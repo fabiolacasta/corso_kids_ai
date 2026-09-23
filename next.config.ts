@@ -21,6 +21,26 @@ const nextConfig: NextConfig = {
   },
   // Enable standalone output for Docker
   output: "standalone",
+  // Kids-only deployments (e.g. Netlify free plan, 250 MB function limit):
+  // leave out large files the kids section never reads at runtime.
+  ...(process.env.KIDS_ONLY === "1"
+    ? {
+        outputFileTracingExcludes: {
+          "*": [
+            "public/**",
+            "prompts.csv",
+            "PROMPTS.md",
+            "packages/**",
+            "src/**",
+            "node_modules/typescript/**",
+            "node_modules/@img/**",
+            "node_modules/sharp/**",
+            "node_modules/@prisma/client/runtime/*.map",
+            "node_modules/.prisma/client/*.wasm",
+          ],
+        },
+      }
+    : {}),
   // Experimental features
   experimental: {
     // Enable server actions
