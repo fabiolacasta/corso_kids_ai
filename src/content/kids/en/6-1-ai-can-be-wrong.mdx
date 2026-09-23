@@ -26,11 +26,11 @@ Hallucinations are tricky because they come with exact dates, numbers and names.
 <SpotTheFake
   question="One sentence in this answer is made up. Tap it!"
   sentences={[
-    { text: "The Leaning Tower of Pisa is in Tuscany, Italy." },
-    { text: "Its construction started in 1173." },
-    { text: "It leans because the ground under it is soft." },
+    { text: "The Leaning Tower of Pisa is in Tuscany, Italy.", why: "True: Pisa is a city in Tuscany." },
+    { text: "Its construction started in 1173.", why: "True: work began in 1173 and took almost 200 years." },
+    { text: "It leans because the ground under it is soft.", why: "True: the ground is clay and sand, and it sank on one side." },
     { text: "In 1950 a team of engineers straightened it completely.", fake: true },
-    { text: "Today visitors can climb to the top." }
+    { text: "Today visitors can climb to the top.", why: "True: with a ticket you can climb almost 300 steps." }
   ]}
   explanation="The tower was never straightened: it still leans! The made-up sentence has a date and precise details, which is why it sounds true."
 />
@@ -42,10 +42,10 @@ Hallucinations are tricky because they come with exact dates, numbers and names.
 <SpotTheFake
   question="Find the made-up fact in this answer about Leonardo."
   sentences={[
-    { text: "Leonardo da Vinci was born in 1452 in Vinci." },
-    { text: "He painted the Mona Lisa." },
+    { text: "Leonardo da Vinci was born in 1452 in Vinci.", why: "True: he was born in Vinci, near Florence, in 1452." },
+    { text: "He painted the Mona Lisa.", why: "True: the Mona Lisa is his most famous painting, now in the Louvre in Paris." },
     { text: "He invented the telephone in 1490.", fake: true },
-    { text: "He drew designs for flying machines." }
+    { text: "He drew designs for flying machines.", why: "True: his notebooks contain drawings of flying machines." }
   ]}
   explanation="The telephone was invented almost 400 years later! Leonardo designed flying machines, but not the telephone."
 />

@@ -1748,7 +1748,8 @@
       "thinkAgain": "Mmm, pensaci ancora…",
       "aiAnswer": "Risposta dell'IA",
       "thisIsTrue": "Questa frase è vera. Cerca quella inventata!",
-      "found": "Beccata!"
+      "found": "Beccata!",
+      "whyWrong": "Perché no:"
     }
   },
   "book": {

@@ -26,11 +26,11 @@ Le allucinazioni sono pericolose perché hanno date, numeri e nomi precisi. Semb
 <SpotTheFake
   question="In questa risposta c'è una frase inventata. Toccala!"
   sentences={[
-    { text: "La Torre di Pisa si trova in Toscana." },
-    { text: "La sua costruzione è iniziata nel 1173." },
-    { text: "È inclinata perché il terreno sotto è morbido." },
+    { text: "La Torre di Pisa si trova in Toscana.", why: "Vero: Pisa è una città della Toscana." },
+    { text: "La sua costruzione è iniziata nel 1173.", why: "Vero: i lavori sono iniziati nel 1173 e sono durati quasi 200 anni." },
+    { text: "È inclinata perché il terreno sotto è morbido.", why: "Vero: il terreno sotto la torre è fatto di argilla e sabbia, e ha ceduto da un lato." },
     { text: "Nel 1950 è stata raddrizzata del tutto da un gruppo di ingegneri giapponesi.", fake: true },
-    { text: "Oggi i visitatori possono salire fino in cima." }
+    { text: "Oggi i visitatori possono salire fino in cima.", why: "Vero: con il biglietto si possono salire i quasi 300 gradini." }
   ]}
   explanation="La torre non è mai stata raddrizzata: è ancora inclinata! La frase inventata ha una data e dei dettagli precisi, per questo sembra vera."
 />
@@ -42,10 +42,10 @@ Le allucinazioni sono pericolose perché hanno date, numeri e nomi precisi. Semb
 <SpotTheFake
   question="Trova l'invenzione in questa risposta su Leonardo."
   sentences={[
-    { text: "Leonardo da Vinci è nato nel 1452 a Vinci." },
-    { text: "Ha dipinto la Gioconda." },
+    { text: "Leonardo da Vinci è nato nel 1452 a Vinci.", why: "Vero: è nato a Vinci, vicino a Firenze, nel 1452." },
+    { text: "Ha dipinto la Gioconda.", why: "Vero: la Gioconda è il suo quadro più famoso, oggi al Louvre di Parigi." },
     { text: "Ha inventato il telefono nel 1490.", fake: true },
-    { text: "Ha disegnato progetti di macchine volanti." }
+    { text: "Ha disegnato progetti di macchine volanti.", why: "Vero: nei suoi quaderni ci sono disegni di macchine per volare." }
   ]}
   explanation="Il telefono è stato inventato quasi 400 anni dopo! Leonardo ha progettato macchine volanti, ma non il telefono."
 />

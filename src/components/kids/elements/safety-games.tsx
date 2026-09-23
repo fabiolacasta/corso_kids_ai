@@ -122,23 +122,24 @@ interface SafetySorterProps {
 export function SafetySorter({ title, instruction, buckets, items, successMessage }: SafetySorterProps) {
   const t = useTranslations("kids.safety");
   const complete = useRequirement();
-  const { state, setState, loaded } = usePersistentState<{ picks: Record<number, string>; checked: boolean }>({
+  const { state, setState, loaded } = usePersistentState<{ picks: Record<number, string>; checked: boolean; checkedPicks?: Record<number, string> }>({
     picks: {},
     checked: false,
   });
   if (!loaded) return null;
 
   const { picks, checked } = state;
+  const checkedPicks = state.checkedPicks || {};
   const allPicked = items.every((_, i) => picks[i]);
   const wrong = items.filter((it, i) => picks[i] && picks[i] !== it.bucket).length;
   const allRight = checked && allPicked && wrong === 0;
 
   const pick = (i: number, b: string) => {
     if (allRight) return;
-    setState({ picks: { ...picks, [i]: b }, checked: false });
+    setState({ ...state, picks: { ...picks, [i]: b }, checked: false });
   };
   const check = () => {
-    setState({ ...state, checked: true });
+    setState({ ...state, checked: true, checkedPicks: { ...picks } });
     if (allPicked && items.every((it, i) => picks[i] === it.bucket)) complete();
   };
 
@@ -149,7 +150,7 @@ export function SafetySorter({ title, instruction, buckets, items, successMessag
       <div className="grid gap-2">
         {items.map((it, i) => {
           const p = picks[i];
-          const isWrong = checked && p && p !== it.bucket;
+          const isWrong = !!p && p !== it.bucket && checkedPicks[i] === p;
           const isRight = checked && p === it.bucket;
           return (
             <div
@@ -163,6 +164,11 @@ export function SafetySorter({ title, instruction, buckets, items, successMessag
               <div className="flex-1">
                 <p className="text-base text-[#2C1810] m-0 leading-tight">{it.text}</p>
                 {allRight && it.why && <p className="text-sm text-[#5D4037] m-0 mt-1">{it.why}</p>}
+                {isWrong && (
+                  <p className="text-sm text-[#9F1239] m-0 mt-1">
+                    <b>{t("whyWrong")}</b> {it.why || t("thinkAgain")}
+                  </p>
+                )}
               </div>
               <div className="flex gap-1 flex-wrap">
                 {buckets.map((b) => {
@@ -295,6 +301,8 @@ export function WhatWouldYouDo({ scenario, question, choices, promiMessage }: Wh
 interface Sentence {
   text: string;
   fake?: boolean;
+  /** Why this sentence is true (shown when it is tapped by mistake) */
+  why?: string;
 }
 interface SpotTheFakeProps {
   question: string;
@@ -342,7 +350,13 @@ export function SpotTheFake({ question, sentences, explanation }: SpotTheFakePro
           })}
         </p>
       </div>
-      {lastWrong && <Feedback ok={false} title={t("thisIsTrue")} />}
+      {lastWrong && (
+        <Feedback ok={false} title={t("thisIsTrue")}>
+          {sentences[state.tried[state.tried.length - 1]]?.why && (
+            <p className="m-0">{sentences[state.tried[state.tried.length - 1]].why}</p>
+          )}
+        </Feedback>
+      )}
       {state.found && (
         <Feedback ok title={t("found")}>
           <p className="m-0">{explanation}</p>

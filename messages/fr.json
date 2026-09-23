@@ -1748,7 +1748,8 @@
       "thinkAgain": "Hmm, think again…",
       "aiAnswer": "AI answer",
       "thisIsTrue": "This sentence is true. Look for the made-up one!",
-      "found": "You caught it!"
+      "found": "You caught it!",
+      "whyWrong": "Why not:"
     }
   },
   "book": {
