@@ -39,7 +39,13 @@ const nextConfig: NextConfig = {
   },
   // Redirects
   async redirects() {
+    // KIDS_ONLY=1 publishes only the kids section (no database needed):
+    // the home page redirects to /kids.
+    const kidsOnly = process.env.KIDS_ONLY === "1"
+      ? [{ source: "/", destination: "/kids", permanent: false }]
+      : [];
     return [
+      ...kidsOnly,
       {
         source: "/vibe",
         destination: "/categories/vibe",

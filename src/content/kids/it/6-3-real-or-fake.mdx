@@ -1,0 +1,86 @@
+<Section>
+<Panel character="promi" mood="thinking">
+Oggi l'IA sa creare anche **foto, voci e video**. Alcuni sono così realistici che ingannano chiunque. Si chiamano **deepfake**.
+</Panel>
+</Section>
+
+<Section>
+## Come si riconosce un falso?
+
+Non sempre si può capire guardando. Ma ci sono degli **indizi**:
+
+- 🖐️ **Mani e dita strane**, con troppe o troppo poche dita
+- 🔤 **Scritte deformate** su cartelli e magliette
+- 💡 **Luci e ombre** che non tornano
+- 😶 **Voci un po' "piatte"** o labbra che non seguono bene le parole
+
+<Panel character="promi" mood="excited">
+L'indizio più forte però è la **fonte**: chi l'ha pubblicato? Lo dicono anche giornali o siti affidabili?
+</Panel>
+</Section>
+
+<Section>
+## Le 3 domande del Detective
+
+Prima di credere a qualcosa, o di condividerlo, chiediti:
+
+1. **Chi lo dice** e dove posso controllarlo?
+2. È **troppo strano, troppo bello o troppo arrabbiato** per essere vero?
+3. Se lo condivido e non è vero, **chi si può fare male**?
+
+<SafetySorter
+  title="Ti fidi o controlli?"
+  instruction="Per ogni contenuto, scegli cosa fare."
+  buckets={[
+    { id: "trust", label: "✅ Mi fido", color: "green" },
+    { id: "check", label: "🔍 Controllo prima", color: "yellow" }
+  ]}
+  items={[
+    { text: "Un video di un calciatore famoso che dice di lasciare il calcio per fare il pasticcere, pubblicato da un profilo sconosciuto", bucket: "check", why: "Notizia clamorosa e fonte sconosciuta: potrebbe essere un deepfake." },
+    { text: "Un vocale del tuo cantante preferito: 'regalo biglietti a chi inoltra questo messaggio!'", bucket: "check", why: "Le voci si possono clonare, e le catene 'inoltra a tutti' sono quasi sempre false." },
+    { text: "La data della gita scritta sul sito della scuola e detta dalla prof in classe", bucket: "trust", why: "Due fonti affidabili dicono la stessa cosa." },
+    { text: "La foto di uno squalo che nuota in una strada allagata", bucket: "check", why: "Troppo strana: prima si controlla se la notizia esiste davvero." }
+  ]}
+  successMessage="Occhio da detective!"
+/>
+</Section>
+
+<Section>
+## Una regola che non si infrange mai
+
+<Panel character="promi" mood="confused">
+Questa è la parte più seria di tutta l'isola. Ascoltami bene.
+</Panel>
+
+Con l'IA qualcuno potrebbe **modificare la foto di un compagno**: metterlo in situazioni imbarazzanti, cambiargli il corpo o fargli dire cose che non ha mai detto.
+
+Questo **fa molto male** a chi lo subisce. È una forma di **cyberbullismo** e può essere anche un **reato**, anche se "era solo uno scherzo".
+
+<WhatWouldYouDo
+  scenario="Nel gruppo della classe qualcuno condivide una foto di Marco modificata con l'IA per prenderlo in giro. Tutti ridono e mettono emoji."
+  choices={[
+    { text: "Rido anch'io e la inoltro, tanto l'hanno già vista tutti.", feedback: "Inoltrarla la fa arrivare ancora più lontano e fa ancora più male a Marco. Chi condivide partecipa." },
+    { text: "Non la condivido e lo dico subito a un adulto di fiducia: un genitore o un prof.", correct: true, feedback: "Giusto! Non partecipare e chiedere aiuto a un adulto è la cosa più coraggiosa che puoi fare." },
+    { text: "Faccio finta di niente, non sono affari miei.", feedback: "Stare zitti lascia Marco da solo. Non serve fare gli eroi: basta dirlo a un adulto." }
+  ]}
+  promiMessage="Non si crea e non si condivide mai un contenuto falso su una persona vera."
+/>
+</Section>
+
+<Section>
+## Livello completato! 🎉
+
+<Panel character="promi" mood="celebrating">
+Bravo! Ora sai che:
+
+- ✅ Foto, voci e video possono essere creati dall'IA
+- ✅ Prima di credere e condividere, ti fai le 3 domande del Detective
+- ✅ Non si falsificano mai le foto degli altri, e se succede lo si dice a un adulto
+</Panel>
+
+<LevelComplete 
+  levelSlug="6-3-real-or-fake" 
+  stars={3}
+  message="Niente deepfake ti può ingannare!"
+/>
+</Section>

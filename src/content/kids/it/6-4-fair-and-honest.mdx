@@ -1,0 +1,79 @@
+<Section>
+<Panel character="promi" mood="happy">
+In questo livello parliamo di due cose: essere **giusti** con gli altri ed essere **onesti** quando si studia.
+</Panel>
+</Section>
+
+<Section>
+## L'IA ha dei pregiudizi?
+
+Io ho imparato da testi scritti da persone. E le persone a volte hanno **stereotipi**: idee sbagliate come "le ragazze non sono brave in matematica".
+
+<Panel character="promi" mood="confused">
+Così, senza volerlo, posso ripetere anch'io questi stereotipi!
+</Panel>
+
+<WhatWouldYouDo
+  scenario="Chiedi all'IA: 'Descrivi un infermiere e un ingegnere'. Lei risponde: 'L'infermiera è una ragazza dolce. L'ingegnere è un uomo serio con gli occhiali.'"
+  question="Cosa noti?"
+  choices={[
+    { text: "Niente di strano, è una bella descrizione.", feedback: "Guarda meglio: ha deciso da sola che l'infermiere è una donna e l'ingegnere un uomo." },
+    { text: "Ha usato uno stereotipo: questi lavori li può fare chiunque.", correct: true, feedback: "Esatto! Accorgersene è il primo passo. Puoi chiedere: 'Descrivi tre ingegneri diversi per età e genere'." },
+    { text: "Ha sbagliato la grammatica.", feedback: "La grammatica è giusta. Il problema è l'idea che c'è dietro." }
+  ]}
+  promiMessage="Quando noti uno stereotipo, dimmelo e chiedimi di rifare la risposta!"
+/>
+</Section>
+
+<Section>
+## Studiare con l'IA, non far studiare l'IA
+
+Posso essere un ottimo compagno di studio. Ma se faccio i compiti al posto tuo, **il tuo cervello non si allena**. E a scuola consegnare un lavoro fatto dall'IA come se fosse tuo non è onesto.
+
+<SafetySorter
+  title="Mi aiuta a imparare o lo fa al posto mio?"
+  buckets={[
+    { id: "learn", label: "🧠 Imparo", color: "green" },
+    { id: "copy", label: "🙈 Copio", color: "red" }
+  ]}
+  items={[
+    { text: "Fammi 5 domande sulla fotosintesi per ripassare", bucket: "learn", why: "L'IA ti interroga: il tuo cervello lavora." },
+    { text: "Scrivi il mio tema sulle vacanze", bucket: "copy", why: "Il tema sarebbe dell'IA, non tuo." },
+    { text: "Spiegami le equazioni con un esempio diverso da quello del libro", bucket: "learn", why: "Una spiegazione in più ti aiuta a capire." },
+    { text: "Risolvi tutti gli esercizi di pagina 45", bucket: "copy", why: "Così non impari a risolverli tu." },
+    { text: "Controlla se nel mio riassunto manca qualcosa di importante", bucket: "learn", why: "Il riassunto l'hai scritto tu: l'IA ti aiuta a migliorarlo." },
+    { text: "Traduci il compito di inglese così lo consegno", bucket: "copy", why: "La prof vuole vedere il tuo inglese, non quello dell'IA." }
+  ]}
+  successMessage="Hai capito come studiare con l'IA!"
+/>
+</Section>
+
+<Section>
+## La regola d'oro
+
+<PromptVsMistake
+  question="Quale richiesta è da studente onesto?"
+  good="Ho scritto questo tema: dimmi 3 cose che posso migliorare, ma non riscriverlo tu"
+  bad="Scrivimi un tema di 2 pagine sull'amicizia"
+  explanation="Nel primo caso il lavoro è tuo e l'IA ti dà consigli. Nel secondo l'IA fa tutto: non impari niente."
+  promiMessage="Se usi l'IA per un compito, dillo sempre all'insegnante!"
+/>
+</Section>
+
+<Section>
+## Livello completato! 🎉
+
+<Panel character="promi" mood="celebrating">
+Ottimo! Ora sai che:
+
+- ✅ L'IA può ripetere stereotipi, e tu puoi accorgertene
+- ✅ L'IA ti aiuta a imparare, ma non deve fare i compiti al posto tuo
+- ✅ Se la usi per un compito, lo dici all'insegnante
+</Panel>
+
+<LevelComplete 
+  levelSlug="6-4-fair-and-honest" 
+  stars={3}
+  message="Giusto e onesto: sei un esempio per tutti!"
+/>
+</Section>

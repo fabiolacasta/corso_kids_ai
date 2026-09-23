@@ -1521,6 +1521,9 @@
       },
       "5": {
         "title": "Montagna del Maestro"
+      },
+      "6": {
+        "title": "Spiaggia della Sicurezza"
       }
     },
     "levels": {
@@ -1599,6 +1602,26 @@
       "5_4_graduation_day": {
         "title": "Giorno della Laurea",
         "description": "La sfida finale - diventa Maestro!"
+      },
+      "6_1_ai_can_be_wrong": {
+        "title": "Anche l'IA sbaglia",
+        "description": "Scopri le risposte inventate e impara a controllare"
+      },
+      "6_2_secret_keeper": {
+        "title": "Il Custode dei Segreti",
+        "description": "Cosa non si scrive mai a un chatbot"
+      },
+      "6_3_real_or_fake": {
+        "title": "Vero o Falso?",
+        "description": "Deepfake, bufale e perché non si falsificano le foto degli altri"
+      },
+      "6_4_fair_and_honest": {
+        "title": "Giusto e Onesto",
+        "description": "Gli stereotipi dell'IA e come usarla per studiare nel modo giusto"
+      },
+      "6_5_ai_guardian": {
+        "title": "Guardiano dell'IA",
+        "description": "L'IA è uno strumento, non un migliore amico: truffe, regole e adulti di fiducia"
       }
     },
     "level": {
@@ -1714,6 +1737,18 @@
       "resetConfirm": "Sì, Reimposta Tutto",
       "resetComplete": "Progressi reimpostati! Ricaricamento...",
       "cancel": "Annulla"
+    },
+    "safety": {
+      "check": "Controlla",
+      "sortWrong": "{count, plural, =0 {Mancano ancora delle carte} one {# carta è al posto sbagliato} other {# carte sono al posto sbagliato}}. Riprova!",
+      "sortRight": "Tutto giusto!",
+      "scenario": "Cosa succede",
+      "whatWouldYouDo": "Tu cosa faresti?",
+      "goodChoice": "Ottima scelta!",
+      "thinkAgain": "Mmm, pensaci ancora…",
+      "aiAnswer": "Risposta dell'IA",
+      "thisIsTrue": "Questa frase è vera. Cerca quella inventata!",
+      "found": "Beccata!"
     }
   },
   "book": {

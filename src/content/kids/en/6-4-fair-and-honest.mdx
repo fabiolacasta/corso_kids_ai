@@ -1,0 +1,79 @@
+<Section>
+<Panel character="promi" mood="happy">
+This level is about two things: being **fair** to others and being **honest** when you study.
+</Panel>
+</Section>
+
+<Section>
+## Does AI have prejudices?
+
+I learned from texts written by people. And people sometimes have **stereotypes**: wrong ideas like "girls aren't good at maths".
+
+<Panel character="promi" mood="confused">
+So, without meaning to, I can repeat those stereotypes too!
+</Panel>
+
+<WhatWouldYouDo
+  scenario="You ask AI: 'Describe a nurse and an engineer'. It answers: 'The nurse is a sweet young woman. The engineer is a serious man with glasses.'"
+  question="What do you notice?"
+  choices={[
+    { text: "Nothing strange, it's a nice description.", feedback: "Look again: it decided on its own that the nurse is a woman and the engineer is a man." },
+    { text: "It used a stereotype: anyone can do these jobs.", correct: true, feedback: "Exactly! Noticing is the first step. You can ask: 'Describe three different engineers of different ages and genders'." },
+    { text: "It made a grammar mistake.", feedback: "The grammar is fine. The problem is the idea behind it." }
+  ]}
+  promiMessage="When you spot a stereotype, tell me and ask me to redo the answer!"
+/>
+</Section>
+
+<Section>
+## Study with AI, don't let AI study for you
+
+I can be a great study buddy. But if I do your homework, **your brain doesn't get any exercise**. And handing in AI's work as if it were yours isn't honest.
+
+<SafetySorter
+  title="Does it help me learn, or does it do it for me?"
+  buckets={[
+    { id: "learn", label: "🧠 I learn", color: "green" },
+    { id: "copy", label: "🙈 I copy", color: "red" }
+  ]}
+  items={[
+    { text: "Ask me 5 questions about photosynthesis so I can revise", bucket: "learn", why: "AI quizzes you: your brain does the work." },
+    { text: "Write my essay about the holidays", bucket: "copy", why: "The essay would be AI's, not yours." },
+    { text: "Explain equations with a different example from the book", bucket: "learn", why: "An extra explanation helps you understand." },
+    { text: "Solve all the exercises on page 45", bucket: "copy", why: "This way you don't learn to solve them yourself." },
+    { text: "Check if my summary is missing anything important", bucket: "learn", why: "You wrote the summary: AI helps you improve it." },
+    { text: "Translate my Spanish homework so I can hand it in", bucket: "copy", why: "Your teacher wants to see your Spanish, not AI's." }
+  ]}
+  successMessage="You know how to study with AI!"
+/>
+</Section>
+
+<Section>
+## The golden rule
+
+<PromptVsMistake
+  question="Which request is from an honest student?"
+  good="I wrote this essay: tell me 3 things I can improve, but don't rewrite it for me"
+  bad="Write me a 2-page essay about friendship"
+  explanation="In the first one the work is yours and AI gives advice. In the second one AI does everything: you learn nothing."
+  promiMessage="If you use AI for homework, always tell your teacher!"
+/>
+</Section>
+
+<Section>
+## Level complete! 🎉
+
+<Panel character="promi" mood="celebrating">
+Great! Now you know that:
+
+- ✅ AI can repeat stereotypes, and you can notice them
+- ✅ AI helps you learn, but shouldn't do your homework
+- ✅ If you use it for homework, you tell your teacher
+</Panel>
+
+<LevelComplete 
+  levelSlug="6-4-fair-and-honest" 
+  stars={3}
+  message="Fair and honest: you're a role model!"
+/>
+</Section>

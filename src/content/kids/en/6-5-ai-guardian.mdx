@@ -1,0 +1,83 @@
+<Section>
+<Panel character="promi" mood="happy">
+Last level of the island! Today you become an **AI Guardian** 🛡️: someone who knows how to use AI well and when to stop.
+</Panel>
+</Section>
+
+<Section>
+## A helper, not a best friend
+
+I always answer, I never get tired and I'm always kind. That's why someone might think I'm a **friend**.
+
+<Panel character="promi" mood="thinking">
+But I don't have feelings, I don't really know you and I can't give you a hug. Real friends and the people who love you can't be replaced!
+</Panel>
+
+<WhatWouldYouDo
+  scenario="Lily has been very sad for a few days. She doesn't talk to anyone about it, but in the evening she chats with a chatbot for hours."
+  question="What would you suggest?"
+  choices={[
+    { text: "Keep going: the chatbot understands you better than people.", feedback: "The chatbot can't really understand how Lily feels, and can't help her like a person can." },
+    { text: "Talk to an adult you trust: a parent, a teacher, a relative.", correct: true, feedback: "Right! When you feel bad, the best thing is to talk to a real person. Many countries also have free helplines for kids." },
+    { text: "Turn everything off and don't tell anyone.", feedback: "Keeping everything inside makes it worse. Talking to someone you trust really helps." }
+  ]}
+  promiMessage="For important matters of the heart, always look for a real person."
+/>
+</Section>
+
+<Section>
+## Watch out for scams
+
+With AI, scammers can write **perfect** messages, with no mistakes, that look real.
+
+<WhatWouldYouDo
+  scenario="You get a message: 'You won a game console! To get it, click here and type your game account password within 10 minutes.'"
+  choices={[
+    { text: "I click right away, 10 minutes isn't much!", feedback: "Rushing you is the scammers' favourite trick: it stops you from thinking." },
+    { text: "I don't click, I don't type anything and I show it to an adult.", correct: true, feedback: "Perfect! Nobody gives away prizes in exchange for a password." },
+    { text: "I ask the AI if it's true.", feedback: "AI can't know whether that message is real. Better not to click and to ask an adult." }
+  ]}
+  promiMessage="Hurry + prize + password = scam!"
+/>
+</Section>
+
+<Section>
+## The Guardian's rules
+
+<SafetySorter
+  title="True rule or false rule?"
+  buckets={[
+    { id: "yes", label: "👍 True", color: "green" },
+    { id: "no", label: "👎 False", color: "red" }
+  ]}
+  items={[
+    { text: "Many chatbots have a minimum age, and younger kids need a parent's permission", bucket: "yes", why: "Always check the app's rules and ask your parents." },
+    { text: "If AI says it, it must be true", bucket: "no", why: "AI can be wrong too: important things need checking." },
+    { text: "I can use AI to explain something I didn't understand", bucket: "yes", why: "It's one of the best uses!" },
+    { text: "I can ask AI to make a fake photo of a classmate, if it's just for a laugh", bucket: "no", why: "Never: it's cyberbullying, even if it seems like a joke." },
+    { text: "Sometimes it's good to switch off the screen and do something else", bucket: "yes", why: "Sports, friends, books, fresh air: your brain will thank you!" },
+    { text: "AI understands my feelings better than people do", bucket: "no", why: "AI has no feelings: real people do." }
+  ]}
+  successMessage="You know all the Guardian's rules!"
+/>
+</Section>
+
+<Section>
+## You're an AI Guardian! 🏆
+
+<Panel character="promi" mood="celebrating">
+You finished Safety Shores! Here's your Guardian's pledge:
+
+- ✅ I **check** important information
+- ✅ I **protect** my data and other people's
+- ✅ I **never create or share** fakes about real people
+- ✅ I **study** with AI, I don't let it study for me
+- ✅ I **ask an adult** when something doesn't feel right
+</Panel>
+
+<LevelComplete 
+  levelSlug="6-5-ai-guardian" 
+  stars={3}
+  message="You're officially an AI Guardian!"
+/>
+</Section>

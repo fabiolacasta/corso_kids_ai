@@ -1,0 +1,104 @@
+<Section>
+<Panel character="promi" mood="happy">
+Benvenuto sulla **Spiaggia della Sicurezza**! 🛟 Finora hai imparato a parlare con me. Adesso impari una cosa ancora più importante: usare l'IA **nel modo giusto**, senza cadere nelle sue trappole.
+</Panel>
+
+<Panel character="promi" mood="confused">
+Devo confessarti un segreto… a volte **sbaglio**. E quando sbaglio, lo dico con tanta sicurezza che sembra vero!
+</Panel>
+</Section>
+
+<Section>
+## Perché l'IA inventa?
+
+Io non "so" le cose come le sai tu. Ho letto tantissimi testi e scelgo le parole che **sembrano** più adatte, una dopo l'altra.
+
+Di solito funziona. Ma a volte metto insieme parole che suonano bene… e sono **false**. Si chiamano **allucinazioni**.
+
+<Panel character="promi" mood="thinking">
+Le allucinazioni sono pericolose perché hanno date, numeri e nomi precisi. Sembrano proprio vere!
+</Panel>
+</Section>
+
+<Section>
+## Caccia all'invenzione
+
+<SpotTheFake
+  question="In questa risposta c'è una frase inventata. Toccala!"
+  sentences={[
+    { text: "La Torre di Pisa si trova in Toscana." },
+    { text: "La sua costruzione è iniziata nel 1173." },
+    { text: "È inclinata perché il terreno sotto è morbido." },
+    { text: "Nel 1950 è stata raddrizzata del tutto da un gruppo di ingegneri giapponesi.", fake: true },
+    { text: "Oggi i visitatori possono salire fino in cima." }
+  ]}
+  explanation="La torre non è mai stata raddrizzata: è ancora inclinata! La frase inventata ha una data e dei dettagli precisi, per questo sembra vera."
+/>
+</Section>
+
+<Section>
+## Un'altra!
+
+<SpotTheFake
+  question="Trova l'invenzione in questa risposta su Leonardo."
+  sentences={[
+    { text: "Leonardo da Vinci è nato nel 1452 a Vinci." },
+    { text: "Ha dipinto la Gioconda." },
+    { text: "Ha inventato il telefono nel 1490.", fake: true },
+    { text: "Ha disegnato progetti di macchine volanti." }
+  ]}
+  explanation="Il telefono è stato inventato quasi 400 anni dopo! Leonardo ha progettato macchine volanti, ma non il telefono."
+/>
+</Section>
+
+<Section>
+## Come si controlla?
+
+<Panel character="promi" mood="excited">
+Quando ti dico qualcosa di importante, fai come un vero detective:
+</Panel>
+
+1. **Controlla su un'altra fonte**: il libro di scuola, un sito affidabile, un'enciclopedia.
+2. **Chiedi a un adulto** se qualcosa ti sembra strano.
+3. **Chiedimi da dove viene l'informazione**, ma ricorda: posso inventare anche le fonti!
+
+<PromptVsMistake
+  question="Quale richiesta ti aiuta di più a non cadere in un errore?"
+  good="Spiegami come nasce un vulcano e dimmi su quale libro o sito posso controllare"
+  bad="Dimmi tutto sui vulcani, mi fido di te"
+  explanation="Chiedere dove controllare ti ricorda di verificare. Fidarsi a occhi chiusi è il modo più facile per imparare una cosa sbagliata!"
+  promiMessage="Io sono un aiutante, non un libro di scuola. Controlla sempre le cose importanti!"
+/>
+</Section>
+
+<Section>
+## Tu cosa faresti?
+
+<WhatWouldYouDo
+  scenario="Devi fare una ricerca sugli Etruschi. Chiedi all'IA e ti risponde con un testo lunghissimo e pieno di date."
+  choices={[
+    { text: "Copio tutto nella ricerca, tanto l'IA sa tutto.", feedback: "Attenzione: dentro potrebbero esserci date inventate. E poi la ricerca non sarebbe tua!" },
+    { text: "Uso la risposta come punto di partenza e controllo le date sul libro.", correct: true, feedback: "Perfetto! L'IA ti dà un'idea, tu controlli e scrivi con parole tue." },
+    { text: "Chiedo all'IA se è sicura. Se dice di sì, va bene.", feedback: "L'IA può dire 'sì, sono sicura' anche quando sbaglia. Meglio controllare su un'altra fonte." }
+  ]}
+  promiMessage="Ricorda: probabile non vuol dire vero!"
+/>
+</Section>
+
+<Section>
+## Livello completato! 🎉
+
+<Panel character="promi" mood="celebrating">
+Bravissimo! Ora sai che:
+
+- ✅ Anche l'IA sbaglia, e lo fa con sicurezza
+- ✅ Le invenzioni dell'IA si chiamano allucinazioni
+- ✅ Le cose importanti si controllano sempre su un'altra fonte
+</Panel>
+
+<LevelComplete 
+  levelSlug="6-1-ai-can-be-wrong" 
+  stars={3}
+  message="Sei diventato un detective delle allucinazioni!"
+/>
+</Section>

@@ -1,0 +1,104 @@
+<Section>
+<Panel character="promi" mood="happy">
+Welcome to **Safety Shores**! 🛟 So far you learned how to talk to me. Now you'll learn something even more important: using AI **the right way**, without falling into its traps.
+</Panel>
+
+<Panel character="promi" mood="confused">
+I have a secret to tell you… sometimes I'm **wrong**. And when I'm wrong, I say it so confidently that it sounds true!
+</Panel>
+</Section>
+
+<Section>
+## Why does AI make things up?
+
+I don't "know" things the way you do. I've read tons of text, and I pick the words that **seem** to fit best, one after another.
+
+Usually it works. But sometimes I put together words that sound right… and are **false**. These are called **hallucinations**.
+
+<Panel character="promi" mood="thinking">
+Hallucinations are tricky because they come with exact dates, numbers and names. They look real!
+</Panel>
+</Section>
+
+<Section>
+## Hunt the made-up fact
+
+<SpotTheFake
+  question="One sentence in this answer is made up. Tap it!"
+  sentences={[
+    { text: "The Leaning Tower of Pisa is in Tuscany, Italy." },
+    { text: "Its construction started in 1173." },
+    { text: "It leans because the ground under it is soft." },
+    { text: "In 1950 a team of engineers straightened it completely.", fake: true },
+    { text: "Today visitors can climb to the top." }
+  ]}
+  explanation="The tower was never straightened: it still leans! The made-up sentence has a date and precise details, which is why it sounds true."
+/>
+</Section>
+
+<Section>
+## One more!
+
+<SpotTheFake
+  question="Find the made-up fact in this answer about Leonardo."
+  sentences={[
+    { text: "Leonardo da Vinci was born in 1452 in Vinci." },
+    { text: "He painted the Mona Lisa." },
+    { text: "He invented the telephone in 1490.", fake: true },
+    { text: "He drew designs for flying machines." }
+  ]}
+  explanation="The telephone was invented almost 400 years later! Leonardo designed flying machines, but not the telephone."
+/>
+</Section>
+
+<Section>
+## How do you check?
+
+<Panel character="promi" mood="excited">
+When I tell you something important, act like a real detective:
+</Panel>
+
+1. **Check another source**: your school book, a trusted website, an encyclopedia.
+2. **Ask a grown-up** if something seems strange.
+3. **Ask me where the information comes from**, but remember: I can make up sources too!
+
+<PromptVsMistake
+  question="Which request helps you most to avoid a mistake?"
+  good="Explain how a volcano forms and tell me which book or website I can use to check"
+  bad="Tell me everything about volcanoes, I trust you"
+  explanation="Asking where to check reminds you to verify. Trusting blindly is the easiest way to learn something wrong!"
+  promiMessage="I'm a helper, not a school book. Always double-check important things!"
+/>
+</Section>
+
+<Section>
+## What would you do?
+
+<WhatWouldYouDo
+  scenario="You have to write a report on the Ancient Romans. You ask the AI and it gives you a very long answer full of dates."
+  choices={[
+    { text: "I copy everything into my report, AI knows everything.", feedback: "Careful: some dates could be made up. And the report wouldn't be yours!" },
+    { text: "I use the answer as a starting point and check the dates in my book.", correct: true, feedback: "Perfect! AI gives you ideas, you check and write in your own words." },
+    { text: "I ask the AI if it's sure. If it says yes, it's fine.", feedback: "AI can say 'yes, I'm sure' even when it's wrong. Better to check another source." }
+  ]}
+  promiMessage="Remember: likely doesn't mean true!"
+/>
+</Section>
+
+<Section>
+## Level complete! 🎉
+
+<Panel character="promi" mood="celebrating">
+Great job! Now you know that:
+
+- ✅ AI can be wrong, and sound very sure about it
+- ✅ AI's made-up facts are called hallucinations
+- ✅ Important things should always be checked with another source
+</Panel>
+
+<LevelComplete 
+  levelSlug="6-1-ai-can-be-wrong" 
+  stars={3}
+  message="You're a hallucination detective!"
+/>
+</Section>

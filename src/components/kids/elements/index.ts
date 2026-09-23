@@ -12,3 +12,4 @@ export { PromptDoctor } from "./prompt-doctor";
 export { StepByStep } from "./step-by-step";
 export { PromptLab } from "./prompt-lab";
 export { WordPredictor } from "./word-predictor";
+export { SafetySorter, WhatWouldYouDo, SpotTheFake } from "./safety-games";

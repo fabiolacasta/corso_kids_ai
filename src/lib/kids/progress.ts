@@ -1,6 +1,6 @@
 "use client";
 
-import { getAllLevels } from "./levels";
+import { getAllLevels, worlds } from "./levels";
 
 const STORAGE_KEY = "kids-progress";
 
@@ -77,6 +77,11 @@ export function isLevelUnlocked(slug: string): boolean {
   
   // First level is always unlocked
   if (levelIndex === 0) return true;
+
+  // The first level of a standalone world (e.g. Safety Shores) is always unlocked
+  const level = levels[levelIndex];
+  const world = worlds.find((w) => w.number === level?.world);
+  if (world?.standalone && world.levels[0]?.slug === slug) return true;
   
   // Level is unlocked if previous level is completed
   const prevLevel = levels[levelIndex - 1];

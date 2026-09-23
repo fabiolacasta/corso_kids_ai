@@ -1521,6 +1521,9 @@
       },
       "5": {
         "title": "마스터 산"
+      },
+      "6": {
+        "title": "Safety Shores"
       }
     },
     "levels": {
@@ -1599,6 +1602,26 @@
       "5_4_graduation_day": {
         "title": "졸업의 날",
         "description": "최종 도전 - 마스터가 되세요!"
+      },
+      "6_1_ai_can_be_wrong": {
+        "title": "AI Can Be Wrong",
+        "description": "Spot made-up answers and learn to double-check"
+      },
+      "6_2_secret_keeper": {
+        "title": "The Secret Keeper",
+        "description": "Learn what you should never share with a chatbot"
+      },
+      "6_3_real_or_fake": {
+        "title": "Real or Fake?",
+        "description": "Deepfakes, fake news and why we never fake photos of others"
+      },
+      "6_4_fair_and_honest": {
+        "title": "Fair and Honest",
+        "description": "Stereotypes in AI and using AI for homework the right way"
+      },
+      "6_5_ai_guardian": {
+        "title": "AI Guardian",
+        "description": "AI is a tool, not a best friend: scams, limits and asking a grown-up"
       }
     },
     "level": {
@@ -1714,6 +1737,18 @@
       "resetConfirm": "네, 모두 초기화",
       "resetComplete": "진행 상황 초기화됨! 새로고침 중...",
       "cancel": "취소"
+    },
+    "safety": {
+      "check": "Check",
+      "sortWrong": "{count, plural, =0 {Some cards are still missing} one {# card is in the wrong place} other {# cards are in the wrong place}}. Try again!",
+      "sortRight": "All correct!",
+      "scenario": "What happens",
+      "whatWouldYouDo": "What would you do?",
+      "goodChoice": "Great choice!",
+      "thinkAgain": "Hmm, think again…",
+      "aiAnswer": "AI answer",
+      "thisIsTrue": "This sentence is true. Look for the made-up one!",
+      "found": "You caught it!"
     }
   },
   "book": {

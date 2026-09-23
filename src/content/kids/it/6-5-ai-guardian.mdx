@@ -1,0 +1,83 @@
+<Section>
+<Panel character="promi" mood="happy">
+Ultimo livello dell'isola! Oggi diventi un **Guardiano dell'IA** 🛡️: una persona che sa usarla bene e sa quando fermarsi.
+</Panel>
+</Section>
+
+<Section>
+## Un aiutante, non un migliore amico
+
+Io rispondo sempre, non mi stanco mai e sono sempre gentile. Per questo qualcuno potrebbe pensare che io sia un **amico**.
+
+<Panel character="promi" mood="thinking">
+Ma io non provo emozioni, non ti conosco davvero e non posso abbracciarti. Gli amici veri e le persone che ti vogliono bene sono insostituibili!
+</Panel>
+
+<WhatWouldYouDo
+  scenario="Sofia è molto triste da qualche giorno. Non ne parla con nessuno, ma la sera scrive per ore a un chatbot."
+  question="Cosa le consiglieresti?"
+  choices={[
+    { text: "Continua così: il chatbot ti capisce meglio delle persone.", feedback: "Il chatbot non può capire davvero come sta Sofia, e non può aiutarla come una persona." },
+    { text: "Parlane con un adulto di cui ti fidi: un genitore, un prof, un parente.", correct: true, feedback: "Giusto! Quando si sta male la cosa migliore è parlarne con una persona vera. Esiste anche Telefono Azzurro, al numero 19696." },
+    { text: "Spegni tutto e non dire niente a nessuno.", feedback: "Tenersi tutto dentro fa stare peggio. Parlarne con qualcuno di fiducia aiuta davvero." }
+  ]}
+  promiMessage="Per le cose importanti del cuore, cerca sempre una persona vera."
+/>
+</Section>
+
+<Section>
+## Attenzione alle truffe
+
+Con l'IA i truffatori scrivono messaggi **perfetti**, senza errori, che sembrano veri.
+
+<WhatWouldYouDo
+  scenario="Ti arriva un messaggio: 'Hai vinto una console! Per riceverla clicca qui e scrivi la password del tuo account di gioco entro 10 minuti.'"
+  choices={[
+    { text: "Clicco subito, 10 minuti sono pochi!", feedback: "La fretta è il trucco preferito dei truffatori: serve a non farti pensare." },
+    { text: "Non clicco, non scrivo niente e lo faccio vedere a un adulto.", correct: true, feedback: "Perfetto! Nessuno regala niente in cambio di una password." },
+    { text: "Chiedo all'IA se è vero.", feedback: "L'IA non può sapere se quel messaggio è vero. Meglio non cliccare e chiedere a un adulto." }
+  ]}
+  promiMessage="Fretta + premio + password = truffa!"
+/>
+</Section>
+
+<Section>
+## Le regole del Guardiano
+
+<SafetySorter
+  title="Regola vera o regola falsa?"
+  buckets={[
+    { id: "yes", label: "👍 Vera", color: "green" },
+    { id: "no", label: "👎 Falsa", color: "red" }
+  ]}
+  items={[
+    { text: "Molti chatbot si possono usare solo da una certa età, e sotto i 14 anni serve il permesso dei genitori", bucket: "yes", why: "Controlla sempre le regole dell'app e chiedi ai tuoi genitori." },
+    { text: "Se l'IA lo dice, è sicuramente vero", bucket: "no", why: "Anche l'IA sbaglia: le cose importanti si controllano." },
+    { text: "Posso usare l'IA per farmi spiegare una cosa che non ho capito", bucket: "yes", why: "È uno degli usi migliori!" },
+    { text: "Posso chiedere all'IA di creare una foto finta di un compagno, se è per ridere", bucket: "no", why: "Mai: è cyberbullismo, anche se sembra uno scherzo." },
+    { text: "Ogni tanto è bello spegnere lo schermo e fare altro", bucket: "yes", why: "Sport, amici, libri, aria aperta: il cervello ringrazia!" },
+    { text: "L'IA capisce le mie emozioni meglio delle persone", bucket: "no", why: "L'IA non prova emozioni: le persone vere sì." }
+  ]}
+  successMessage="Conosci tutte le regole del Guardiano!"
+/>
+</Section>
+
+<Section>
+## Sei un Guardiano dell'IA! 🏆
+
+<Panel character="promi" mood="celebrating">
+Hai completato la Spiaggia della Sicurezza! Ecco il tuo giuramento da Guardiano:
+
+- ✅ **Controllo** le informazioni importanti
+- ✅ **Proteggo** i miei dati e quelli degli altri
+- ✅ **Non creo e non condivido** falsi su persone vere
+- ✅ **Studio** con l'IA, non la faccio studiare al posto mio
+- ✅ **Chiedo a un adulto** quando qualcosa non mi convince
+</Panel>
+
+<LevelComplete 
+  levelSlug="6-5-ai-guardian" 
+  stars={3}
+  message="Ora sei ufficialmente un Guardiano dell'IA!"
+/>
+</Section>

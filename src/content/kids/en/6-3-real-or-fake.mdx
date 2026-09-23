@@ -1,0 +1,86 @@
+<Section>
+<Panel character="promi" mood="thinking">
+Today AI can also create **photos, voices and videos**. Some are so realistic they fool everyone. They're called **deepfakes**.
+</Panel>
+</Section>
+
+<Section>
+## How do you spot a fake?
+
+You can't always tell just by looking. But there are **clues**:
+
+- 🖐️ **Strange hands and fingers**, with too many or too few
+- 🔤 **Warped writing** on signs and T-shirts
+- 💡 **Light and shadows** that don't match
+- 😶 **Flat-sounding voices** or lips that don't follow the words
+
+<Panel character="promi" mood="excited">
+The strongest clue is the **source**: who posted it? Do newspapers or trusted websites say the same?
+</Panel>
+</Section>
+
+<Section>
+## The Detective's 3 questions
+
+Before believing something, or sharing it, ask yourself:
+
+1. **Who says it**, and where can I check?
+2. Is it **too strange, too good or too angry** to be true?
+3. If I share it and it's false, **who could get hurt**?
+
+<SafetySorter
+  title="Trust it or check it?"
+  instruction="For each item, choose what to do."
+  buckets={[
+    { id: "trust", label: "✅ I trust it", color: "green" },
+    { id: "check", label: "🔍 I check first", color: "yellow" }
+  ]}
+  items={[
+    { text: "A video of a famous footballer saying he's quitting to become a baker, posted by an unknown account", bucket: "check", why: "Huge news from an unknown source: it could be a deepfake." },
+    { text: "A voice message from your favourite singer: 'free tickets for everyone who forwards this!'", bucket: "check", why: "Voices can be cloned, and 'forward to everyone' chains are almost always fake." },
+    { text: "The school trip date on the school website, also announced by your teacher", bucket: "trust", why: "Two trusted sources say the same thing." },
+    { text: "A photo of a shark swimming down a flooded street", bucket: "check", why: "Too strange: first check whether the news really exists." }
+  ]}
+  successMessage="Detective eyes!"
+/>
+</Section>
+
+<Section>
+## A rule you never break
+
+<Panel character="promi" mood="confused">
+This is the most serious part of the whole island. Listen carefully.
+</Panel>
+
+With AI, someone could **edit a classmate's photo**: put them in embarrassing situations, change their body or make them say things they never said.
+
+This **really hurts** the person it happens to. It's a form of **cyberbullying** and it can also be **against the law**, even if "it was just a joke".
+
+<WhatWouldYouDo
+  scenario="In the class group chat someone shares a photo of Max edited with AI to make fun of him. Everyone laughs and sends emojis."
+  choices={[
+    { text: "I laugh too and forward it, everyone has seen it anyway.", feedback: "Forwarding it spreads it further and hurts Max even more. Sharing means taking part." },
+    { text: "I don't share it and I tell a trusted adult right away: a parent or a teacher.", correct: true, feedback: "Right! Not taking part and asking an adult for help is the bravest thing you can do." },
+    { text: "I pretend nothing happened, it's none of my business.", feedback: "Staying silent leaves Max alone. You don't need to be a hero: just tell an adult." }
+  ]}
+  promiMessage="Never create or share fake content about a real person."
+/>
+</Section>
+
+<Section>
+## Level complete! 🎉
+
+<Panel character="promi" mood="celebrating">
+Well done! Now you know that:
+
+- ✅ Photos, voices and videos can be made by AI
+- ✅ Before believing and sharing, you ask the Detective's 3 questions
+- ✅ You never fake other people's photos, and if it happens you tell an adult
+</Panel>
+
+<LevelComplete 
+  levelSlug="6-3-real-or-fake" 
+  stars={3}
+  message="No deepfake can fool you!"
+/>
+</Section>

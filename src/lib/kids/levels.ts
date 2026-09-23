@@ -17,6 +17,8 @@ export interface World {
   emoji: string;
   color: string; // Tailwind color class
   levels: Level[];
+  /** A standalone world can be played without finishing the previous worlds. */
+  standalone?: boolean;
 }
 
 export const worlds: World[] = [
@@ -257,6 +259,67 @@ export const worlds: World[] = [
         world: 5,
         levelNumber: 4,
         concepts: ["final", "mastery"],
+      },
+    ],
+  },
+  {
+    number: 6,
+    title: "Safety Shores",
+    titleKey: "kids.worlds.6.title",
+    slug: "safety-shores",
+    emoji: "🛟",
+    color: "teal",
+    standalone: true,
+    levels: [
+      {
+        slug: "6-1-ai-can-be-wrong",
+        title: "AI Can Be Wrong",
+        titleKey: "kids.levels.6_1_ai_can_be_wrong.title",
+        description: "Spot made-up answers and learn to double-check",
+        descriptionKey: "kids.levels.6_1_ai_can_be_wrong.description",
+        world: 6,
+        levelNumber: 1,
+        concepts: ["hallucinations", "fact-checking"],
+      },
+      {
+        slug: "6-2-secret-keeper",
+        title: "The Secret Keeper",
+        titleKey: "kids.levels.6_2_secret_keeper.title",
+        description: "Learn what you should never share with a chatbot",
+        descriptionKey: "kids.levels.6_2_secret_keeper.description",
+        world: 6,
+        levelNumber: 2,
+        concepts: ["privacy", "personal-data"],
+      },
+      {
+        slug: "6-3-real-or-fake",
+        title: "Real or Fake?",
+        titleKey: "kids.levels.6_3_real_or_fake.title",
+        description: "Deepfakes, fake news and why we never fake photos of others",
+        descriptionKey: "kids.levels.6_3_real_or_fake.description",
+        world: 6,
+        levelNumber: 3,
+        concepts: ["deepfakes", "misinformation", "respect"],
+      },
+      {
+        slug: "6-4-fair-and-honest",
+        title: "Fair and Honest",
+        titleKey: "kids.levels.6_4_fair_and_honest.title",
+        description: "Stereotypes in AI and using AI for homework the right way",
+        descriptionKey: "kids.levels.6_4_fair_and_honest.description",
+        world: 6,
+        levelNumber: 4,
+        concepts: ["bias", "honesty", "learning"],
+      },
+      {
+        slug: "6-5-ai-guardian",
+        title: "AI Guardian",
+        titleKey: "kids.levels.6_5_ai_guardian.title",
+        description: "AI is a tool, not a best friend: scams, limits and asking a grown-up",
+        descriptionKey: "kids.levels.6_5_ai_guardian.description",
+        world: 6,
+        levelNumber: 5,
+        concepts: ["wellbeing", "scams", "rules"],
       },
     ],
   },
