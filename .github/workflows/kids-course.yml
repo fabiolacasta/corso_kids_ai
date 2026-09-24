@@ -19,6 +19,8 @@ permissions:
 
 env:
   SITE_URL: https://corso-ai-medie.netlify.app
+  # Needed only by "prisma generate" during npm ci (no database is used)
+  DATABASE_URL: "postgresql://test:test@localhost:5432/test"
 
 jobs:
   unit:
