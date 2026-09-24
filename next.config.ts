@@ -93,7 +93,10 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withSentryConfig(withMDX(withNextIntl(nextConfig)), {
+// Kids-only deployments do not use Sentry at all (see src/instrumentation-client.ts).
+const baseConfig = withMDX(withNextIntl(nextConfig));
+
+export default process.env.KIDS_ONLY === "1" ? baseConfig : withSentryConfig(baseConfig, {
   // For all available options, see:
   // https://www.npmjs.com/package/@sentry/webpack-plugin#options
 

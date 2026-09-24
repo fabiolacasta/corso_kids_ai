@@ -100,6 +100,7 @@ export const FAQ: { q: string; a: string }[] = [
   { q: "I ragazzi devono creare un account?", a: "No. Non serve nessuna registrazione né un indirizzo email per giocare." },
   { q: "Dove vengono salvati i progressi?", a: "Solo nel browser del dispositivo che si sta usando. Se si cancellano i dati del browser o si cambia computer, i progressi ripartono da zero." },
   { q: "I ragazzi usano un chatbot vero?", a: "No. Le risposte dell'IA dentro gli esercizi sono simulate, quindi i ragazzi non inviano nulla a un servizio di intelligenza artificiale." },
+  { q: "Il corso è accessibile a studenti con dislessia, ADHD o daltonismo?", a: "Sì. Dal pulsante Accessibilità si attivano la lettura facilitata per la dislessia (carattere ad alta leggibilità e testo più spaziato), la modalità concentrazione per l'ADHD (niente animazioni e musica), i colori sicuri per il daltonismo (blu e arancione al posto di verde e rosso, sempre con simboli ✓ ✗) e il testo più grande." },
   { q: "Posso fare solo la parte sui rischi dell'IA?", a: "Sì. Il mondo 6, \"Spiaggia della Sicurezza\" (5 livelli), si può giocare subito, senza aver completato i mondi precedenti." },
   { q: "Come si usa in classe?", a: "L'insegnante proietta il livello sulla LIM, legge i dialoghi con Promi e fa scegliere o votare la classe nelle attività. Conviene provare il livello prima della lezione." },
   { q: "A che età è adatto?", a: "È pensato per ragazzi di 11-14 anni, cioè la scuola secondaria di primo grado, con l'insegnante che guida l'attività." },

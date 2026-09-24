@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { PixelRobot, PixelStar } from "./pixel-art";
 import { useLevelSlug, useSectionNavigation } from "@/components/kids/providers/level-context";
 import { getComponentState, saveComponentState, markSectionCompleted } from "@/lib/kids/progress";
+import { useKidsA11y } from "@/components/kids/layout/accessibility";
 
 /*
  * Safety games for World 6 ("Safety Shores").
@@ -27,6 +28,14 @@ const BUCKET_COLORS: Record<string, { bg: string; border: string; text: string }
   red: { bg: "#FFE4E6", border: "#E11D48", text: "#9F1239" },
   blue: { bg: "#DBEAFE", border: "#2563EB", text: "#1E40AF" },
   purple: { bg: "#F3E8FF", border: "#9333EA", text: "#6B21A8" },
+};
+
+// "Colori sicuri" (color blindness) option: no green/red pair.
+const SAFE_BUCKET_COLORS: typeof BUCKET_COLORS = {
+  ...BUCKET_COLORS,
+  green: { bg: "#DBEAFE", border: "#1D4ED8", text: "#1E3A8A" },
+  red: { bg: "#FFEDD5", border: "#C2410C", text: "#7C2D12" },
+  blue: { bg: "#E0F2FE", border: "#0369A1", text: "#0C4A6E" },
 };
 
 function usePersistentState<T>(initial: T) {
@@ -126,6 +135,8 @@ export function SafetySorter({ title, instruction, buckets, items, successMessag
     picks: {},
     checked: false,
   });
+  const safeColors = useKidsA11y()?.settings.colors;
+  const palette = safeColors ? SAFE_BUCKET_COLORS : BUCKET_COLORS;
   if (!loaded) return null;
 
   const { picks, checked } = state;
@@ -162,7 +173,11 @@ export function SafetySorter({ title, instruction, buckets, items, successMessag
               style={{ clipPath: smallClip }}
             >
               <div className="flex-1">
-                <p className="text-base text-[#2C1810] m-0 leading-tight">{it.text}</p>
+                <p className="text-base text-[#2C1810] m-0 leading-tight">
+                  {isRight && <span className="font-bold text-[#16A34A] mr-1" aria-label="giusto">✓</span>}
+                  {isWrong && <span className="font-bold text-[#DC2626] mr-1" aria-label="sbagliato">✗</span>}
+                  {it.text}
+                </p>
                 {allRight && it.why && <p className="text-sm text-[#5D4037] m-0 mt-1">{it.why}</p>}
                 {isWrong && (
                   <p className="text-sm text-[#9F1239] m-0 mt-1">
@@ -172,7 +187,7 @@ export function SafetySorter({ title, instruction, buckets, items, successMessag
               </div>
               <div className="flex gap-1 flex-wrap">
                 {buckets.map((b) => {
-                  const c = BUCKET_COLORS[b.color || "blue"];
+                  const c = palette[b.color || "blue"];
                   const sel = p === b.id;
                   return (
                     <button
@@ -272,7 +287,7 @@ export function WhatWouldYouDo({ scenario, question, choices, promiMessage }: Wh
                 )}
                 style={{ clipPath: smallClip }}
               >
-                {String.fromCharCode(65 + i)}
+                {tried ? (ok ? "✓" : "✗") : String.fromCharCode(65 + i)}
               </span>
               <span className="text-base text-[#2C1810] leading-tight">{c.text}</span>
             </button>

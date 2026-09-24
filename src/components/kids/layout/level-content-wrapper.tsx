@@ -33,6 +33,8 @@ export function LevelContentWrapper({ children, levelSlug, levelNumber: _levelNu
 
   // Track the highest section the user has visited (moved before early returns)
   const [highestVisitedSection, setHighestVisitedSection] = useState(0);
+  // Entrance animation only after the first section (first text shows immediately)
+  const [firstSection] = useState(() => currentSection);
 
   // Check localStorage for section completion on mount and when section changes
   const checkSectionCompletion = useCallback(() => {
@@ -168,7 +170,7 @@ export function LevelContentWrapper({ children, levelSlug, levelNumber: _levelNu
         <div className="w-full max-w-2xl my-auto">
           <div 
             key={currentSection}
-            className="animate-in fade-in slide-in-from-right-4 duration-300 prose max-w-none kids-prose-pixel"
+            className={`${currentSection === firstSection ? "" : "animate-in fade-in slide-in-from-right-4 duration-300 "}prose max-w-none kids-prose-pixel`}
           >
             {sections[currentSection]}
           </div>

@@ -14,6 +14,11 @@
 - [Inizio del corso](https://corso-ai-medie.netlify.app/kids)
 - [Mappa dei livelli](https://corso-ai-medie.netlify.app/kids/map)
 
+## Accessibilità
+
+- Opzioni integrate, attivabili da ogni studente: lettura facilitata (dislessia), modalità concentrazione (ADHD), colori sicuri (daltonismo), testo più grande.
+- Rispetta l'impostazione "riduci movimento" del sistema; si usa anche da tastiera.
+
 ## Come si usa in classe
 L'insegnante apre il livello sulla LIM o sul proiettore, legge i dialoghi con la classe e fa discutere e votare le risposte alle attività (quiz, frasi da riordinare, "Tu cosa faresti?", semaforo della privacy, "trova la frase inventata"). Quando la risposta è sbagliata il gioco spiega il perché.
 

@@ -6,14 +6,18 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { analyticsKids } from "@/lib/analytics";
 import { PixelRobot, PixelStar, PixelTree, PixelCastle } from "@/components/kids/elements/pixel-art";
+import { AccessibilityBadge } from "./accessibility";
 
 export function KidsHomeContent() {
   const t = useTranslations("kids");
   const [step, setStep] = useState(0);
+  // No entrance animation on first load: the first text appears immediately (faster LCP)
+  const [moved, setMoved] = useState(false);
+  const stepAnim = moved ? "animate-in fade-in slide-in-from-right-4 duration-300" : "";
   const totalSteps = 3;
 
-  const nextStep = () => setStep((prev) => Math.min(prev + 1, totalSteps - 1));
-  const prevStep = () => setStep((prev) => Math.max(prev - 1, 0));
+  const nextStep = () => { setMoved(true); setStep((prev) => Math.min(prev + 1, totalSteps - 1)); };
+  const prevStep = () => { setMoved(true); setStep((prev) => Math.max(prev - 1, 0)); };
 
   return (
     <div className="h-full flex flex-col">
@@ -22,10 +26,13 @@ export function KidsHomeContent() {
         <div className="w-full max-w-2xl my-auto">
           {/* Step 0: Welcome */}
           {step === 0 && (
-            <div className="text-center animate-in fade-in slide-in-from-right-4 duration-300">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#ffffff] border-2 border-[#DAA520] pixel-border-sm text-[#8B4513] text-lg mb-4">
-                <PixelStar filled className="w-4 h-4" />
-                {t("home.badge")}
+            <div className={cn("text-center", stepAnim)}>
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-4">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#ffffff] border-2 border-[#DAA520] pixel-border-sm text-[#8B4513] text-lg">
+                  <PixelStar filled className="w-4 h-4" />
+                  {t("home.badge")}
+                </div>
+                <AccessibilityBadge />
               </div>
               
               <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4 text-[#2C1810] pixel-text-shadow">
@@ -54,7 +61,7 @@ export function KidsHomeContent() {
 
           {/* Step 1: Features */}
           {step === 1 && (
-            <div className="text-center animate-in fade-in slide-in-from-right-4 duration-300">
+            <div className={cn("text-center", stepAnim)}>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#2C1810] pixel-text-shadow">
                 {t("home.whatYouLearn")}
               </h2>
@@ -91,7 +98,7 @@ export function KidsHomeContent() {
 
           {/* Step 2: Ready to start */}
           {step === 2 && (
-            <div className="text-center animate-in fade-in slide-in-from-right-4 duration-300">
+            <div className={cn("text-center", stepAnim)}>
               <div className="mb-6 flex justify-center items-end gap-4">
                 <PixelTree className="w-10 h-14" />
                 <PixelRobot className="w-16 h-20 animate-bounce-slow" />
@@ -150,7 +157,7 @@ export function KidsHomeContent() {
               {Array.from({ length: totalSteps }).map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => setStep(i)}
+                  onClick={() => { setMoved(true); setStep(i); }}
                   className={cn(
                     "w-4 h-4 border-2 transition-all",
                     i === step
@@ -192,7 +199,7 @@ export function KidsHomeContent() {
             {Array.from({ length: totalSteps }).map((_, i) => (
               <button
                 key={i}
-                onClick={() => setStep(i)}
+                onClick={() => { setMoved(true); setStep(i); }}
                 className={cn(
                   "w-4 h-4 border-2 transition-all",
                   i === step

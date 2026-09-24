@@ -22,6 +22,7 @@ const inter = Inter({
 
 const notoSansArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
+  preload: false,
   variable: "--font-arabic",
   weight: ["400", "500", "600", "700"],
 });
@@ -29,11 +30,13 @@ const notoSansArabic = Noto_Sans_Arabic({
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
+  preload: false,
 });
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  preload: false,
   weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
 });

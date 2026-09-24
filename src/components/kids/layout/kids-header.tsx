@@ -8,6 +8,7 @@ import { getTotalLevels, getLevelBySlug } from "@/lib/kids/levels";
 import { PixelStar, PixelRobot } from "@/components/kids/elements/pixel-art";
 import { MusicButton } from "./background-music";
 import { SettingsButton } from "./settings-modal";
+import { AccessibilityButton } from "./accessibility";
 import { useLevelSlug } from "@/components/kids/providers/level-context";
 
 const KIDS_ONLY = process.env.NEXT_PUBLIC_KIDS_ONLY === "1";
@@ -47,7 +48,7 @@ export function KidsHeader() {
     <header className="shrink-0 z-50 w-full bg-[#2C1810] border-b-4 border-[#8B4513]">
       <div className="container flex h-14 items-center justify-between px-4">
         {/* Logo */}
-        <a href="/kids" className="flex items-center gap-2">
+        <a href="/kids" className="flex items-center gap-2" aria-label={t("header.title")}>
           <PixelRobot className="w-8 h-10" />
           <span className="text-[#FFD700] font-bold text-2xl pixel-text-shadow hidden sm:block">
             {t("header.title")}
@@ -78,6 +79,7 @@ export function KidsHeader() {
 
           {/* Nav buttons - desktop */}
           <div className="hidden sm:flex items-center gap-2">
+            <AccessibilityButton />
             <MusicButton />
             <SettingsButton />
             <a 
@@ -121,6 +123,7 @@ export function KidsHeader() {
                   </div>
                   
                   <div className="flex items-center justify-center gap-2">
+                    <AccessibilityButton />
                     <MusicButton />
                     <SettingsButton />
                   </div>

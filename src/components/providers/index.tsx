@@ -31,9 +31,12 @@ interface ProvidersProps {
   branding: BrandingConfig;
 }
 
+// Kids-only deployments have no login: don't call /api/auth/session at all.
+const KIDS_ONLY = process.env.NEXT_PUBLIC_KIDS_ONLY === "1";
+
 export function Providers({ children, locale, messages, theme, branding }: ProvidersProps) {
   return (
-    <SessionProvider>
+    <SessionProvider {...(KIDS_ONLY ? { session: null, refetchOnWindowFocus: false } : {})}>
       <NextIntlClientProvider locale={locale} messages={messages}>
         <ThemeProvider
           attribute="class"

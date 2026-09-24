@@ -1,8 +1,9 @@
-import { Schoolbell } from "next/font/google";
+import { Schoolbell, Lexend } from "next/font/google";
 import { getLocale } from "next-intl/server";
 import { KidsHeader } from "@/components/kids/layout/kids-header";
 import { MusicProvider } from "@/components/kids/layout/background-music";
 import { LevelProvider } from "@/components/kids/providers/level-context";
+import { KidsA11yProvider, A11Y_BOOT_SCRIPT } from "@/components/kids/layout/accessibility";
 
 const RTL_LOCALES = ["ar", "he", "fa"];
 
@@ -10,6 +11,16 @@ const kidsFont = Schoolbell({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-kids",
+});
+
+// High-legibility font for the "Lettura facilitata" (dyslexia) option.
+// Not preloaded: it is downloaded only when the option is turned on.
+const dyslexiaFont = Lexend({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-dyslexia",
+  preload: false,
+  display: "swap",
 });
 
 // Pixel art cloud component for background
@@ -41,12 +52,14 @@ export default async function KidsLayout({
   return (
     <LevelProvider>
     <MusicProvider>
+    <script dangerouslySetInnerHTML={{ __html: A11Y_BOOT_SCRIPT }} />
     <div 
-      className={`fixed inset-0 flex flex-col text-xl light ${kidsFont.className}`} 
+      className={`kids-root fixed inset-0 flex flex-col text-xl light ${kidsFont.className} ${dyslexiaFont.variable}`} 
       data-theme="light" 
       dir={isRtl ? "rtl" : "ltr"}
       style={{ colorScheme: "light" }}
     >
+      <KidsA11yProvider>
       {/* Smooth gradient sky background */}
       <div 
         className="absolute inset-0 -z-10"
@@ -56,7 +69,7 @@ export default async function KidsLayout({
       />
       
       {/* Animated pixel clouds - drift from left to right */}
-      <div className="absolute inset-0 -z-5 overflow-hidden pointer-events-none">
+      <div className="kids-decor absolute inset-0 -z-5 overflow-hidden pointer-events-none" aria-hidden="true">
         <PixelCloudBg 
           className="absolute w-24 h-12 opacity-90 animate-cloud-slow"
           style={{ top: "8%", left: 0, animationDelay: "0s" }}
@@ -84,9 +97,10 @@ export default async function KidsLayout({
       </div>
 
       <KidsHeader />
-      <main className="flex-1 min-h-0 overflow-hidden">
+      <main id="contenuto" className="flex-1 min-h-0 overflow-hidden">
         {children}
       </main>
+      </KidsA11yProvider>
     </div>
     </MusicProvider>
     </LevelProvider>

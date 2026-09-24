@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback, createContext, useContext } f
 
 const MUSIC_ENABLED_KEY = "kids-music-enabled";
 const MUSIC_VOLUME_KEY = "kids-music-volume";
+const MUSIC_URL = "https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/main/public/kids-music.mp3";
 
 // Shared audio instance and context for cross-component communication
 interface MusicContextType {
@@ -70,15 +71,22 @@ export function MusicProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  // Create and manage audio element
-  useEffect(() => {
+  // The audio file (~2.7 MB) is created and downloaded only when music
+  // actually starts playing, not on page load.
+  const ensureAudio = useCallback(() => {
     if (!audioRef.current) {
-      const audio = new Audio("https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/main/public/kids-music.mp3");
+      const audio = new Audio();
+      audio.preload = "none";
       audio.loop = true;
       audio.volume = volume;
+      audio.src = MUSIC_URL;
       audioRef.current = audio;
     }
-    
+    return audioRef.current;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -99,23 +107,21 @@ export function MusicProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     localStorage.setItem(MUSIC_ENABLED_KEY, isPlaying.toString());
     
-    if (!audioRef.current) return;
-    
     if (isPlaying && hasInteracted) {
-      audioRef.current.play().catch(() => {
+      ensureAudio().play().catch(() => {
         // Autoplay blocked, will retry on user interaction
       });
     } else {
-      audioRef.current.pause();
+      audioRef.current?.pause();
     }
-  }, [isPlaying, hasInteracted]);
+  }, [isPlaying, hasInteracted, ensureAudio]);
 
   // Listen for first user interaction to enable autoplay
   useEffect(() => {
     const handleInteraction = () => {
       setHasInteracted(true);
-      if (isPlaying && audioRef.current) {
-        audioRef.current.play().catch(() => {});
+      if (isPlaying) {
+        ensureAudio().play().catch(() => {});
       }
     };
 
@@ -128,7 +134,7 @@ export function MusicProvider({ children }: { children: React.ReactNode }) {
       document.removeEventListener("keydown", handleInteraction);
       document.removeEventListener("touchstart", handleInteraction);
     };
-  }, [isPlaying]);
+  }, [isPlaying, ensureAudio]);
 
   return (
     <MusicContext.Provider value={{ isPlaying, volume, setIsPlaying, setVolume, audioRef }}>
@@ -153,7 +159,7 @@ export function MusicButton() {
     } else {
       // Fallback behavior
       if (!localAudioRef.current) {
-        localAudioRef.current = new Audio("https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/main/public/kids-music.mp3");
+        localAudioRef.current = new Audio(MUSIC_URL);
         localAudioRef.current.loop = true;
         localAudioRef.current.volume = 0.3;
       }

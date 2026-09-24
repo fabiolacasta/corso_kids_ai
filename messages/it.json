@@ -1750,6 +1750,36 @@
       "thisIsTrue": "Questa frase è vera. Cerca quella inventata!",
       "found": "Beccata!",
       "whyWrong": "Perché no:"
+    },
+    "a11y": {
+      "button": "Accessibilità",
+      "title": "Accessibilità",
+      "intro": "Scegli come vuoi vedere il corso. Puoi attivare più opzioni insieme.",
+      "dyslexia": {
+        "title": "Lettura facilitata (dislessia)",
+        "desc": "Carattere ad alta leggibilità, lettere, parole e righe più distanziate, niente corsivo."
+      },
+      "focus": {
+        "title": "Modalità concentrazione (ADHD)",
+        "desc": "Niente animazioni e nuvole in movimento, musica spenta, bordo ben visibile sull'elemento che stai usando."
+      },
+      "colors": {
+        "title": "Colori sicuri (daltonismo)",
+        "desc": "Il verde diventa blu e il rosso diventa arancione. Giusto e sbagliato hanno sempre anche un simbolo ✓ ✗."
+      },
+      "bigText": {
+        "title": "Testo più grande",
+        "desc": "Ingrandisce tutti i testi, utile anche sulla LIM."
+      },
+      "on": "Attivo",
+      "off": "Spento",
+      "reset": "Ripristina",
+      "done": "Fatto",
+      "close": "Chiudi",
+      "badge": "Corso accessibile",
+      "badgeItems": "Dislessia · ADHD · Daltonismo",
+      "badgeHint": "Apri le opzioni di accessibilità: dislessia, ADHD, daltonismo, testo grande",
+      "privacy": "Le scelte restano salvate solo su questo dispositivo."
     }
   },
   "book": {

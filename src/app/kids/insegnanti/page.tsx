@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { worlds } from "@/lib/kids/levels";
+import { AccessibilityBadge } from "@/components/kids/layout/accessibility";
 import {
   KIDS_ONLY,
   SITE_URL,
@@ -58,7 +59,8 @@ export default function TeachersPage() {
             come usare l&apos;intelligenza artificiale in modo corretto e come riconoscerne i rischi. Ci sono <strong>6 mondi</strong> e{" "}
             <strong>24 livelli</strong>, con il robot Promi come guida. L&apos;insegnante lo proietta in classe; i ragazzi non devono registrarsi.
           </p>
-          <div className="flex flex-wrap gap-3 mt-2">
+          <div className="flex flex-wrap gap-3 mt-2 items-center">
+            <AccessibilityBadge />
             <Link href="/kids/map" className="pixel-btn pixel-btn-green px-4 py-2 text-lg">Apri la mappa dei livelli</Link>
             <Link href="/kids/level/6-1-ai-can-be-wrong" className="pixel-btn pixel-btn-amber px-4 py-2 text-lg">Vai alla parte sui rischi</Link>
           </div>
@@ -119,6 +121,24 @@ export default function TeachersPage() {
           <p className={`${p} mt-3`}>
             I temi del livello 6.3 (foto modificate, cyberbullismo) e 6.5 (stare male, chiedere aiuto) sono delicati: conviene
             affrontarli insieme alla classe e non lasciarli al solo gioco.
+          </p>
+        </section>
+
+        <section className={panel} aria-labelledby="accessibilita">
+          <h2 id="accessibilita" className={h2}>Accessibilità e inclusione</h2>
+          <p className={p}>
+            Dal pulsante <strong>Accessibilità</strong> in alto (l&apos;icona con l&apos;omino) ogni studente, o l&apos;insegnante sulla LIM,
+            può attivare queste opzioni. Si possono combinare e restano salvate solo sul dispositivo.
+          </p>
+          <ul className="m-0 pl-5 list-disc text-lg text-[#3E2723]">
+            <li><strong>Lettura facilitata (dislessia)</strong>: carattere ad alta leggibilità (Lexend), lettere, parole e righe più distanziate, niente corsivo.</li>
+            <li><strong>Modalità concentrazione (ADHD)</strong>: niente animazioni né nuvole in movimento, musica spenta, bordo ben visibile sull&apos;elemento attivo.</li>
+            <li><strong>Colori sicuri (daltonismo)</strong>: il verde diventa blu e il rosso arancione; le risposte giuste e sbagliate hanno sempre anche un simbolo (✓ ✗) o una scritta.</li>
+            <li><strong>Testo più grande</strong>: utile sulla LIM o per chi vede poco.</li>
+          </ul>
+          <p className={`${p} mt-3`}>
+            Inoltre il sito rispetta l&apos;impostazione &quot;riduci movimento&quot; del computer e si usa anche da tastiera.
+            Queste opzioni aiutano, ma non sostituiscono il piano didattico personalizzato (PDP) né gli strumenti compensativi della classe.
           </p>
         </section>
 

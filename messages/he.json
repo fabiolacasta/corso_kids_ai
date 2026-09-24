@@ -1750,6 +1750,36 @@
       "thisIsTrue": "This sentence is true. Look for the made-up one!",
       "found": "You caught it!",
       "whyWrong": "Why not:"
+    },
+    "a11y": {
+      "button": "Accessibility",
+      "title": "Accessibility",
+      "intro": "Choose how you want to see the course. You can turn on several options together.",
+      "dyslexia": {
+        "title": "Easy reading (dyslexia)",
+        "desc": "Highly legible font, more space between letters, words and lines, no italics."
+      },
+      "focus": {
+        "title": "Focus mode (ADHD)",
+        "desc": "No animations or moving clouds, music off, a clear outline on what you are using."
+      },
+      "colors": {
+        "title": "Safe colors (color blindness)",
+        "desc": "Green becomes blue and red becomes orange. Right and wrong always have a symbol too ✓ ✗."
+      },
+      "bigText": {
+        "title": "Bigger text",
+        "desc": "Makes all text larger, useful on a classroom screen too."
+      },
+      "on": "On",
+      "off": "Off",
+      "reset": "Reset",
+      "done": "Done",
+      "close": "Close",
+      "badge": "Accessible course",
+      "badgeItems": "Dyslexia · ADHD · Color blindness",
+      "badgeHint": "Open accessibility options: dyslexia, ADHD, color blindness, bigger text",
+      "privacy": "Your choices are saved only on this device."
     }
   },
   "book": {
