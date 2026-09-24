@@ -10,6 +10,8 @@ import { MusicButton } from "./background-music";
 import { SettingsButton } from "./settings-modal";
 import { useLevelSlug } from "@/components/kids/providers/level-context";
 
+const KIDS_ONLY = process.env.NEXT_PUBLIC_KIDS_ONLY === "1";
+
 export function KidsHeader() {
   const t = useTranslations("kids");
   const [stars, setStars] = useState(0);
@@ -92,10 +94,10 @@ export function KidsHeader() {
             </Link>
             {/* Back to main site */}
             <a 
-              href="/" 
+              href={KIDS_ONLY ? "/kids/insegnanti" : "/"} 
               className="hidden md:flex pixel-btn pixel-btn-amber px-3 py-1.5 text-sm h-8 items-center"
             >
-              {t("header.mainSite")}
+              {KIDS_ONLY ? "Per insegnanti" : t("header.mainSite")}
             </a>
           </div>
 
@@ -140,11 +142,11 @@ export function KidsHeader() {
                     {t("level.map")}
                   </Link>
                   <a 
-                    href="/" 
+                    href={KIDS_ONLY ? "/kids/insegnanti" : "/"} 
                     className="pixel-btn pixel-btn-amber px-3 py-2 text-sm flex items-center justify-center"
                     onClick={() => setMenuOpen(false)}
                   >
-                    {t("header.mainSite")}
+                    {KIDS_ONLY ? "Per insegnanti" : t("header.mainSite")}
                   </a>
                 </div>
               </div>

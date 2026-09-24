@@ -3,6 +3,7 @@ import { getLocale } from "next-intl/server";
 import { getLevelBySlug, getAllLevels } from "@/lib/kids/levels";
 import { LevelContentWrapper } from "@/components/kids/layout/level-content-wrapper";
 import type { Metadata } from "next";
+import { KIDS_ONLY, kidsMetadata, LEVEL_SEO, levelTitleIt, worldTitleIt, levelJsonLd, jsonLdString } from "@/lib/kids/seo";
 
 interface LevelPageProps {
   params: Promise<{ slug: string }>;
@@ -20,6 +21,10 @@ export async function generateMetadata({ params }: LevelPageProps): Promise<Meta
 
   if (!level) {
     return { title: "Level Not Found" };
+  }
+
+  if (KIDS_ONLY && LEVEL_SEO[slug]) {
+    return kidsMetadata(LEVEL_SEO[slug].title, LEVEL_SEO[slug].description, `/kids/level/${slug}`);
   }
 
   return {
@@ -49,9 +54,26 @@ export default async function LevelPage({ params }: LevelPageProps) {
     }
   }
 
+  const jsonLd = KIDS_ONLY ? levelJsonLd(slug) : null;
+
   return (
+    <>
+    {KIDS_ONLY && (
+      <>
+        {jsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }} />}
+        {/* Server-rendered heading and summary for search engines and screen readers */}
+        <h1 className="sr-only">
+          {levelTitleIt(slug)} – Mondo {level.world}: {worldTitleIt(level.world)}
+        </h1>
+        <noscript>
+          <p>{LEVEL_SEO[slug]?.description}</p>
+          <p><a href="/kids/insegnanti">Guida per insegnanti e elenco di tutti i livelli</a></p>
+        </noscript>
+      </>
+    )}
     <LevelContentWrapper levelSlug={slug} levelNumber={`${level.world}-${level.levelNumber}`}>
       {Content ? <Content /> : null}
     </LevelContentWrapper>
+    </>
   );
 }

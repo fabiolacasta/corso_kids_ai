@@ -52,7 +52,8 @@ export default getRequestConfig(async () => {
       locale = detected;
       detectedFromBrowser = true;
     } else {
-      locale = defaultLocale;
+      // Kids-only Italian deployment: crawlers send no Accept-Language, default to Italian
+      locale = process.env.KIDS_ONLY === "1" ? "it" : defaultLocale;
     }
   }
   

@@ -1489,7 +1489,7 @@
         }
       },
       "startButton": "Inizia a Giocare!",
-      "ageNote": "Ideale per bambini di 8-14 anni che sanno leggere e scrivere",
+      "ageNote": "Pensato per ragazzi di 11-14 anni (scuola media), con l'insegnante",
       "whatYouLearn": "Cosa imparerai",
       "readyTitle": "Pronto per iniziare?",
       "readyMessage": "Andiamo all'avventura e impariamo a parlare con l'IA!"
@@ -1600,7 +1600,7 @@
         "description": "Riscrivi prompt per risultati diversi"
       },
       "5_4_graduation_day": {
-        "title": "Giorno della Laurea",
+        "title": "Giorno del Diploma",
         "description": "La sfida finale - diventa Maestro!"
       },
       "6_1_ai_can_be_wrong": {
@@ -1788,7 +1788,7 @@
     "kidsSection": {
       "question": "Sei un insegnante o un genitore?",
       "title": "Prova il nostro Libro Giocabile per Bambini! 🎮",
-      "description": "Un'avventura interattiva basata sul gioco per insegnare ai bambini (8-14 anni) come comunicare con l'AI attraverso puzzle e storie divertenti.",
+      "description": "Un'avventura interattiva basata sul gioco per insegnare ai ragazzi delle medie (11-14 anni) come comunicare con l'IA attraverso puzzle e storie divertenti.",
       "startPlaying": "Inizia a Giocare"
     },
     "chapter": {

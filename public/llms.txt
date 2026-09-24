@@ -1,0 +1,58 @@
+# Corso IA per le medie – La Scuola di Prompt di Promi
+
+> Corso gratuito e open source, in italiano, per insegnare a ragazzi di 11-14 anni (scuola secondaria di primo grado) a usare l'intelligenza artificiale in modo corretto e consapevole e a riconoscerne i rischi. È strutturato come un videogioco: 6 mondi e 24 livelli, con il robot Promi come guida. È pensato per essere proiettato in classe dall'insegnante.
+
+- Gratuito, senza pubblicità, nessun account richiesto ai ragazzi
+- I progressi (stelle, livelli completati) sono salvati solo nel browser (localStorage), non su un server
+- Le risposte dell'IA negli esercizi sono simulate: i ragazzi non usano un chatbot vero
+- Il mondo 6 "Spiaggia della Sicurezza" si può giocare subito, senza completare i mondi precedenti
+- Open source, licenza MIT; basato su prompts.chat (https://github.com/f/prompts.chat)
+- Pubblico: insegnanti, genitori, animatori digitali
+
+## Pagine principali
+- [Guida per insegnanti, elenco dei livelli e domande frequenti](https://corso-ai-medie.netlify.app/kids/insegnanti)
+- [Inizio del corso](https://corso-ai-medie.netlify.app/kids)
+- [Mappa dei livelli](https://corso-ai-medie.netlify.app/kids/map)
+
+## Come si usa in classe
+L'insegnante apre il livello sulla LIM o sul proiettore, legge i dialoghi con la classe e fa discutere e votare le risposte alle attività (quiz, frasi da riordinare, "Tu cosa faresti?", semaforo della privacy, "trova la frase inventata"). Quando la risposta è sbagliata il gioco spiega il perché.
+
+
+### Mondo 1 – Villaggio Iniziale (cos'è l'IA, il primo prompt, istruzioni chiare)
+- [1.1 Incontra Promi!](https://corso-ai-medie.netlify.app/kids/level/1-1-meet-promi): Saluta il tuo amico robot e scopri cos'è l'IA
+- [1.2 Le Prime Parole di Promi](https://corso-ai-medie.netlify.app/kids/level/1-2-first-words): Aiuta Promi a capire scrivendo il tuo primo prompt
+- [1.3 Essere Chiari](https://corso-ai-medie.netlify.app/kids/level/1-3-being-clear): Scopri perché le istruzioni chiare funzionano meglio
+
+### Mondo 2 – Castello della Chiarezza (i dettagli: chi, cosa, quando, dove)
+- [2.1 I Dettagli Mancanti](https://corso-ai-medie.netlify.app/kids/level/2-1-missing-details): Scopri perché i dettagli contano
+- [2.2 Chi e Cosa](https://corso-ai-medie.netlify.app/kids/level/2-2-who-and-what): Aggiungi personaggi e oggetti
+- [2.3 Quando e Dove](https://corso-ai-medie.netlify.app/kids/level/2-3-when-and-where): Impara ad aggiungere tempo e luogo
+- [2.4 Detective dei Dettagli](https://corso-ai-medie.netlify.app/kids/level/2-4-detail-detective): Diventa esperto nell'aggiungere dettagli
+
+### Mondo 3 – Caverne del Contesto (contesto, esempi, formato della risposta)
+- [3.1 Preparare la Scena](https://corso-ai-medie.netlify.app/kids/level/3-1-setting-the-scene): Scopri perché il contesto aiuta
+- [3.2 Mostra, Non Dire](https://corso-ai-medie.netlify.app/kids/level/3-2-show-dont-tell): Usa esempi per mostrare cosa vuoi
+- [3.3 Cercatore di Formato](https://corso-ai-medie.netlify.app/kids/level/3-3-format-finder): Chiedi liste, storie, poesie e altro!
+- [3.4 Campione del Contesto](https://corso-ai-medie.netlify.app/kids/level/3-4-context-champion): Combina tutte le tecniche di contesto
+
+### Mondo 4 – Canyon Creativo (usi creativi: gioco di ruolo, storie, personaggi)
+- [4.1 Tempo di Recitare!](https://corso-ai-medie.netlify.app/kids/level/4-1-pretend-time): Impara i prompt di gioco di ruolo
+- [4.2 Inizi di Storie](https://corso-ai-medie.netlify.app/kids/level/4-2-story-starters): Crea storie incredibili con l'IA
+- [4.3 Creatore di Personaggi](https://corso-ai-medie.netlify.app/kids/level/4-3-character-creator): Dai una personalità all'IA
+- [4.4 Costruttore di Mondi](https://corso-ai-medie.netlify.app/kids/level/4-4-world-builder): Crea mondi immaginativi
+
+### Mondo 5 – Montagna del Maestro (ripasso e sfida finale)
+- [5.1 Il Prompt Perfetto](https://corso-ai-medie.netlify.app/kids/level/5-1-perfect-prompt): Combina chiarezza, dettagli e contesto
+- [5.2 Sistemalo!](https://corso-ai-medie.netlify.app/kids/level/5-2-fix-it-up): Trova e migliora prompt deboli
+- [5.3 Remix dei Prompt](https://corso-ai-medie.netlify.app/kids/level/5-3-prompt-remix): Riscrivi prompt per risultati diversi
+- [5.4 Giorno del Diploma](https://corso-ai-medie.netlify.app/kids/level/5-4-graduation-day): La sfida finale - diventa Maestro!
+
+### Mondo 6 – Spiaggia della Sicurezza (rischi e uso responsabile)
+- [6.1 Anche l'IA sbaglia](https://corso-ai-medie.netlify.app/kids/level/6-1-ai-can-be-wrong): Scopri le risposte inventate e impara a controllare
+- [6.2 Il Custode dei Segreti](https://corso-ai-medie.netlify.app/kids/level/6-2-secret-keeper): Cosa non si scrive mai a un chatbot
+- [6.3 Vero o Falso?](https://corso-ai-medie.netlify.app/kids/level/6-3-real-or-fake): Deepfake, bufale e perché non si falsificano le foto degli altri
+- [6.4 Giusto e Onesto](https://corso-ai-medie.netlify.app/kids/level/6-4-fair-and-honest): Gli stereotipi dell'IA e come usarla per studiare nel modo giusto
+- [6.5 Guardiano dell'IA](https://corso-ai-medie.netlify.app/kids/level/6-5-ai-guardian): L'IA è uno strumento, non un migliore amico: truffe, regole e adulti di fiducia
+
+## English
+Free, open-source (MIT), game-style Italian course that teaches 11-14 year olds how to use AI well and safely: 6 worlds, 24 levels, projected by the teacher in class. No student accounts; progress is stored only in the browser; AI answers inside the exercises are simulated. World 6 ("Safety Shores") covers hallucinations, privacy, deepfakes and cyberbullying, bias, honest homework, wellbeing and scams. Based on prompts.chat.

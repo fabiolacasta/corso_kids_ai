@@ -1,12 +1,29 @@
 import { MetadataRoute } from "next";
 import { db } from "@/lib/db";
 import { getAllChapters } from "@/lib/book/chapters";
+import { getAllLevels } from "@/lib/kids/levels";
 
 // Revalidate sitemap every hour (3600 seconds)
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXTAUTH_URL || "https://prompts.chat";
+
+  // Kids-only deployment: list only the kids course pages (no database needed)
+  if (process.env.KIDS_ONLY === "1") {
+    const now = new Date();
+    return [
+      { url: `${baseUrl}/kids`, lastModified: now, changeFrequency: "weekly", priority: 1 },
+      { url: `${baseUrl}/kids/insegnanti`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+      { url: `${baseUrl}/kids/map`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+      ...getAllLevels().map((l) => ({
+        url: `${baseUrl}/kids/level/${l.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: l.world === 6 ? 0.8 : 0.7,
+      })),
+    ];
+  }
 
   // Static pages - always included
   const staticPages: MetadataRoute.Sitemap = [

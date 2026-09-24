@@ -19,6 +19,8 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
+  // Make KIDS_ONLY visible to client components
+  env: { NEXT_PUBLIC_KIDS_ONLY: process.env.KIDS_ONLY || "" },
   // Enable standalone output for Docker
   output: "standalone",
   // Kids-only deployments (e.g. Netlify free plan, 250 MB function limit):

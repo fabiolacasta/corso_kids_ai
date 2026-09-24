@@ -38,7 +38,7 @@ const playfairDisplay = Playfair_Display({
   style: ["normal", "italic"],
 });
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   metadataBase: new URL(process.env.NEXTAUTH_URL || "http://localhost:3000"),
   title: {
     default: "prompts.chat - AI Prompts Community",
@@ -113,6 +113,32 @@ export const metadata: Metadata = {
   },
 };
 
+// Kids-only deployment (KIDS_ONLY=1): Italian defaults, and the non-kids pages
+// are not indexed (they need a database that this deployment does not have).
+export const metadata: Metadata =
+  process.env.KIDS_ONLY === "1"
+    ? {
+        ...baseMetadata,
+        title: { default: "Corso IA per le medie", template: "%s | Corso IA per le medie" },
+        description:
+          "Corso gratuito a livelli per insegnare l'uso consapevole dell'intelligenza artificiale ai ragazzi delle medie.",
+        keywords: undefined,
+        authors: undefined,
+        creator: undefined,
+        publisher: undefined,
+        other: { "apple-mobile-web-app-title": "Corso IA medie" },
+        openGraph: {
+          type: "website",
+          locale: "it_IT",
+          siteName: "Corso IA per le medie",
+          images: [{ url: "/og-corso.png", width: 1200, height: 630 }],
+        },
+        twitter: { card: "summary_large_image", images: ["/og-corso.png"] },
+        robots: { index: false, follow: true },
+        alternates: undefined,
+      }
+    : baseMetadata;
+
 const radiusValues = {
   none: "0",
   sm: "0.25rem",
@@ -184,7 +210,7 @@ export default async function RootLayout({
         {process.env.GOOGLE_ADSENSE_ACCOUNT && (
           <meta name="google-adsense-account" content={process.env.GOOGLE_ADSENSE_ACCOUNT} />
         )}
-        <WebsiteStructuredData />
+        {process.env.KIDS_ONLY !== "1" && <WebsiteStructuredData />}
       </head>
       <body className={`${fontClasses} antialiased`}>
         {process.env.GOOGLE_ANALYTICS_ID && (

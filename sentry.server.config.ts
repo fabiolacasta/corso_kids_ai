@@ -8,7 +8,8 @@ Sentry.init({
   dsn: "https://9c2eb3b4441745efad28a908001c30bf@o4510673866063872.ingest.de.sentry.io/4510673871306832",
 
   // Disable Sentry in development
-  enabled: process.env.NODE_ENV === "production",
+  // Disabled on kids-only deployments (no data about minors sent to third parties)
+  enabled: process.env.NODE_ENV === "production" && process.env.KIDS_ONLY !== "1",
 
   // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.
   tracesSampleRate: 0.1,

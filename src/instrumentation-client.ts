@@ -26,7 +26,8 @@ Sentry.init({
   dsn: "https://9c2eb3b4441745efad28a908001c30bf@o4510673866063872.ingest.de.sentry.io/4510673871306832",
 
   // Disable Sentry in development
-  enabled: process.env.NODE_ENV === "production",
+  // Disabled on kids-only deployments (no replay or data about minors sent to third parties)
+  enabled: process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_KIDS_ONLY !== "1",
 
   // Add optional integrations for additional features
   integrations: [Sentry.replayIntegration()],
