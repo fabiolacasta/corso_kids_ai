@@ -29,7 +29,7 @@ export default function robots(): MetadataRoute.Robots {
         { userAgent: "*", ...kidsRule },
         ...AI_CRAWLERS.map((userAgent) => ({ userAgent, ...kidsRule })),
       ],
-      sitemap: `${baseUrl}/sitemap.xml`,
+      sitemap: [`${baseUrl}/sitemap.xml`, `${baseUrl}/kids/sitemap.xml`],
     };
   }
 
