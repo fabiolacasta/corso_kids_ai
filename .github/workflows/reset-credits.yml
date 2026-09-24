@@ -8,6 +8,8 @@ on:
 
 jobs:
   reset-credits:
+    # Upstream only: skipped on forks such as the kids-only course
+    if: github.repository == 'f/prompts.chat'
     runs-on: ubuntu-latest
     steps:
       - name: Reset daily generation credits

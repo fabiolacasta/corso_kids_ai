@@ -7,6 +7,8 @@ on:
 
 jobs:
   update-contributors:
+    # Upstream only: skipped on forks such as the kids-only course
+    if: github.repository == 'f/prompts.chat'
     runs-on: ubuntu-latest
     
     steps:

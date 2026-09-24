@@ -1,0 +1,56 @@
+name: Corso IA per le medie – verifiche
+
+# 1) Unit tests (Vitest, Jest-style) of the kids course: content of every level,
+#    safety games, accessibility options, translations, SEO.
+# 2) After each push, and every morning: smoke test of the published site
+#    (every page, every level in a real browser, accessibility panel).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  SITE_URL: https://corso-ai-medie.netlify.app
+
+jobs:
+  unit:
+    name: Test del corso (Vitest)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npx vitest run src/__tests__/kids
+
+  live:
+    name: Controllo del sito pubblicato
+    if: github.event_name != 'pull_request'
+    needs: unit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+      - name: Aspetta la pubblicazione su Netlify
+        if: github.event_name == 'push'
+        run: sleep 300
+      - name: Installa il browser
+        run: |
+          npm install --no-save --no-package-lock playwright@1
+          npx playwright install --with-deps chromium
+      - name: Verifica pagine, livelli e accessibilità
+        run: node e2e/kids-smoke.mjs
+        env:
+          BASE_URL: ${{ env.SITE_URL }}
