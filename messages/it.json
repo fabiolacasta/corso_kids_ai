@@ -1467,28 +1467,28 @@
       "mainSite": "Sito Principale"
     },
     "home": {
-      "badge": "Apprendimento per Bambini",
-      "title": "Impara a Parlare con l'IA!",
-      "subtitle": "Unisciti al robot Promi in un'avventura divertente per imparare a scrivere prompt fantastici!",
+      "badge": "Corso per le medie · 11-14 anni",
+      "title": "Impara a usare l'IA",
+      "subtitle": "Un'avventura in 6 mondi con il robot Promi: scrivi prompt efficaci e scopri come usare l'IA in modo sicuro.",
       "promiIntro": {
         "greeting": "Ciao, sono Promi! 🤖",
-        "message": "Sono un robot amichevole che ha bisogno del TUO aiuto! Mi aiuti a capire meglio i prompt?"
+        "message": "Sono un robot e ho bisogno di una squadra in gamba. Mi aiuti a capire cosa mi chiedi e a non cadere nelle trappole dell'IA?"
       },
       "features": {
         "games": {
-          "title": "Giochi Divertenti",
-          "description": "Impara giocando con drag-and-drop e quiz"
+          "title": "Sfide e giochi",
+          "description": "Quiz, frasi da riordinare e scelte da discutere in classe"
         },
         "stories": {
-          "title": "Storie Fantastiche",
-          "description": "Segui Promi in avventure emozionanti"
+          "title": "Casi reali",
+          "description": "Allucinazioni, privacy, deepfake: situazioni vere, non teoria"
         },
         "stars": {
-          "title": "Guadagna Stelle",
-          "description": "Raccogli stelle e sblocca nuovi livelli"
+          "title": "Stelle e medaglie",
+          "description": "Completa i mondi e guadagna una medaglia per ognuno"
         }
       },
-      "startButton": "Inizia a Giocare!",
+      "startButton": "Inizia l'avventura",
       "ageNote": "Pensato per ragazzi di 11-14 anni (scuola media), con l'insegnante",
       "whatYouLearn": "Cosa imparerai",
       "readyTitle": "Pronto per iniziare?",
@@ -1636,7 +1636,10 @@
       "title": "Livello Completato!",
       "nextLevel": "Livello Successivo",
       "backToMap": "Torna alla Mappa",
-      "allDone": "Torna alla Mappa"
+      "allDone": "Torna alla Mappa",
+      "medalTitle": "Medaglia conquistata!",
+      "medalText": "Hai completato tutto il mondo «{world}».",
+      "certificate": "Stampa il tuo attestato"
     },
     "quiz": {
       "goodLabel": "Ottimo prompt!",

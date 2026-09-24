@@ -1636,7 +1636,10 @@
       "title": "Nível Completo!",
       "nextLevel": "Próximo Nível",
       "backToMap": "Voltar ao Mapa",
-      "allDone": "Voltar ao Mapa"
+      "allDone": "Voltar ao Mapa",
+      "medalTitle": "Medal earned!",
+      "medalText": "You completed the whole world “{world}”.",
+      "certificate": "Print your certificate"
     },
     "quiz": {
       "goodLabel": "Ótimo prompt!",

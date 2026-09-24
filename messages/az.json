@@ -1636,7 +1636,10 @@
       "title": "Səviyyə Tamamlandı!",
       "nextLevel": "Növbəti Səviyyə",
       "backToMap": "Xəritəyə Qayıt",
-      "allDone": "Xəritəyə Qayıt"
+      "allDone": "Xəritəyə Qayıt",
+      "medalTitle": "Medal earned!",
+      "medalText": "You completed the whole world “{world}”.",
+      "certificate": "Print your certificate"
     },
     "quiz": {
       "goodLabel": "Əla prompt!",

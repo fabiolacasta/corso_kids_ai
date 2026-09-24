@@ -1636,7 +1636,10 @@
       "title": "Уровень пройден!",
       "nextLevel": "Следующий уровень",
       "backToMap": "Назад к карте",
-      "allDone": "Назад к карте"
+      "allDone": "Назад к карте",
+      "medalTitle": "Medal earned!",
+      "medalText": "You completed the whole world “{world}”.",
+      "certificate": "Print your certificate"
     },
     "quiz": {
       "goodLabel": "Отличный промпт!",

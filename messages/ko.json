@@ -1636,7 +1636,10 @@
       "title": "레벨 완료!",
       "nextLevel": "다음 레벨",
       "backToMap": "지도로 돌아가기",
-      "allDone": "지도로 돌아가기"
+      "allDone": "지도로 돌아가기",
+      "medalTitle": "Medal earned!",
+      "medalText": "You completed the whole world “{world}”.",
+      "certificate": "Print your certificate"
     },
     "quiz": {
       "goodLabel": "훌륭한 프롬프트!",

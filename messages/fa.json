@@ -1636,7 +1636,10 @@
       "title": "مرحله تمام شد!",
       "nextLevel": "مرحله بعدی",
       "backToMap": "برگشت به نقشه",
-      "allDone": "برگشت به نقشه"
+      "allDone": "برگشت به نقشه",
+      "medalTitle": "Medal earned!",
+      "medalText": "You completed the whole world “{world}”.",
+      "certificate": "Print your certificate"
     },
     "quiz": {
       "goodLabel": "پرامپت عالی!",

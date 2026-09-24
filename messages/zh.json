@@ -1636,7 +1636,10 @@
       "title": "关卡完成！",
       "nextLevel": "下一关",
       "backToMap": "返回地图",
-      "allDone": "返回地图"
+      "allDone": "返回地图",
+      "medalTitle": "Medal earned!",
+      "medalText": "You completed the whole world “{world}”.",
+      "certificate": "Print your certificate"
     },
     "quiz": {
       "goodLabel": "很棒的提示词！",

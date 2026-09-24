@@ -50,13 +50,13 @@ describe("SEO (kids-only site)", () => {
     expect(problems).toEqual([]);
   });
 
-  it("sitemaps list the 27 course pages and nothing else", async () => {
+  it("sitemaps list the 52 course pages and nothing else", async () => {
     const sitemap = (await import("@/app/sitemap")).default;
     const urls = (await sitemap()).map((u) => u.url);
-    expect(urls).toHaveLength(27);
+    expect(urls).toHaveLength(52); // home, guide, glossary, map, 24 levels, 24 worksheets
     expect(urls.every((u) => u.startsWith("https://corso-ai-medie.netlify.app/kids"))).toBe(true);
     const kidsSitemap = await (await import("@/app/kids/sitemap.xml/route")).GET().text();
-    expect(kidsSitemap.match(/<url>/g)).toHaveLength(27);
+    expect(kidsSitemap.match(/<url>/g)).toHaveLength(52);
   });
 
   it("robots allows Google and AI answer engines on the course", async () => {

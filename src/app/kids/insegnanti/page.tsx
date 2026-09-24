@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { worlds } from "@/lib/kids/levels";
 import { AccessibilityBadge } from "@/components/kids/layout/accessibility";
+import { ClassroomToggle } from "@/components/kids/layout/classroom-bar";
 import {
   KIDS_ONLY,
   SITE_URL,
@@ -81,6 +82,33 @@ export default function TeachersPage() {
           </p>
         </section>
 
+        <section className={panel} aria-labelledby="modalita-classe">
+          <h2 id="modalita-classe" className={h2}>Modalità classe per la LIM</h2>
+          <p className={p}>
+            Attivatela sul computer collegato alla LIM: tutti i livelli e tutte le schermate sono aperti, e in basso a sinistra compaiono
+            gli strumenti per la lezione.
+          </p>
+          <ul className="m-0 pl-5 list-disc text-lg text-[#3E2723] mb-3">
+            <li><strong>💬 Discutiamone</strong>: l&apos;obiettivo del livello e le domande da fare alla classe, una alla volta.</li>
+            <li><strong>⏱️ Timer</strong>: 1, 2, 3, 5 o 10 minuti per le attività a gruppi.</li>
+            <li><strong>🏆 Squadre</strong>: da 2 a 4 squadre con il punteggio, per trasformare i quiz in una sfida.</li>
+          </ul>
+          <ClassroomToggle />
+          <p className="text-base text-[#5D4037] m-0 mt-3">
+            Si può attivare anche aprendo il sito con <code>?classe=1</code> alla fine dell&apos;indirizzo (per esempio nei preferiti della LIM),
+            e disattivare con <code>?classe=0</code>. La modalità resta solo su quel computer.
+          </p>
+        </section>
+
+        <section className={panel} aria-labelledby="materiali">
+          <h2 id="materiali" className={h2}>Materiali da stampare</h2>
+          <ul className="m-0 pl-5 list-disc text-lg text-[#3E2723]">
+            <li><strong>Schede didattiche</strong>: una per ogni livello, con obiettivo, parole chiave, domande e un&apos;attività senza computer. Le trovate accanto a ogni livello qui sotto (🖨️ scheda).</li>
+            <li><strong><Link href="/kids/glossario" className="underline text-[#1D4ED8]">Glossario dell&apos;IA</Link></strong>: 20 parole spiegate in modo semplice.</li>
+            <li><strong><Link href="/kids/attestato" className="underline text-[#1D4ED8]">Attestato</Link></strong>: a fine corso ogni studente scrive il nome e lo stampa. Il nome non viene salvato.</li>
+          </ul>
+        </section>
+
         <section className={panel} aria-labelledby="mondi">
           <h2 id="mondi" className={h2}>I 6 mondi e i 24 livelli</h2>
           <div className="flex flex-col gap-4">
@@ -97,6 +125,8 @@ export default function TeachersPage() {
                         {w.number}.{l.levelNumber} {levelTitleIt(l.slug)}
                       </Link>
                       {levelShortDescIt(l.slug) && <span className="text-[#5D4037]"> – {levelShortDescIt(l.slug)}</span>}
+                      {" "}
+                      <Link href={`/kids/insegnanti/schede/${l.slug}`} className="text-sm whitespace-nowrap underline text-[#B45309]">🖨️ scheda</Link>
                     </li>
                   ))}
                 </ul>

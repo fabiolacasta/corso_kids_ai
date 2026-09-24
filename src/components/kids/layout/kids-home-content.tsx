@@ -35,7 +35,7 @@ export function KidsHomeContent() {
                 <AccessibilityBadge />
               </div>
               
-              <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4 text-[#2C1810] pixel-text-shadow">
+              <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4 text-[#2C1810] kids-title-glow">
                 {t("home.title")}
               </h1>
               

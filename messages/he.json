@@ -1636,7 +1636,10 @@
       "title": "שלב הושלם!",
       "nextLevel": "השלב הבא",
       "backToMap": "חזרה למפה",
-      "allDone": "חזרה למפה"
+      "allDone": "חזרה למפה",
+      "medalTitle": "Medal earned!",
+      "medalText": "You completed the whole world “{world}”.",
+      "certificate": "Print your certificate"
     },
     "quiz": {
       "goodLabel": "פרומפט מעולה!",

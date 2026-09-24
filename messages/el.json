@@ -1636,7 +1636,10 @@
       "title": "Επίπεδο Ολοκληρώθηκε!",
       "nextLevel": "Επόμενο Επίπεδο",
       "backToMap": "Πίσω στο Χάρτη",
-      "allDone": "Πίσω στο Χάρτη"
+      "allDone": "Πίσω στο Χάρτη",
+      "medalTitle": "Medal earned!",
+      "medalText": "You completed the whole world “{world}”.",
+      "certificate": "Print your certificate"
     },
     "quiz": {
       "goodLabel": "Εξαιρετικό prompt!",

@@ -15,12 +15,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return [
       { url: `${baseUrl}/kids`, lastModified: now, changeFrequency: "weekly", priority: 1 },
       { url: `${baseUrl}/kids/insegnanti`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+      { url: `${baseUrl}/kids/glossario`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
       { url: `${baseUrl}/kids/map`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
       ...getAllLevels().map((l) => ({
         url: `${baseUrl}/kids/level/${l.slug}`,
         lastModified: now,
         changeFrequency: "monthly" as const,
         priority: l.world === 6 ? 0.8 : 0.7,
+      })),
+      ...getAllLevels().map((l) => ({
+        url: `${baseUrl}/kids/insegnanti/schede/${l.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.5,
       })),
     ];
   }

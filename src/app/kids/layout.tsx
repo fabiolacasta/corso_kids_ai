@@ -1,16 +1,27 @@
-import { Schoolbell, Lexend } from "next/font/google";
+import { Rubik, Pixelify_Sans, Lexend } from "next/font/google";
 import { getLocale } from "next-intl/server";
 import { KidsHeader } from "@/components/kids/layout/kids-header";
 import { MusicProvider } from "@/components/kids/layout/background-music";
 import { LevelProvider } from "@/components/kids/providers/level-context";
 import { KidsA11yProvider, A11Y_BOOT_SCRIPT } from "@/components/kids/layout/accessibility";
+import { ClassroomBar } from "@/components/kids/layout/classroom-bar";
 
 const RTL_LOCALES = ["ar", "he", "fa"];
 
-const kidsFont = Schoolbell({
+// Body text: modern and readable, suited to 11-14 year olds
+const kidsFont = Rubik({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "700"],
   variable: "--font-kids",
+  display: "swap",
+});
+
+// Headings and game labels: pixel-art video game style
+const pixelFont = Pixelify_Sans({
+  subsets: ["latin"],
+  weight: ["500", "700"],
+  variable: "--font-pixel",
+  display: "swap",
 });
 
 // High-legibility font for the "Lettura facilitata" (dyslexia) option.
@@ -54,7 +65,7 @@ export default async function KidsLayout({
     <MusicProvider>
     <script dangerouslySetInnerHTML={{ __html: A11Y_BOOT_SCRIPT }} />
     <div 
-      className={`kids-root fixed inset-0 flex flex-col text-xl light ${kidsFont.className} ${dyslexiaFont.variable}`} 
+      className={`kids-root fixed inset-0 flex flex-col text-xl light ${kidsFont.className} ${kidsFont.variable} ${pixelFont.variable} ${dyslexiaFont.variable}`} 
       data-theme="light" 
       dir={isRtl ? "rtl" : "ltr"}
       style={{ colorScheme: "light" }}
@@ -100,6 +111,7 @@ export default async function KidsLayout({
       <main id="contenuto" className="flex-1 min-h-0 overflow-hidden">
         {children}
       </main>
+      <ClassroomBar />
       </KidsA11yProvider>
     </div>
     </MusicProvider>

@@ -25,6 +25,9 @@ import {
   PixelOldCar,
   PixelVan 
 } from "./pixel-art";
+import { BeachScene } from "./beach-art";
+
+const KIDS_ONLY = process.env.NEXT_PUBLIC_KIDS_ONLY === "1";
 
 export function ProgressMap() {
   const t = useTranslations("kids");
@@ -49,6 +52,15 @@ export function ProgressMap() {
   // Calculate map width - ensure it fits content but also works on large screens
   const calculatedWidth = (allLevels.length * 200) + 240;
   const mapWidth = Math.max(calculatedWidth, 800);
+
+  // World 6 (Safety Shores) gets its own beach scenery
+  const beachIndex = allLevels.findIndex((l) => l.world === 6);
+  const beachLeft = beachIndex > 0 ? levelPositions[beachIndex].x - 110 : mapWidth;
+
+  // Where the player is now: first unlocked level not yet completed
+  const currentIndex = progress
+    ? allLevels.findIndex((l) => !progress.levels[l.slug]?.completed && isLevelUnlocked(l.slug))
+    : -1;
 
   const scrollLeft = () => {
     scrollRef.current?.scrollBy({ left: -300, behavior: "smooth" });
@@ -115,10 +127,14 @@ export function ProgressMap() {
             />
           </div>
           
+          {beachIndex > 0 && <BeachScene left={beachLeft} width={mapWidth - beachLeft} />}
+
           {/* Pixel art path connecting all levels */}
           <svg 
             className="absolute inset-0 w-full h-full pointer-events-none z-0" 
             style={{ width: `${mapWidth}px`, imageRendering: "pixelated" }}
+            // y values are percentages of the map height, like the level nodes
+            viewBox={`0 0 ${mapWidth} 100`}
             preserveAspectRatio="none"
             shapeRendering="crispEdges"
           >
@@ -128,6 +144,7 @@ export function ProgressMap() {
               fill="none"
               stroke="#8B5A2B"
               strokeWidth="12"
+              vectorEffect="non-scaling-stroke"
               strokeLinecap="square"
               strokeLinejoin="miter"
             />
@@ -137,13 +154,27 @@ export function ProgressMap() {
               fill="none"
               stroke="#D4A574"
               strokeWidth="8"
+              vectorEffect="non-scaling-stroke"
               strokeLinecap="square"
               strokeLinejoin="miter"
             />
+            {/* Animated golden trail over the part already travelled */}
+            {currentIndex > 0 && (
+              <path
+                className="kids-map-trail"
+                d={generatePixelPathD(levelPositions.slice(0, currentIndex + 1))}
+                fill="none"
+                stroke="#FFD700"
+                strokeWidth="4"
+                vectorEffect="non-scaling-stroke"
+                strokeDasharray="8 8"
+                strokeLinecap="square"
+              />
+            )}
           </svg>
 
           {/* Decorative elements - rendered after path so clouds appear on top */}
-          <MapDecorations mapWidth={mapWidth} />
+          <MapDecorations mapWidth={mapWidth} beachLeft={beachLeft} />
 
           {/* World labels - pixel art style */}
           {worlds.map((world) => {
@@ -162,7 +193,11 @@ export function ProgressMap() {
                     clipPath: "polygon(4px 0%, calc(100% - 4px) 0%, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0% calc(100% - 4px), 0% 4px)",
                   }}
                 >
+                  {world.number === 6 && "🛟 "}
                   {t(`worlds.${world.number}.title`)}
+                  {progress && world.levels.every((l) => progress.levels[l.slug]?.completed) && (
+                    <span className="ml-1" title="Mondo completato" aria-label="Mondo completato">🏅</span>
+                  )}
                 </div>
               </div>
             );
@@ -179,6 +214,20 @@ export function ProgressMap() {
               t={t}
             />
           ))}
+
+          {/* "Sei qui": Promi stands on the current level */}
+          {currentIndex >= 0 && (
+            <div
+              className="absolute z-20 pointer-events-none kids-map-you flex flex-col items-center"
+              style={{ left: `${levelPositions[currentIndex].x}px`, top: `calc(${levelPositions[currentIndex].y}% - 44px)` }}
+              aria-hidden="true"
+            >
+              <span className="mb-1 px-2 py-0.5 text-xs font-bold bg-[#2C1810] text-[#FFD700] border-2 border-[#FFD700] whitespace-nowrap font-pixel">
+                Sei qui
+              </span>
+              <PixelRobot className="w-9 h-11 drop-shadow-[2px_2px_0_rgba(0,0,0,0.35)]" />
+            </div>
+          )}
         </div>
       </div>
 
@@ -254,7 +303,7 @@ function generatePixelPathD(positions: { x: number; y: number }[]): string {
   return d;
 }
 
-function MapDecorations({ mapWidth }: { mapWidth: number }) {
+function MapDecorations({ mapWidth, beachLeft }: { mapWidth: number; beachLeft: number }) {
   const [planeY, setPlaneY] = useState(15); // percentage from top
   const [isDragging, setIsDragging] = useState(false);
   const planeRef = useRef<HTMLDivElement>(null);
@@ -295,6 +344,7 @@ function MapDecorations({ mapWidth }: { mapWidth: number }) {
   
   for (let i = 0; i < Math.floor(mapWidth / spacing); i++) {
     const x = 50 + i * spacing;
+    if (x > beachLeft - 40) continue; // the beach has its own scenery
     const type = i % 5;
     const yOffset = Math.sin(i * 0.8) * 10;
     
@@ -344,7 +394,7 @@ function MapDecorations({ mapWidth }: { mapWidth: number }) {
     <div 
       key="castle"
       className="absolute pointer-events-none"
-      style={{ left: `${mapWidth - 80}px`, bottom: "50px" }}
+      style={{ left: `${Math.min(mapWidth, beachLeft) - 90}px`, bottom: "50px" }}
     >
       <PixelCastle />
     </div>
@@ -407,7 +457,7 @@ function MapDecorations({ mapWidth }: { mapWidth: number }) {
         <div className="w-1.5 h-8 bg-gray-500" />
       </div>
       <div style={{ animation: "engineVibrate 0.1s steps(2) infinite" }}>
-        <PixelVan text="prompts.chat" />
+        <PixelVan text={KIDS_ONLY ? "Promi" : "prompts.chat"} />
       </div>
     </div>
   );
@@ -456,7 +506,7 @@ function MapDecorations({ mapWidth }: { mapWidth: number }) {
       onMouseDown={() => setIsDragging(true)}
       onTouchStart={() => setIsDragging(true)}
     >
-      <PixelPlaneWithBanner bannerText="prompts.chat" />
+      <PixelPlaneWithBanner bannerText={KIDS_ONLY ? "Corso IA medie" : "prompts.chat"} />
     </div>
   );
 

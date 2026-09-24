@@ -1,6 +1,7 @@
 "use client";
 
 import { getAllLevels, worlds } from "./levels";
+import { isClassroomMode } from "./classroom";
 
 const STORAGE_KEY = "kids-progress";
 
@@ -71,6 +72,8 @@ export function completeLevel(slug: string, stars: number): KidsProgress {
 }
 
 export function isLevelUnlocked(slug: string): boolean {
+  // Classroom mode (LIM): the teacher can open any level
+  if (isClassroomMode()) return true;
   const progress = getProgress();
   const levels = getAllLevels();
   const levelIndex = levels.findIndex((l) => l.slug === slug);

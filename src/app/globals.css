@@ -1013,3 +1013,72 @@ html[data-kids-colors] .pixel-btn-green {
   background: linear-gradient(180deg, #2563EB 0%, #1D4ED8 100%) !important;
   box-shadow: 0 4px 0 #1E3A8A !important;
 }
+
+/* ============================================================
+   Kids course look for 11-14 year olds: pixel headings, readable body
+   ============================================================ */
+.kids-root h1,
+.kids-root h2,
+.kids-root h3,
+.kids-root .pixel-btn,
+.kids-root .font-pixel {
+  font-family: var(--font-pixel), var(--font-kids), system-ui, sans-serif;
+  letter-spacing: 0.01em;
+}
+.kids-root .kids-prose-pixel,
+.kids-root .kids-prose-pixel p,
+.kids-root .kids-prose-pixel ul,
+.kids-root .kids-prose-pixel ol { font-size: 1.25rem; }
+.kids-root .kids-prose-pixel p { line-height: 1.65; }
+.kids-root .kids-prose-pixel h1 { font-size: 2.25rem; }
+.kids-root .kids-prose-pixel h2 { font-size: 1.9rem; }
+.kids-root .kids-prose-pixel h3 { font-size: 1.5rem; }
+
+/* Soft glow behind the title */
+.kids-title-glow {
+  text-shadow: 3px 3px 0 #FFD700, 6px 6px 0 rgba(0, 0, 0, 0.18);
+}
+
+/* Map: current-level marker bobbing, animated trail */
+@keyframes kids-bob { 0%, 100% { transform: translate(-50%, -100%); } 50% { transform: translate(-50%, calc(-100% - 6px)); } }
+.kids-map-you { animation: kids-bob 1.4s ease-in-out infinite; }
+@keyframes kids-trail { to { stroke-dashoffset: -32; } }
+.kids-map-trail { animation: kids-trail 1.2s linear infinite; }
+@keyframes kids-wave { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-16px); } }
+.kids-sea-wave { animation: kids-wave 3s ease-in-out infinite; }
+@keyframes kids-beam { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.6; } }
+.kids-lighthouse-beam { animation: kids-beam 2.4s ease-in-out infinite; transform-origin: left center; }
+
+/* Level complete: confetti and medal */
+@keyframes kids-confetti-fall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0.8; }
+}
+.kids-confetti { position: fixed; top: 0; width: 10px; height: 14px; z-index: 120; pointer-events: none; animation: kids-confetti-fall linear forwards; }
+@keyframes kids-pop { 0% { transform: scale(0.3) rotate(-12deg); opacity: 0; } 70% { transform: scale(1.12) rotate(4deg); opacity: 1; } 100% { transform: scale(1) rotate(0); } }
+.kids-pop { animation: kids-pop 0.6s cubic-bezier(.2,.9,.3,1.3) both; }
+@keyframes kids-shine { 0% { background-position: -150% 0; } 100% { background-position: 250% 0; } }
+.kids-medal-shine {
+  background-image: linear-gradient(110deg, transparent 40%, rgba(255,255,255,0.8) 50%, transparent 60%);
+  background-size: 200% 100%;
+  animation: kids-shine 2.5s ease-in-out infinite;
+}
+
+/* Printing (certificate, worksheets): only the printable area */
+@media print {
+  @page { size: A4; margin: 12mm; }
+  html, body { background: #fff !important; }
+  .kids-root { position: static !important; display: block !important; background: #fff !important; }
+  .kids-root > *:not(main), .kids-decor, .no-print, header { display: none !important; }
+  .kids-root main { overflow: visible !important; }
+  .kids-root main * { overflow: visible !important; }
+  .print-area { box-shadow: none !important; margin: 0 !important; max-width: none !important; }
+  .print-break { break-after: page; }
+}
+
+.pixel-btn-purple {
+  background: linear-gradient(180deg, #A855F7 0%, #7E22CE 100%);
+  box-shadow: 0 4px 0 #581C87;
+}
+.pixel-btn-purple:hover { box-shadow: 0 6px 0 #581C87; }
+.pixel-btn-purple:active { box-shadow: 0 2px 0 #581C87; }

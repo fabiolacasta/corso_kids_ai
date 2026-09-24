@@ -9,6 +9,7 @@ import { useSetLevelSlug, useSectionNavigation } from "@/components/kids/provide
 import { getLevelBySlug } from "@/lib/kids/levels";
 import { analyticsKids } from "@/lib/analytics";
 import { isSectionCompleted, markSectionCompleted } from "@/lib/kids/progress";
+import { useClassroomMode } from "@/lib/kids/classroom";
 
 interface LevelContentWrapperProps {
   children: ReactNode;
@@ -35,6 +36,7 @@ export function LevelContentWrapper({ children, levelSlug, levelNumber: _levelNu
   const [highestVisitedSection, setHighestVisitedSection] = useState(0);
   // Entrance animation only after the first section (first text shows immediately)
   const [firstSection] = useState(() => currentSection);
+  const classroom = useClassroomMode();
 
   // Check localStorage for section completion on mount and when section changes
   const checkSectionCompletion = useCallback(() => {
@@ -125,13 +127,14 @@ export function LevelContentWrapper({ children, levelSlug, levelNumber: _levelNu
 
   // Check if current section is complete (from localStorage) OR doesn't require completion
   const currentSectionRequiresCompletion = sectionRequiresCompletion(currentSection);
-  const isCurrentSectionComplete = !currentSectionRequiresCompletion || sectionCompletionState[currentSection] || false;
+  const isCurrentSectionComplete = classroom || !currentSectionRequiresCompletion || sectionCompletionState[currentSection] || false;
 
   // Can navigate to a section if it's:
   // 1. The current section
   // 2. A previously visited section (but NOT future sections)
   const canNavigateToSection = (targetSection: number): boolean => {
     if (targetSection === currentSection) return true;
+    if (classroom) return true; // classroom mode: the teacher can jump anywhere
     // Can only go back to sections we've already visited
     if (targetSection < currentSection && targetSection <= highestVisitedSection) return true;
     // Cannot skip ahead via dots - must use Next button

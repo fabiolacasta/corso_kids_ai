@@ -1636,7 +1636,10 @@
       "title": "المستوى مكتمل!",
       "nextLevel": "المستوى التالي",
       "backToMap": "العودة للخريطة",
-      "allDone": "العودة للخريطة"
+      "allDone": "العودة للخريطة",
+      "medalTitle": "Medal earned!",
+      "medalText": "You completed the whole world “{world}”.",
+      "certificate": "Print your certificate"
     },
     "quiz": {
       "goodLabel": "أمر رائع!",

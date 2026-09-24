@@ -1636,7 +1636,10 @@
       "title": "Niveau Terminé !",
       "nextLevel": "Niveau Suivant",
       "backToMap": "Retour à la Carte",
-      "allDone": "Retour à la Carte"
+      "allDone": "Retour à la Carte",
+      "medalTitle": "Medal earned!",
+      "medalText": "You completed the whole world “{world}”.",
+      "certificate": "Print your certificate"
     },
     "quiz": {
       "goodLabel": "Super prompt !",

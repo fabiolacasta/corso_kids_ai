@@ -1636,7 +1636,10 @@
       "title": "Seviye Tamamlandı!",
       "nextLevel": "Sonraki Seviye",
       "backToMap": "Haritaya Dön",
-      "allDone": "Haritaya Dön"
+      "allDone": "Haritaya Dön",
+      "medalTitle": "Medal earned!",
+      "medalText": "You completed the whole world “{world}”.",
+      "certificate": "Print your certificate"
     },
     "quiz": {
       "goodLabel": "Harika prompt!",

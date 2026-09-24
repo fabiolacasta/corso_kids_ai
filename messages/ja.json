@@ -1636,7 +1636,10 @@
       "title": "レベルクリア！",
       "nextLevel": "次のレベル",
       "backToMap": "マップに戻る",
-      "allDone": "マップに戻る"
+      "allDone": "マップに戻る",
+      "medalTitle": "Medal earned!",
+      "medalText": "You completed the whole world “{world}”.",
+      "certificate": "Print your certificate"
     },
     "quiz": {
       "goodLabel": "素晴らしいプロンプト！",

@@ -24,7 +24,7 @@ for (const [path, must] of [["/robots.txt", "Sitemap:"], ["/sitemap.xml", "<urls
 const sitemap = (await get("/kids/sitemap.xml")).text;
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(/^https?:\/\/[^/]+/, ""));
 console.log(`\n2) Le ${urls.length} pagine della sitemap (HTML, titolo, canonical, dati strutturati)`);
-if (urls.length !== 27) fail(`la sitemap ha ${urls.length} pagine invece di 27`);
+if (urls.length !== 52) fail(`la sitemap ha ${urls.length} pagine invece di 52`);
 for (const u of urls) {
   const r = await get(u);
   const title = r.text.match(/<title>([^<]*)<\/title>/)?.[1] || "";
@@ -42,7 +42,7 @@ console.log("\n3) Ogni livello nel browser (errori JavaScript, primo schermo, pu
 const browser = await chromium.launch();
 const ctx = await browser.newContext({ locale: "it-IT", viewport: { width: 1280, height: 800 } });
 await ctx.addInitScript(() => { try { localStorage.setItem("kids-music-enabled", "false"); } catch {} });
-for (const u of ["/kids", "/kids/map", "/kids/insegnanti", ...urls.filter((x) => x.startsWith("/kids/level/"))]) {
+for (const u of ["/kids", "/kids/map", "/kids/insegnanti", "/kids/glossario", "/kids/attestato", "/kids/insegnanti/schede/6-2-secret-keeper", ...urls.filter((x) => x.startsWith("/kids/level/"))]) {
   const page = await ctx.newPage();
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
@@ -63,7 +63,25 @@ for (const u of ["/kids", "/kids/map", "/kids/insegnanti", ...urls.filter((x) =>
   await page.close();
 }
 
-console.log("\n4) Pannello accessibilità");
+console.log("\n4) Modalità classe");
+{
+  const page = await ctx.newPage();
+  try {
+    await page.goto(BASE + "/kids/level/6-2-secret-keeper?classe=1", { waitUntil: "networkidle" });
+    await page.getByRole("button", { name: /Discutiamone/ }).click();
+    (await page.getByRole("dialog", { name: "Discutiamone" }).count()) ? ok("Discutiamone") : fail("Discutiamone non si apre");
+    await page.getByRole("button", { name: /Squadre/ }).click();
+    await page.getByRole("button", { name: /Aggiungi un punto/ }).first().click();
+    ok("Squadre");
+    await page.goto(BASE + "/kids/map", { waitUntil: "networkidle" });
+    const locked = await page.locator(".cursor-not-allowed").count();
+    locked === 0 ? ok("tutti i livelli aperti") : fail(`${locked} livelli ancora chiusi in modalità classe`);
+    await page.goto(BASE + "/kids?classe=0", { waitUntil: "networkidle" });
+  } catch (e) { fail("modalità classe: " + String(e).slice(0, 120)); }
+  await page.close();
+}
+
+console.log("\n5) Pannello accessibilità");
 {
   const page = await ctx.newPage();
   await page.goto(BASE + "/kids", { waitUntil: "networkidle" });
