@@ -191,6 +191,31 @@ export function levelJsonLd(slug: string) {
   ];
 }
 
+/** Map page: the list of the 24 levels, plus breadcrumb */
+export function mapJsonLd() {
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: `Mappa dei livelli – ${SITE_NAME}`,
+      itemListElement: getAllLevels().map((l, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: levelTitleIt(l.slug),
+        url: `${SITE_URL}/kids/level/${l.slug}`,
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: SITE_NAME, item: `${SITE_URL}/kids` },
+        { "@type": "ListItem", position: 2, name: "Mappa dei livelli", item: `${SITE_URL}/kids/map` },
+      ],
+    },
+  ];
+}
+
 /** Safely serialise JSON-LD for a <script> tag */
 export function jsonLdString(data: unknown): string {
   return JSON.stringify(data).replace(/</g, "\\u003c");

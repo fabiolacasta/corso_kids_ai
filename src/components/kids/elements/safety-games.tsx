@@ -359,6 +359,7 @@ export function SpotTheFake({ question, sentences, explanation }: SpotTheFakePro
                   tried && !s.fake && "bg-[#DCFCE7] text-[#166534]"
                 )}
               >
+                {tried && <span aria-hidden="true" className="font-bold mr-1">{s.fake ? "⚠" : "✓"}</span>}
                 {s.text}
               </button>
             );

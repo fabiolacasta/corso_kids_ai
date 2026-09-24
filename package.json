@@ -19,6 +19,8 @@
     "generate:examples": "npx tsx scripts/generate-examples.ts",
     "postinstall": "prisma generate",
     "test": "vitest run",
+    "test:kids": "vitest run src/__tests__/kids",
+    "test:sito": "node e2e/kids-smoke.mjs",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
