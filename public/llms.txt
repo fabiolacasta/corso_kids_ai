@@ -24,6 +24,8 @@
 - Glossario dell'IA per ragazzi: https://corso-ai-medie.netlify.app/kids/glossario
 - Una scheda didattica stampabile per ogni livello: https://corso-ai-medie.netlify.app/kids/insegnanti/schede/1-1-meet-promi (e così via)
 - Modalità classe per la LIM: domande per la discussione, timer, punteggio a squadre
+- Sfida di classe (quiz a squadre per la LIM): https://corso-ai-medie.netlify.app/kids/sfida
+- Tutte le schede in una pagina: https://corso-ai-medie.netlify.app/kids/insegnanti/schede
 - Attestato stampabile a fine corso (il nome non viene salvato)
 
 ## Come si usa in classe

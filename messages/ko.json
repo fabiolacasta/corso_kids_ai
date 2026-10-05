@@ -1739,7 +1739,9 @@
       "resetWarning": "모든 별과 진행 상황이 삭제됩니다. 확실한가요?",
       "resetConfirm": "네, 모두 초기화",
       "resetComplete": "진행 상황 초기화됨! 새로고침 중...",
-      "cancel": "취소"
+      "cancel": "취소",
+      "languageWarning": "Changing language resets your stars and completed levels on this device.",
+      "languageConfirm": "Yes, switch to {language}"
     },
     "safety": {
       "check": "Check",

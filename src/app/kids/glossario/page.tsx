@@ -29,7 +29,7 @@ export default function GlossaryPage() {
   };
 
   return (
-    <div className="h-full overflow-y-auto">
+    <div className="h-full overflow-y-auto" dir="ltr" lang="it">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }} />
       <article className="max-w-3xl mx-auto px-4 py-6 flex flex-col gap-4">
         <header className="bg-white/90 border-4 border-[#8B4513] p-4 md:p-6">

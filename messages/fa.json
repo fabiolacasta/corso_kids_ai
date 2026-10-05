@@ -1739,7 +1739,9 @@
       "resetWarning": "این همه ستاره‌ها و پیشرفت پاک می‌کند. مطمئنی؟",
       "resetConfirm": "بله، همه بازنشانی",
       "resetComplete": "پیشرفت بازنشانی شد! بارگذاری مجدد...",
-      "cancel": "لغو"
+      "cancel": "لغو",
+      "languageWarning": "Changing language resets your stars and completed levels on this device.",
+      "languageConfirm": "Yes, switch to {language}"
     },
     "safety": {
       "check": "Check",

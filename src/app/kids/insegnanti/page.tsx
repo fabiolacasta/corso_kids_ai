@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { worlds } from "@/lib/kids/levels";
 import { AccessibilityBadge } from "@/components/kids/layout/accessibility";
 import { ClassroomToggle } from "@/components/kids/layout/classroom-bar";
+import { ShareButtons } from "@/components/kids/layout/share-buttons";
 import {
   KIDS_ONLY,
   SITE_URL,
@@ -47,7 +48,7 @@ export default function TeachersPage() {
   if (!KIDS_ONLY) notFound();
 
   return (
-    <div className="h-full overflow-y-auto">
+    <div className="h-full overflow-y-auto" dir="ltr" lang="it">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString([courseJsonLd(), faqJsonLd()]) }} />
       <article className="max-w-3xl mx-auto px-4 py-6 flex flex-col gap-5 font-sans">
         <header className={panel}>
@@ -93,6 +94,10 @@ export default function TeachersPage() {
             <li><strong>⏱️ Timer</strong>: 1, 2, 3, 5 o 10 minuti per le attività a gruppi.</li>
             <li><strong>🏆 Squadre</strong>: da 2 a 4 squadre con il punteggio, per trasformare i quiz in una sfida.</li>
           </ul>
+          <p className={p}>
+            Per ripassare c&apos;è la <Link href="/kids/sfida" className="underline text-[#1D4ED8] font-bold">Sfida di classe</Link>: un quiz a squadre
+            con 24 domande su tutto il corso (o solo sulla sicurezza). Le risposte compaiono in ordine diverso ogni volta.
+          </p>
           <ClassroomToggle />
           <p className="text-base text-[#5D4037] m-0 mt-3">
             Si può attivare anche aprendo il sito con <code>?classe=1</code> alla fine dell&apos;indirizzo (per esempio nei preferiti della LIM),
@@ -104,6 +109,7 @@ export default function TeachersPage() {
           <h2 id="materiali" className={h2}>Materiali da stampare</h2>
           <ul className="m-0 pl-5 list-disc text-lg text-[#3E2723]">
             <li><strong>Schede didattiche</strong>: una per ogni livello, con obiettivo, parole chiave, domande e un&apos;attività senza computer. Le trovate accanto a ogni livello qui sotto (🖨️ scheda).</li>
+            <li><strong><Link href="/kids/insegnanti/schede" className="underline text-[#1D4ED8]">Tutte le schede insieme</Link></strong>: le 24 schede in un&apos;unica pagina, da stampare in una volta.</li>
             <li><strong><Link href="/kids/glossario" className="underline text-[#1D4ED8]">Glossario dell&apos;IA</Link></strong>: 20 parole spiegate in modo semplice.</li>
             <li><strong><Link href="/kids/attestato" className="underline text-[#1D4ED8]">Attestato</Link></strong>: a fine corso ogni studente scrive il nome e lo stampa. Il nome non viene salvato.</li>
           </ul>
@@ -213,6 +219,7 @@ export default function TeachersPage() {
           <h2 id="condividi" className={h2}>Condividilo con i colleghi</h2>
           <p className={p}>Se il corso vi è utile, potete inoltrare questo messaggio nei gruppi di docenti:</p>
           <p className="text-lg bg-[#FEF3C7] border-2 border-[#D97706] p-3 m-0 select-all">{SHARE_TEXT}</p>
+          <ShareButtons text={SHARE_TEXT.replace(` ${SITE_URL}/kids/insegnanti`, "")} url={`${SITE_URL}/kids/insegnanti`} />
         </section>
 
         <footer className={panel}>

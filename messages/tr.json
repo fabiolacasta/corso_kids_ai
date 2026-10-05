@@ -1739,7 +1739,9 @@
       "resetWarning": "Bu tüm yıldızlarını ve ilerlemenizi silecek. Emin misiniz?",
       "resetConfirm": "Evet, Her Şeyi Sıfırla",
       "resetComplete": "İlerleme sıfırlandı! Yeniden yükleniyor...",
-      "cancel": "İptal"
+      "cancel": "İptal",
+      "languageWarning": "Changing language resets your stars and completed levels on this device.",
+      "languageConfirm": "Yes, switch to {language}"
     },
     "safety": {
       "check": "Check",

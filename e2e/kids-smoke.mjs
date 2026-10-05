@@ -24,7 +24,7 @@ for (const [path, must] of [["/robots.txt", "Sitemap:"], ["/sitemap.xml", "<urls
 const sitemap = (await get("/kids/sitemap.xml")).text;
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(/^https?:\/\/[^/]+/, ""));
 console.log(`\n2) Le ${urls.length} pagine della sitemap (HTML, titolo, canonical, dati strutturati)`);
-if (urls.length !== 52) fail(`la sitemap ha ${urls.length} pagine invece di 52`);
+if (urls.length !== 54) fail(`la sitemap ha ${urls.length} pagine invece di 54`);
 for (const u of urls) {
   const r = await get(u);
   const title = r.text.match(/<title>([^<]*)<\/title>/)?.[1] || "";
@@ -42,7 +42,7 @@ console.log("\n3) Ogni livello nel browser (errori JavaScript, primo schermo, pu
 const browser = await chromium.launch();
 const ctx = await browser.newContext({ locale: "it-IT", viewport: { width: 1280, height: 800 } });
 await ctx.addInitScript(() => { try { localStorage.setItem("kids-music-enabled", "false"); } catch {} });
-for (const u of ["/kids", "/kids/map", "/kids/insegnanti", "/kids/glossario", "/kids/attestato", "/kids/insegnanti/schede/6-2-secret-keeper", ...urls.filter((x) => x.startsWith("/kids/level/"))]) {
+for (const u of ["/kids", "/kids/map", "/kids/insegnanti", "/kids/glossario", "/kids/attestato", "/kids/sfida", "/kids/insegnanti/schede", "/kids/insegnanti/schede/6-2-secret-keeper", ...urls.filter((x) => x.startsWith("/kids/level/"))]) {
   const page = await ctx.newPage();
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
@@ -63,7 +63,20 @@ for (const u of ["/kids", "/kids/map", "/kids/insegnanti", "/kids/glossario", "/
   await page.close();
 }
 
-console.log("\n4) Modalità classe");
+console.log("\n4) Pagine in italiano anche se il browser ha una lingua da destra a sinistra");
+{
+  const rtl = await browser.newContext({ locale: "it-IT" });
+  await rtl.addCookies([{ name: "NEXT_LOCALE", value: "ar", url: BASE }]);
+  const page = await rtl.newPage();
+  for (const u of ["/kids/insegnanti", "/kids/glossario", "/kids/insegnanti/schede/6-2-secret-keeper", "/kids/attestato"]) {
+    await page.goto(BASE + u, { waitUntil: "networkidle" });
+    const dir = await page.evaluate(() => getComputedStyle(document.querySelector("main h1") || document.querySelector("h1")).direction);
+    dir === "ltr" ? ok(u) : fail(`${u}: testo da destra a sinistra`);
+  }
+  await rtl.close();
+}
+
+console.log("\n5) Modalità classe");
 {
   const page = await ctx.newPage();
   try {
@@ -81,7 +94,7 @@ console.log("\n4) Modalità classe");
   await page.close();
 }
 
-console.log("\n5) Pannello accessibilità");
+console.log("\n6) Pannello accessibilità");
 {
   const page = await ctx.newPage();
   await page.goto(BASE + "/kids", { waitUntil: "networkidle" });

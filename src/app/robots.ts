@@ -21,7 +21,7 @@ export default function robots(): MetadataRoute.Robots {
   // Kids-only deployment: only the kids course (and llms.txt) is meant to be crawled
   if (process.env.KIDS_ONLY === "1") {
     const kidsRule = {
-      allow: ["/kids", "/llms.txt", "/og-corso.png"],
+      allow: ["/kids", "/llms.txt", "/og-corso.png", "/corso/"],
       disallow: ["/api/", "/admin/", "/settings/", "/login", "/register"],
     };
     return {

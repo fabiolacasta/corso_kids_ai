@@ -29,7 +29,7 @@ export function Certificate() {
   const complete = stats.done === total;
 
   return (
-    <div className="h-full overflow-y-auto">
+    <div className="h-full overflow-y-auto" dir="ltr" lang="it">
       <div className="max-w-3xl mx-auto px-4 py-6">
         <div className="no-print bg-[#FEF3C7] border-4 border-[#8B4513] p-4 mb-4">
           <h1 className="text-2xl font-bold text-[#8B4513] m-0 mb-2">🎓 Il tuo attestato</h1>

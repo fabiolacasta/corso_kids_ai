@@ -1739,7 +1739,9 @@
       "resetWarning": "这将删除所有星星和进度。确定吗？",
       "resetConfirm": "是的，重置全部",
       "resetComplete": "进度已重置！正在重新加载...",
-      "cancel": "取消"
+      "cancel": "取消",
+      "languageWarning": "Changing language resets your stars and completed levels on this device.",
+      "languageConfirm": "Yes, switch to {language}"
     },
     "safety": {
       "check": "Check",

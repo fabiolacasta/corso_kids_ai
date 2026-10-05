@@ -1017,10 +1017,9 @@ html[data-kids-colors] .pixel-btn-green {
 /* ============================================================
    Kids course look for 11-14 year olds: pixel headings, readable body
    ============================================================ */
+/* Pixel font only for big titles: at small sizes some letters (B/8, 2/Z) are hard to read */
 .kids-root h1,
 .kids-root h2,
-.kids-root h3,
-.kids-root .pixel-btn,
 .kids-root .font-pixel {
   font-family: var(--font-pixel), var(--font-kids), system-ui, sans-serif;
   letter-spacing: 0.01em;

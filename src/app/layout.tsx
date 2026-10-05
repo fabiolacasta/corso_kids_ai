@@ -130,6 +130,15 @@ export const metadata: Metadata =
         creator: undefined,
         publisher: undefined,
         other: { "apple-mobile-web-app-title": "Corso IA medie" },
+        icons: {
+          icon: [
+            { url: "/corso/favicon.svg", type: "image/svg+xml" },
+            { url: "/corso/favicon-96.png", sizes: "96x96", type: "image/png" },
+          ],
+          apple: "/corso/apple-touch-icon.png",
+          shortcut: "/corso/favicon.svg",
+        },
+        manifest: "/corso/manifest.webmanifest",
         openGraph: {
           type: "website",
           locale: "it_IT",

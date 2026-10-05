@@ -37,7 +37,7 @@ export function ClassroomBar() {
   const btn = "pixel-btn px-3 py-2 text-base flex items-center gap-1 shadow-lg";
   return (
     <>
-      <div className="no-print fixed left-3 bottom-24 z-[60] flex flex-col gap-2 items-start" role="toolbar" aria-label="Strumenti per la classe">
+      <div dir="ltr" lang="it" className="no-print fixed left-3 bottom-24 z-[60] flex flex-col gap-2 items-start" role="toolbar" aria-label="Strumenti per la classe">
         <span className="hidden md:inline px-2 py-1 text-xs font-bold bg-[#2C1810] text-[#FFD700] border-2 border-[#FFD700] font-pixel">
           MODALITÀ CLASSE
         </span>
@@ -52,6 +52,9 @@ export function ClassroomBar() {
         <button className={cn(btn, "pixel-btn-green")} onClick={() => setPanel(panel === "teams" ? null : "teams")} aria-expanded={panel === "teams"} aria-label="Squadre">
           🏆 <span className="hidden md:inline">Squadre</span>
         </button>
+        <Link href="/kids/sfida" className={cn(btn, "pixel-btn-purple")} aria-label="Sfida di classe">
+          🎲 <span className="hidden md:inline">Sfida</span>
+        </Link>
         <button className={cn(btn)} onClick={() => { setClassroomMode(false); setPanel(null); }} title="Esci dalla modalità classe" aria-label="Esci dalla modalità classe">
           <X className="w-4 h-4" aria-hidden="true" /> <span className="hidden md:inline">Esci</span>
         </button>
@@ -59,6 +62,8 @@ export function ClassroomBar() {
 
       {panel && (
         <div
+          dir="ltr"
+          lang="it"
           className="no-print fixed left-3 right-3 sm:right-auto sm:left-44 bottom-24 z-[61] sm:w-[28rem] max-h-[70vh] overflow-y-auto bg-[#FEF3C7] border-4 border-[#8B4513] p-4 shadow-2xl"
           role="dialog"
           aria-label={panel === "discuss" ? "Discutiamone" : panel === "timer" ? "Timer" : "Squadre"}
@@ -174,7 +179,7 @@ function Teams() {
               className="flex-1 min-w-0 bg-transparent text-lg font-bold text-[#2C1810] border-b border-dashed border-[#D4A574] focus:outline-none"
               aria-label={`Nome della squadra ${i + 1}`}
             />
-            <span className="text-3xl font-bold font-pixel w-12 text-center tabular-nums" aria-live="polite">
+            <span className="text-3xl font-bold w-12 text-center tabular-nums" aria-live="polite">
               {t.score}{t.score === best && best > 0 ? "👑" : ""}
             </span>
             <button className="pixel-btn px-2 py-1 text-base" onClick={() => add(i, -1)} aria-label={`Togli un punto a ${t.name}`}>−</button>

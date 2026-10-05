@@ -1739,7 +1739,9 @@
       "resetWarning": "すべてのスターと進捗が削除されます。よろしいですか？",
       "resetConfirm": "はい、すべてリセット",
       "resetComplete": "進捗をリセットしました！再読み込み中...",
-      "cancel": "キャンセル"
+      "cancel": "キャンセル",
+      "languageWarning": "Changing language resets your stars and completed levels on this device.",
+      "languageConfirm": "Yes, switch to {language}"
     },
     "safety": {
       "check": "Check",

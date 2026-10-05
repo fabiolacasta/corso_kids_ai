@@ -11,6 +11,8 @@ export function GET() {
     { loc: `${baseUrl}/kids`, priority: 1, freq: "weekly" },
     { loc: `${baseUrl}/kids/insegnanti`, priority: 0.9, freq: "monthly" },
     { loc: `${baseUrl}/kids/glossario`, priority: 0.8, freq: "monthly" },
+    { loc: `${baseUrl}/kids/sfida`, priority: 0.7, freq: "monthly" },
+    { loc: `${baseUrl}/kids/insegnanti/schede`, priority: 0.7, freq: "monthly" },
     { loc: `${baseUrl}/kids/map`, priority: 0.8, freq: "monthly" },
     ...getAllLevels().map((l) => ({
       loc: `${baseUrl}/kids/level/${l.slug}`,

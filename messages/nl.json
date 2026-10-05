@@ -1739,7 +1739,9 @@
       "resetWarning": "Dit verwijdert al je sterren en voortgang. Weet je het zeker?",
       "resetConfirm": "Ja, alles resetten",
       "resetComplete": "Voortgang gereset! Herladen...",
-      "cancel": "Annuleren"
+      "cancel": "Annuleren",
+      "languageWarning": "Changing language resets your stars and completed levels on this device.",
+      "languageConfirm": "Yes, switch to {language}"
     },
     "safety": {
       "check": "Check",

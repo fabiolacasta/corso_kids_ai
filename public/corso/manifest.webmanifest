@@ -1,0 +1,25 @@
+{
+  "name": "Corso IA per le medie – La Scuola di Prompt di Promi",
+  "short_name": "Corso IA",
+  "description": "Corso gratuito sull'intelligenza artificiale per la scuola media: prompt, allucinazioni, privacy, deepfake e uso responsabile.",
+  "lang": "it",
+  "dir": "ltr",
+  "start_url": "/kids?source=app",
+  "scope": "/kids",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#2C1810",
+  "theme_color": "#2C1810",
+  "categories": ["education", "kids"],
+  "icons": [
+    { "src": "/corso/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/corso/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/corso/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Mappa dei livelli", "url": "/kids/map" },
+    { "name": "Modalità classe", "url": "/kids?classe=1" },
+    { "name": "Sfida di classe", "url": "/kids/sfida" },
+    { "name": "Guida insegnanti", "url": "/kids/insegnanti" }
+  ]
+}

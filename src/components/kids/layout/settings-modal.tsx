@@ -11,6 +11,7 @@ import { Settings, X, Globe, Trash2, Check, Volume2 } from "lucide-react";
 import { MusicVolumeSlider } from "./background-music";
 
 const SUPPORTED_LOCALES = [
+  { code: "it", label: "Italiano", flag: "🇮🇹" },
   { code: "en", label: "English", flag: "🇺🇸" },
   { code: "zh", label: "中文", flag: "🇨🇳" },
   { code: "es", label: "Español", flag: "🇪🇸" },
@@ -18,7 +19,6 @@ const SUPPORTED_LOCALES = [
   { code: "fr", label: "Français", flag: "🇫🇷" },
   { code: "de", label: "Deutsch", flag: "🇩🇪" },
   { code: "nl", label: "Dutch", flag: "🇳🇱" },
-  { code: "it", label: "Italiano", flag: "🇮🇹" },
   { code: "ja", label: "日本語", flag: "🇯🇵" },
   { code: "tr", label: "Türkçe", flag: "🇹🇷" },
   { code: "az", label: "Azərbaycan", flag: "🇦🇿" },
@@ -60,13 +60,19 @@ function SettingsModal({ onClose }: { onClose: () => void }) {
   const router = useRouter();
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [resetComplete, setResetComplete] = useState(false);
+  const [pendingLocale, setPendingLocale] = useState<string | null>(null);
 
   const stars = getTotalStars();
   const completed = getCompletedLevelsCount();
 
   const handleLanguageChange = (locale: string) => {
     if (locale === currentLocale) return;
-    
+    // Changing language resets stars and progress: ask first
+    if (pendingLocale !== locale) {
+      setPendingLocale(locale);
+      return;
+    }
+
     analyticsKids.changeLanguage(locale);
     clearAllProgress();
     setLocale(locale);
@@ -153,6 +159,27 @@ function SettingsModal({ onClose }: { onClose: () => void }) {
             <Globe className="w-5 h-5" />
             {t("language")}
           </h3>
+          {pendingLocale && (
+            <div className="mb-3 p-3 bg-[#FFF7ED] border-2 border-[#EA580C] text-[#7C2D12]" role="alert">
+              <p className="m-0 text-sm font-bold">{t("languageWarning")}</p>
+              <div className="flex gap-2 mt-2">
+                <button
+                  onClick={() => handleLanguageChange(pendingLocale)}
+                  className="px-3 py-1.5 text-sm font-bold bg-[#C2410C] text-white"
+                  style={{ clipPath: smallPixelClipPath }}
+                >
+                  {t("languageConfirm", { language: SUPPORTED_LOCALES.find((l) => l.code === pendingLocale)?.label || pendingLocale })}
+                </button>
+                <button
+                  onClick={() => setPendingLocale(null)}
+                  className="px-3 py-1.5 text-sm font-bold bg-white border-2 border-[#D4A574] text-[#5D4037]"
+                  style={{ clipPath: smallPixelClipPath }}
+                >
+                  {t("cancel")}
+                </button>
+              </div>
+            </div>
+          )}
           <div className="grid grid-cols-2 gap-2">
             {SUPPORTED_LOCALES.map((locale) => (
               <button

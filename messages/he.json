@@ -1739,7 +1739,9 @@
       "resetWarning": "זה ימחק את כל הכוכבים וההתקדמות. בטוח?",
       "resetConfirm": "כן, אפס הכל",
       "resetComplete": "התקדמות אופסה! טוען מחדש...",
-      "cancel": "ביטול"
+      "cancel": "ביטול",
+      "languageWarning": "Changing language resets your stars and completed levels on this device.",
+      "languageConfirm": "Yes, switch to {language}"
     },
     "safety": {
       "check": "Check",

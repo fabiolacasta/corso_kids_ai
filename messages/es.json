@@ -1739,7 +1739,9 @@
       "resetWarning": "Esto eliminará todas tus estrellas y progreso. ¿Estás seguro?",
       "resetConfirm": "Sí, Restablecer Todo",
       "resetComplete": "¡Progreso restablecido! Recargando...",
-      "cancel": "Cancelar"
+      "cancel": "Cancelar",
+      "languageWarning": "Changing language resets your stars and completed levels on this device.",
+      "languageConfirm": "Yes, switch to {language}"
     },
     "safety": {
       "check": "Check",

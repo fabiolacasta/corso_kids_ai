@@ -1739,7 +1739,9 @@
       "resetWarning": "Это удалит все звёзды и прогресс. Уверен?",
       "resetConfirm": "Да, сбросить всё",
       "resetComplete": "Прогресс сброшен! Перезагрузка...",
-      "cancel": "Отмена"
+      "cancel": "Отмена",
+      "languageWarning": "Changing language resets your stars and completed levels on this device.",
+      "languageConfirm": "Yes, switch to {language}"
     },
     "safety": {
       "check": "Check",

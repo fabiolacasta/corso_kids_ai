@@ -1739,7 +1739,9 @@
       "resetWarning": "سيحذف هذا كل نجومك وتقدمك. هل أنت متأكد؟",
       "resetConfirm": "نعم، أعد تعيين كل شيء",
       "resetComplete": "تم إعادة التعيين! جارٍ إعادة التحميل...",
-      "cancel": "إلغاء"
+      "cancel": "إلغاء",
+      "languageWarning": "Changing language resets your stars and completed levels on this device.",
+      "languageConfirm": "Yes, switch to {language}"
     },
     "safety": {
       "check": "Check",

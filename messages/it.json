@@ -1739,7 +1739,9 @@
       "resetWarning": "Questo cancellerà tutte le stelle e i progressi. Sei sicuro?",
       "resetConfirm": "Sì, Reimposta Tutto",
       "resetComplete": "Progressi reimpostati! Ricaricamento...",
-      "cancel": "Annulla"
+      "cancel": "Annulla",
+      "languageWarning": "Cambiando lingua si azzerano le stelle e i livelli completati su questo dispositivo.",
+      "languageConfirm": "Sì, passa a {language}"
     },
     "safety": {
       "check": "Controlla",

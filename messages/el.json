@@ -1739,7 +1739,9 @@
       "resetWarning": "Αυτό θα διαγράψει όλα τα αστέρια και την πρόοδο. Είσαι σίγουρος;",
       "resetConfirm": "Ναι, Επαναφορά Όλων",
       "resetComplete": "Η πρόοδος επαναφέρθηκε! Επαναφόρτωση...",
-      "cancel": "Ακύρωση"
+      "cancel": "Ακύρωση",
+      "languageWarning": "Changing language resets your stars and completed levels on this device.",
+      "languageConfirm": "Yes, switch to {language}"
     },
     "safety": {
       "check": "Check",

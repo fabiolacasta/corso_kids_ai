@@ -1739,7 +1739,9 @@
       "resetWarning": "Bu bütün ulduzları və tərəqqini siləcək. Əminsən?",
       "resetConfirm": "Bəli, Hamısını Sıfırla",
       "resetComplete": "Tərəqqi sıfırlandı! Yenidən yüklənir...",
-      "cancel": "Ləğv et"
+      "cancel": "Ləğv et",
+      "languageWarning": "Changing language resets your stars and completed levels on this device.",
+      "languageConfirm": "Yes, switch to {language}"
     },
     "safety": {
       "check": "Check",
