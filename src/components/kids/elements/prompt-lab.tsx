@@ -204,7 +204,7 @@ export function PromptLab({
       {(completed || appliedImprovements.length > 0) && (
         <button
           onClick={handleReset}
-          className="px-6 py-2 rounded-lg font-bold bg-[#047857] hover:bg-[#065F46] text-white"
+          className="kids-retry"
         >
           {t("retry")}
         </button>

@@ -205,7 +205,7 @@ export function PromptParts({ title, instruction, parts, successMessage }: Promp
       {(Object.keys(assignments).length > 0 || completed) && (
         <button
           onClick={handleReset}
-          className="px-6 py-2 rounded-lg font-bold bg-[#D97706] hover:bg-[#B45309] text-white"
+          className="kids-retry"
         >
           {t("retry")}
         </button>

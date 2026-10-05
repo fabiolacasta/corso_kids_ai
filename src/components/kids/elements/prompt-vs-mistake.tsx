@@ -228,9 +228,8 @@ export function PromptVsMistake({
           {!isCorrect && (
             <button 
               onClick={handleReset} 
-              className="mt-3 inline-flex items-center gap-1 px-4 py-2 bg-[#8B4513] hover:bg-[#A0522D] text-white text-sm font-bold transition-colors"
-              style={{ clipPath: smallPixelClipPath }}
-            >
+              className="kids-retry mt-3"
+                          >
               <PixelRefreshIcon />
               {t("tryAgain")}
             </button>

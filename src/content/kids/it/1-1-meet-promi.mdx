@@ -20,12 +20,12 @@ Vuoi conoscere il mio segreto? In realtà non "penso" come te. Leggo le parole e
 <WordPredictor
   title="Pensa Come un'IA!"
   instruction="Leggo i pattern e indovino la parola successiva. Cosa indovineresti TU?"
-  sentence="Il gatto dorme sul ___"
-  options={["letto", "luna", "veloce", "viola"]}
-  correctAnswer="letto"
-  explanation="'Letto' ha più senso perché i gatti di solito dormono sui letti! L'IA impara questi pattern leggendo molti testi."
-  aiThinking="Hmm, ho letto molto su dove dormono i gatti..."
-  successMessage="Pensi come un'IA! Scelgo la parola più probabile basandomi sui pattern."
+  sentence="Ogni mattina, prima di andare a scuola, faccio ___"
+  options={["colazione", "la doccia", "i compiti", "tardi"]}
+  correctAnswer="colazione"
+  explanation="Anche «la doccia» o «tardi» sono possibili, ma nei testi «faccio colazione» compare molto più spesso. Io non so cosa fai TU: scelgo la continuazione più frequente."
+  aiThinking="Nei testi che ho letto, dopo «ogni mattina faccio» arriva quasi sempre la stessa parola..."
+  successMessage="Esatto! Scelgo la parola più probabile in base ai pattern, non in base a quello che è successo davvero."
 />
 
 </Section>
@@ -33,13 +33,13 @@ Vuoi conoscere il mio segreto? In realtà non "penso" come te. Leggo le parole e
 <Section>
 <WordPredictor
   title="Un Altro Tentativo!"
-  instruction="Ora hai capito! Quale parola si adatta meglio qui?"
-  sentence="C'era una ___"
-  options={["volta", "banana", "veloce", "verde"]}
-  correctAnswer="volta"
-  explanation="'C'era una volta' è l'inizio di quasi tutte le fiabe! L'IA ha letto migliaia di storie che iniziano così."
-  aiThinking="Sembra l'inizio di una fiaba... Ho visto questo pattern così tante volte!"
-  successMessage="Perfetto! Stai già pensando come un'IA - riconosci i pattern!"
+  instruction="Quale continuazione sceglierebbe l'IA? Attenzione: la più probabile non è sempre quella vera!"
+  sentence="Il deserto più grande del mondo è ___"
+  options={["il Sahara", "l'Antartide", "il Gobi", "l'Atacama"]}
+  correctAnswer="il Sahara"
+  explanation="Nei testi si legge molto spesso «il Sahara», quindi per l'IA è la continuazione più probabile. Ma se si contano anche i deserti freddi, il più grande è l'Antartide! L'IA sceglie ciò che ha letto più spesso, non ciò che è vero: ecco perché può sbagliare."
+  aiThinking="Ho letto questa frase migliaia di volte, quasi sempre con lo stesso finale..."
+  successMessage="Giusto: è la risposta più probabile. Ricorda però che probabile non vuol dire vero, quindi controlla sempre le informazioni importanti."
 />
 </Section>
 
@@ -55,11 +55,11 @@ Quando scrivi un buon prompt, posso capire cosa vuoi e aiutarti meglio! Pratichi
 </Panel>
 
 <PromptVsMistake
-  question="Quale messaggio aiuterebbe IAco a capire meglio?"
-  good="Per favore scrivi una storia breve su un drago gentile che ama fare i biscotti"
-  bad="storia"
-  explanation="Il primo messaggio dice a IAco esattamente che tipo di storia scrivere! Il secondo è troppo corto - IAco non sa che tipo di storia vuoi."
-  promiMessage="Vedi? Più dettagli mi aiutano a capire cosa vuoi!"
+  question="Quale messaggio fa capire a IAco CHE COSA deve produrre?"
+  good="Scrivi un racconto breve su un drago che ha paura del buio, da leggere in classe"
+  bad="Mi serve qualcosa sui draghi per domani, una cosa carina da portare in classe, grazie mille"
+  explanation="Il primo dice che tipo di testo vuoi (un racconto breve) e su cosa. Il secondo è gentile, ma non dice se vuoi un racconto, una ricerca o un disegno."
+  promiMessage="Se non so che cosa produrre, devo tirare a indovinare."
 />
 </Section>
 
@@ -67,11 +67,11 @@ Quando scrivi un buon prompt, posso capire cosa vuoi e aiutarti meglio! Pratichi
 ## Quiz Veloce!
 
 <PromptVsMistake
-  question="Qual è un prompt?"
-  good="Puoi aiutarmi a scrivere una poesia sull'oceano?"
-  bad="🌊"
-  explanation="Un prompt usa parole per dire all'IA di cosa hai bisogno. Gli emoji sono divertenti ma non danno abbastanza informazioni!"
-  promiMessage="Le parole sono il mio super potere! Più mi dici, meglio posso aiutare!"
+  question="Quale messaggio dà a IAco una vera richiesta da eseguire?"
+  good="Spiegami con parole semplici perché l'acqua del mare è salata"
+  bad="L'acqua del mare è salata, me ne sono accorto quest'estate facendo il bagno"
+  explanation="Il primo chiede qualcosa di preciso: spiegare il perché, con parole semplici. Il secondo racconta un fatto, ma non dice cosa vuoi che io faccia."
+  promiMessage="Un prompt è una richiesta: dimmi cosa vuoi che faccia."
 />
 </Section>
 

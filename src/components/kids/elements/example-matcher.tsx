@@ -176,7 +176,7 @@ export function ExampleMatcher({
         ) : !isCorrect ? (
           <button
             onClick={handleReset}
-            className="px-6 py-2 rounded-lg font-bold bg-[#6366F1] hover:bg-[#4F46E5] text-white"
+            className="kids-retry"
           >
             {t("retry")}
           </button>

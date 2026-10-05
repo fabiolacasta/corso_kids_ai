@@ -307,10 +307,10 @@ export function MagicWords({
               {t("check")}
             </Button>
           ) : !allCorrect ? (
-            <Button onClick={handleReset} variant="outline" className="rounded-full h-12 text-xl px-6">
-              <RefreshCw className="h-5 w-5 mr-2" />
+            <button onClick={handleReset} className="kids-retry">
+              <RefreshCw className="h-5 w-5" aria-hidden="true" />
               {t("retry")}
-            </Button>
+            </button>
           ) : null}
         </div>
       </div>

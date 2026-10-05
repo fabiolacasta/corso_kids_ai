@@ -209,7 +209,7 @@ export function PromptDoctor({
       {(isHealed || fixedProblems.length > 0) && (
         <button
           onClick={handleReset}
-          className="px-6 py-2 rounded-lg font-bold bg-[#DC2626] hover:bg-[#B91C1C] text-white"
+          className="kids-retry"
         >
           {t("retry")}
         </button>

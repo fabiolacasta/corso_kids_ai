@@ -17,16 +17,16 @@ Invece di descrivere solo cosa vuoi, **mostrami un esempio**!
 
 <ExampleMatcher
   title="Potere dei Pattern"
-  instruction="L'IA impara dagli esempi! Guarda il pattern e scegli cosa viene dopo."
+  instruction="L'IA impara dagli esempi! Guarda come sono stati trasformati i titoli del giornalino e scegli quello che segue lo stesso schema."
   examples={[
-    { input: "felice", output: "😊" },
-    { input: "triste", output: "😢" },
-    { input: "assonnato", output: "😴" }
+    { input: "La gita a Firenze", output: "Firenze: 3 cose che non sapevi" },
+    { input: "Il laboratorio di scienze", output: "Scienze: 3 cose che non sapevi" },
+    { input: "Il nuovo orto della scuola", output: "Orto: 3 cose che non sapevi" }
   ]}
-  question="arrabbiato"
-  options={["😠", "😊", "🎉", "😴"]}
-  correctAnswer="😠"
-  explanation="L'IA ha imparato: parola di sentimento → emoji corrispondente! Questo si chiama 'imparare con l'esempio' - proprio come te!"
+  question="Il torneo di pallavolo"
+  options={["Torneo di pallavolo: tutto quello che c'è da sapere", "Pallavolo: 3 cose che non sapevi", "3 cose che non sapevi sul torneo", "Il grande torneo di pallavolo: 3 cose!"]}
+  correctAnswer="Pallavolo: 3 cose che non sapevi"
+  explanation="Lo schema è: una sola parola chiave + «: 3 cose che non sapevi». Le altre opzioni cambiano l'ordine o le parole, quindi non seguono l'esempio. È così che l'IA impara da ciò che le mostri."
 />
 </Section>
 
@@ -40,11 +40,11 @@ Se dici "rendilo figo", potrei non sapere cosa significa "figo" per te. Ma se mi
 ## Guarda la differenza
 
 <PromptVsMistake
-  question="Quale prompt usa meglio gli esempi?"
-  good="Scrivi un nome di prodotto divertente come 'Shampoo Super Brillante' o 'Cuscini Nuvola Magica' - qualcosa di accattivante e giocoso!"
-  bad="Scrivi un nome di prodotto divertente"
-  explanation="Gli esempi mostrano esattamente quale stile di nome stai cercando - accattivante, giocoso, con aggettivi divertenti!"
-  promiMessage="Gli esempi sono come mappe del tesoro - mi mostrano esattamente dove vuoi andare!"
+  question="Quale prompt usa un esempio che aiuta davvero l'IA?"
+  good="Ci servono i nomi delle rubriche del giornalino di classe, brevi e con un gioco di parole, tipo «Ci vuole Scienza» o «Sport e Sportivi». Proponimene 5 per musica, libri e videogiochi."
+  bad="Ci servono i nomi delle rubriche del giornalino di classe, brevi e con un gioco di parole. Prendi spunto da questo esempio: «Le notizie più importanti della settimana dalla nostra scuola». Proponimene 5 per musica, libri e videogiochi."
+  explanation="Nel primo gli esempi sono proprio come i nomi che vuoi: brevi e con un gioco di parole. Nel secondo l'esempio contraddice la richiesta (è lungo e senza gioco di parole), quindi l'IA non sa a cosa credere."
+  promiMessage="Copio lo stile dei tuoi esempi: se l'esempio va in un'altra direzione, ci vado anch'io."
 />
 </Section>
 
@@ -52,11 +52,11 @@ Se dici "rendilo figo", potrei non sapere cosa significa "figo" per te. Ma se mi
 ## Mostra il tuo stile
 
 <PromptVsMistake
-  question="Quale prompt mostra meglio lo stile di scrittura?"
-  good="Scrivi una barzelletta in questo stile: 'Perché la banana è andata dal dottore? Perché non si sentiva bene!' - qualcosa di sciocco con un gioco di parole!"
-  bad="Scrivi una barzelletta divertente"
-  explanation="Mostrando un esempio di barzelletta con gioco di parole, so che vuoi lo stesso stile sciocco!"
-  promiMessage="Quando mi mostri cosa ti piace, posso eguagliare quello stile!"
+  question="Vuoi domande di ripasso fatte come quelle della prof. Quale prompt lo ottiene meglio?"
+  good="Trasforma questi appunti di storia in domande di ripasso fatte così: «D: In che anno cade l'Impero romano d'Occidente? R: 476 d.C.» Fanne 6, brevi e con la risposta secca."
+  bad="Trasforma questi appunti di storia in domande di ripasso brevi, chiare e precise, con le risposte, proprio come quelle che fa la prof nelle interrogazioni, così mi esercito bene per la verifica."
+  explanation="Il primo MOSTRA un esempio di domanda e risposta, così l'IA copia esattamente quel formato. Il secondo lo DESCRIVE soltanto: «come la prof» per l'IA non vuol dire niente, perché la tua prof non la conosce."
+  promiMessage="Un esempio vale più di tante spiegazioni: mostrami cosa vuoi e lo rifaccio uguale."
 />
 </Section>
 

@@ -213,7 +213,7 @@ export function StepByStep({
       {(magicWordsAdded || completed) && (
         <button
           onClick={handleReset}
-          className="mt-4 px-6 py-2 rounded-lg font-bold bg-gray-500 hover:bg-gray-600 text-white"
+          className="kids-retry mt-4"
         >
           {t("retry")}
         </button>
