@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { worlds } from "@/lib/kids/levels";
-import { KIDS_ONLY, kidsMetadata, worldTitleIt } from "@/lib/kids/seo";
+import { KIDS_ONLY, SITE_URL, SITE_NAME, kidsMetadata, worldTitleIt, levelTitleIt, jsonLdString } from "@/lib/kids/seo";
+import { getAllLevels } from "@/lib/kids/levels";
 import { PrintButton } from "@/components/kids/layout/print-button";
 import { Worksheet } from "@/components/kids/layout/worksheet";
 
@@ -17,8 +18,21 @@ export const metadata: Metadata = KIDS_ONLY
 /** All 24 worksheets on one page, one per printed sheet. */
 export default function AllWorksheetsPage() {
   if (!KIDS_ONLY) notFound();
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Schede didattiche del corso sull'intelligenza artificiale",
+    isPartOf: { "@type": "Course", name: SITE_NAME, url: `${SITE_URL}/kids` },
+    itemListElement: getAllLevels().map((l, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: `Scheda: ${levelTitleIt(l.slug)}`,
+      url: `${SITE_URL}/kids/insegnanti/schede/${l.slug}`,
+    })),
+  };
   return (
     <div className="h-full overflow-y-auto" dir="ltr" lang="it">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }} />
       <div className="max-w-3xl mx-auto px-4 py-6">
         <div className="no-print bg-[#FEF3C7] border-4 border-[#8B4513] p-4 mb-4">
           <h1 className="text-3xl font-bold text-[#2C1810] m-0">Tutte le schede didattiche</h1>
