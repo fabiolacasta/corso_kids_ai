@@ -215,7 +215,7 @@ export function ProgressMap() {
             />
           ))}
 
-          {/* "Sei qui": Promi stands on the current level */}
+          {/* "Sei qui": IAco stands on the current level */}
           {currentIndex >= 0 && (
             <div
               className="absolute z-20 pointer-events-none kids-map-you flex flex-col items-center"
@@ -457,7 +457,7 @@ function MapDecorations({ mapWidth, beachLeft }: { mapWidth: number; beachLeft: 
         <div className="w-1.5 h-8 bg-gray-500" />
       </div>
       <div style={{ animation: "engineVibrate 0.1s steps(2) infinite" }}>
-        <PixelVan text={KIDS_ONLY ? "Promi" : "prompts.chat"} />
+        <PixelVan text={KIDS_ONLY ? "IAco" : "prompts.chat"} />
       </div>
     </div>
   );

@@ -31,7 +31,7 @@ export const TEACHERS_DESCRIPTION =
 
 /** Italian SEO title + description for each level */
 export const LEVEL_SEO: Record<string, { title: string; description: string }> = {
-  "1-1-meet-promi": { title: "Cos'è l'intelligenza artificiale? Lezione 1 per ragazzi", description: "Prima lezione del corso: con il robot Promi i ragazzi scoprono cos'è l'IA e come funziona un chatbot. Attività interattiva da fare in classe." },
+  "1-1-meet-promi": { title: "Cos'è l'intelligenza artificiale? Lezione 1 per ragazzi", description: "Prima lezione del corso: con il robot IAco i ragazzi scoprono cos'è l'IA e come funziona un chatbot. Attività interattiva da fare in classe." },
   "1-2-first-words": { title: "Il primo prompt: come si parla a un'IA | Livello 1-2", description: "Cos'è un prompt e come scriverne uno: esercizio guidato per ragazzi delle medie. Si impara a dare istruzioni all'intelligenza artificiale." },
   "1-3-being-clear": { title: "Istruzioni chiare all'IA: perché contano | Livello 1-3", description: "Perché una richiesta vaga dà risposte vaghe: attività sulla chiarezza delle istruzioni ai chatbot, pensata per la scuola secondaria di primo grado." },
   "2-1-missing-details": { title: "I dettagli nei prompt: attività per ragazzi | Livello 2-1", description: "Cosa succede se al prompt mancano i dettagli? Esercizio interattivo per capire come l'IA interpreta le richieste incomplete." },
@@ -102,7 +102,7 @@ export const FAQ: { q: string; a: string }[] = [
   { q: "I ragazzi usano un chatbot vero?", a: "No. Le risposte dell'IA dentro gli esercizi sono simulate, quindi i ragazzi non inviano nulla a un servizio di intelligenza artificiale." },
   { q: "Il corso è accessibile a studenti con dislessia, ADHD o daltonismo?", a: "Sì. Dal pulsante Accessibilità si attivano la lettura facilitata per la dislessia (carattere ad alta leggibilità e testo più spaziato), la modalità concentrazione per l'ADHD (niente animazioni e musica), i colori sicuri per il daltonismo (blu e arancione al posto di verde e rosso, sempre con simboli ✓ ✗) e il testo più grande." },
   { q: "Posso fare solo la parte sui rischi dell'IA?", a: "Sì. Il mondo 6, \"Spiaggia della Sicurezza\" (5 livelli), si può giocare subito, senza aver completato i mondi precedenti." },
-  { q: "Come si usa in classe?", a: "L'insegnante proietta il livello sulla LIM, legge i dialoghi con Promi e fa scegliere o votare la classe nelle attività. Conviene provare il livello prima della lezione." },
+  { q: "Come si usa in classe?", a: "L'insegnante proietta il livello sulla LIM, legge i dialoghi con IAco e fa scegliere o votare la classe nelle attività. Conviene provare il livello prima della lezione." },
   { q: "A che età è adatto?", a: "È pensato per ragazzi di 11-14 anni, cioè la scuola secondaria di primo grado, con l'insegnante che guida l'attività." },
 ];
 
@@ -111,7 +111,7 @@ export function courseJsonLd() {
     "@context": "https://schema.org",
     "@type": "Course",
     "@id": `${SITE_URL}/kids#corso`,
-    name: SITE_NAME + " – La Scuola di Prompt di Promi",
+    name: SITE_NAME + " – Missione IA con IAco",
     description: HOME_DESCRIPTION,
     url: `${SITE_URL}/kids`,
     inLanguage: "it",

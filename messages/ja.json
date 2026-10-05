@@ -1460,7 +1460,7 @@
   },
   "kids": {
     "header": {
-      "title": "Promiのプロンプトスクール",
+      "title": "IAcoのプロンプトスクール",
       "levels": "レベル",
       "home": "ホーム",
       "map": "マップ",
@@ -1474,9 +1474,9 @@
     "home": {
       "badge": "キッズ向け学習",
       "title": "AIと話すことを学ぼう！",
-      "subtitle": "ロボットのPromiと一緒に、素晴らしいプロンプトを書く楽しい冒険に出かけよう！",
+      "subtitle": "ロボットのIAcoと一緒に、素晴らしいプロンプトを書く楽しい冒険に出かけよう！",
       "promiIntro": {
-        "greeting": "こんにちは、Promiだよ！🤖",
+        "greeting": "こんにちは、IAcoだよ！🤖",
         "message": "キミの助けが必要なフレンドリーなロボットだよ！プロンプトをもっとよく理解できるように手伝ってくれる？"
       },
       "features": {
@@ -1486,7 +1486,7 @@
         },
         "stories": {
           "title": "すごいストーリー",
-          "description": "Promiと一緒にワクワクする冒険を体験"
+          "description": "IAcoと一緒にワクワクする冒険を体験"
         },
         "stars": {
           "title": "スターを集めよう",
@@ -1535,12 +1535,12 @@
     },
     "levels": {
       "1_1_meet_promi": {
-        "title": "Promiに会おう！",
+        "title": "IAcoに会おう！",
         "description": "ロボットの友達に挨拶してAIとは何かを学ぼう"
       },
       "1_2_first_words": {
-        "title": "Promiの最初の言葉",
-        "description": "最初のプロンプトを書いてPromiの理解を助けよう"
+        "title": "IAcoの最初の言葉",
+        "description": "最初のプロンプトを書いてIAcoの理解を助けよう"
       },
       "1_3_being_clear": {
         "title": "はっきり伝えよう",

@@ -1460,7 +1460,7 @@
   },
   "kids": {
     "header": {
-      "title": "Promi's Promptschool",
+      "title": "IAco's Promptschool",
       "levels": "levels",
       "home": "Home",
       "map": "Kaart",
@@ -1474,9 +1474,9 @@
     "home": {
       "badge": "Leren voor kinderen",
       "title": "Leer praten met AI!",
-      "subtitle": "Ga met Promi de robot op een leuk avontuur om te leren hoe je geweldige prompts schrijft!",
+      "subtitle": "Ga met IAco de robot op een leuk avontuur om te leren hoe je geweldige prompts schrijft!",
       "promiIntro": {
-        "greeting": "Hoi, ik ben Promi! 🤖",
+        "greeting": "Hoi, ik ben IAco! 🤖",
         "message": "Ik ben een vriendelijke robot die JOUW hulp nodig heeft! Wil je me leren hoe ik prompts beter kan begrijpen?"
       },
       "features": {
@@ -1486,7 +1486,7 @@
         },
         "stories": {
           "title": "Coole verhalen",
-          "description": "Volg Promi door spannende avonturen"
+          "description": "Volg IAco door spannende avonturen"
         },
         "stars": {
           "title": "Verdien sterren",
@@ -1535,12 +1535,12 @@
     },
     "levels": {
       "1_1_meet_promi": {
-        "title": "Ontmoet Promi!",
+        "title": "Ontmoet IAco!",
         "description": "Zeg hallo tegen je robotvriend en leer wat AI is"
       },
       "1_2_first_words": {
-        "title": "Promi's eerste woorden",
-        "description": "Help Promi begrijpen door je eerste prompt te schrijven"
+        "title": "IAco's eerste woorden",
+        "description": "Help IAco begrijpen door je eerste prompt te schrijven"
       },
       "1_3_being_clear": {
         "title": "Duidelijk zijn",

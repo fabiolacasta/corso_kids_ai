@@ -1460,7 +1460,7 @@
   },
   "kids": {
     "header": {
-      "title": "La Scuola di Prompt di Promi",
+      "title": "Missione IA con IAco",
       "levels": "livelli",
       "home": "Home",
       "map": "Mappa",
@@ -1474,9 +1474,9 @@
     "home": {
       "badge": "Corso per le medie · 11-14 anni",
       "title": "Impara a usare l'IA",
-      "subtitle": "Un'avventura in 6 mondi con il robot Promi: scrivi prompt efficaci e scopri come usare l'IA in modo sicuro.",
+      "subtitle": "Un'avventura in 6 mondi con il robot IAco: scrivi prompt efficaci e scopri come usare l'IA in modo sicuro.",
       "promiIntro": {
-        "greeting": "Ciao, sono Promi! 🤖",
+        "greeting": "Ciao, sono IAco! 🤖",
         "message": "Sono un robot e ho bisogno di una squadra in gamba. Mi aiuti a capire cosa mi chiedi e a non cadere nelle trappole dell'IA?"
       },
       "features": {
@@ -1535,12 +1535,12 @@
     },
     "levels": {
       "1_1_meet_promi": {
-        "title": "Incontra Promi!",
+        "title": "Incontra IAco!",
         "description": "Saluta il tuo amico robot e scopri cos'è l'IA"
       },
       "1_2_first_words": {
-        "title": "Le Prime Parole di Promi",
-        "description": "Aiuta Promi a capire scrivendo il tuo primo prompt"
+        "title": "Le Prime Parole di IAco",
+        "description": "Aiuta IAco a capire scrivendo il tuo primo prompt"
       },
       "1_3_being_clear": {
         "title": "Essere Chiari",

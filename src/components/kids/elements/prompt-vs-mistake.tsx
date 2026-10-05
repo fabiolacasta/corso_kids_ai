@@ -106,7 +106,7 @@ export function PromptVsMistake({
 
   return (
     <div className="my-2">
-      {/* Question card with Promi */}
+      {/* Question card with IAco */}
       <div className="flex items-center gap-2 mb-2">
         <div className="shrink-0">
           <PixelRobot className="w-8 h-10" />

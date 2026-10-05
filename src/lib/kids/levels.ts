@@ -32,7 +32,7 @@ export const worlds: World[] = [
     levels: [
       {
         slug: "1-1-meet-promi",
-        title: "Meet Promi!",
+        title: "Meet IAco!",
         titleKey: "kids.levels.1_1_meet_promi.title",
         description: "Say hello to your robot friend and learn what AI is",
         descriptionKey: "kids.levels.1_1_meet_promi.description",
@@ -42,9 +42,9 @@ export const worlds: World[] = [
       },
       {
         slug: "1-2-first-words",
-        title: "Promi's First Words",
+        title: "IAco's First Words",
         titleKey: "kids.levels.1_2_first_words.title",
-        description: "Help Promi understand by writing your first prompt",
+        description: "Help IAco understand by writing your first prompt",
         descriptionKey: "kids.levels.1_2_first_words.description",
         world: 1,
         levelNumber: 2,

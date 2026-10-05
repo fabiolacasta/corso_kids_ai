@@ -59,7 +59,7 @@ export default function TeachersPage() {
           <p className={p}>
             Un corso <strong>gratuito</strong> e <strong>open source</strong>, in stile videogioco, per insegnare ai ragazzi di 11-14 anni
             come usare l&apos;intelligenza artificiale in modo corretto e come riconoscerne i rischi. Ci sono <strong>6 mondi</strong> e{" "}
-            <strong>24 livelli</strong>, con il robot Promi come guida. L&apos;insegnante lo proietta in classe; i ragazzi non devono registrarsi.
+            <strong>24 livelli</strong>, con il robot IAco come guida. L&apos;insegnante lo proietta in classe; i ragazzi non devono registrarsi.
           </p>
           <div className="flex flex-wrap gap-3 mt-2 items-center">
             <AccessibilityBadge />
@@ -72,7 +72,7 @@ export default function TeachersPage() {
           <h2 id="come-si-usa" className={h2}>Come si usa in classe</h2>
           <ol className="text-lg text-[#3E2723] leading-relaxed pl-6 m-0 list-decimal">
             <li>Aprite il livello sulla LIM o sul proiettore: non serve installare nulla.</li>
-            <li>Leggete ad alta voce i dialoghi di Promi, oppure fateli leggere a turno ai ragazzi.</li>
+            <li>Leggete ad alta voce i dialoghi di IAco, oppure fateli leggere a turno ai ragazzi.</li>
             <li>Nelle attività (quiz, frasi da riordinare, &quot;Tu cosa faresti?&quot;) fate discutere e votare la classe prima di rispondere.</li>
             <li>Quando la risposta è sbagliata il gioco spiega il perché: fermatevi lì e chiedete alla classe cosa ha capito.</li>
             <li>Provate il livello da soli prima della lezione, per scegliere dove fermarvi a discutere.</li>

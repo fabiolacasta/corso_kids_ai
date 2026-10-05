@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useBranding } from "@/components/providers/branding-provider";
 import { notFound } from "next/navigation";
 
-// Promi logo SVG component for light backgrounds
+// IAco logo SVG component for light backgrounds
 function PromiLogo({ className }: { className?: string }) {
   return (
     <svg 
@@ -43,7 +43,7 @@ function PromiLogo({ className }: { className?: string }) {
   );
 }
 
-// Promi logo SVG component for dark backgrounds
+// IAco logo SVG component for dark backgrounds
 function PromiLogoDark({ className }: { className?: string }) {
   return (
     <svg 
@@ -268,14 +268,14 @@ export default function BrandAssetsPage() {
           </div>
         </section>
 
-        {/* Promi Mascot Section */}
+        {/* IAco Mascot Section */}
         <section>
-          <h2 className="text-xl font-semibold mb-4">Promi</h2>
+          <h2 className="text-xl font-semibold mb-4">IAco</h2>
           <p className="text-sm text-muted-foreground mb-4">The pixel art mascot for prompts.chat Kids</p>
           <div className="grid md:grid-cols-2 gap-4">
-            {/* Promi for light backgrounds */}
+            {/* IAco for light backgrounds */}
             <AssetCard
-              title="Promi"
+              title="IAco"
               description={t("forLightBackgrounds")}
               bgClass="bg-gray-100"
               downloadUrl="/promi.svg"
@@ -284,9 +284,9 @@ export default function BrandAssetsPage() {
               <PromiLogo className="h-20 w-auto" />
             </AssetCard>
 
-            {/* Promi for dark backgrounds */}
+            {/* IAco for dark backgrounds */}
             <AssetCard
-              title="Promi"
+              title="IAco"
               description={t("forDarkBackgrounds")}
               bgClass="bg-gray-900"
               downloadUrl="/promi-dark.svg"
@@ -313,16 +313,16 @@ export default function BrandAssetsPage() {
               <img src="/logo-animated.svg" alt="Logo animated" className="h-20 w-auto" />
             </AssetCard>
 
-            {/* Promi animated */}
+            {/* IAco animated */}
             <AssetCard
-              title="Promi"
+              title="IAco"
               description="Animated"
               bgClass="bg-gradient-to-br from-gray-100 to-gray-200"
               downloadUrl="/promi-animated.svg"
               filename="promi-animated.svg"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/promi-animated.svg" alt="Promi animated" className="h-20 w-auto" />
+              <img src="/promi-animated.svg" alt="IAco animated" className="h-20 w-auto" />
             </AssetCard>
           </div>
         </section>

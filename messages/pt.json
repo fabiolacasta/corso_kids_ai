@@ -1460,7 +1460,7 @@
   },
   "kids": {
     "header": {
-      "title": "Escola de Prompts do Promi",
+      "title": "Escola de Prompts do IAco",
       "levels": "níveis",
       "home": "Início",
       "map": "Mapa",
@@ -1474,9 +1474,9 @@
     "home": {
       "badge": "Aprendizado para Crianças",
       "title": "Aprenda a Falar com IA!",
-      "subtitle": "Junte-se ao robô Promi em uma aventura divertida para aprender a escrever prompts incríveis!",
+      "subtitle": "Junte-se ao robô IAco em uma aventura divertida para aprender a escrever prompts incríveis!",
       "promiIntro": {
-        "greeting": "Oi, eu sou o Promi! 🤖",
+        "greeting": "Oi, eu sou o IAco! 🤖",
         "message": "Sou um robô amigável que precisa da SUA ajuda! Você me ajuda a entender melhor os prompts?"
       },
       "features": {
@@ -1486,7 +1486,7 @@
         },
         "stories": {
           "title": "Histórias Legais",
-          "description": "Siga o Promi em aventuras emocionantes"
+          "description": "Siga o IAco em aventuras emocionantes"
         },
         "stars": {
           "title": "Ganhe Estrelas",
@@ -1535,12 +1535,12 @@
     },
     "levels": {
       "1_1_meet_promi": {
-        "title": "Conheça o Promi!",
+        "title": "Conheça o IAco!",
         "description": "Diga olá ao seu amigo robô e aprenda o que é IA"
       },
       "1_2_first_words": {
-        "title": "As Primeiras Palavras do Promi",
-        "description": "Ajude o Promi a entender escrevendo seu primeiro prompt"
+        "title": "As Primeiras Palavras do IAco",
+        "description": "Ajude o IAco a entender escrevendo seu primeiro prompt"
       },
       "1_3_being_clear": {
         "title": "Sendo Claro",

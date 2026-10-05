@@ -1,6 +1,6 @@
-# Corso IA per le medie – La Scuola di Prompt di Promi
+# Missione IA con IAco – Corso IA per le medie
 
-> Corso gratuito e open source, in italiano, per insegnare a ragazzi di 11-14 anni (scuola secondaria di primo grado) a usare l'intelligenza artificiale in modo corretto e consapevole e a riconoscerne i rischi. È strutturato come un videogioco: 6 mondi e 24 livelli, con il robot Promi come guida. È pensato per essere proiettato in classe dall'insegnante.
+> Corso gratuito e open source, in italiano, per insegnare a ragazzi di 11-14 anni (scuola secondaria di primo grado) a usare l'intelligenza artificiale in modo corretto e consapevole e a riconoscerne i rischi. È strutturato come un videogioco: 6 mondi e 24 livelli, con il robot IAco come guida. È pensato per essere proiettato in classe dall'insegnante.
 
 - Gratuito, senza pubblicità, nessun account richiesto ai ragazzi
 - I progressi (stelle, livelli completati) sono salvati solo nel browser (localStorage), non su un server
@@ -33,8 +33,8 @@ L'insegnante apre il livello sulla LIM o sul proiettore, legge i dialoghi con la
 
 
 ### Mondo 1 – Villaggio Iniziale (cos'è l'IA, il primo prompt, istruzioni chiare)
-- [1.1 Incontra Promi!](https://corso-ai-medie.netlify.app/kids/level/1-1-meet-promi): Saluta il tuo amico robot e scopri cos'è l'IA
-- [1.2 Le Prime Parole di Promi](https://corso-ai-medie.netlify.app/kids/level/1-2-first-words): Aiuta Promi a capire scrivendo il tuo primo prompt
+- [1.1 Incontra IAco!](https://corso-ai-medie.netlify.app/kids/level/1-1-meet-promi): Saluta il tuo amico robot e scopri cos'è l'IA
+- [1.2 Le Prime Parole di IAco](https://corso-ai-medie.netlify.app/kids/level/1-2-first-words): Aiuta IAco a capire scrivendo il tuo primo prompt
 - [1.3 Essere Chiari](https://corso-ai-medie.netlify.app/kids/level/1-3-being-clear): Scopri perché le istruzioni chiare funzionano meglio
 
 ### Mondo 2 – Castello della Chiarezza (i dettagli: chi, cosa, quando, dove)

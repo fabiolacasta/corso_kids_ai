@@ -10,7 +10,7 @@ const kidsFont = Schoolbell({
   variable: "--font-kids",
 });
 
-// Mini Promi icon for header
+// Mini IAco icon for header
 function MiniPromi({ className }: { className?: string }) {
   return (
     <svg 

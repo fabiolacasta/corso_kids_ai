@@ -16,7 +16,7 @@ export interface QuizQuestion {
 export const QUIZ_BANK: QuizQuestion[] = [
   {
     id: "q1", world: 1, level: "1-1-meet-promi",
-    question: "Come scrive le sue risposte un chatbot come Promi?",
+    question: "Come scrive le sue risposte un chatbot come IAco?",
     options: ["Le copia da un libro segreto", "Sceglie una parola dopo l'altra, quelle che sembrano più adatte", "Le chiede a una persona collegata", "Le inventa a caso"],
     correct: 1,
     explanation: "Un modello linguistico ha letto moltissimi testi e sceglie, una dopo l'altra, le parole più probabili. Per questo può anche sbagliare.",

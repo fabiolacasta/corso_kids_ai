@@ -155,7 +155,7 @@ export function PixelStar({ className, filled = false }: { className?: string; f
   );
 }
 
-// Pixel Art Robot (Promi) with mood support
+// Pixel Art Robot (IAco) with mood support
 type PromiMood = "happy" | "thinking" | "excited" | "confused" | "celebrating";
 
 interface PixelRobotProps {

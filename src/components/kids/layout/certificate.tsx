@@ -60,7 +60,7 @@ export function Certificate() {
           aria-label="Anteprima dell'attestato"
         >
           <div className="flex justify-center mb-2"><PixelRobot className="w-14 h-16" /></div>
-          <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#B45309] m-0">La Scuola di Prompt di Promi</p>
+          <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#B45309] m-0">Missione IA con IAco</p>
           <h2 className="text-4xl md:text-5xl font-bold text-[#2C1810] m-0 mt-2">
             {complete ? "Attestato di Maestro dei Prompt" : "Attestato di partecipazione"}
           </h2>
