@@ -16,7 +16,7 @@ async function get(path) {
 }
 
 console.log(`Sito: ${BASE}\n\n1) File per Google e per le AI`);
-for (const [path, must] of [["/robots.txt", "Sitemap:"], ["/sitemap.xml", "<urlset"], ["/kids/sitemap.xml", "<urlset"], ["/llms.txt", "# Corso IA"], ["/og-corso.png", ""]]) {
+for (const [path, must] of [["/robots.txt", "Sitemap:"], ["/sitemap.xml", "<urlset"], ["/kids/sitemap.xml", "<urlset"], ["/llms.txt", "Corso IA per le medie"], ["/og-corso.png", ""]]) {
   const r = await get(path);
   if (r.status !== 200 || (must && !r.text.includes(must))) fail(`${path} → ${r.status}`); else ok(path);
 }
