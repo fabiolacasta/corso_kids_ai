@@ -1464,7 +1464,12 @@
       "levels": "关卡",
       "home": "首页",
       "map": "地图",
-      "mainSite": "主站"
+      "mainSite": "主站",
+      "musicOn": "Mute music",
+      "musicOff": "Play music",
+      "settings": "Settings and language",
+      "homeLabel": "Home page",
+      "mapLabel": "Level map"
     },
     "home": {
       "badge": "儿童学习",
@@ -1497,7 +1502,9 @@
     "navigation": {
       "back": "返回",
       "next": "下一步",
-      "completeFirst": "请先完成活动再继续"
+      "completeFirst": "请先完成活动再继续",
+      "section": "Go to screen",
+      "locked": "locked"
     },
     "map": {
       "title": "世界地图",

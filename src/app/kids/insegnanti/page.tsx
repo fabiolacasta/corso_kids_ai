@@ -48,7 +48,7 @@ export default function TeachersPage() {
   if (!KIDS_ONLY) notFound();
 
   return (
-    <div className="h-full overflow-y-auto" dir="ltr" lang="it">
+    <div className="adult-page h-full overflow-y-auto" dir="ltr" lang="it">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString([courseJsonLd(), faqJsonLd()]) }} />
       <article className="max-w-3xl mx-auto px-4 py-6 flex flex-col gap-5 font-sans">
         <header className={panel}>

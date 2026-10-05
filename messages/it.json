@@ -1464,7 +1464,12 @@
       "levels": "livelli",
       "home": "Home",
       "map": "Mappa",
-      "mainSite": "Sito Principale"
+      "mainSite": "Sito Principale",
+      "musicOn": "Spegni la musica",
+      "musicOff": "Accendi la musica",
+      "settings": "Impostazioni e lingua",
+      "homeLabel": "Pagina iniziale",
+      "mapLabel": "Mappa dei livelli"
     },
     "home": {
       "badge": "Corso per le medie · 11-14 anni",
@@ -1497,7 +1502,9 @@
     "navigation": {
       "back": "Indietro",
       "next": "Avanti",
-      "completeFirst": "Completa prima l'attività per continuare"
+      "completeFirst": "Completa prima l'attività per continuare",
+      "section": "Vai alla schermata",
+      "locked": "bloccata"
     },
     "map": {
       "title": "Mappa del Mondo",

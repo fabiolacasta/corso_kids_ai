@@ -1464,7 +1464,12 @@
       "levels": "niveaux",
       "home": "Accueil",
       "map": "Carte",
-      "mainSite": "Site Principal"
+      "mainSite": "Site Principal",
+      "musicOn": "Mute music",
+      "musicOff": "Play music",
+      "settings": "Settings and language",
+      "homeLabel": "Home page",
+      "mapLabel": "Level map"
     },
     "home": {
       "badge": "Apprentissage pour Enfants",
@@ -1497,7 +1502,9 @@
     "navigation": {
       "back": "Retour",
       "next": "Suivant",
-      "completeFirst": "Termine l'activité d'abord pour continuer"
+      "completeFirst": "Termine l'activité d'abord pour continuer",
+      "section": "Go to screen",
+      "locked": "locked"
     },
     "map": {
       "title": "Carte du Monde",

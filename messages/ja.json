@@ -1464,7 +1464,12 @@
       "levels": "レベル",
       "home": "ホーム",
       "map": "マップ",
-      "mainSite": "メインサイト"
+      "mainSite": "メインサイト",
+      "musicOn": "Mute music",
+      "musicOff": "Play music",
+      "settings": "Settings and language",
+      "homeLabel": "Home page",
+      "mapLabel": "Level map"
     },
     "home": {
       "badge": "キッズ向け学習",
@@ -1497,7 +1502,9 @@
     "navigation": {
       "back": "戻る",
       "next": "次へ",
-      "completeFirst": "続けるには、まずアクティビティを完了してください"
+      "completeFirst": "続けるには、まずアクティビティを完了してください",
+      "section": "Go to screen",
+      "locked": "locked"
     },
     "map": {
       "title": "ワールドマップ",

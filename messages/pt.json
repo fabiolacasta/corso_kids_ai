@@ -1464,7 +1464,12 @@
       "levels": "níveis",
       "home": "Início",
       "map": "Mapa",
-      "mainSite": "Site Principal"
+      "mainSite": "Site Principal",
+      "musicOn": "Mute music",
+      "musicOff": "Play music",
+      "settings": "Settings and language",
+      "homeLabel": "Home page",
+      "mapLabel": "Level map"
     },
     "home": {
       "badge": "Aprendizado para Crianças",
@@ -1497,7 +1502,9 @@
     "navigation": {
       "back": "Voltar",
       "next": "Próximo",
-      "completeFirst": "Complete a atividade primeiro para continuar"
+      "completeFirst": "Complete a atividade primeiro para continuar",
+      "section": "Go to screen",
+      "locked": "locked"
     },
     "map": {
       "title": "Mapa do Mundo",

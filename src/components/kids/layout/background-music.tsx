@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback, createContext, useContext } from "react";
+import { useTranslations } from "next-intl";
 
 const MUSIC_ENABLED_KEY = "kids-music-enabled";
 const MUSIC_VOLUME_KEY = "kids-music-volume";
@@ -144,6 +145,7 @@ export function MusicProvider({ children }: { children: React.ReactNode }) {
 }
 
 export function MusicButton() {
+  const t = useTranslations("kids.header");
   const context = useMusicContext();
   
   // Fallback for when not wrapped in provider
@@ -178,8 +180,8 @@ export function MusicButton() {
     <button
       onClick={toggleMusic}
       className="pixel-btn pixel-btn-amber px-2 py-1.5 h-8 flex items-center"
-      aria-label={isPlaying ? "Mute music" : "Play music"}
-      title={isPlaying ? "Mute music" : "Play music"}
+      aria-label={isPlaying ? t("musicOn") : t("musicOff")}
+      title={isPlaying ? t("musicOn") : t("musicOff")}
     >
       {isPlaying ? <PixelSpeakerOn /> : <PixelSpeakerOff />}
     </button>

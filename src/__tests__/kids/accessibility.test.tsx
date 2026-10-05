@@ -61,11 +61,11 @@ describe("accessibility panel", () => {
 
   it("focus mode (ADHD) turns the music off", () => {
     setup();
-    expect(screen.getByRole("button", { name: "Mute music" })).toBeInTheDocument(); // music on by default
+    expect(screen.getByRole("button", { name: "Spegni la musica" })).toBeInTheDocument(); // music on by default
     fireEvent.click(screen.getByRole("button", { name: /Corso accessibile/ }));
     fireEvent.click(screen.getByRole("switch", { name: /concentrazione/ }));
     expect(document.documentElement.getAttribute("data-kids-focus")).toBe("1");
-    expect(screen.getByRole("button", { name: "Play music" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Accendi la musica" })).toBeInTheDocument();
   });
 
   it("saved choices are restored", () => {

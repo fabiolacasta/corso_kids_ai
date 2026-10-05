@@ -50,7 +50,7 @@ export default async function WorksheetPage({ params }: { params: Promise<{ slug
   };
 
   return (
-    <div className="h-full overflow-y-auto" dir="ltr" lang="it">
+    <div className="adult-page h-full overflow-y-auto" dir="ltr" lang="it">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }} />
       <div className="max-w-3xl mx-auto px-4 py-6">
         <div className="no-print flex flex-wrap gap-2 justify-between items-center mb-3">

@@ -85,12 +85,16 @@ export function KidsHeader() {
             <a 
               href="/kids" 
               className="pixel-btn px-3 py-1.5 text-sm h-8 flex items-center"
+              aria-label={t("header.homeLabel")}
+              title={t("header.homeLabel")}
             >
               <PixelHomeIcon />
             </a>
             <Link 
               href="/kids/map" 
               className="pixel-btn pixel-btn-green px-3 py-1.5 text-sm h-8 flex items-center"
+              aria-label={t("header.mapLabel")}
+              title={t("header.mapLabel")}
             >
               <PixelMapIcon />
             </Link>
@@ -107,8 +111,9 @@ export function KidsHeader() {
           <div className="sm:hidden relative" ref={menuRef}>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="pixel-btn px-3 py-1.5 h-8 flex items-center"
+              className="pixel-btn px-3 py-2 h-11 min-w-11 flex items-center justify-center"
               aria-label="Menu"
+              aria-expanded={menuOpen}
             >
               <PixelMenuIcon />
             </button>

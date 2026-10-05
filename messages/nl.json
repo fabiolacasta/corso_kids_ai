@@ -1464,7 +1464,12 @@
       "levels": "levels",
       "home": "Home",
       "map": "Kaart",
-      "mainSite": "Hoofdsite"
+      "mainSite": "Hoofdsite",
+      "musicOn": "Mute music",
+      "musicOff": "Play music",
+      "settings": "Settings and language",
+      "homeLabel": "Home page",
+      "mapLabel": "Level map"
     },
     "home": {
       "badge": "Leren voor kinderen",
@@ -1497,7 +1502,9 @@
     "navigation": {
       "back": "Terug",
       "next": "Volgende",
-      "completeFirst": "Maak eerst de activiteit af om door te gaan"
+      "completeFirst": "Maak eerst de activiteit af om door te gaan",
+      "section": "Go to screen",
+      "locked": "locked"
     },
     "map": {
       "title": "Wereldkaart",

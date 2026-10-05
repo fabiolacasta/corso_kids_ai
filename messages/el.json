@@ -1464,7 +1464,12 @@
       "levels": "επίπεδα",
       "home": "Αρχική",
       "map": "Χάρτης",
-      "mainSite": "Κύρια Σελίδα"
+      "mainSite": "Κύρια Σελίδα",
+      "musicOn": "Mute music",
+      "musicOff": "Play music",
+      "settings": "Settings and language",
+      "homeLabel": "Home page",
+      "mapLabel": "Level map"
     },
     "home": {
       "badge": "Μάθηση για Παιδιά",
@@ -1497,7 +1502,9 @@
     "navigation": {
       "back": "Πίσω",
       "next": "Επόμενο",
-      "completeFirst": "Ολοκλήρωσε πρώτα τη δραστηριότητα για να συνεχίσεις"
+      "completeFirst": "Ολοκλήρωσε πρώτα τη δραστηριότητα για να συνεχίσεις",
+      "section": "Go to screen",
+      "locked": "locked"
     },
     "map": {
       "title": "Χάρτης Κόσμου",

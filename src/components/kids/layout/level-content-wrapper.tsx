@@ -211,17 +211,23 @@ export function LevelContentWrapper({ children, levelSlug, levelNumber: _levelNu
                     key={i}
                     onClick={() => handleDotClick(i)}
                     disabled={!canNavigate}
-                    className={cn(
-                      "w-4 h-4 border-2 transition-all",
+                    // big invisible hit area (touch), small pixel dot inside
+                    className="p-1.5 -m-1.5 sm:p-1 sm:-m-1 disabled:cursor-not-allowed"
+                    aria-label={`${t("navigation.section")} ${i + 1}${!canNavigate ? ` (${t("navigation.locked")})` : ""}`}
+                    aria-current={isCurrent ? "step" : undefined}
+                    >
+                      <span
+                        className={cn(
+                          "block w-4 h-4 border-2 transition-all",
                       isCurrent
                         ? "bg-[#22C55E] border-[#16A34A]"
                         : isVisited && i < currentSection
                         ? "bg-[#3B82F6] border-[#2563EB]"
                         : "bg-[#2C1810] border-[#4A3728] opacity-50 cursor-not-allowed"
-                    )}
-                    style={{ clipPath: "polygon(2px 0, calc(100% - 2px) 0, 100% 2px, 100% calc(100% - 2px), calc(100% - 2px) 100%, 2px 100%, 0 calc(100% - 2px), 0 2px)" }}
-                    aria-label={`Go to section ${i + 1}${!canNavigate ? ' (locked)' : ''}`}
-                  />
+                        )}
+                        style={{ clipPath: "polygon(2px 0, calc(100% - 2px) 0, 100% 2px, 100% calc(100% - 2px), calc(100% - 2px) 100%, 2px 100%, 0 calc(100% - 2px), 0 2px)" }}
+                      />
+                  </button>
                 );
               })}
             </div>
@@ -269,17 +275,23 @@ export function LevelContentWrapper({ children, levelSlug, levelNumber: _levelNu
                   key={i}
                   onClick={() => handleDotClick(i)}
                   disabled={!canNavigate}
-                  className={cn(
-                    "w-4 h-4 border-2 transition-all",
+                  // big invisible hit area (touch), small pixel dot inside
+                  className="p-1.5 -m-1.5 sm:p-1 sm:-m-1 disabled:cursor-not-allowed"
+                  aria-label={`${t("navigation.section")} ${i + 1}${!canNavigate ? ` (${t("navigation.locked")})` : ""}`}
+                  aria-current={isCurrent ? "step" : undefined}
+                  >
+                    <span
+                      className={cn(
+                        "block w-4 h-4 border-2 transition-all",
                     isCurrent
                       ? "bg-[#22C55E] border-[#16A34A]"
                       : isVisited && i < currentSection
                       ? "bg-[#3B82F6] border-[#2563EB]"
                       : "bg-[#2C1810] border-[#4A3728] opacity-50 cursor-not-allowed"
-                  )}
-                  style={{ clipPath: "polygon(2px 0, calc(100% - 2px) 0, 100% 2px, 100% calc(100% - 2px), calc(100% - 2px) 100%, 2px 100%, 0 calc(100% - 2px), 0 2px)" }}
-                  aria-label={`Go to section ${i + 1}${!canNavigate ? ' (locked)' : ''}`}
-                />
+                      )}
+                      style={{ clipPath: "polygon(2px 0, calc(100% - 2px) 0, 100% 2px, 100% calc(100% - 2px), calc(100% - 2px) 100%, 2px 100%, 0 calc(100% - 2px), 0 2px)" }}
+                    />
+                </button>
               );
             })}
           </div>

@@ -107,7 +107,12 @@ export function getCompletedLevelsCount(): number {
 }
 
 export function getTotalStars(): number {
-  return getProgress().totalStars;
+  const p = getProgress();
+  // Recompute from the levels if the saved total is missing (older or edited data)
+  if (typeof p.totalStars !== "number") {
+    return Object.values(p.levels || {}).reduce((n, l) => n + (l?.stars || 0), 0);
+  }
+  return p.totalStars;
 }
 
 // Component state persistence for within-level progress

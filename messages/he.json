@@ -1464,7 +1464,12 @@
       "levels": "שלבים",
       "home": "בית",
       "map": "מפה",
-      "mainSite": "האתר הראשי"
+      "mainSite": "האתר הראשי",
+      "musicOn": "Mute music",
+      "musicOff": "Play music",
+      "settings": "Settings and language",
+      "homeLabel": "Home page",
+      "mapLabel": "Level map"
     },
     "home": {
       "badge": "למידה לילדים",
@@ -1497,7 +1502,9 @@
     "navigation": {
       "back": "אחורה",
       "next": "הבא",
-      "completeFirst": "השלם קודם את הפעילות כדי להמשיך"
+      "completeFirst": "השלם קודם את הפעילות כדי להמשיך",
+      "section": "Go to screen",
+      "locked": "locked"
     },
     "map": {
       "title": "מפת העולם",

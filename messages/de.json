@@ -1464,7 +1464,12 @@
       "levels": "Level",
       "home": "Start",
       "map": "Karte",
-      "mainSite": "Hauptseite"
+      "mainSite": "Hauptseite",
+      "musicOn": "Mute music",
+      "musicOff": "Play music",
+      "settings": "Settings and language",
+      "homeLabel": "Home page",
+      "mapLabel": "Level map"
     },
     "home": {
       "badge": "Lernen für Kinder",
@@ -1497,7 +1502,9 @@
     "navigation": {
       "back": "Zurück",
       "next": "Weiter",
-      "completeFirst": "Schließe zuerst die Aktivität ab, um fortzufahren"
+      "completeFirst": "Schließe zuerst die Aktivität ab, um fortzufahren",
+      "section": "Go to screen",
+      "locked": "locked"
     },
     "map": {
       "title": "Weltkarte",

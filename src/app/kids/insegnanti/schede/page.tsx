@@ -31,7 +31,7 @@ export default function AllWorksheetsPage() {
     })),
   };
   return (
-    <div className="h-full overflow-y-auto" dir="ltr" lang="it">
+    <div className="adult-page h-full overflow-y-auto" dir="ltr" lang="it">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }} />
       <div className="max-w-3xl mx-auto px-4 py-6">
         <div className="no-print bg-[#FEF3C7] border-4 border-[#8B4513] p-4 mb-4">

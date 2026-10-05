@@ -1464,7 +1464,12 @@
       "levels": "levels",
       "home": "Home",
       "map": "Map",
-      "mainSite": "Main Site"
+      "mainSite": "Main Site",
+      "musicOn": "Mute music",
+      "musicOff": "Play music",
+      "settings": "Settings and language",
+      "homeLabel": "Home page",
+      "mapLabel": "Level map"
     },
     "home": {
       "badge": "Learning for Kids",
@@ -1497,7 +1502,9 @@
     "navigation": {
       "back": "Back",
       "next": "Next",
-      "completeFirst": "Complete the activity first to continue"
+      "completeFirst": "Complete the activity first to continue",
+      "section": "Go to screen",
+      "locked": "locked"
     },
     "map": {
       "title": "World Map",

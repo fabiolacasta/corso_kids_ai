@@ -1464,7 +1464,12 @@
       "levels": "레벨",
       "home": "홈",
       "map": "지도",
-      "mainSite": "메인 사이트"
+      "mainSite": "메인 사이트",
+      "musicOn": "Mute music",
+      "musicOff": "Play music",
+      "settings": "Settings and language",
+      "homeLabel": "Home page",
+      "mapLabel": "Level map"
     },
     "home": {
       "badge": "어린이 학습",
@@ -1497,7 +1502,9 @@
     "navigation": {
       "back": "뒤로",
       "next": "다음",
-      "completeFirst": "계속하려면 먼저 활동을 완료하세요"
+      "completeFirst": "계속하려면 먼저 활동을 완료하세요",
+      "section": "Go to screen",
+      "locked": "locked"
     },
     "map": {
       "title": "세계 지도",

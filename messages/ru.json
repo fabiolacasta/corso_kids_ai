@@ -1464,7 +1464,12 @@
       "levels": "уровней",
       "home": "Главная",
       "map": "Карта",
-      "mainSite": "Основной сайт"
+      "mainSite": "Основной сайт",
+      "musicOn": "Mute music",
+      "musicOff": "Play music",
+      "settings": "Settings and language",
+      "homeLabel": "Home page",
+      "mapLabel": "Level map"
     },
     "home": {
       "badge": "Обучение для детей",
@@ -1497,7 +1502,9 @@
     "navigation": {
       "back": "Назад",
       "next": "Далее",
-      "completeFirst": "Сначала завершите задание, чтобы продолжить"
+      "completeFirst": "Сначала завершите задание, чтобы продолжить",
+      "section": "Go to screen",
+      "locked": "locked"
     },
     "map": {
       "title": "Карта мира",

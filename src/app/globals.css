@@ -1081,3 +1081,22 @@ html[data-kids-colors] .pixel-btn-green {
 }
 .pixel-btn-purple:hover { box-shadow: 0 6px 0 #581C87; }
 .pixel-btn-purple:active { box-shadow: 0 2px 0 #581C87; }
+
+/* Big screens (classroom whiteboard / projector): everything grows so it can be
+   read from the back of the room. The bigger-text option grows on top of it. */
+@media (min-width: 1600px) {
+  html:has(.kids-root) { font-size: 118.75%; }
+  html[data-kids-bigtext]:has(.kids-root) { font-size: 137.5%; }
+}
+@media (min-width: 2400px) {
+  html:has(.kids-root) { font-size: 150%; }
+  html[data-kids-bigtext]:has(.kids-root) { font-size: 175%; }
+}
+
+/* Pages for adults (guide, glossary, worksheets, certificate): long titles in
+   the readable font, not the pixel one */
+.kids-root .adult-page h1,
+.kids-root .adult-page h2 {
+  font-family: var(--font-kids), system-ui, sans-serif;
+  letter-spacing: 0;
+}
