@@ -59,6 +59,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Kids-only: let Netlify's CDN keep a copy of each page (one per chosen language),
+  // so visitors don't wait for the server to start ("cold start"). The cache is
+  // emptied automatically at every new deploy.
+  async headers() {
+    if (process.env.KIDS_ONLY !== "1") return [];
+    const cdn = [
+      { key: "Netlify-CDN-Cache-Control", value: "public, durable, s-maxage=86400, stale-while-revalidate=604800" },
+      { key: "Netlify-Vary", value: "cookie=NEXT_LOCALE" },
+    ];
+    return [
+      { source: "/kids", headers: cdn },
+      { source: "/kids/:path*", headers: cdn },
+    ];
+  },
   // Redirects
   async redirects() {
     // KIDS_ONLY=1 publishes only the kids section (no database needed):

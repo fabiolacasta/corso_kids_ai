@@ -1,0 +1,6 @@
+# Home page: go straight to the course, answered by the CDN without starting the server
+[[redirects]]
+  from = "/"
+  to = "/kids"
+  status = 302
+  force = true
