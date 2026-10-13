@@ -44,7 +44,12 @@ export default getRequestConfig(async () => {
   let locale = cookieStore.get(LOCALE_COOKIE)?.value;
   let detectedFromBrowser = false;
   
-  // 2. If no cookie, detect from browser's Accept-Language header
+  // 2. If no cookie, detect from browser's Accept-Language header.
+  //    Kids-only Italian deployment: always Italian unless a language was chosen
+  //    in the settings (cookie), so the CDN can cache one copy per language.
+  if ((!locale || !supportedLocales.includes(locale)) && process.env.KIDS_ONLY === "1") {
+    locale = "it";
+  }
   if (!locale || !supportedLocales.includes(locale)) {
     const acceptLanguage = headerStore.get("accept-language");
     const detected = detectLocaleFromHeader(acceptLanguage);
