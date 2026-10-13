@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { PixelRobot, PixelStar } from "./pixel-art";
 import { useLevelSlug, useSectionNavigation } from "@/components/kids/providers/level-context";
-import { getComponentState, saveComponentState, markSectionCompleted } from "@/lib/kids/progress";
+import { getComponentState, saveComponentState, markSectionCompleted, recordMistake } from "@/lib/kids/progress";
 import { useKidsA11y } from "@/components/kids/layout/accessibility";
 
 /*
@@ -131,7 +131,7 @@ interface SafetySorterProps {
 export function SafetySorter({ title, instruction, buckets, items, successMessage }: SafetySorterProps) {
   const t = useTranslations("kids.safety");
   const complete = useRequirement();
-  const { state, setState, loaded } = usePersistentState<{ picks: Record<number, string>; checked: boolean; checkedPicks?: Record<number, string> }>({
+  const { state, setState, loaded, levelSlug } = usePersistentState<{ picks: Record<number, string>; checked: boolean; checkedPicks?: Record<number, string> }>({
     picks: {},
     checked: false,
   });
@@ -152,6 +152,7 @@ export function SafetySorter({ title, instruction, buckets, items, successMessag
   const check = () => {
     setState({ ...state, checked: true, checkedPicks: { ...picks } });
     if (allPicked && items.every((it, i) => picks[i] === it.bucket)) complete();
+    else recordMistake(levelSlug);
   };
 
   return (
@@ -244,7 +245,7 @@ interface WhatWouldYouDoProps {
 export function WhatWouldYouDo({ scenario, question, choices, promiMessage }: WhatWouldYouDoProps) {
   const t = useTranslations("kids.safety");
   const complete = useRequirement();
-  const { state, setState, loaded } = usePersistentState<{ tried: number[]; done: boolean }>({ tried: [], done: false });
+  const { state, setState, loaded, levelSlug } = usePersistentState<{ tried: number[]; done: boolean }>({ tried: [], done: false });
   if (!loaded) return null;
   const last = state.tried[state.tried.length - 1];
 
@@ -253,6 +254,7 @@ export function WhatWouldYouDo({ scenario, question, choices, promiMessage }: Wh
     const ok = !!choices[i].correct;
     setState({ tried: [...state.tried, i], done: ok });
     if (ok) complete();
+    else recordMistake(levelSlug);
   };
 
   return (
@@ -328,7 +330,7 @@ interface SpotTheFakeProps {
 export function SpotTheFake({ question, sentences, explanation }: SpotTheFakeProps) {
   const t = useTranslations("kids.safety");
   const complete = useRequirement();
-  const { state, setState, loaded } = usePersistentState<{ tried: number[]; found: boolean }>({ tried: [], found: false });
+  const { state, setState, loaded, levelSlug } = usePersistentState<{ tried: number[]; found: boolean }>({ tried: [], found: false });
   if (!loaded) return null;
 
   const tap = (i: number) => {
@@ -336,6 +338,7 @@ export function SpotTheFake({ question, sentences, explanation }: SpotTheFakePro
     const f = !!sentences[i].fake;
     setState({ tried: [...state.tried, i], found: f });
     if (f) complete();
+    else recordMistake(levelSlug);
   };
   const lastWrong = !state.found && state.tried.length > 0;
 
@@ -378,6 +381,146 @@ export function SpotTheFake({ question, sentences, explanation }: SpotTheFakePro
           <p className="m-0">{explanation}</p>
         </Feedback>
       )}
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* RedFlagChat                                                         */
+/* A realistic chat (DM, group chat, game chat). The player taps every */
+/* message that is a warning sign, then checks. All warning signs must */
+/* be found without flagging innocent messages.                        */
+/* ------------------------------------------------------------------ */
+
+interface ChatMessage {
+  /** "them" = the other person, "me" = the player, "system" = app notice */
+  from: "them" | "me" | "system";
+  text: string;
+  /** true if this message is a warning sign */
+  flag?: boolean;
+  /** Why it is (or is not) a warning sign, shown after checking */
+  why?: string;
+}
+interface RedFlagChatProps {
+  /** Name shown at the top of the chat, e.g. "ProGamer_99" */
+  contact: string;
+  /** Where the chat happens, e.g. "Messaggi privati del gioco" */
+  app?: string;
+  avatar?: string;
+  instruction?: string;
+  messages: ChatMessage[];
+  successMessage?: string;
+}
+
+export function RedFlagChat({ contact, app, avatar = "👤", instruction, messages, successMessage }: RedFlagChatProps) {
+  const t = useTranslations("kids.safety");
+  const complete = useRequirement();
+  const { state, setState, loaded, levelSlug } = usePersistentState<{ marked: number[]; checked: number[] | null; done: boolean }>({
+    marked: [],
+    checked: null,
+    done: false,
+  });
+  if (!loaded) return null;
+
+  const flags = messages.map((m, i) => (m.flag ? i : -1)).filter((i) => i >= 0);
+  const checked = state.checked;
+  const found = checked ? flags.filter((i) => checked.includes(i)).length : 0;
+  const wrongMarks = checked ? checked.filter((i) => !messages[i].flag) : [];
+
+  const toggle = (i: number) => {
+    if (state.done || messages[i].from !== "them") return;
+    const marked = state.marked.includes(i) ? state.marked.filter((x) => x !== i) : [...state.marked, i];
+    setState({ ...state, marked, checked: null });
+  };
+  const check = () => {
+    const ok = flags.every((i) => state.marked.includes(i)) && state.marked.every((i) => messages[i].flag);
+    setState({ ...state, checked: [...state.marked], done: ok });
+    if (ok) complete();
+    else recordMistake(levelSlug);
+  };
+
+  return (
+    <div className="my-2">
+      {instruction && <Bubble>{instruction}</Bubble>}
+      <div className="max-w-xl mx-auto bg-[#0F172A] border-4 border-[#334155] rounded-sm overflow-hidden" dir="ltr">
+        <div className="flex items-center gap-2 px-3 py-2 bg-[#1E293B] border-b-2 border-[#334155]">
+          <span className="text-2xl leading-none" aria-hidden="true">{avatar}</span>
+          <div className="leading-tight">
+            <p className="m-0 text-base font-bold text-white">{contact}</p>
+            {app && <p className="m-0 text-xs text-[#94A3B8]">{app}</p>}
+          </div>
+        </div>
+        <ul className="list-none m-0 p-3 flex flex-col gap-2" aria-label={t("chatLabel")}>
+          {messages.map((m, i) => {
+            if (m.from === "system") {
+              return (
+                <li key={i} className="self-center text-xs text-[#CBD5E1] bg-[#1E293B] px-2 py-1 text-center">
+                  {m.text}
+                </li>
+              );
+            }
+            const mine = m.from === "me";
+            const marked = state.marked.includes(i);
+            const wasChecked = checked !== null;
+            const showFlagOk = wasChecked && m.flag && checked.includes(i);
+            const showMissed = wasChecked && state.done === false && m.flag && !checked.includes(i);
+            const showWrong = wasChecked && !m.flag && checked.includes(i);
+            const reveal = state.done && (m.flag || m.why);
+            const bubble = (
+              <span
+                className={cn(
+                  "block text-left text-base px-3 py-2 leading-snug border-2",
+                  mine ? "bg-[#2563EB] text-white border-[#2563EB]" : "bg-[#F1F5F9] text-[#0F172A] border-[#F1F5F9]",
+                  !mine && marked && "border-[#F97316] bg-[#FFEDD5]",
+                  showWrong && "border-[#64748B] bg-[#E2E8F0]"
+                )}
+              >
+                {marked && !mine && <span aria-hidden="true" className="mr-1">🚩</span>}
+                {m.text}
+              </span>
+            );
+            return (
+              <li key={i} className={cn("flex flex-col max-w-[85%]", mine ? "self-end items-end" : "self-start items-start")}>
+                {mine ? (
+                  bubble
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => toggle(i)}
+                    disabled={state.done}
+                    aria-pressed={marked}
+                    aria-label={`${m.text}${marked ? ` – ${t("flagged")}` : ""}`}
+                    className="text-left focus-visible:outline-4 focus-visible:outline-[#FFD700]"
+                  >
+                    {bubble}
+                  </button>
+                )}
+                {(showFlagOk || showWrong || reveal) && m.why && (
+                  <span className={cn("block text-sm mt-1 px-2 py-1", m.flag ? "bg-[#FFEDD5] text-[#7C2D12]" : "bg-[#E2E8F0] text-[#1E293B]")}>
+                    <b>{m.flag ? "🚩 " : "✓ "}</b>
+                    {m.why}
+                  </span>
+                )}
+                {showMissed && <span className="sr-only">{t("missedFlag")}</span>}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      {!state.done && (
+        <div className="mt-3 text-center">
+          <p className="text-sm text-[#5D4037] m-0 mb-2">{t("flagHint", { count: state.marked.length })}</p>
+          <button onClick={check} disabled={state.marked.length === 0} className={cn("pixel-btn px-6 py-2 text-base", state.marked.length === 0 && "opacity-40")}>
+            {t("check")}
+          </button>
+        </div>
+      )}
+      {checked && !state.done && (
+        <Feedback ok={false} title={t("flagsResult", { found, total: flags.length })}>
+          {wrongMarks.length > 0 && <p className="m-0">{t("flagsWrong", { count: wrongMarks.length })}</p>}
+        </Feedback>
+      )}
+      {state.done && <Feedback ok title={successMessage || t("flagsAll")} />}
     </div>
   );
 }

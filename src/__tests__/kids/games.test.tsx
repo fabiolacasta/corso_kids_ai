@@ -6,7 +6,8 @@ import { describe, it, expect, beforeEach, vi } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { NextIntlClientProvider } from "next-intl";
 import messages from "../../../messages/it.json";
-import { SafetySorter, WhatWouldYouDo, SpotTheFake } from "@/components/kids/elements/safety-games";
+import { SafetySorter, WhatWouldYouDo, SpotTheFake, RedFlagChat } from "@/components/kids/elements/safety-games";
+import { recordMistake, getMistakes, starsForMistakes, resetLevelAttempt } from "@/lib/kids/progress";
 
 // Use the real translations (vitest.setup.ts mocks next-intl globally)
 vi.mock("next-intl", async () => await vi.importActual("next-intl"));
@@ -89,5 +90,54 @@ describe("SpotTheFake", () => {
     fireEvent.click(screen.getByRole("button", { name: /alta 3 km/ }));
     await waitFor(() => expect(screen.getByText("Beccata!")).toBeInTheDocument());
     expect(screen.getByText("È troppo alta!")).toBeInTheDocument();
+  });
+});
+
+describe("RedFlagChat", () => {
+  const messages = [
+    { from: "them" as const, text: "Ciao, giochi stasera?", why: "Domanda normale." },
+    { from: "them" as const, text: "Non dirlo ai tuoi", flag: true, why: "Chiede di tenere un segreto." },
+    { from: "me" as const, text: "Perché?" },
+    { from: "them" as const, text: "Passiamo su un'altra app", flag: true, why: "Vuole spostarti dove non ci sono controlli." },
+  ];
+
+  it("must find every warning sign without flagging harmless messages", async () => {
+    wrap(<RedFlagChat contact="Leo" messages={messages} successMessage="Trovati!" />);
+    const check = await screen.findByRole("button", { name: "Controlla" });
+    expect(check).toBeDisabled();
+    // one right + one harmless: not done
+    fireEvent.click(screen.getByRole("button", { name: /Non dirlo ai tuoi/ }));
+    fireEvent.click(screen.getByRole("button", { name: /Ciao, giochi stasera/ }));
+    fireEvent.click(check);
+    expect(await screen.findByText(/Hai trovato 1 segnale d'allarme su 2/)).toBeInTheDocument();
+    expect(screen.getByText(/1 messaggio segnato è innocuo/)).toBeInTheDocument();
+    // fix: unmark the harmless one, mark the missing one
+    fireEvent.click(screen.getByRole("button", { name: /Ciao, giochi stasera/ }));
+    fireEvent.click(screen.getByRole("button", { name: /altra app/ }));
+    fireEvent.click(screen.getByRole("button", { name: "Controlla" }));
+    expect(await screen.findByText("Trovati!")).toBeInTheDocument();
+    expect(screen.getByText("Vuole spostarti dove non ci sono controlli.")).toBeInTheDocument();
+  });
+
+  it("the player's own messages cannot be flagged", async () => {
+    wrap(<RedFlagChat contact="Leo" messages={messages} />);
+    await screen.findByRole("button", { name: "Controlla" });
+    expect(screen.queryByRole("button", { name: /Perché\?/ })).toBeNull();
+  });
+});
+
+describe("stars from mistakes", () => {
+  it("0 mistakes = 3 stars, 1-2 = 2, more = 1", () => {
+    expect([0, 1, 2, 3, 7].map(starsForMistakes)).toEqual([3, 2, 2, 1, 1]);
+  });
+
+  it("mistakes are counted per level and reset when the level is replayed", () => {
+    recordMistake("7-1-free-skins");
+    recordMistake("7-1-free-skins");
+    recordMistake("6-1-ai-can-be-wrong");
+    expect(getMistakes("7-1-free-skins")).toBe(2);
+    resetLevelAttempt("7-1-free-skins");
+    expect(getMistakes("7-1-free-skins")).toBe(0);
+    expect(getMistakes("6-1-ai-can-be-wrong")).toBe(1);
   });
 });

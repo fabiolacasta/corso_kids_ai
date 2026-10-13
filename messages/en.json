@@ -1531,6 +1531,9 @@
       },
       "6": {
         "title": "Safety Shores"
+      },
+      "7": {
+        "title": "Digital City"
       }
     },
     "levels": {
@@ -1629,6 +1632,26 @@
       "6_5_ai_guardian": {
         "title": "AI Guardian",
         "description": "AI is a tool, not a best friend: scams, limits and asking a grown-up"
+      },
+      "7_1_free_skins": {
+        "title": "Free Skins?",
+        "description": "Game scams made with AI: fake streamers, fake support, fake coin generators"
+      },
+      "7_2_cloned_voice": {
+        "title": "The Cloned Voice",
+        "description": "Strong passwords, two-step verification and AI voice clones"
+      },
+      "7_3_photo_detective": {
+        "title": "What a Photo Reveals",
+        "description": "Your digital footprint: what AI can find out from a single post"
+      },
+      "7_4_the_feed": {
+        "title": "The Feed That Knows You",
+        "description": "Recommendation algorithms and how to take back control"
+      },
+      "7_5_fake_friends": {
+        "title": "Friends Who Don't Exist",
+        "description": "Fake profiles made with AI and the warning signs in a chat"
       }
     },
     "level": {
@@ -1646,7 +1669,10 @@
       "allDone": "Back to Map",
       "medalTitle": "Medal earned!",
       "medalText": "You completed the whole world “{world}”.",
-      "certificate": "Print your certificate"
+      "certificate": "Print your certificate",
+      "noMistakes": "Zero mistakes: full score.",
+      "mistakes": "{count, plural, one {# mistake} other {# mistakes}} in this level. Zero mistakes earns 3 stars.",
+      "replay": "Replay the level for 3 stars"
     },
     "quiz": {
       "goodLabel": "Great prompt!",
@@ -1761,7 +1787,14 @@
       "aiAnswer": "AI answer",
       "thisIsTrue": "This sentence is true. Look for the made-up one!",
       "found": "You caught it!",
-      "whyWrong": "Why not:"
+      "whyWrong": "Why not:",
+      "chatLabel": "Chat messages",
+      "flagged": "marked as a warning sign",
+      "missedFlag": "Warning sign not found",
+      "flagHint": "{count, plural, =0 {Tap the messages that look dangerous.} one {You marked # message.} other {You marked # messages.}}",
+      "flagsResult": "You found {found} of {total} warning signs.",
+      "flagsWrong": "{count, plural, one {# marked message is harmless.} other {# marked messages are harmless.}} Read again and retry.",
+      "flagsAll": "You found them all."
     },
     "a11y": {
       "button": "Accessibility",

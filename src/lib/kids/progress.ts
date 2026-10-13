@@ -260,3 +260,35 @@ export function hasCompletedInteraction(levelSlug: string, componentIdPrefix?: s
     return false;
   }
 }
+
+/* ------------------------------------------------------------------ */
+/* Mistakes and stars                                                  */
+/* Every wrong answer in a level counts as a mistake; the stars at the */
+/* end depend on them. Stored with the level's game state, so replaying */
+/* the level (which clears that state) starts again from zero.          */
+/* ------------------------------------------------------------------ */
+
+const MISTAKES_ID = "__mistakes";
+
+export function recordMistake(levelSlug: string | null | undefined): void {
+  if (!levelSlug) return;
+  const n = getComponentState<number>(levelSlug, MISTAKES_ID) || 0;
+  saveComponentState<number>(levelSlug, MISTAKES_ID, n + 1);
+}
+
+export function getMistakes(levelSlug: string): number {
+  return getComponentState<number>(levelSlug, MISTAKES_ID) || 0;
+}
+
+/** 0 mistakes = 3 stars, 1-2 mistakes = 2 stars, more = 1 star. */
+export function starsForMistakes(mistakes: number): number {
+  if (mistakes <= 0) return 3;
+  if (mistakes <= 2) return 2;
+  return 1;
+}
+
+/** Forget answers, mistakes and section progress of a level so it can be replayed. */
+export function resetLevelAttempt(levelSlug: string): void {
+  clearComponentState(levelSlug);
+  clearSectionCompletion(levelSlug);
+}

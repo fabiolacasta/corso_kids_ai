@@ -1047,6 +1047,8 @@ html[data-kids-colors] .pixel-btn-green {
 .kids-sea-wave { animation: kids-wave 3s ease-in-out infinite; }
 @keyframes kids-beam { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.6; } }
 .kids-lighthouse-beam { animation: kids-beam 2.4s ease-in-out infinite; transform-origin: left center; }
+@keyframes kids-city-blink { 0%, 60% { opacity: 1; } 61%, 100% { opacity: 0.15; } }
+.kids-city-blink { animation: kids-city-blink 1.6s steps(1) infinite; }
 
 /* Level complete: confetti and medal */
 @keyframes kids-confetti-fall {

@@ -1474,7 +1474,7 @@
     "home": {
       "badge": "Corso per le medie · 11-14 anni",
       "title": "Impara a usare l'IA",
-      "subtitle": "Un'avventura in 6 mondi con il robot IAco: scrivi prompt efficaci e scopri come usare l'IA in modo sicuro.",
+      "subtitle": "Un'avventura in 7 mondi con il robot IAco: scrivi prompt efficaci e scopri come usare l'IA in modo sicuro.",
       "promiIntro": {
         "greeting": "Ciao, sono IAco! 🤖",
         "message": "Sono un robot e ho bisogno di una squadra in gamba. Mi aiuti a capire cosa mi chiedi e a non cadere nelle trappole dell'IA?"
@@ -1531,24 +1531,27 @@
       },
       "6": {
         "title": "Spiaggia della Sicurezza"
+      },
+      "7": {
+        "title": "Città Digitale"
       }
     },
     "levels": {
       "1_1_meet_promi": {
-        "title": "Incontra IAco!",
-        "description": "Saluta il tuo amico robot e scopri cos'è l'IA"
+        "title": "Chi è IAco",
+        "description": "Cos'è un chatbot, come sceglie le parole e cos'è un prompt"
       },
       "1_2_first_words": {
         "title": "Le Prime Parole di IAco",
         "description": "Aiuta IAco a capire scrivendo il tuo primo prompt"
       },
       "1_3_being_clear": {
-        "title": "Essere Chiari",
-        "description": "Scopri perché le istruzioni chiare funzionano meglio"
+        "title": "Niente giri di parole",
+        "description": "Perché le richieste vaghe danno risposte vaghe"
       },
       "2_1_missing_details": {
-        "title": "I Dettagli Mancanti",
-        "description": "Scopri perché i dettagli contano"
+        "title": "Il pezzo mancante",
+        "description": "Cosa fa l'IA quando nel prompt manca un dettaglio"
       },
       "2_2_who_and_what": {
         "title": "Chi e Cosa",
@@ -1559,64 +1562,64 @@
         "description": "Impara ad aggiungere tempo e luogo"
       },
       "2_4_detail_detective": {
-        "title": "Detective dei Dettagli",
-        "description": "Diventa esperto nell'aggiungere dettagli"
+        "title": "Detective dei dettagli",
+        "description": "Chi, cosa, quando, dove, perché e formato: la sfida del mondo 2"
       },
       "3_1_setting_the_scene": {
-        "title": "Preparare la Scena",
-        "description": "Scopri perché il contesto aiuta"
+        "title": "Prepara la scena",
+        "description": "Il contesto: chi sei, a cosa serve, chi leggerà la risposta"
       },
       "3_2_show_dont_tell": {
-        "title": "Mostra, Non Dire",
-        "description": "Usa esempi per mostrare cosa vuoi"
+        "title": "Mostra, non dire",
+        "description": "Un esempio vale più di dieci aggettivi"
       },
       "3_3_format_finder": {
-        "title": "Cercatore di Formato",
-        "description": "Chiedi liste, storie, poesie e altro!"
+        "title": "Il formato giusto",
+        "description": "Tabelle, elenchi, mappe, copioni: chiedi la forma che ti serve"
       },
       "3_4_context_champion": {
-        "title": "Campione del Contesto",
-        "description": "Combina tutte le tecniche di contesto"
+        "title": "Campione del contesto",
+        "description": "Contesto, esempi e formato nella stessa richiesta"
       },
       "4_1_pretend_time": {
-        "title": "Tempo di Recitare!",
-        "description": "Impara i prompt di gioco di ruolo"
+        "title": "Gioco di ruolo",
+        "description": "Far interpretare un personaggio all'IA, sapendo che è finzione"
       },
       "4_2_story_starters": {
-        "title": "Inizi di Storie",
-        "description": "Crea storie incredibili con l'IA"
+        "title": "Coautore, non ghostwriter",
+        "description": "Usare l'IA per le idee restando l'autore della storia"
       },
       "4_3_character_creator": {
-        "title": "Creatore di Personaggi",
-        "description": "Dai una personalità all'IA"
+        "title": "Crea un personaggio",
+        "description": "Desideri, paure e difetti: personaggi per fumetti, video e giochi"
       },
       "4_4_world_builder": {
-        "title": "Costruttore di Mondi",
-        "description": "Crea mondi immaginativi"
+        "title": "Costruttore di mondi",
+        "description": "Regole, conseguenze e conflitti per il mondo di un gioco o di un racconto"
       },
       "5_1_perfect_prompt": {
-        "title": "Il Prompt Perfetto",
-        "description": "Combina chiarezza, dettagli e contesto"
+        "title": "Il prompt perfetto",
+        "description": "Compito, contesto, dettagli e formato tutti insieme"
       },
       "5_2_fix_it_up": {
-        "title": "Sistemalo!",
-        "description": "Trova e migliora prompt deboli"
+        "title": "Ripara il prompt",
+        "description": "Trova cosa non va in un prompt e sistemalo"
       },
       "5_3_prompt_remix": {
-        "title": "Remix dei Prompt",
-        "description": "Riscrivi prompt per risultati diversi"
+        "title": "Remix",
+        "description": "Stessa richiesta, scopo o pubblico diverso: risultato diverso"
       },
       "5_4_graduation_day": {
-        "title": "Giorno del Diploma",
-        "description": "La sfida finale - diventa Maestro!"
+        "title": "L'esame finale",
+        "description": "Sette prove per chiudere la parte sui prompt"
       },
       "6_1_ai_can_be_wrong": {
         "title": "Anche l'IA sbaglia",
         "description": "Scopri le risposte inventate e impara a controllare"
       },
       "6_2_secret_keeper": {
-        "title": "Il Custode dei Segreti",
-        "description": "Cosa non si scrive mai a un chatbot"
+        "title": "Dati al sicuro",
+        "description": "Cosa non scrivere mai a un chatbot e perché"
       },
       "6_3_real_or_fake": {
         "title": "Vero o Falso?",
@@ -1629,6 +1632,26 @@
       "6_5_ai_guardian": {
         "title": "Guardiano dell'IA",
         "description": "L'IA è uno strumento, non un migliore amico: truffe, regole e adulti di fiducia"
+      },
+      "7_1_free_skins": {
+        "title": "Skin gratis?",
+        "description": "Truffe nei videogiochi create con l'IA: streamer finti, finto supporto, generatori di monete"
+      },
+      "7_2_cloned_voice": {
+        "title": "La voce clonata",
+        "description": "Password forti, verifica in due passaggi e voci copiate con l'IA"
+      },
+      "7_3_photo_detective": {
+        "title": "Cosa rivela una foto",
+        "description": "La tua impronta digitale: cosa può scoprire l'IA da un solo post"
+      },
+      "7_4_the_feed": {
+        "title": "Il feed che ti conosce",
+        "description": "Gli algoritmi che scelgono i video per te e come riprendere il controllo"
+      },
+      "7_5_fake_friends": {
+        "title": "Amici che non esistono",
+        "description": "Profili finti creati con l'IA e i segnali d'allarme in chat"
       }
     },
     "level": {
@@ -1646,7 +1669,10 @@
       "allDone": "Torna alla Mappa",
       "medalTitle": "Medaglia conquistata!",
       "medalText": "Hai completato tutto il mondo «{world}».",
-      "certificate": "Stampa il tuo attestato"
+      "certificate": "Stampa il tuo attestato",
+      "noMistakes": "Zero errori: punteggio pieno.",
+      "mistakes": "{count, plural, one {# errore} other {# errori}} in questo livello. Con zero errori prendi 3 stelle.",
+      "replay": "Rigioca il livello per le 3 stelle"
     },
     "quiz": {
       "goodLabel": "Ottimo prompt!",
@@ -1761,7 +1787,14 @@
       "aiAnswer": "Risposta dell'IA",
       "thisIsTrue": "Questa frase è vera. Cerca quella inventata!",
       "found": "Beccata!",
-      "whyWrong": "Perché no:"
+      "whyWrong": "Perché no:",
+      "chatLabel": "Messaggi della chat",
+      "flagged": "segnato come segnale d'allarme",
+      "missedFlag": "Segnale d'allarme non trovato",
+      "flagHint": "{count, plural, =0 {Tocca i messaggi che ti sembrano pericolosi.} one {Hai segnato # messaggio.} other {Hai segnato # messaggi.}}",
+      "flagsResult": "Hai trovato {found, plural, one {# segnale d'allarme} other {# segnali d'allarme}} su {total}.",
+      "flagsWrong": "{count, plural, one {# messaggio segnato è innocuo.} other {# messaggi segnati sono innocui.}} Rileggi e riprova.",
+      "flagsAll": "Li hai trovati tutti."
     },
     "a11y": {
       "button": "Accessibilità",

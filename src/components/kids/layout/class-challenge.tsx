@@ -56,7 +56,7 @@ export function ClassChallenge() {
   useEffect(() => setTeams(loadTeams()), []);
 
   const questions: QuizQuestion[] = useMemo(() => {
-    const pool = scope === "safety" ? QUIZ_BANK.filter((q) => q.world === 6) : QUIZ_BANK;
+    const pool = scope === "safety" ? QUIZ_BANK.filter((q) => q.world >= 6) : QUIZ_BANK;
     // Shuffle the questions and also the order of the options, so the right
     // answer is not always in the same position
     return shuffle(pool, seed).slice(0, Math.min(count, pool.length)).map((q, k) => {
@@ -94,7 +94,7 @@ export function ClassChallenge() {
   const panel = "bg-[#FEF3C7] border-4 border-[#8B4513] p-4 md:p-6";
 
   if (phase === "setup") {
-    const pool = scope === "safety" ? QUIZ_BANK.filter((q) => q.world === 6).length : QUIZ_BANK.length;
+    const pool = scope === "safety" ? QUIZ_BANK.filter((q) => q.world >= 6).length : QUIZ_BANK.length;
     return (
       <div className="h-full overflow-y-auto" dir="ltr" lang="it">
         <div className="max-w-2xl mx-auto px-4 py-6 flex flex-col gap-4">
@@ -130,7 +130,7 @@ export function ClassChallenge() {
           <section className={panel} aria-labelledby="sf-opts">
             <h2 id="sf-opts" className="text-2xl font-bold text-[#8B4513] m-0 mb-3">Domande</h2>
             <div className="flex flex-wrap gap-2 mb-3" role="group" aria-label="Argomento">
-              {([["all", "Tutto il corso"], ["safety", "Solo sicurezza (mondo 6)"]] as const).map(([v, l]) => (
+              {([["all", "Tutto il corso"], ["safety", "Solo sicurezza (mondi 6 e 7)"]] as const).map(([v, l]) => (
                 <button key={v} onClick={() => setScope(v)} aria-pressed={scope === v} className={cn("pixel-btn px-3 py-1.5 text-base", scope === v ? "pixel-btn-purple" : "")}>{l}</button>
               ))}
             </div>

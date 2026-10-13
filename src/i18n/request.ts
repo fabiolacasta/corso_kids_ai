@@ -71,6 +71,18 @@ export default getRequestConfig(async () => {
     messages = (await import(`@/../messages/${defaultLocale}.json`)).default;
   }
   
+  // Missing keys (e.g. new levels not translated yet) fall back to the base language:
+  // Italian on the kids-only Italian deployment, English otherwise.
+  const baseLocale = process.env.KIDS_ONLY === "1" ? "it" : defaultLocale;
+  if (locale !== baseLocale) {
+    try {
+      const base = (await import(`@/../messages/${baseLocale}.json`)).default;
+      messages = deepMerge(base, messages);
+    } catch {
+      // keep the locale's messages as they are
+    }
+  }
+
   return {
     locale,
     messages,
@@ -91,3 +103,15 @@ export default getRequestConfig(async () => {
     },
   };
 });
+
+type Messages = { [key: string]: string | Messages };
+
+/** Copy of `base` with every value present in `over` replaced by it. */
+function deepMerge(base: Messages, over: Messages): Messages {
+  const out: Messages = { ...base };
+  for (const [k, v] of Object.entries(over)) {
+    const b = out[k];
+    out[k] = v && typeof v === "object" && b && typeof b === "object" ? deepMerge(b, v) : v;
+  }
+  return out;
+}

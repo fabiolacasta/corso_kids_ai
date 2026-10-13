@@ -15,13 +15,16 @@ function keys(obj: unknown, prefix = ""): string[] {
 }
 
 describe("translations (kids)", () => {
+  // Italian and English are complete; other languages may miss the newest texts,
+  // which then fall back to Italian/English at runtime (see src/i18n/request.ts).
   const en = keys(load("en.json").kids, "kids");
-  for (const f of fs.readdirSync(MSG_DIR).filter((f) => f.endsWith(".json") && f !== "en.json")) {
-    it(`${f} has every kids key of en.json`, () => {
-      const have = new Set(keys(load(f).kids, "kids"));
-      expect(en.filter((k) => !have.has(k))).toEqual([]);
-    });
-  }
+  const itKeys = keys(load("it.json").kids, "kids");
+  it("it.json has every kids key of en.json and vice versa", () => {
+    const have = new Set(itKeys);
+    expect(en.filter((k) => !have.has(k))).toEqual([]);
+    const haveEn = new Set(en);
+    expect(itKeys.filter((k) => !haveEn.has(k))).toEqual([]);
+  });
 
   it("Italian texts for the safety world and accessibility are really in Italian", () => {
     const it = load("it.json").kids;
@@ -50,13 +53,13 @@ describe("SEO (kids-only site)", () => {
     expect(problems).toEqual([]);
   });
 
-  it("sitemaps list the 54 course pages and nothing else", async () => {
+  it("sitemaps list the 58 course pages and nothing else", async () => {
     const sitemap = (await import("@/app/sitemap")).default;
     const urls = (await sitemap()).map((u) => u.url);
-    expect(urls).toHaveLength(54); // home, guide, glossary, challenge, all worksheets, map, 24 levels, 24 worksheets
+    expect(urls).toHaveLength(58); // home, guide, glossary, challenge, all worksheets, map, 26 levels, 26 worksheets
     expect(urls.every((u) => u.startsWith("https://corso-ai-medie.netlify.app/kids"))).toBe(true);
     const kidsSitemap = await (await import("@/app/kids/sitemap.xml/route")).GET().text();
-    expect(kidsSitemap.match(/<url>/g)).toHaveLength(54);
+    expect(kidsSitemap.match(/<url>/g)).toHaveLength(58);
   });
 
   it("robots allows Google and AI answer engines on the course", async () => {

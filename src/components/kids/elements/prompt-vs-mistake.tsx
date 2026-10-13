@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { PixelRobot, PixelStar } from "./pixel-art";
 import { useLevelSlug, useSectionNavigation } from "@/components/kids/providers/level-context";
-import { getComponentState, saveComponentState, markSectionCompleted } from "@/lib/kids/progress";
+import { getComponentState, saveComponentState, markSectionCompleted, recordMistake } from "@/lib/kids/progress";
 
 interface PromptVsMistakeProps {
   question: string;
@@ -82,6 +82,8 @@ export function PromptVsMistake({
     if (choice === "good" && levelSlug) {
       markSectionCompleted(levelSlug, currentSection);
       markSectionComplete(currentSection);
+    } else if (choice === "bad") {
+      recordMistake(levelSlug);
     }
   };
 

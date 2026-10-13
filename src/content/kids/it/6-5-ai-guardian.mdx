@@ -1,83 +1,107 @@
 <Section>
 <Panel character="promi" mood="happy">
-Ultimo livello dell'isola! Oggi diventi un **Guardiano dell'IA** 🛡️: una persona che sa usarla bene e sa quando fermarsi.
+Ultimo livello della spiaggia. Mettiamo insieme tutto: cosa sono io davvero, come evitare le truffe che usano l'IA, e chi chiamare quando qualcosa non va.
 </Panel>
 </Section>
 
 <Section>
-## Un aiutante, non un migliore amico
+## Uno strumento, non un amico
 
-Io rispondo sempre, non mi stanco mai e sono sempre gentile. Per questo qualcuno potrebbe pensare che io sia un **amico**.
+Rispondo a qualsiasi ora, non mi stanco, non ti giudico e sono sempre d'accordo con te. Per questo qualcuno finisce per considerarmi un **amico**.
+
+Ma io non provo niente, non mi ricordo di te come farebbe una persona e non posso accorgermi se stai male davvero. Alcune app di chat, poi, sono progettate apposta per farti restare il più a lungo possibile.
 
 <Panel character="promi" mood="thinking">
-Ma io non provo emozioni, non ti conosco davvero e non posso abbracciarti. Gli amici veri e le persone che ti vogliono bene sono insostituibili!
+Sono uno strumento. Utile, a volte molto. Ma uno strumento non ti viene a cercare se sparisci per una settimana.
 </Panel>
 
 <WhatWouldYouDo
-  scenario="Sofia è molto triste da qualche giorno. Non ne parla con nessuno, ma la sera scrive per ore a un chatbot."
-  question="Cosa le consiglieresti?"
+  scenario="Sofia, una tua amica, è giù da settimane. A scuola dice che va tutto bene, ma ti confida che la sera scrive per ore a un chatbot perché «almeno lui non la giudica»."
+  question="Cosa le dici?"
   choices={[
-    { text: "Continua così: il chatbot ti capisce meglio delle persone.", feedback: "Il chatbot non può capire davvero come sta Sofia, e non può aiutarla come una persona." },
-    { text: "Parlane con un adulto di cui ti fidi: un genitore, un prof, un parente.", correct: true, feedback: "Giusto! Quando si sta male la cosa migliore è parlarne con una persona vera. Esiste anche Telefono Azzurro, al numero 19696." },
-    { text: "Spegni tutto e non dire niente a nessuno.", feedback: "Tenersi tutto dentro fa stare peggio. Parlarne con qualcuno di fiducia aiuta davvero." }
+    { text: "Se le fa bene sfogarsi così, va bene: almeno parla con qualcuno.", feedback: "Scrivere può aiutare per un momento, ma il chatbot non vede come sta Sofia e non può fare niente di concreto per lei. E più ci parla, più rischia di chiudersi con le persone." },
+    { text: "Di chiedere al chatbot cosa dovrebbe fare.", feedback: "Probabilmente le consiglierebbe di parlarne con qualcuno. Ma è un consiglio che puoi darle tu, ed è più forte detto da un'amica." },
+    { text: "Che ne parli con un adulto di cui si fida, e che se vuole la accompagni tu.", correct: true, feedback: "Giusto. Un genitore, un prof, l'allenatore, lo psicologo della scuola. Può anche chiamare Telefono Azzurro al 19696: rispondono a ragazzi della vostra età, gratis." },
+    { text: "Niente: se non ne parla a scuola vuol dire che non vuole aiuto.", feedback: "Spesso chi sta male fa finta di stare bene. Il fatto che si sia confidata con te è già una richiesta di aiuto." }
   ]}
-  promiMessage="Per le cose importanti del cuore, cerca sempre una persona vera."
+  promiMessage="Per le cose che pesano davvero, serve una persona vera."
 />
 </Section>
 
 <Section>
-## Attenzione alle truffe
+## Le truffe con l'IA
 
-Con l'IA i truffatori scrivono messaggi **perfetti**, senza errori, che sembrano veri.
+Con l'IA i truffatori scrivono messaggi **senza un errore**, creano siti e loghi perfetti e rispondono come persone vere. Il vecchio trucco «se ci sono errori è una truffa» non funziona più.
 
-<WhatWouldYouDo
-  scenario="Ti arriva un messaggio: 'Hai vinto una console! Per riceverla clicca qui e scrivi la password del tuo account di gioco entro 10 minuti.'"
-  choices={[
-    { text: "Clicco subito, 10 minuti sono pochi!", feedback: "La fretta è il trucco preferito dei truffatori: serve a non farti pensare." },
-    { text: "Non clicco, non scrivo niente e lo faccio vedere a un adulto.", correct: true, feedback: "Perfetto! Nessuno regala niente in cambio di una password." },
-    { text: "Chiedo all'IA se è vero.", feedback: "L'IA non può sapere se quel messaggio è vero. Meglio non cliccare e chiedere a un adulto." }
+Quello che non cambia è lo **schema**: un premio che non hai chiesto, fretta, un link strano, la richiesta di un dato o di un codice, e il segreto.
+
+<RedFlagChat
+  contact="IA Premium Gratis ✨"
+  app="Messaggi diretti"
+  avatar="🤖"
+  instruction="Trova tutti i messaggi che sono segnali d'allarme. Attenzione: non tutti lo sono."
+  messages={[
+    { from: "system", text: "Questo account è stato creato 3 giorni fa" },
+    { from: "them", text: "Ciao! Stiamo regalando 12 mesi di IA Premium agli studenti delle medie 🎓", flag: true, why: "Un premio che non hai chiesto, da un account che non conosci: è l'esca." },
+    { from: "me", text: "Ah sì? E cosa fa?" },
+    { from: "them", text: "Risponde più veloce e puoi caricare foto e file", why: "Descrizione di un prodotto: da sola non è un segnale d'allarme." },
+    { from: "them", text: "Restano solo 37 posti, l'offerta scade stasera a mezzanotte", flag: true, why: "La fretta serve a non farti pensare e a non farti chiedere a nessuno." },
+    { from: "them", text: "Scarica l'app da questo link: non è ancora sugli store perché è in anteprima", flag: true, why: "Le app si scaricano solo dagli store ufficiali. Un link esterno può installare qualcosa che ruba i tuoi dati." },
+    { from: "them", text: "Funziona sia su Android che su iPhone", why: "Informazione normale: non chiede niente e non mette pressione." },
+    { from: "them", text: "Per attivarla mandami il tuo numero e il codice di 6 cifre che ti arriva per SMS", flag: true, why: "Quel codice è la chiave del tuo account: chi lo ha può entrare al posto tuo. Non si dà mai a nessuno." },
+    { from: "them", text: "Non dirlo ai tuoi compagni, sennò i posti finiscono", flag: true, why: "Chiederti il segreto serve a isolarti: se ne parlassi con qualcuno, scopriresti subito la truffa." }
   ]}
-  promiMessage="Fretta + premio + password = truffa!"
+  successMessage="Premio, fretta, link, codice, segreto: li hai trovati tutti."
 />
+
+<Panel character="promi" mood="thinking">
+Se ti capita di cascarci, non vergognarti: succede anche agli adulti. Dillo subito a un genitore. Prima lo dici, più cose si possono sistemare.
+</Panel>
 </Section>
 
 <Section>
 ## Le regole del Guardiano
 
 <SafetySorter
-  title="Regola vera o regola falsa?"
+  title="Vera o falsa?"
+  instruction="Alcune frasi sono più insidiose di come sembrano."
   buckets={[
     { id: "yes", label: "👍 Vera", color: "green" },
     { id: "no", label: "👎 Falsa", color: "red" }
   ]}
   items={[
-    { text: "Molti chatbot si possono usare solo da una certa età, e sotto i 14 anni serve il permesso dei genitori", bucket: "yes", why: "Controlla sempre le regole dell'app e chiedi ai tuoi genitori." },
-    { text: "Se l'IA lo dice, è sicuramente vero", bucket: "no", why: "Anche l'IA sbaglia: le cose importanti si controllano." },
-    { text: "Posso usare l'IA per farmi spiegare una cosa che non ho capito", bucket: "yes", why: "È uno degli usi migliori!" },
-    { text: "Posso chiedere all'IA di creare una foto finta di un compagno, se è per ridere", bucket: "no", why: "Mai: è cyberbullismo, anche se sembra uno scherzo." },
-    { text: "Ogni tanto è bello spegnere lo schermo e fare altro", bucket: "yes", why: "Sport, amici, libri, aria aperta: il cervello ringrazia!" },
-    { text: "L'IA capisce le mie emozioni meglio delle persone", bucket: "no", why: "L'IA non prova emozioni: le persone vere sì." }
+    { text: "In Italia, sotto i 14 anni serve il consenso dei genitori per usare un'app di IA", bucket: "yes", why: "È la legge italiana. Molti chatbot hanno anche limiti propri: alcuni chiedono almeno 13 anni, altri 18." },
+    { text: "Se un'app di IA non mi chiede l'età, vuol dire che posso usarla", bucket: "no", why: "Se non te la chiede, il controllo spetta a te e ai tuoi genitori. Le regole d'uso valgono anche se nessuno controlla." },
+    { text: "Mettere una data di nascita falsa per iscriversi non è un problema, lo fanno tutti", bucket: "no", why: "Così perdi le protezioni pensate per la tua età, e violi le regole dell'app." },
+    { text: "Un chatbot o un utente che ti dice «non dirlo ai tuoi genitori» è un segnale d'allarme", bucket: "yes", why: "Chi ti chiede il segreto con gli adulti di solito ha qualcosa da nascondere." },
+    { text: "Se l'IA mi dà un consiglio sulla salute e sembra sicura, posso seguirlo", bucket: "no", why: "Il tono sicuro non è una garanzia, l'hai visto nel primo livello. Per la salute si chiede a un genitore o al medico." },
+    { text: "Posso usare l'IA per farmi spiegare una cosa che non ho capito in classe", bucket: "yes", why: "È uno degli usi migliori, purché il lavoro poi lo faccia tu." },
+    { text: "Se un'IA crea una foto finta di un compagno, la colpa è dell'IA e non di chi l'ha chiesta", bucket: "no", why: "L'IA è uno strumento: la responsabilità è di chi lo usa e di chi diffonde il risultato." }
   ]}
-  successMessage="Conosci tutte le regole del Guardiano!"
+  successMessage="Conosci le regole, anche quelle scritte in piccolo."
 />
 </Section>
 
 <Section>
-## Sei un Guardiano dell'IA! 🏆
+## Il giuramento del Guardiano
 
 <Panel character="promi" mood="celebrating">
-Hai completato la Spiaggia della Sicurezza! Ecco il tuo giuramento da Guardiano:
+Hai finito la Spiaggia della Sicurezza. Cinque regole da portarti dietro:
 
-- ✅ **Controllo** le informazioni importanti
+- ✅ **Controllo** le informazioni importanti su una fonte affidabile
 - ✅ **Proteggo** i miei dati e quelli degli altri
 - ✅ **Non creo e non condivido** falsi su persone vere
 - ✅ **Studio** con l'IA, non la faccio studiare al posto mio
-- ✅ **Chiedo a un adulto** quando qualcosa non mi convince
+- ✅ **Parlo con un adulto** quando qualcosa non mi convince (e c'è sempre il 19696)
+</Panel>
+
+<Panel character="promi" mood="excited">
+Prossima tappa: la **Città Digitale**. Lì vediamo da vicino truffe nei giochi, password e voci clonate, foto, feed e profili finti. Le regole di oggi ti serviranno tutte.
 </Panel>
 
 <LevelComplete 
   levelSlug="6-5-ai-guardian" 
   stars={3}
-  message="Ora sei ufficialmente un Guardiano dell'IA!"
+  message="Spiaggia della Sicurezza completata. Ora sai usare l'IA senza farti usare."
 />
 </Section>

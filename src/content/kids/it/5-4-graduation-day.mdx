@@ -1,102 +1,134 @@
 <Section>
 <Panel character="promi" mood="excited">
-🎉 **CONGRATULAZIONI!** 🎉 Sei arrivato all'ULTIMO LIVELLO! Questo è il **Giorno del Diploma**!
+Sei in cima alla **Montagna del Maestro**. Questo è l'**esame finale della parte sui prompt** 🎓. Regole semplici: niente suggerimenti, i prompt sbagliati sembrano giusti e ogni errore costa una stella. Leggi tutto fino all'ultima parola prima di scegliere.
 </Panel>
 </Section>
 
 <Section>
-## Guarda quanto sei arrivato lontano!
+## Cosa porti all'esame
 
-Hai padroneggiato:
+- **Mondo 1** – Che cos'è un'IA e perché essere chiari cambia tutto.
+- **Mondo 2** – I dettagli che contano: chi, cosa, quando, dove.
+- **Mondo 3** – Contesto, esempi e formato della risposta.
+- **Mondo 4** – Ruoli, personaggi e storie.
+- **Mondo 5** – Combinare tutto, riparare, remixare.
 
-⭐ **Mondo 1** - Cos'è l'IA e perché la chiarezza è importante
-⭐ **Mondo 2** - Dettagli CHI, COSA, QUANDO, DOVE
-⭐ **Mondo 3** - Contesto, esempi e formati
-⭐ **Mondo 4** - Gioco di ruolo, storie e creatività
-⭐ **Mondo 5** - Combinare tutto alla perfezione!
+Una sola domanda guida tutto l'esame: **con questo prompt, l'IA ha tutte le informazioni che le servono, e nessuna richiesta in conflitto?**
 </Section>
 
 <Section>
-<Panel character="promi" mood="happy">
-Sono COSÌ orgoglioso di te! Sei diventato un vero Maestro dei Prompt! Festeggiamo con alcune sfide finali!
-</Panel>
+## Prova 1 – Anatomia
+
+<PromptParts
+  title="Il discorso del capitano"
+  instruction="Assegna ogni pezzo: Ruolo, Compito, Contesto o Vincolo. Non c'è un solo pezzo per tipo."
+  parts={[
+    { text: "Sono il capitano dell'Under 14 e sabato giochiamo contro la prima in classifica", type: "context" },
+    { text: "Fai l'allenatore di una squadra giovanile", type: "role" },
+    { text: "Nell'ultima partita abbiamo perso 3-0 e il morale è basso", type: "context" },
+    { text: "Scrivimi un discorso da fare nello spogliatoio prima della partita", type: "task" },
+    { text: "Massimo 6 frasi, da dire a voce in meno di un minuto", type: "constraint" },
+    { text: "Niente frasi fatte tipo «crediamoci fino alla fine»", type: "constraint" }
+  ]}
+  successMessage="Prova 1 superata. Due contesti, un ruolo, un compito e due vincoli: sapere a cosa serve ogni pezzo è la base di tutto il resto."
+/>
 </Section>
 
 <Section>
-## Sfida Finale #1
+## Prova 2 – Un compito per prompt
 
 <PromptVsMistake
-  question="Sfida finale: tutti e due sembrano ottimi. Quale è davvero un prompt da maestro?"
+  question="Tutti e due sembrano ottimi. Quale è davvero un prompt da maestro?"
   good="Sono in terza media e preparo il percorso d'esame su energia e ambiente. Fai il mio tutor: aiutami a trovare 3 collegamenti, uno per scienze, storia e geografia, e spiegami perché ognuno funziona. I testi poi li scrivo io."
   bad="Sono in terza media e preparo il percorso d'esame su energia e ambiente. Fai il mio tutor: trovami 3 collegamenti tra le materie, correggimi il tema di ieri, fammi un piano per la verifica di inglese e inventa un titolo."
-  explanation="Il primo ha un solo obiettivo chiaro, un ruolo e un formato preciso. Il secondo mette insieme quattro compiti diversi: l'IA li farà tutti un po' male invece di farne bene uno."
+  explanation="Il primo ha un solo obiettivo chiaro, un ruolo e un formato preciso. Il secondo mette insieme quattro compiti diversi (e il tema di ieri non è nemmeno incollato): l'IA li farà tutti un po' male invece di farne bene uno."
   promiMessage="Un compito per prompt: così posso concentrarmi su quello che conta."
 />
 </Section>
 
 <Section>
-## Sfida Finale #2
+## Prova 3 – Il dettaglio che manca
 
 <PromptVsMistake
-  question="Domani hai l'orale d'esame e vuoi allenarti. Quale prompt è più completo?"
+  question="Domani hai l'orale dell'esame e vuoi allenarti. Quale prompt è più completo?"
   good="Domani ho l'orale dell'esame di terza media sul mio percorso sui viaggi. Fai la commissione: fammi una domanda alla volta, aspetta la mia risposta e alla fine dimmi in 3 punti cosa migliorare."
   bad="Domani ho l'orale dell'esame di terza media sul mio percorso sui viaggi. Fai la commissione d'esame e fammi delle domande sul percorso, come farebbero dei prof veri, e poi dimmi com'è andata."
-  explanation="Tutti e due hanno contesto e ruolo, ma solo il primo dice COME svolgere la simulazione: una domanda alla volta, aspettare la risposta e un riscontro in 3 punti. Il secondo rischia una raffica di domande e un giudizio vago."
-  promiMessage="Ce l'hai fatta: ora sai notare anche il dettaglio che manca. In bocca al lupo!"
+  explanation="Tutti e due hanno contesto e ruolo, ma solo il primo dice COME svolgere la simulazione: una domanda alla volta, aspettare la risposta e un riscontro in 3 punti. Il secondo rischia una raffica di 10 domande insieme e un giudizio vago."
+  promiMessage="Quando chiedi una simulazione, spiega le regole del gioco."
 />
 </Section>
 
 <Section>
-## La Sfida del Prompt Definitivo!
+## Prova 4 – Chi decide
+
+<PromptVsMistake
+  question="Stai scegliendo la scuola superiore. Leggi bene la fine dei due prompt: quale usa l'IA nel modo giusto?"
+  good="Sono in terza media, mi piacciono informatica e matematica ma faccio fatica a studiare a memoria. Confronta liceo scientifico scienze applicate e istituto tecnico informatico in una tabella: materie, ore di laboratorio, cosa si fa dopo. Poi dammi 3 domande da fare agli open day."
+  bad="Sono in terza media, mi piacciono informatica e matematica ma faccio fatica a studiare a memoria. Confronta liceo scientifico scienze applicate e istituto tecnico informatico in una tabella: materie, ore di laboratorio, cosa si fa dopo. Poi dimmi tu quale devo scegliere."
+  explanation="L'IA non conosce te, le scuole della tua città né i tuoi prof: una decisione così importante non si delega a una risposta di chat, che può anche contenere informazioni vecchie. Il primo prompt usa l'IA per capire le differenze e prepararsi agli open day, dove le informazioni si verificano."
+  promiMessage="Io ti aiuto a ragionare. La scelta resta tua, insieme a chi ti conosce."
+/>
+</Section>
+
+<Section>
+## Prova 5 – Correggere il tiro
+
+<WhatWouldYouDo
+  scenario="Hai chiesto un piano di ripasso per l'esame di terza media. L'IA ti ha dato un piano ordinato e chiaro, ma prevede 4 ore di studio ogni giorno. Tu il martedì e il giovedì hai allenamento fino alle 19 e non puoi studiare più di un'ora."
+  question="Qual è la mossa migliore?"
+  choices={[
+    { text: "Apro una nuova chat e riscrivo tutta la richiesta da capo.", feedback: "Funziona, ma perdi tutto il lavoro già fatto e rischi di dimenticare qualche dettaglio. Correggere nella stessa chat è più veloce e preciso." },
+    { text: "Rispondo: «Troppe ore, fallo più leggero.»", feedback: "Più leggero quanto? Senza numeri potrei passare a 3 ore al giorno e il problema del martedì e del giovedì resterebbe." },
+    { text: "Rispondo nella stessa chat: «Martedì e giovedì ho allenamento fino alle 19: massimo 1 ora quei giorni, 2 ore negli altri. Rifai il piano tenendolo presente e dimmi se qualcosa non ci sta più.»", correct: true, feedback: "Esatto. Tieni il lavoro già fatto, dai i vincoli precisi e chiedi anche di segnalarti cosa resta fuori. Questo è un maestro." },
+    { text: "Tengo il piano così com'è e salto qualche allenamento.", feedback: "Il piano deve adattarsi alla tua vita, non il contrario. Bastava una riga per correggerlo." }
+  ]}
+  promiMessage="Il primo prompt è l'inizio di una conversazione, non l'ultima parola."
+/>
+</Section>
+
+<Section>
+## Prova 6 – Costruzione finale
 
 <DragDropPrompt
-  title="Sfida del Diploma"
-  instruction="Costruisci il prompt più completo possibile!"
-  pieces={["Sono un giovane chef che adora fare dolci.", "Fai finta di essere un istruttore di pasticceria simpatico", "e dammi 3 ricette facili di biscotti per principianti,", "come 'Biscotti allo zucchero semplici - solo 5 ingredienti!'", "Rendi le istruzioni chiare e divertenti!"]}
-  correctOrder={[0, 1, 2, 3, 4]}
-  successMessage="PERFETTO! Contesto, ruolo, formato, esempio E stile! Sei un vero maestro!"
+  title="Il piano per l'esame"
+  instruction="Sei pezzi per il prompt più importante dell'anno. Mettili nell'unico ordine in cui la frase fila."
+  pieces={["mettendo prima le materie dove vado peggio, matematica e inglese,", "Fai il mio tutor di studio e preparami un piano", "Mancano 3 settimane all'esame di terza media", "e lasciando gli ultimi 2 giorni solo per provare l'orale.", "in una tabella giorno per giorno,", "e ho 2 ore al giorno, tranne la domenica."]}
+  correctOrder={[2, 5, 1, 4, 0, 3]}
+  successMessage="Tempo a disposizione, ruolo, compito, formato, priorità e il finale pensato per l'orale. Un prompt che ti organizza tre settimane."
 />
 </Section>
 
 <Section>
-## Crea il tuo capolavoro finale!
+## Prova 7 – Il tuo capolavoro
+
+Ultima prova: scrivi un prompt completo su un compito vero. Tutte le scelte funzionano, ma alcune combinazioni sono più sensate di altre: rileggilo e chiediti se i pezzi vanno d'accordo.
 
 <MagicWords
-  sentence="Sono un ___ che vuole ___. Fai finta di essere un ___ e aiutami con ___. Dammi qualcosa come '___'. Rendilo ___ e ___!"
+  sentence="Sono ___ e devo ___. Fai ___ e aiutami a ___. Tieni conto che ___. Voglio la risposta come ___."
   blanks={[
-    { hint: "👤 chi sei", answers: ["bambino creativo", "giovane esploratore", "apprendista curioso", "artista in erba", "futuro inventore"] },
-    { hint: "🎯 il tuo obiettivo", answers: ["creare qualcosa di incredibile", "imparare qualcosa di nuovo", "risolvere un problema", "far sorridere le persone", "iniziare un'avventura"] },
-    { hint: "🎭 un ruolo utile", answers: ["mentore saggio", "allenatore divertente", "guida creativa", "insegnante paziente", "amico incoraggiante"] },
-    { hint: "📚 cosa ti serve", answers: ["3 idee brillanti", "un piano passo dopo passo", "una storia ispiratrice", "consigli utili", "un progetto creativo"] },
-    { hint: "💡 un esempio", answers: ["Costruisci un razzo di cartone!", "Scrivi una canzone sulla gentilezza", "Progetta una casa sull'albero dei sogni", "Crea un nuovo gioco", "Inventa un robot utile"] },
-    { hint: "✨ stile 1", answers: ["divertente", "ispiratrice", "creativo", "emozionante", "incoraggiante"] },
-    { hint: "🌟 stile 2", answers: ["facile da seguire", "pieno di immaginazione", "memorabile", "unico", "gioioso"] }
+    { hint: "👤 chi sei", answers: ["in terza media", "il capitano della squadra", "in redazione al giornalino", "il regista del video di classe", "in seconda media"] },
+    { hint: "🎯 l'obiettivo", answers: ["preparare l'orale d'esame", "scegliere tra due scuole superiori", "organizzare un lavoro di gruppo in 4", "girare un video di 3 minuti", "preparare l'allenamento di giovedì"] },
+    { hint: "🎭 il ruolo", answers: ["la commissione d'esame", "un orientatore", "un capo progetto", "un regista", "un allenatore giovanile"] },
+    { hint: "✏️ il compito preciso", answers: ["fare una scaletta", "confrontare le opzioni", "dividere i compiti", "scrivere il copione", "trovare i miei punti deboli"] },
+    { hint: "📌 il vincolo", answers: ["ho solo 1 ora al giorno", "non voglio il lavoro fatto al posto mio", "non uso nomi o foto vere", "devo stare in 5 minuti", "la decisione finale la prendo io"] },
+    { hint: "📋 il formato", answers: ["una tabella", "una domanda alla volta", "un elenco di 5 punti", "un copione con le battute", "un calendario settimanale"] }
   ]}
-  successMessage="🎉 CAPOLAVORO! Hai creato il prompt definitivo! Sei ufficialmente un MAESTRO DEI PROMPT!"
+  successMessage="Prompt completo: chi sei, obiettivo, ruolo, compito, vincolo e formato. È lo stesso schema che userai anche fra cinque anni, per cose molto più grandi."
 />
 </Section>
 
 <Section>
-## 🎓 CE L'HAI FATTA! 🎓
+## Esame superato
 
 <Panel character="promi" mood="celebrating">
-**CONGRATULAZIONI, MAESTRO DEI PROMPT!** 🏆
+Ce l'hai fatta: sei un **Maestro dei Prompt**. Sai essere chiaro, dare contesto e dettagli, scegliere il formato, riparare e remixare. E soprattutto sai riconoscere il pezzo che manca.
 
-Hai completato TUTTI i livelli! Ora sai come parlare con l'IA nei modi migliori possibili. Puoi:
-- Essere chiaro e specifico
-- Aggiungere dettagli incredibili
-- Dare contesto utile
-- Essere creativo e fantasioso
-- E tanto altro!
-
-Ricorda: Migliori sono i tuoi prompt, meglio l'IA può aiutarti. Vai a creare cose incredibili!
-
-**Grazie per aver imparato con me! 🤖❤️**
+Ma saper chiedere è solo metà del lavoro. L'altra metà è capire **quando fidarsi della risposta**: l'IA può sbagliare, inventare, e va usata senza mettere in giro i tuoi dati. Per questo il viaggio continua: prossima tappa la **Spiaggia della Sicurezza**, poi la **Città Digitale**.
 </Panel>
 
-<LevelComplete 
-  levelSlug="5-4-graduation-day" 
+<LevelComplete
+  levelSlug="5-4-graduation-day"
   stars={3}
-  message="🎓 CONGRATULAZIONI! Ora sei un MAESTRO DEI PROMPT! 🏆"
+  message="Esame della parte sui prompt superato: sei un Maestro dei Prompt. Prossima tappa, la Spiaggia della Sicurezza."
 />
 </Section>

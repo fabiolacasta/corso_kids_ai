@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
-import { completeLevel, getLevelProgress } from "@/lib/kids/progress";
+import { completeLevel, getLevelProgress, getMistakes, starsForMistakes, resetLevelAttempt } from "@/lib/kids/progress";
 import { getAdjacentLevels, getLevelBySlug, getAllLevels, worlds } from "@/lib/kids/levels";
 import { analyticsKids } from "@/lib/analytics";
 import { PixelRobot, PixelStar } from "./pixel-art";
@@ -25,24 +25,29 @@ export function LevelComplete({
   const [savedStars, setSavedStars] = useState(0);
   const [worldMedal, setWorldMedal] = useState<number | null>(null);
   const [allDone, setAllDone] = useState(false);
+  const [attempt, setAttempt] = useState<{ stars: number; mistakes: number } | null>(null);
   const { next } = getAdjacentLevels(levelSlug);
 
   useEffect(() => {
     const existingProgress = getLevelProgress(levelSlug);
     const existingStars = existingProgress?.stars || 0;
+    // Stars of this attempt depend on the wrong answers given in the level
+    const mistakes = getMistakes(levelSlug);
+    const earned = Math.min(stars, starsForMistakes(mistakes));
+    setAttempt({ stars: earned, mistakes });
     
-    if (stars > existingStars) {
-      completeLevel(levelSlug, stars);
+    if (!existingProgress?.completed || earned > existingStars) {
+      completeLevel(levelSlug, Math.max(earned, existingStars));
       setShowConfetti(true);
       
       // Track level completion
       const level = getLevelBySlug(levelSlug);
       if (level) {
-        analyticsKids.completeLevel(levelSlug, level.world, stars);
+        analyticsKids.completeLevel(levelSlug, level.world, earned);
       }
     }
     
-    setSavedStars(Math.max(stars, existingStars));
+    setSavedStars(Math.max(earned, existingStars));
 
     // Medal when this level completes its whole world; certificate when the course is done
     const level = getLevelBySlug(levelSlug);
@@ -103,6 +108,29 @@ export function LevelComplete({
             </div>
           ))}
         </div>
+
+        {/* Result of this attempt: mistakes and a way to try for 3 stars */}
+        {attempt && (
+          <div className="mx-4 mb-5 text-center">
+            <p className="m-0 text-lg text-[#2C1810]">
+              {attempt.mistakes === 0
+                ? t("levelComplete.noMistakes")
+                : t("levelComplete.mistakes", { count: attempt.mistakes })}
+            </p>
+            {savedStars < 3 && (
+              <button
+                type="button"
+                className="pixel-btn pixel-btn-amber px-4 py-2 text-base mt-2"
+                onClick={() => {
+                  resetLevelAttempt(levelSlug);
+                  window.location.reload();
+                }}
+              >
+                {t("levelComplete.replay")}
+              </button>
+            )}
+          </div>
+        )}
 
         {/* World medal */}
         {worldMedal !== null && (

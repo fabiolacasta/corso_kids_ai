@@ -1,27 +1,31 @@
 <Section>
 <Panel character="promi" mood="excited">
-Benvenuto all'ultimo livello delle Grotte del Contesto! 🕳️ È ora di diventare un **Campione del Contesto** combinando tutto ciò che hai imparato!
+Ultimo livello delle Caverne del Contesto. Adesso si mette tutto insieme. Ti avviso: nelle sfide di oggi i prompt sembrano tutti buoni. La differenza è in un pezzo solo.
 </Panel>
 </Section>
 
 <Section>
-## La checklist del Campione del Contesto
+## La checklist del contesto
 
-Un ottimo contesto include:
+Un prompt completo ha tre ingredienti:
 
-✅ **Sfondo** - Chi sei, in che situazione sei
-✅ **Esempi** - Mostra cosa vuoi
-✅ **Formato** - Come vuoi che la risposta sia organizzata
+✅ **Sfondo**: chi sei, in che situazione sei, a cosa ti serve, chi leggerà.
+
+✅ **Esempio**: un modello di quello che vuoi, che mostra stile e lunghezza.
+
+✅ **Formato**: come deve essere organizzata la risposta e quanto deve essere lunga.
+
+Non serve sempre scrivere un tema. Spesso bastano tre frasi, una per ingrediente.
 </Section>
 
 <Section>
 <Panel character="promi" mood="thinking">
-Metti insieme tutti e tre e otterrai risultati incredibili ogni volta!
+Il trucco per le sfide: non scegliere il prompt più lungo. Controlla la checklist pezzo per pezzo e cerca quello che manca.
 </Panel>
 </Section>
 
 <Section>
-## Sfida Campione #1
+## Sfida #1
 
 <PromptVsMistake
   question="Quale prompt dà all'IA tutto quello che serve per gli slogan del cartellone?"
@@ -33,7 +37,7 @@ Metti insieme tutti e tre e otterrai risultati incredibili ogni volta!
 </Section>
 
 <Section>
-## Sfida Campione #2
+## Sfida #2
 
 <PromptVsMistake
   question="Quale prompt combina meglio sfondo, esempio e formato?"
@@ -45,43 +49,54 @@ Metti insieme tutti e tre e otterrai risultati incredibili ogni volta!
 </Section>
 
 <Section>
-## Costruisci un prompt campione!
+## Sfida #3
+
+<PromptVsMistake
+  question="Fai la recensione di un videogioco per il giornalino. Quale prompt è completo?"
+  good="Scrivo per il giornalino della scuola, letto da ragazzi di 11-14 anni. Aiutami con la recensione di un gioco di costruzioni: 3 paragrafi brevi (com'è, pregi, difetti) e un voto finale, tipo «Voto: 8/10, perfetto da giocare in squadra»."
+  bad="Scrivo per il giornalino della scuola, letto da ragazzi di 11-14 anni. Aiutami con la recensione di un gioco di costruzioni, che sia onesta, con pregi e difetti, e scritta in modo che invogli a leggerla fino in fondo."
+  explanation="Il secondo ha uno sfondo ottimo, ma niente formato (quanto lunga, come divisa) e nessun esempio di come scrivere il voto finale. Il primo ha tutti e tre i pezzi, quindi la recensione arriva già con la struttura giusta per la pagina."
+  promiMessage="«Onesta» e «che invogli» sono belle parole, ma non mi dicono che forma deve avere il testo."
+/>
+</Section>
+
+<Section>
+## Costruisci un prompt completo
 
 <DragDropPrompt
-  title="Campione del Contesto"
-  instruction="Ordina TUTTI gli elementi del contesto in un prompt perfetto"
-  pieces={["Sto scrivendo una storia per la mia classe.", "Puoi suggerire 3 nomi di animali magici", "come 'Scintilla' o 'Raggio di Luna'?", "Qualcosa di carino ma non troppo lungo."]}
-  correctOrder={[0, 1, 2, 3]}
-  successMessage="Prompt campione! Hai incluso sfondo, esempi e preferenze di formato!"
+  title="Prompt completo"
+  instruction="Metti in ordine: sfondo, richiesta, esempio, formato."
+  pieces={["Scrivimi l'introduzione dell'episodio,", "Con la classe facciamo un podcast sulla storia del nostro quartiere.", "e chiudi con una domanda per chi ascolta.", "con un tono simile a «Benvenuti in Fuori Orario, il podcast della 2ªC».", "Il primo episodio parla della vecchia stazione.", "Massimo 60 secondi letti ad alta voce,"]}
+  correctOrder={[1, 4, 0, 3, 5, 2]}
+  successMessage="Sfondo in due frasi, richiesta, esempio di tono e formato preciso: questo è un prompt completo."
 />
 </Section>
 
 <Section>
-## Crea il tuo prompt campione!
+## Crea il tuo prompt completo
 
 <MagicWords
-  sentence="Sono un ___ che lavora su ___. Puoi darmi ___ come ___? Rendilo ___."
+  sentence="Faccio la terza media e sto lavorando a ___. Mi serve ___, sullo stile di ___. Organizzalo come ___."
   blanks={[
-    { hint: "👤 chi sei", answers: ["studente", "giovane scrittore", "bambino curioso", "artista creativo", "cuoco principiante"] },
-    { hint: "📚 il tuo progetto", answers: ["un progetto scolastico", "un biglietto d'auguri", "una storia divertente", "un esperimento scientifico", "un fumetto"] },
-    { hint: "🎯 cosa ti serve", answers: ["3 buone idee", "5 titoli divertenti", "alcuni nomi fighi", "qualche esempio", "consigli utili"] },
-    { hint: "💡 un esempio", answers: ["'Super Stella'", "'Momento Magico'", "'Mondo delle Meraviglie'", "'Aiutante Felice'", "'Squadra dei Sogni'"] },
-    { hint: "✨ lo stile", answers: ["divertente e corto", "creativo e accattivante", "semplice e chiaro", "emozionante e audace", "amichevole e caloroso"] }
+    { hint: "📚 il progetto", answers: ["la tesina per l'esame", "il video di fine anno", "la presentazione sulle superiori", "il torneo di classe"] },
+    { hint: "🎯 cosa ti serve", answers: ["un titolo", "una scaletta", "5 idee", "un'introduzione"] },
+    { hint: "💡 l'esempio", answers: ["«Tre anni in tre minuti»", "«Dalla prima alla terza»", "«Ultima campanella»"] },
+    { hint: "📋 il formato", answers: ["elenco numerato", "tabella a due colonne", "schema in 5 punti"] }
   ]}
-  successMessage="Sei un vero Campione del Contesto! Questo prompt ha tutto!"
+  successMessage="Sfondo, richiesta, esempio e formato. È il prompt completo."
 />
 </Section>
 
 <Section>
-## Congratulazioni, Campione! 🎉
+## Caverne completate
 
 <Panel character="promi" mood="celebrating">
-Ce l'hai fatta! Hai completato le Grotte del Contesto e sei diventato un **Campione del Contesto**! Ora sai come combinare sfondo, esempi e formato per prompt incredibili!
+Hai finito le Caverne del Contesto. Da qui in poi, quando una risposta non ti convince, sai dove guardare: manca lo sfondo, manca l'esempio o manca il formato. Quasi sempre è uno dei tre.
 </Panel>
 
-<LevelComplete 
-  levelSlug="3-4-context-champion" 
+<LevelComplete
+  levelSlug="3-4-context-champion"
   stars={3}
-  message="Hai completato le Grotte del Contesto! Sei un Campione del Contesto!"
+  message="Hai completato le Caverne del Contesto: sai combinare sfondo, esempi e formato."
 />
 </Section>

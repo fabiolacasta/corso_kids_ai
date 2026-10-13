@@ -1,28 +1,29 @@
 <Section>
 <Panel character="promi" mood="excited">
-Benvenuto nel **Canyon della Creatività**! 🎨 Qui è dove la creatività prende vita! Oggi impariamo i **prompt di gioco di ruolo**!
+Benvenuto nel **Canyon Creativo**. Qui si inventa: personaggi, storie, mondi interi. Primo strumento della cassetta: il **gioco di ruolo**.
 </Panel>
 </Section>
 
 <Section>
-## Cos'è il gioco di ruolo?
+## Cos'è il gioco di ruolo con l'IA?
 
-**Gioco di ruolo** significa chiedere all'IA di fingere di essere qualcuno o qualcosa!
+Fai un gioco di ruolo quando chiedi all'IA di **interpretare una parte**: un personaggio, un mestiere, un punto di vista. Serve a tre cose:
 
-Puoi dire cose come:
-- "Fai finta di essere un pirata..."
-- "Immagina di essere un insegnante..."
-- "Sei uno chef simpatico..."
+- **Allenarti**: un prof che ti interroga, un turista inglese che ti chiede indicazioni, un selezionatore che ti fa il colloquio di orientamento per le superiori.
+- **Studiare in modo diverso**: un mercante del Medioevo, un'operaia di una fabbrica dell'Ottocento, un tecnico della missione Apollo 11.
+- **Creare**: il master di una campagna da tavolo, un personaggio di un videogioco, il testimone di un giallo che stai scrivendo.
+
+Un buon prompt di ruolo dice **chi deve essere l'IA**, **chi sei tu**, **qual è la situazione** e **come si gioca** (chi parla, quando ci si ferma).
 </Section>
 
 <Section>
-<Panel character="promi" mood="happy">
-Quando mi chiedi di interpretare un ruolo, posso dare risposte con la voce e lo stile di quel personaggio! È come giocare a fare finta insieme!
+<Panel character="promi" mood="thinking">
+Una cosa importante. Se mi chiedi di fare Leonardo da Vinci, io **non sono** Leonardo: imito un personaggio con quello che ho letto, e quando non so una cosa posso inventarla con molta sicurezza. Quello che dico «in parte» è **finzione**. Date e fatti li controlli sul libro, prima di metterli in una ricerca.
 </Panel>
 </Section>
 
 <Section>
-## Guarda il gioco di ruolo in azione!
+## Personaggi storici: finzione o fonte?
 
 <PromptVsMistake
   question="Per una ricerca sul Medioevo vuoi usare il gioco di ruolo. Quale prompt è più corretto?"
@@ -34,7 +35,7 @@ Quando mi chiedi di interpretare un ruolo, posso dare risposte con la voce e lo 
 </Section>
 
 <Section>
-## Scegli il tuo personaggio!
+## Il ruolo deve servire a qualcosa
 
 <PromptVsMistake
   question="Vuoi esercitarti per l'interrogazione di scienze. Quale gioco di ruolo ti aiuta davvero?"
@@ -46,41 +47,57 @@ Quando mi chiedi di interpretare un ruolo, posso dare risposte con la voce e lo 
 </Section>
 
 <Section>
-## Crea un prompt di gioco di ruolo!
+## E se il personaggio ti dà una data?
+
+<WhatWouldYouDo
+  scenario="Per la ricerca sul Risorgimento fai un gioco di ruolo: l'IA interpreta un garibaldino inventato che racconta la spedizione dei Mille. A un certo punto dice: «Partimmo da Quarto il 5 maggio 1860, eravamo più di duemila». Nel prompt avevi scritto «usa solo fatti storici veri»."
+  question="Cosa fai con questa informazione?"
+  choices={[
+    { text: "La metto nella ricerca: avevo chiesto esplicitamente solo fatti veri, quindi è affidabile.", feedback: "Chiederlo aiuta, ma non è una garanzia: l'IA può sbagliare anche quando le chiedi di non farlo. Qui infatti il numero è sbagliato: i Mille erano poco più di mille." },
+    { text: "Controllo data e numero sul libro di storia e scrivo nella ricerca solo quello che trovo lì.", correct: true, feedback: "Esatto. Il gioco di ruolo ti ha dato una scena da ricordare, il libro ti dà i fatti. La data è giusta, il numero no." },
+    { text: "Esco dal gioco e chiedo all'IA: «Sei sicuro dei numeri?». Se conferma, li tengo.", feedback: "Sembra furbo, ma l'IA può confermare con sicurezza anche un errore. Per controllare serve una fonte diversa dall'IA stessa." }
+  ]}
+  promiMessage="Il personaggio ti fa entrare nella storia. I fatti, però, li verifichi fuori da me."
+/>
+</Section>
+
+<Section>
+## Costruisci un gioco di ruolo per allenarti
 
 <DragDropPrompt
-  title="Tempo di immaginare!"
-  instruction="Ordina i pezzi per creare un prompt di gioco di ruolo divertente"
-  pieces={["e raccontami", "Fai finta di essere un drago", "del tuo tesoro preferito", "che ama collezionare cose luccicanti"]}
-  correctOrder={[1, 3, 0, 2]}
-  successMessage="Ottimo prompt di gioco di ruolo! Ora il drago può condividere le sue storie di tesori!"
+  title="Allenamento d'inglese"
+  instruction="Metti in ordine i pezzi: prima il ruolo, poi la situazione, poi le regole del gioco."
+  pieces={["Fai la parte di un commesso in un negozio di Londra:", "io sono un cliente che vuole cambiare una felpa della taglia sbagliata.", "Parla solo in inglese semplice, livello A2,", "e scrivi una battuta alla volta, aspettando la mia.", "Quando scrivo «stop», esci dal personaggio", "e correggimi gli errori spiegandoli in italiano."]}
+  correctOrder={[0, 1, 2, 3, 4, 5]}
+  successMessage="Ruolo, situazione, regole e un modo per uscire dal gioco. Così è un allenamento vero, non una chiacchierata."
 />
 </Section>
 
 <Section>
-## Costruisci il tuo gioco di ruolo!
+## Il tuo gioco di ruolo
 
 <MagicWords
-  sentence="Fai finta di essere un ___ che ___. Raccontami di ___."
+  sentence="Fai la parte di ___. Io sono ___. Lo scopo è ___. Quando scrivo «stop», ___."
   blanks={[
-    { hint: "🎭 un personaggio", answers: ["mago", "supereroe", "gatto parlante", "viaggiatore del tempo", "fata"] },
-    { hint: "⭐ cosa fa", answers: ["esaudisce desideri", "salva la situazione", "esplora terre magiche", "inventa gadget fighi", "fa pozioni"] },
-    { hint: "📖 cosa condividere", answers: ["la tua più grande avventura", "il tuo giorno migliore", "un errore divertente che hai fatto", "il tuo nascondiglio segreto", "il tuo migliore amico"] }
+    { hint: "chi è l'IA", answers: ["un commissario che indaga su un furto nella palestra della scuola", "un selezionatore di una squadra di basket under 14", "un turista inglese che si è perso a Roma", "il master di una campagna horror leggera ambientata in un ospedale abbandonato", "un'operaia di una fabbrica tessile del 1890, personaggio inventato"] },
+    { hint: "chi sei tu", answers: ["il testimone che ha visto qualcosa di strano", "un ragazzo che vuole entrare in squadra", "un passante che parla un po' di inglese", "un giocatore che entra per primo nell'edificio", "uno studente che la intervista per una ricerca"] },
+    { hint: "a cosa serve", answers: ["allenarmi a rispondere sotto pressione", "esercitarmi a parlare in inglese", "provare la prima scena della campagna", "capire com'era la vita in fabbrica, sapendo che è finzione", "trovare idee per il mio racconto"] },
+    { hint: "come si chiude", answers: ["dimmi cosa potevo fare meglio", "correggi i miei errori", "elencami i fatti storici da controllare sul libro", "riassumi in tre righe cosa è successo", "dammi un voto da 1 a 10 con il motivo"] }
   ]}
-  successMessage="Fantastico gioco di ruolo! Ora possiamo avere una conversazione immaginaria divertente!"
+  successMessage="Hai un ruolo, una situazione, uno scopo e un'uscita. Manca solo la prof alla LIM per provarlo."
 />
 </Section>
 
 <Section>
-## Maestro del Gioco di Ruolo! 🎉
+## Livello completato
 
 <Panel character="promi" mood="celebrating">
-Fantastico! Hai imparato che i **prompt di gioco di ruolo** rendono le conversazioni creative e divertenti! Basta chiedermi di "fare finta" o "essere" qualcuno!
+Ricapitolando: un gioco di ruolo funziona quando dici **chi sono io**, **chi sei tu**, **cosa vuoi ottenere** e **come si chiude**. E quando il personaggio è storico, ricordati che stai parlando con un'imitazione: i fatti si controllano.
 </Panel>
 
-<LevelComplete 
-  levelSlug="4-1-pretend-time" 
+<LevelComplete
+  levelSlug="4-1-pretend-time"
   stars={3}
-  message="Hai imparato a usare i prompt di gioco di ruolo!"
+  message="Sai costruire un gioco di ruolo utile e sai che quello che dice un personaggio resta finzione."
 />
 </Section>

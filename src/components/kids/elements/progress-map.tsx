@@ -26,6 +26,7 @@ import {
   PixelVan 
 } from "./pixel-art";
 import { BeachScene } from "./beach-art";
+import { CityScene } from "./city-art";
 
 const KIDS_ONLY = process.env.NEXT_PUBLIC_KIDS_ONLY === "1";
 
@@ -56,6 +57,9 @@ export function ProgressMap() {
   // World 6 (Safety Shores) gets its own beach scenery
   const beachIndex = allLevels.findIndex((l) => l.world === 6);
   const beachLeft = beachIndex > 0 ? levelPositions[beachIndex].x - 110 : mapWidth;
+  // World 7 (Città Digitale) gets a city skyline after the beach
+  const cityIndex = allLevels.findIndex((l) => l.world === 7);
+  const cityLeft = cityIndex > 0 ? levelPositions[cityIndex].x - 110 : mapWidth;
 
   // Where the player is now: first unlocked level not yet completed
   const currentIndex = progress
@@ -127,7 +131,8 @@ export function ProgressMap() {
             />
           </div>
           
-          {beachIndex > 0 && <BeachScene left={beachLeft} width={mapWidth - beachLeft} />}
+          {beachIndex > 0 && <BeachScene left={beachLeft} width={Math.min(mapWidth, cityLeft) - beachLeft} />}
+          {cityIndex > 0 && <CityScene left={cityLeft} width={mapWidth - cityLeft} />}
 
           {/* Pixel art path connecting all levels */}
           <svg 
@@ -194,6 +199,7 @@ export function ProgressMap() {
                   }}
                 >
                   {world.number === 6 && "🛟 "}
+                  {world.number === 7 && "🌃 "}
                   {t(`worlds.${world.number}.title`)}
                   {progress && world.levels.every((l) => progress.levels[l.slug]?.completed) && (
                     <span className="ml-1" title="Mondo completato" aria-label="Mondo completato">🏅</span>

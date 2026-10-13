@@ -1,0 +1,157 @@
+<Section>
+<Panel character="promi" mood="thinking">
+Oggi parliamo di chiavi. Non quelle di casa: quelle dei tuoi account. Password, codici di verifica e, novità degli ultimi anni, **la tua voce**.
+</Panel>
+</Section>
+
+<Section>
+## Lunga batte complicata
+
+Esistono programmi che provano **miliardi di password al secondo**, e alcuni usano anche l'IA per indovinare quelle che scelgono le persone. Sanno benissimo che la gente usa:
+
+- nome + anno di nascita (**Chiara2012**)
+- squadra del cuore + numero (**Juventus10**)
+- una parola con una maiuscola e un punto esclamativo alla fine (**Gatto!**)
+- lettere al posto dei numeri (**P4ssw0rd**)
+
+Queste cadono in pochi secondi. Quello che conta davvero è la **lunghezza**.
+
+Il metodo migliore è la **passphrase**: 4 o più parole a caso, che non c'entrano niente l'una con l'altra. Per esempio **ombrello-giraffa-tostapane-marzo**. È lunghissima, quindi difficile da indovinare, ma facile da ricordare perché te la immagini.
+
+<Panel character="promi" mood="happy">
+Le passphrase che vedi in questo livello ora le conosce tutta la classe. Quindi non usarle: inventane una tua.
+</Panel>
+
+Due regole in più:
+- **Una password diversa per ogni account.** Se rubano quella del gioco, non devono poter entrare anche nella tua email.
+- L'email è l'account più importante: da lì si recuperano tutti gli altri.
+</Section>
+
+<Section>
+## Debole o forte?
+
+<SafetySorter
+  title="Prova di resistenza"
+  instruction="Per ogni password decidi se reggerebbe a un programma che prova miliardi di combinazioni."
+  buckets={[
+    { id: "weak", label: "🔓 Debole", color: "red" },
+    { id: "strong", label: "🔒 Forte", color: "green" }
+  ]}
+  items={[
+    { text: "Juventus2013", bucket: "weak", why: "Squadra + anno: è una delle prime combinazioni che i programmi provano." },
+    { text: "lampada-gufo-razzo-ottobre", bucket: "strong", why: "Quattro parole a caso senza legame tra loro: lunga e imprevedibile." },
+    { text: "Chiara#2012", bucket: "weak", why: "Il simbolo non basta: nome + anno di nascita resta prevedibile, soprattutto se il tuo nome e la tua età sono sul profilo." },
+    { text: "Gatto!", bucket: "weak", why: "Troppo corta: sei caratteri si indovinano in un attimo, punto esclamativo compreso." },
+    { text: "nonna-trampolino-21-meteorite", bucket: "strong", why: "Parole scollegate più un numero: molto lunga e difficile da indovinare." },
+    { text: "Tr0mb0n3!2024", bucket: "weak", why: "Sembra complicata, ma sostituire le lettere con numeri è un trucco che i programmi conoscono benissimo." },
+    { text: "calcio-calcio-calcio-calcio", bucket: "weak", why: "È lunga, ma è la stessa parola ripetuta: un programma ci arriva subito. Le parole devono essere diverse e casuali." }
+  ]}
+  successMessage="Ora sai che una password forte non è quella più strana, ma quella più lunga e imprevedibile."
+/>
+</Section>
+
+<Section>
+## Il secondo lucchetto: la verifica in due passaggi
+
+La **verifica in due passaggi** (2FA) funziona così: dopo la password, l'app ti chiede anche un **codice di 6 cifre** che arriva via SMS o in un'app apposita sul tuo telefono.
+
+Risultato: anche se qualcuno ruba la tua password, **non entra**, perché il codice arriva a te.
+
+Proprio per questo i truffatori non cercano più solo la password: **cercano quel codice**. E lo chiedono con le scuse più credibili.
+
+<Panel character="promi" mood="confused">
+Regola senza eccezioni: il codice di verifica non si dà a nessuno. Non al supporto, non all'amico, non alla banca, non a me. Nessuna azienda seria te lo chiede.
+</Panel>
+</Section>
+
+<Section>
+## La voce che sembra vera
+
+Con l'IA oggi bastano **pochi secondi di audio** per imitare la voce di una persona: un vocale su WhatsApp, una storia, un video pubblicato. Il programma impara il timbro e può fargli dire qualsiasi cosa.
+
+I truffatori lo usano per messaggi tipo: «Sono io, ho perso il telefono, ti sto scrivendo da un altro numero. Mi arriva un codice sul tuo, me lo giri?»
+
+<RedFlagChat
+  contact="Numero sconosciuto"
+  app="WhatsApp"
+  avatar="📱"
+  instruction="Ti scrive qualcuno che dice di essere Matteo, il tuo compagno di banco. Trova i segnali d'allarme."
+  messages={[
+    { from: "them", text: "Ehi, sono Matteo! Mi si è rotto il telefono, questo è il numero di mia cugina", flag: true, why: "Numero nuovo + scusa del telefono perso: è l'inizio classico, così non puoi controllare dal numero vero." },
+    { from: "them", text: "🎤 Messaggio vocale (0:07): «Sì sono io, ti giuro, ascolta la voce»", flag: true, why: "Insistere sulla voce come prova non prova niente: con l'IA bastano pochi secondi di un vocale vecchio per clonarla." },
+    { from: "me", text: "Ah ok, che è successo?" },
+    { from: "them", text: "Domani abbiamo la verifica di geometria vero?", why: "Domanda normale, magari presa dal gruppo della classe: da sola non è un segnale." },
+    { from: "them", text: "Senti, ti è appena arrivato un codice di 6 cifre per sbaglio, me lo mandi? Mi serve per rientrare nel mio account", flag: true, why: "Il codice è arrivato a TE: serve per entrare nel TUO account. È la richiesta che decide tutto." },
+    { from: "them", text: "Fai veloce che tra 2 minuti scade", flag: true, why: "La fretta serve a non farti pensare né controllare." },
+    { from: "them", text: "Ah, non dirlo a nessuno che mi vergogno", flag: true, why: "Il segreto evita che tu lo chieda a qualcuno, o che chiami il vero Matteo." }
+  ]}
+  successMessage="La voce non era una prova. Il codice era la vera richiesta."
+/>
+
+<Panel character="promi" mood="thinking">
+La difesa è semplice e un po' vecchio stile. In famiglia potete decidere una **parola d'ordine** che conoscete solo voi. Oppure fai una **domanda che sa solo quella persona**. E soprattutto: **richiama sul numero vero** che hai già in rubrica.
+</Panel>
+</Section>
+
+<Section>
+## Una chiamata strana
+
+<WhatWouldYouDo
+  scenario="Sei a casa da solo. Squilla il telefono, numero sconosciuto. È la voce di tua madre, identica, un po' agitata: «Mi hanno bloccato la banca, ti è arrivato un SMS con un codice, leggimelo subito che sono in fila allo sportello.»"
+  question="Cosa fai?"
+  choices={[
+    { text: "Le leggo il codice: è la sua voce, non ci sono dubbi.", feedback: "Oggi una voce identica non basta come prova: con l'IA si clona da pochi secondi di audio. E una banca vera non ha bisogno del codice arrivato sul tuo telefono." },
+    { text: "Le chiedo il nome del nostro cane: se lo sa, le do il codice.", feedback: "Buona idea controllare, ma quell'informazione potrebbe essere sui social. E anche se fosse davvero lei, il codice non si legge al telefono: è sempre un rischio." },
+    { text: "Chiudo, non do nessun codice e richiamo mia madre sul suo numero salvato in rubrica.", correct: true, feedback: "Esatto. Richiamare sul numero vero smonta la truffa in dieci secondi. Se era davvero lei, nessun problema: capirà." },
+    { text: "Le dico di mandarmi un vocale su WhatsApp per essere sicuro che sia lei.", feedback: "Un vocale non prova niente: anche quello si può generare con la voce clonata. Serve richiamare sul numero vero." }
+  ]}
+  promiMessage="Voce uguale non vuol dire persona uguale. Il numero in rubrica sì."
+/>
+</Section>
+
+<Section>
+## Se ti rubano l'account
+
+Prima regola: l'account non si presta, **nemmeno al migliore amico**. Le amicizie cambiano, i telefoni si perdono, e chi ha la password può fare qualsiasi cosa a nome tuo.
+
+E se succede comunque?
+
+<DragDropPrompt
+  title="Account rubato: in che ordine?"
+  instruction="Hai appena scoperto che qualcuno è entrato nel tuo account di gioco. Metti i passi nell'ordine giusto."
+  pieces={[
+    "Attivo la verifica in due passaggi, se non c'era",
+    "Lo dico subito a un adulto di fiducia",
+    "Avviso gli amici che eventuali messaggi strani dal mio account non li ho scritti io",
+    "Cambio la password dell'email collegata, dall'app o dal sito ufficiale",
+    "Recupero l'account dall'app ufficiale del gioco e cambio la password con una nuova passphrase",
+    "Controllo se ho usato la stessa password altrove e la cambio anche lì"
+  ]}
+  correctOrder={[1, 3, 4, 0, 5, 2]}
+  successMessage="Prima l'adulto, poi l'email, poi il gioco, poi i lucchetti. E alla fine avvisi gli altri."
+/>
+
+<Panel character="promi" mood="thinking">
+Perché l'email prima del gioco? Perché se il ladro controlla la tua email, può rubarti di nuovo l'account con un semplice «password dimenticata».
+</Panel>
+</Section>
+
+<Section>
+## Livello completato
+
+<Panel character="promi" mood="celebrating">
+Le tue chiavi, riassunte:
+
+- ✅ Password **lunghe**: meglio una passphrase di 4 parole a caso
+- ✅ **Una password diversa** per ogni account, e l'email protetta più di tutte
+- ✅ Verifica in due passaggi attiva, e il **codice non si dà a nessuno**
+- ✅ Una voce si può clonare: **richiama sul numero vero** o usa la parola d'ordine
+- ✅ L'account non si presta, e se lo rubano lo dici subito a un adulto
+</Panel>
+
+<LevelComplete
+  levelSlug="7-2-cloned-voice"
+  stars={3}
+  message="Password lunga, codice segreto, numero vero. I tre lucchetti sono tuoi."
+/>
+</Section>

@@ -1,88 +1,107 @@
 <Section>
 <Panel character="promi" mood="excited">
-Oggi impariamo a dare all'IA una **personalità**! 🎭 Questo rende le conversazioni MOLTO più divertenti!
+Oggi si lavora sui **personaggi**: quello che faccio io quando ti rispondo, e quelli che inventi tu per un corto, un fumetto o un videogioco. Spoiler: i personaggi perfetti sono i più noiosi.
 </Panel>
 </Section>
 
 <Section>
-## Dai una personalità all'IA!
+## Due modi di usare un personaggio
 
-Puoi dire all'IA quale personalità avere:
+**1. Dare una personalità all'IA.** Cambia il modo in cui ti risponde: un tutor calmo per il ripasso, un critico severo che legge il tuo racconto, un allenatore esigente che ti prepara alla prova orale.
 
-- **Amichevole e allegro** - sempre positivo!
-- **Sciocco e divertente** - fa tante battute
-- **Saggio e calmo** - dà risposte ponderate
-- **Entusiasta ed energico** - usa tanti punti esclamativi!
+**2. Creare personaggi per i tuoi progetti.** Il protagonista di un cortometraggio di classe, il cattivo di un fumetto, un personaggio non giocante (NPC) di un videogioco. Un personaggio regge quando sai:
+
+- **cosa vuole**;
+- **cosa teme** o cosa nasconde;
+- **un difetto** vero, non finto;
+- **come parla** (frasi lunghe? secche? battute?);
+- **una contraddizione**: duro fuori, insicuro dentro, per esempio.
 </Section>
 
 <Section>
-<Panel character="promi" mood="happy">
-Quando mi dici quale personalità avere, posso adattarmi all'atmosfera che cerchi!
+<Panel character="promi" mood="thinking">
+Se mi descrivi un personaggio solo con aggettivi positivi, io ti restituisco un personaggio che hai già visto mille volte. Dammi un difetto e un desiderio, e iniziano a succedere cose.
 </Panel>
 </Section>
 
 <Section>
-## La personalità fa la differenza!
+## Pregi o conflitto?
 
 <PromptVsMistake
-  question="Vuoi che l'IA interpreti un personaggio del tuo racconto. Quale descrizione dà una personalità più interessante?"
-  good="Interpreta Nonna Ida, ex camionista di 80 anni: parla in modo brusco ma fa battute secche, odia le smancerie e ripara biciclette in cortile. Rispondi come lei alle domande del nipote."
-  bad="Interpreta una nonna dolce e gentile che fa i biscotti, lavora a maglia, porta gli occhiali sul naso e dice sempre «tesoro mio». Rispondi come lei alle domande del nipote."
-  explanation="Il primo dà tratti precisi e un po' inaspettati, che creano un personaggio unico. Il secondo usa solo stereotipi sulle nonne: l'IA risponderà come mille altre nonne già viste."
-  promiMessage="Dettagli veri e un po' sorprendenti rendono un personaggio memorabile."
+  question="State girando un corto sulla squadra di pallavolo della scuola. Quale prompt crea un personaggio più interessante?"
+  good="Interpreta Rebecca, capitana della squadra di pallavolo: in campo è competitiva fino all'esagerazione, ma va nel panico alle interrogazioni. Parla poco, a frasi secche. Rispondi come lei all'allenatore che l'ha messa in panchina."
+  bad="Interpreta Rebecca, capitana della squadra di pallavolo: è forte, coraggiosa, leale e simpatica, sempre positiva e amata da tutte le compagne. Rispondi come lei all'allenatore che l'ha messa in panchina."
+  explanation="Il secondo sembra completo, ma è una lista di pregi: niente difetti, niente contraddizioni, nessun modo di parlare. Rebecca risponderà in modo gentile e prevedibile. Il primo le dà un conflitto interno e una voce: la scena diventa tesa."
+  promiMessage="Un personaggio interessante ha qualcosa che non va. È lì che nasce la storia."
 />
 </Section>
 
 <Section>
-## Adatta l'atmosfera!
+## La personalità giusta per il momento giusto
 
 <PromptVsMistake
   question="La verifica di matematica ti mette ansia e vuoi ripassare con l'IA. Quale personalità le chiedi?"
   good="Fai il tutor paziente e calmo: ripassiamo le equazioni di primo grado un esercizio alla volta. Se sbaglio, non darmi subito la soluzione ma un piccolo indizio."
-  bad="Fai il tutor super energico e pieno di battute che urla «FORZAAA!» a ogni risposta: ripassiamo le equazioni di primo grado un esercizio alla volta, così mi carico per la verifica."
-  explanation="Tutti e due chiedono una personalità, ma il primo la sceglie adatta alla situazione: se sei in ansia serve calma. Il secondo è divertente, ma rischia di agitarti ancora di più."
-  promiMessage="La personalità giusta dipende dalla situazione, non solo da cosa è più divertente."
+  bad="Fai il tutor energico e pieno di battute che mi carica come un allenatore prima della finale: ripassiamo le equazioni di primo grado un esercizio alla volta, così arrivo carico alla verifica."
+  explanation="Tutti e due chiedono una personalità e un metodo. Ma se sei in ansia, un tutor che ti mette pressione rischia di agitarti di più. In più il secondo non dice cosa fare quando sbagli: probabilmente ti darà subito la soluzione."
+  promiMessage="La personalità giusta dipende dalla situazione, non da cosa sembra più divertente."
 />
 </Section>
 
 <Section>
-## Crea un personaggio!
+## Cura il cattivo
+
+<PromptDoctor
+  title="Il cattivo del fumetto"
+  brokenPrompt="Inventa un cattivo per il nostro fumetto."
+  problems={[
+    { issue: "Manca il contesto", symptom: "Che fumetto? Sci-fi, giallo, supereroi? Per chi?", fix: "Inventa un cattivo per il nostro fumetto di fantascienza per la mostra di fine anno, ambientato su una stazione spaziale." },
+    { issue: "Manca il motivo", symptom: "Perché fa quello che fa? Un cattivo «cattivo e basta» non fa paura a nessuno.", fix: "Inventa un cattivo per il nostro fumetto di fantascienza per la mostra di fine anno, ambientato su una stazione spaziale. Deve avere un motivo comprensibile: secondo lui sta salvando la stazione." },
+    { issue: "Manca un punto debole", symptom: "Se è invincibile, come fanno i protagonisti a fermarlo?", fix: "Inventa un cattivo per il nostro fumetto di fantascienza per la mostra di fine anno, ambientato su una stazione spaziale. Deve avere un motivo comprensibile: secondo lui sta salvando la stazione. Dagli anche un punto debole che i protagonisti possono scoprire." },
+    { issue: "Manca il formato", symptom: "Vuoi un racconto lungo o una scheda da usare mentre disegni?", fix: "Inventa un cattivo per il nostro fumetto di fantascienza per la mostra di fine anno, ambientato su una stazione spaziale. Deve avere un motivo comprensibile: secondo lui sta salvando la stazione. Dagli anche un punto debole che i protagonisti possono scoprire. Rispondi con una scheda: nome, aspetto, obiettivo, punto debole, frase tipica." }
+  ]}
+  healedPrompt="Inventa un cattivo per il nostro fumetto di fantascienza per la mostra di fine anno, ambientato su una stazione spaziale. Deve avere un motivo comprensibile: secondo lui sta salvando la stazione. Dagli anche un punto debole che i protagonisti possono scoprire. Rispondi con una scheda: nome, aspetto, obiettivo, punto debole, frase tipica."
+  successMessage="Da sei parole a una scheda personaggio utilizzabile. La scheda però è un punto di partenza: disegni e dialoghi restano vostri."
+/>
+</Section>
+
+<Section>
+## Un personaggio per il videogioco
 
 <DragDropPrompt
-  title="Personalità del Personaggio"
-  instruction="Ordina per creare una personalità divertente"
-  pieces={["Fai finta di essere un vecchio gufo saggio", "Usa tanti suoni 'uh-uh'!", "che ama insegnare ai giovani uccelli.", "Sii paziente e gentile."]}
-  correctOrder={[0, 2, 3, 1]}
-  successMessage="Che personaggio meraviglioso! Uh-uh! Questo gufo è pronto a insegnare!"
+  title="NPC del videogioco di classe"
+  instruction="Ordina: contesto, chi è, cosa vuole e teme, come parla, la scena, la regola del gioco."
+  pieces={["Stiamo progettando un videogioco di classe e ci serve un personaggio non giocante:", "Ottavio, il custode notturno di un museo chiuso da anni.", "Vuole proteggere un segreto del museo, ma ha paura di essere dimenticato.", "Parla per indovinelli e non risponde mai in modo diretto.", "Interpretalo mentre il giocatore cerca di farsi aprire la sala chiusa,", "e non rivelare il segreto prima di 5 domande giuste."]}
+  correctOrder={[0, 1, 2, 3, 4, 5]}
+  successMessage="Ottavio ha un desiderio, una paura, una voce e una regola. È già un personaggio, non un distributore di informazioni."
 />
 </Section>
 
 <Section>
-## Progetta la personalità della tua IA!
+## La tua scheda personaggio
 
 <MagicWords
-  sentence="Fai finta di essere un ___ che è sempre ___. Usa ___ e sii ___. Parlami di ___."
+  sentence="Interpreta ___. Vuole ___, ma ___. Parla ___."
   blanks={[
-    { hint: "🎭 tipo di personaggio", answers: ["robot amichevole", "mago saggio", "clown sciocco", "cavaliere coraggioso", "alieno curioso"] },
-    { hint: "😊 tratto di personalità", answers: ["entusiasta", "calmo", "divertente", "incoraggiante", "misterioso"] },
-    { hint: "💬 stile di parlare", answers: ["tante battute", "parole gentili", "rime", "parole grandi", "effetti sonori"] },
-    { hint: "❤️ altro tratto", answers: ["utile", "paziente", "creativo", "avventuroso", "premuroso"] },
-    { hint: "📚 un argomento", answers: ["lo spazio", "gli animali", "la musica", "l'amicizia", "la natura"] }
+    { hint: "chi è", answers: ["una giornalista di 15 anni del giornalino scolastico", "l'IA di bordo di un'astronave che non si fida dell'equipaggio", "un ex campione che ora allena una squadra di periferia", "un'influencer in una città distopica dove i like sono la moneta", "un fantasma che infesta il laboratorio di chimica da cent'anni"] },
+    { hint: "cosa vuole", answers: ["scoprire chi ha truccato l'elezione dei rappresentanti", "riportare la nave a casa", "vincere la finale regionale", "uscire dal sistema senza perdere i follower", "finire un esperimento lasciato a metà"] },
+    { hint: "cosa lo frena", answers: ["ha paura di deludere chi crede in lei", "nasconde un errore del passato", "non sa chiedere aiuto", "dipende da chi vuole combattere", "dimentica tutto ogni volta che sorge il sole"] },
+    { hint: "come parla", answers: ["con frasi brevi e secche", "in modo freddo e preciso, con numeri e percentuali", "con battute ironiche anche quando è nei guai", "come in una diretta, sempre rivolto al pubblico", "con parole antiche e un po' inquietanti"] }
   ]}
-  successMessage="Hai creato una personalità incredibile! Parliamo!"
+  successMessage="Desiderio, ostacolo, voce. Con questi tre elementi un personaggio può reggere un corto intero."
 />
 </Section>
 
 <Section>
-## Maestro delle Personalità! 🎉
+## Livello completato
 
 <Panel character="promi" mood="celebrating">
-Meraviglioso! Hai imparato che dare all'IA una **personalità** rende le conversazioni più divertenti e coinvolgenti! Prova personalità diverse per esigenze diverse!
+Ora sai fare due cose: scegliere la **personalità giusta** per come vuoi che ti risponda, e costruire **personaggi con un conflitto**: cosa vogliono, cosa li blocca, come parlano. Le schede che ti do sono una base: il personaggio diventa tuo quando lo scrivi e lo disegni tu.
 </Panel>
 
-<LevelComplete 
-  levelSlug="4-3-character-creator" 
+<LevelComplete
+  levelSlug="4-3-character-creator"
   stars={3}
-  message="Hai imparato a dare personalità all'IA!"
+  message="Sai dare la personalità giusta all'IA e creare personaggi con un desiderio, un difetto e una voce."
 />
 </Section>

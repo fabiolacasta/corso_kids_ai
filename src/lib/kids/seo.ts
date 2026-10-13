@@ -21,23 +21,20 @@ const K = (it as unknown as { kids: KidsMessages }).kids;
 
 export const HOME_TITLE = "Corso gratuito sull'intelligenza artificiale per le medie";
 export const HOME_DESCRIPTION =
-  "Gioco a livelli per insegnare l'uso consapevole dell'IA ai ragazzi di 11-14 anni: 6 mondi, 24 lezioni da proiettare in classe. Gratis, senza registrazione.";
-export const MAP_TITLE = "Mappa del corso IA per ragazzi: 6 mondi e 24 livelli";
+  "Gioco a livelli per insegnare l'uso consapevole dell'IA ai ragazzi di 11-14 anni: 7 mondi, 26 lezioni da proiettare in classe. Gratis, senza registrazione.";
+export const MAP_TITLE = "Mappa del corso IA per ragazzi: 7 mondi e 26 livelli";
 export const MAP_DESCRIPTION =
   "Scegli il livello: dal primo prompt alla sicurezza online. Percorso di educazione digitale sull'intelligenza artificiale per la scuola media.";
 export const TEACHERS_TITLE = "Guida per insegnanti: l'intelligenza artificiale alle medie";
 export const TEACHERS_DESCRIPTION =
-  "Come usare in classe il corso gratuito sull'IA per la scuola media: obiettivi dei 24 livelli, rischi (deepfake, privacy, allucinazioni), privacy e domande frequenti.";
+  "Come usare in classe il corso gratuito sull'IA per la scuola media: obiettivi dei 26 livelli, rischi (deepfake, privacy, allucinazioni), privacy e domande frequenti.";
 
 /** Italian SEO title + description for each level */
 export const LEVEL_SEO: Record<string, { title: string; description: string }> = {
   "1-1-meet-promi": { title: "Cos'è l'intelligenza artificiale? Lezione 1 per ragazzi", description: "Prima lezione del corso: con il robot IAco i ragazzi scoprono cos'è l'IA e come funziona un chatbot. Attività interattiva da fare in classe." },
-  "1-2-first-words": { title: "Il primo prompt: come si parla a un'IA | Livello 1-2", description: "Cos'è un prompt e come scriverne uno: esercizio guidato per ragazzi delle medie. Si impara a dare istruzioni all'intelligenza artificiale." },
-  "1-3-being-clear": { title: "Istruzioni chiare all'IA: perché contano | Livello 1-3", description: "Perché una richiesta vaga dà risposte vaghe: attività sulla chiarezza delle istruzioni ai chatbot, pensata per la scuola secondaria di primo grado." },
+  "1-3-being-clear": { title: "Istruzioni chiare all'IA: perché contano | Livello 1-2", description: "Perché una richiesta vaga dà risposte vaghe: attività sulla chiarezza delle istruzioni ai chatbot, pensata per la scuola secondaria di primo grado." },
   "2-1-missing-details": { title: "I dettagli nei prompt: attività per ragazzi | Livello 2-1", description: "Cosa succede se al prompt mancano i dettagli? Esercizio interattivo per capire come l'IA interpreta le richieste incomplete." },
-  "2-2-who-and-what": { title: "Chi e cosa: personaggi e oggetti nel prompt | Livello 2-2", description: "I ragazzi imparano ad aggiungere personaggi e oggetti per ottenere dall'IA risposte più precise. Gioco didattico sull'intelligenza artificiale." },
-  "2-3-when-and-where": { title: "Quando e dove: tempo e luogo nel prompt | Livello 2-3", description: "Aggiungere tempo e luogo a una richiesta cambia la risposta dell'IA. Attività pratica per la classe sulla scrittura di prompt efficaci." },
-  "2-4-detail-detective": { title: "Detective dei dettagli: sfida sui prompt | Livello 2-4", description: "Sfida finale del Castello della Chiarezza: i ragazzi combinano chi, cosa, quando e dove per scrivere prompt completi e precisi." },
+  "2-4-detail-detective": { title: "Detective dei dettagli: sfida sui prompt | Livello 2-2", description: "Sfida finale del Castello della Chiarezza: i ragazzi combinano chi, cosa, quando, dove e perché per scrivere prompt completi e precisi." },
   "3-1-setting-the-scene": { title: "Il contesto nei prompt: perché aiuta l'IA | Livello 3-1", description: "Dare contesto all'intelligenza artificiale migliora le risposte: lezione interattiva per ragazzi delle medie, con esempi e quiz." },
   "3-2-show-dont-tell": { title: "Mostra, non dire: usare esempi con l'IA | Livello 3-2", description: "Come usare esempi per spiegare all'IA cosa vuoi: attività sul prompting con esempi, adatta a studenti di 11-14 anni." },
   "3-3-format-finder": { title: "Liste, poesie, tabelle: il formato giusto | Livello 3-3", description: "I ragazzi imparano a chiedere all'IA risposte in formati diversi: elenchi, storie, poesie. Esercizio pratico da svolgere in classe." },
@@ -55,6 +52,11 @@ export const LEVEL_SEO: Record<string, { title: string; description: string }> =
   "6-3-real-or-fake": { title: "Deepfake e bufale: vero o falso? | Livello 6-3", description: "Riconoscere immagini e notizie false create con l'IA e capire perché falsificare le foto degli altri è cyberbullismo. Attività per la classe." },
   "6-4-fair-and-honest": { title: "Stereotipi dell'IA e compiti: usarla onestamente | 6-4", description: "L'IA può avere pregiudizi e non deve fare i compiti al posto tuo: lezione su stereotipi, pensiero critico e uso onesto per studiare." },
   "6-5-ai-guardian": { title: "IA e benessere: truffe, regole, adulti di fiducia | 6-5", description: "L'IA è uno strumento, non un amico: truffe online, regole d'uso e quando chiedere aiuto a un adulto. Lezione conclusiva sulla sicurezza." },
+  "7-1-free-skins": { title: "Truffe nei videogiochi e IA: skin gratis? | Livello 7-1", description: "Streamer finti creati con l'IA, finto supporto, generatori di monete: come riconoscere le truffe nei videogiochi. Lezione di sicurezza online per le medie." },
+  "7-2-cloned-voice": { title: "Password, verifica in due passaggi e voci clonate | 7-2", description: "Come proteggere gli account: password lunghe, verifica in due passaggi, codici da non dare mai e voci copiate con l'IA. Attività per ragazzi di 11-14 anni." },
+  "7-3-photo-detective": { title: "Impronta digitale: cosa rivela una foto | Livello 7-3", description: "Da una sola foto l'IA può capire dove sei e chi sei: impronta digitale, posizione e cosa non pubblicare. Lezione interattiva per la scuola media." },
+  "7-4-the-feed": { title: "Algoritmi e social: il feed che ti conosce | Livello 7-4", description: "Come funzionano gli algoritmi che scelgono i video su YouTube e TikTok, perché tengono incollati allo schermo e come riprendere il controllo." },
+  "7-5-fake-friends": { title: "Profili finti creati con l'IA: segnali d'allarme | 7-5", description: "Riconoscere profili falsi e richieste sospette in chat e sapere a chi chiedere aiuto. Lezione conclusiva sulla sicurezza online per le medie." },
 };
 
 /** Italian level title as shown in the game */
@@ -95,7 +97,7 @@ export function kidsMetadata(title: string, description: string, path: string): 
 }
 
 export const FAQ: { q: string; a: string }[] = [
-  { q: "Come posso insegnare l'intelligenza artificiale alle medie?", a: "Con attività guidate da proiettare in classe. Questo corso gratuito ha 24 livelli in 6 mondi: si parte da cos'è l'IA e come si scrive un prompt, e si arriva ai rischi (allucinazioni, privacy, deepfake, stereotipi, truffe)." },
+  { q: "Come posso insegnare l'intelligenza artificiale alle medie?", a: "Con attività guidate da proiettare in classe. Questo corso gratuito ha 26 livelli in 7 mondi: si parte da cos'è l'IA e come si scrive un prompt, e si arriva ai rischi (allucinazioni, privacy, deepfake, stereotipi, truffe, profili finti, algoritmi)." },
   { q: "Il corso è gratuito?", a: "Sì, è completamente gratuito, senza pubblicità, ed è open source con licenza MIT." },
   { q: "I ragazzi devono creare un account?", a: "No. Non serve nessuna registrazione né un indirizzo email per giocare." },
   { q: "Dove vengono salvati i progressi?", a: "Solo nel browser del dispositivo che si sta usando. Se si cancellano i dati del browser o si cambia computer, i progressi ripartono da zero." },

@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { ChevronUp, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLevelSlug, useSectionNavigation } from "@/components/kids/providers/level-context";
-import { getComponentState, saveComponentState, markSectionCompleted } from "@/lib/kids/progress";
+import { getComponentState, saveComponentState, markSectionCompleted, recordMistake } from "@/lib/kids/progress";
 
 interface DragDropPromptProps {
   title?: string;
@@ -226,6 +226,8 @@ export function DragDropPrompt({
     if (isCorrect() && levelSlug) {
       markSectionCompleted(levelSlug, currentSection);
       markSectionComplete(currentSection);
+    } else if (!isCorrect()) {
+      recordMistake(levelSlug);
     }
   };
 

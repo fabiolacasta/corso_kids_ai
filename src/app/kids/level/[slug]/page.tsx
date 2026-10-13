@@ -50,7 +50,12 @@ export default async function LevelPage({ params }: LevelPageProps) {
     try {
       Content = (await import(`@/content/kids/en/${slug}.mdx`)).default;
     } catch {
-      Content = null;
+      // Newest levels exist only in Italian
+      try {
+        Content = (await import(`@/content/kids/it/${slug}.mdx`)).default;
+      } catch {
+        Content = null;
+      }
     }
   }
 

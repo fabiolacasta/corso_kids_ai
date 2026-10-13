@@ -1,28 +1,30 @@
 <Section>
 <Panel character="promi" mood="happy">
-Bentornato nel Canyon della Creatività! Oggi creeremo insieme **storie** incredibili! 📚
+Di nuovo nel Canyon Creativo. Oggi si scrivono **storie**: gialli a scuola, fantascienza, distopie, sport, un po' di horror. Io ti passo le idee. La storia, però, la scrivi tu.
 </Panel>
 </Section>
 
 <Section>
-## L'IA come tuo co-autore
+## Co-autore, non autore
 
-Non devi scrivere storie da solo! L'IA può aiutarti a:
+L'IA può darti una mano quando sei bloccato:
 
-- Iniziare una storia con un'apertura emozionante
-- Continuare una storia che hai iniziato
-- Aggiungere nuovi personaggi o colpi di scena
-- Darti idee quando sei bloccato
+- proporti **3 inizi diversi** tra cui scegliere;
+- suggerire **colpi di scena** o indizi da nascondere;
+- trovare i **buchi nella trama** («ma come fa a sapere della chiave?»);
+- proporre **titoli** o nomi per i personaggi.
+
+Quello che resta tuo: **scegliere**, **scrivere con le tue parole**, decidere come finisce. E se l'hai usata per un compito o un concorso, **lo dici alla prof**: quali idee ti ha dato e cosa hai scritto tu.
 </Section>
 
 <Section>
 <Panel character="promi" mood="thinking">
-Le storie migliori vengono dalla tua immaginazione E dal mio aiuto che lavorano insieme!
+Un consiglio pratico: chiedimi sempre **più opzioni** e **poco testo**. Tre idee da due righe ti fanno pensare. Due pagine già scritte ti fanno solo copiare, e si sente.
 </Panel>
 </Section>
 
 <Section>
-## Inizi di storia che funzionano!
+## Chi tiene la penna?
 
 <PromptVsMistake
   question="Devi scrivere un racconto giallo per italiano. Quale prompt ti lascia l'autore della storia?"
@@ -34,7 +36,7 @@ Le storie migliori vengono dalla tua immaginazione E dal mio aiuto che lavorano 
 </Section>
 
 <Section>
-## Continua l'avventura!
+## Continuare senza perdere il tuo stile
 
 <PromptVsMistake
   question="Vuoi che l'IA ti aiuti a continuare il racconto. Quale prompt funziona meglio?"
@@ -46,42 +48,65 @@ Le storie migliori vengono dalla tua immaginazione E dal mio aiuto che lavorano 
 </Section>
 
 <Section>
-## Inizia la tua storia!
+## Aiuto o scorciatoia?
+
+<SafetySorter
+  title="Co-autore o ghostwriter?"
+  instruction="Per ogni richiesta, decidi se va bene, se prima devi chiedere alla prof, o se così la storia non è più tua."
+  buckets={[
+    { id: "ok", label: "✅ Va bene", color: "green" },
+    { id: "ask", label: "⚠️ Prima chiedo e lo dichiaro", color: "yellow" },
+    { id: "no", label: "⛔ Non è più mio", color: "red" }
+  ]}
+  items={[
+    { text: "Leggi il mio racconto sci-fi e dimmi in quali punti la trama non regge, senza riscriverlo.", bucket: "ok", why: "Ti indica i problemi, ma a sistemarli sei tu. È quello che farebbe un amico che legge la bozza." },
+    { text: "Dammi 5 titoli possibili per il racconto horror che scrivo per me, non per la scuola.", bucket: "ok", why: "Sono solo idee tra cui scegliere, e non c'è nessun compito da valutare." },
+    { text: "Proponimi 3 colpi di scena per il tema narrativo che consegno domani.", bucket: "ask", why: "Le idee non sono il testo, ma il tema viene valutato: ogni prof ha le sue regole. Chiedi prima e scrivi che ti sei fatto aiutare." },
+    { text: "Correggi l'ortografia del racconto che mando al concorso di scrittura della scuola.", bucket: "ask", why: "Sembra innocuo, ma molti concorsi hanno regole precise sull'aiuto esterno. Leggi il regolamento o chiedi." },
+    { text: "Riscrivi il mio tema con parole più belle, poi lo consegno così.", bucket: "no", why: "La trama è tua, ma le frasi no. La prof valuta come scrivi tu, non come scrive l'IA." },
+    { text: "Scrivi tu il finale del mio giallo, tanto il resto l'ho fatto io.", bucket: "no", why: "Il finale è la parte più importante di un giallo. Se lo scrive l'IA e lo consegni come tuo, non è onesto." }
+  ]}
+  successMessage="La linea non sta tra «uso l'IA» e «non la uso», ma tra «mi dà idee» e «scrive al posto mio»."
+/>
+</Section>
+
+<Section>
+## Costruisci un prompt da co-autore
 
 <DragDropPrompt
-  title="Inizio della Storia"
-  instruction="Ordina questi pezzi per creare un prompt di storia emozionante"
-  pieces={["Scrivi l'inizio", "che scopre di poter parlare con gli animali", "Rendilo divertente e sorprendente!", "di una storia su un bambino"]}
-  correctOrder={[0, 3, 1, 2]}
-  successMessage="È un ottimo inizio di storia! Non vedo l'ora di scrivere questa avventura!"
+  title="Racconto distopico"
+  instruction="Metti in ordine: contesto, mondo, protagonista, cosa NON deve fare l'IA, cosa deve fare, chi decide."
+  pieces={["Sto scrivendo un racconto distopico per il laboratorio di scrittura:", "in una città del 2090 il voto medio di terza media decide che lavoro farai.", "La protagonista, Noa, ha 13 anni e scopre che il suo voto è stato truccato.", "Non scrivere la storia:", "proponimi 3 prime frasi molto diverse tra loro,", "poi scelgo io e continuo da solo."]}
+  correctOrder={[0, 1, 2, 3, 4, 5]}
+  successMessage="Il prompt dà all'IA tutto il contesto, ma le lascia fare solo una cosa: proporre. La scelta resta tua."
 />
 </Section>
 
 <Section>
-## Crea il tuo prompt di storia!
+## Il tuo inizio di storia
 
 <MagicWords
-  sentence="Scrivi una storia ___ su un ___ che trova un ___ che può ___. Inizia con un'apertura emozionante!"
+  sentence="Proponimi 3 inizi diversi per un racconto ___ in cui ___. Il tono deve essere ___. Solo la prima frase per ciascuno: ___."
   blanks={[
-    { hint: "✨ tipo di storia", answers: ["magica", "divertente", "misteriosa", "avventurosa", "commovente"] },
-    { hint: "🧒 personaggio principale", answers: ["giovane inventore", "principessa coraggiosa", "robot curioso", "drago timido", "volpe furba"] },
-    { hint: "🎁 oggetto speciale", answers: ["vecchio libro", "cristallo luminoso", "bacchetta magica", "chiave misteriosa", "animale parlante"] },
-    { hint: "🌟 potere speciale", answers: ["esaudire desideri", "aprire portali", "mostrare il futuro", "dare vita ai disegni", "parlare ogni lingua"] }
+    { hint: "genere", answers: ["thriller ambientato a scuola", "di fantascienza", "distopico", "sportivo", "horror leggero"] },
+    { hint: "situazione", answers: ["la notte prima degli scrutini il server della scuola cancella tutti i voti", "una squadra di pallavolo scopre che qualcuno vende i suoi schemi agli avversari", "durante la gita la guida sparisce e lascia solo un biglietto", "un'app indovina sempre chi verrà interrogato", "in un videogioco online un giocatore sconosciuto sa cose che nessuno gli ha detto"] },
+    { hint: "tono", answers: ["teso e misterioso", "ironico", "cupo ma senza scene violente", "realistico", "veloce, come un trailer"] },
+    { hint: "chi decide", answers: ["il resto lo scrivo io", "scelgo io quale usare", "poi ti dico cosa non mi convince", "alla prof dirò che le idee di partenza vengono dall'IA", "il finale lo decido io"] }
   ]}
-  successMessage="Che idea di storia incredibile! Che l'avventura abbia inizio!"
+  successMessage="Genere, situazione, tono e una regola chiara su chi scrive. Questo è un prompt da co-autore."
 />
 </Section>
 
 <Section>
-## Creatore di Storie! 🎉
+## Livello completato
 
 <Panel character="promi" mood="celebrating">
-Incredibile! Hai imparato a usare l'IA come tuo **co-autore**! Insieme, possiamo creare le storie più incredibili!
+Ti porti a casa tre regole: chiedi **idee, non testi interi**; incolla **il tuo testo** se vuoi che continui nel tuo stile; e se mi hai usato per la scuola, **dillo**. Le idee possono venire da me, la storia resta tua.
 </Panel>
 
-<LevelComplete 
-  levelSlug="4-2-story-starters" 
+<LevelComplete
+  levelSlug="4-2-story-starters"
   stars={3}
-  message="Hai imparato a creare storie con l'IA!"
+  message="Sai usare l'IA come co-autore: ti dà idee, la storia resta tua."
 />
 </Section>

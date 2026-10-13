@@ -1,86 +1,107 @@
 <Section>
 <Panel character="promi" mood="thinking">
-Oggi l'IA sa creare anche **foto, voci e video**. Alcuni sono così realistici che ingannano chiunque. Si chiamano **deepfake**.
+Oggi l'IA crea **foto, voci e video** di persone vere che dicono e fanno cose mai successe. Si chiamano **deepfake**, e alcuni ingannano anche gli adulti esperti.
 </Panel>
 </Section>
 
 <Section>
 ## Come si riconosce un falso?
 
-Non sempre si può capire guardando. Ma ci sono degli **indizi**:
+Fino a poco tempo fa c'erano indizi facili da vedere:
 
-- 🖐️ **Mani e dita strane**, con troppe o troppo poche dita
-- 🔤 **Scritte deformate** su cartelli e magliette
-- 💡 **Luci e ombre** che non tornano
-- 😶 **Voci un po' "piatte"** o labbra che non seguono bene le parole
+- 🖐️ **mani strane**, con dita in più o fuse insieme
+- 🔤 **scritte deformate** su cartelli e magliette
+- 💡 **luci e ombre** che non tornano
+- 🗣️ **labbra** che non seguono bene le parole, voce un po' piatta
+
+Il problema è che le IA migliorano ogni mese, e questi errori sono sempre più rari. Se li trovi, è un buon segnale che qualcosa non va. Se **non** li trovi, non vuol dire niente.
 
 <Panel character="promi" mood="excited">
-L'indizio più forte però è la **fonte**: chi l'ha pubblicato? Lo dicono anche giornali o siti affidabili?
+Per questo l'indizio più forte non è nell'immagine, ma intorno: **chi** l'ha pubblicata, **quando**, e se lo riportano anche fonti affidabili.
 </Panel>
 </Section>
 
 <Section>
-## Le 3 domande del Detective
+## Un consiglio sbagliato
 
-Prima di credere a qualcosa, o di condividerlo, chiediti:
+Hai chiesto a un'IA come riconoscere un deepfake. Quasi tutto quello che dice è corretto, tranne una frase.
+
+<SpotTheFake
+  question="Quale consiglio è sbagliato?"
+  sentences={[
+    { text: "Cerca se la stessa notizia è riportata da giornali o siti affidabili.", why: "Corretto: una notizia clamorosa vera la riportano in tanti, non un solo profilo." },
+    { text: "Controlla chi ha pubblicato il contenuto per primo e da quanto esiste quel profilo.", why: "Corretto: profili nuovi o anonimi che pubblicano scoop sono un campanello d'allarme." },
+    { text: "Se mani, scritte e ombre sono perfette, puoi stare tranquillo: la foto è vera.", fake: true },
+    { text: "Diffida dei contenuti fatti apposta per farti arrabbiare o spaventare subito.", why: "Corretto: l'emozione forte ti fa condividere prima di pensare, ed è proprio quello che vuole chi crea i falsi." },
+    { text: "Una foto vera può diventare una notizia falsa se viene presentata con la data o il luogo sbagliati.", why: "Corretto: molte bufale usano foto vere ma vecchie, o scattate altrove." }
+  ]}
+  explanation="L'assenza di errori visibili non prova niente: le IA più recenti fanno mani e scritte perfette. Gli indizi visivi possono solo farti sospettare, mai rassicurarti. Quello che conta è la fonte."
+/>
+</Section>
+
+<Section>
+## Le 3 domande prima di condividere
 
 1. **Chi lo dice** e dove posso controllarlo?
-2. È **troppo strano, troppo bello o troppo arrabbiato** per essere vero?
-3. Se lo condivido e non è vero, **chi si può fare male**?
+2. È fatto apposta per farmi **arrabbiare, ridere o spaventare** subito?
+3. Se lo condivido e non è vero, **a chi faccio male**?
 
 <SafetySorter
-  title="Ti fidi o controlli?"
-  instruction="Per ogni contenuto, scegli cosa fare."
+  title="Ti fidi o controlli prima?"
+  instruction="Per ogni contenuto, scegli cosa fare. Attenzione: alcuni casi sono meno ovvi di come sembrano."
   buckets={[
     { id: "trust", label: "✅ Mi fido", color: "green" },
     { id: "check", label: "🔍 Controllo prima", color: "yellow" }
   ]}
   items={[
-    { text: "Un video di un calciatore famoso che dice di lasciare il calcio per fare il pasticcere, pubblicato da un profilo sconosciuto", bucket: "check", why: "Notizia clamorosa e fonte sconosciuta: potrebbe essere un deepfake." },
-    { text: "Un vocale del tuo cantante preferito: 'regalo biglietti a chi inoltra questo messaggio!'", bucket: "check", why: "Le voci si possono clonare, e le catene 'inoltra a tutti' sono quasi sempre false." },
-    { text: "La data della gita scritta sul sito della scuola e detta dalla prof in classe", bucket: "trust", why: "Due fonti affidabili dicono la stessa cosa." },
-    { text: "La foto di uno squalo che nuota in una strada allagata", bucket: "check", why: "Troppo strana: prima si controlla se la notizia esiste davvero." }
+    { text: "La comunicazione dell'uscita anticipata di domani, pubblicata sul registro elettronico della scuola", bucket: "trust", why: "È il canale ufficiale della scuola: è la fonte giusta per questa informazione." },
+    { text: "Lo screenshot di una «circolare» girato nella chat di classe: domani niente scuola per sciopero", bucket: "check", why: "Uno screenshot si falsifica in un minuto. Controlla sul registro o sul sito della scuola." },
+    { text: "Il trasferimento di un calciatore annunciato sul profilo ufficiale verificato della sua squadra", bucket: "trust", why: "È la fonte diretta. Se fosse un errore o un account violato, lo smentirebbero subito e lo vedresti ovunque." },
+    { text: "Un video in cui un calciatore famoso annuncia il ritiro, pubblicato da un profilo con un nome simile al suo", bucket: "check", why: "Profilo che imita quello vero e notizia clamorosa: è la combinazione tipica dei deepfake." },
+    { text: "La foto di una città allagata, con scritto «Successo stamattina», che gira su tutti i social", bucket: "check", why: "Anche se la foto è vera, potrebbe essere di anni fa o di un altro posto. Molte bufale funzionano così." },
+    { text: "Un vocale di uno youtuber che promette un regalo a chi inoltra il messaggio a dieci amici", bucket: "check", why: "Le voci si clonano con pochi secondi di audio, e le catene «inoltra a tutti» sono quasi sempre false." }
   ]}
-  successMessage="Occhio da detective!"
+  successMessage="Fonte, data e contesto: li hai controllati tutti."
 />
 </Section>
 
 <Section>
-## Una regola che non si infrange mai
+## La regola più importante
 
 <Panel character="promi" mood="confused">
-Questa è la parte più seria di tutta l'isola. Ascoltami bene.
+Questa è la parte più seria di tutta la spiaggia.
 </Panel>
 
-Con l'IA qualcuno potrebbe **modificare la foto di un compagno**: metterlo in situazioni imbarazzanti, cambiargli il corpo o fargli dire cose che non ha mai detto.
+Con l'IA chiunque può **modificare la foto di un compagno**: metterlo in situazioni imbarazzanti, cambiargli il corpo, fargli dire cose che non ha mai detto.
 
-Questo **fa molto male** a chi lo subisce. È una forma di **cyberbullismo** e può essere anche un **reato**, anche se "era solo uno scherzo".
+Per chi lo subisce è umiliante e fa molto male, anche se per gli altri «era solo uno scherzo». È **cyberbullismo** e può essere un **reato**: non solo per chi crea il contenuto, ma anche per chi lo diffonde.
 
 <WhatWouldYouDo
-  scenario="Nel gruppo della classe qualcuno condivide una foto di Marco modificata con l'IA per prenderlo in giro. Tutti ridono e mettono emoji."
+  scenario="Nel gruppo della classe qualcuno pubblica una foto di Marco modificata con l'IA per prenderlo in giro. In pochi minuti arrivano decine di risate e di emoji."
   choices={[
-    { text: "Rido anch'io e la inoltro, tanto l'hanno già vista tutti.", feedback: "Inoltrarla la fa arrivare ancora più lontano e fa ancora più male a Marco. Chi condivide partecipa." },
-    { text: "Non la condivido e lo dico subito a un adulto di fiducia: un genitore o un prof.", correct: true, feedback: "Giusto! Non partecipare e chiedere aiuto a un adulto è la cosa più coraggiosa che puoi fare." },
-    { text: "Faccio finta di niente, non sono affari miei.", feedback: "Stare zitti lascia Marco da solo. Non serve fare gli eroi: basta dirlo a un adulto." }
+    { text: "Non la inoltro, ma metto una reazione per non sembrare quello che si offende.", feedback: "Anche una reazione dice a chi l'ha pubblicata che la cosa funziona, e a Marco che tutti ridono di lui." },
+    { text: "La cancello dal mio telefono, così non c'entro.", feedback: "Non diffonderla è giusto, ma la foto resta nel gruppo e Marco resta da solo. E senza uno screenshot è più difficile dimostrare cosa è successo." },
+    { text: "Scrivo nel gruppo di toglierla, ma non lo dico agli adulti per non fare la spia.", feedback: "Ci vuole coraggio, ed è un buon inizio. Ma da solo spesso non basta: chi l'ha fatta può rifarlo. Dirlo a un adulto non è fare la spia, è proteggere Marco." },
+    { text: "Non partecipo, salvo uno screenshot come prova e lo dico subito a un adulto di fiducia: un genitore o un prof.", correct: true, feedback: "È la scelta giusta. Gli adulti possono far togliere il contenuto e fermare chi l'ha creato. Puoi anche scrivere a Marco in privato per fargli sapere che non è solo." }
   ]}
-  promiMessage="Non si crea e non si condivide mai un contenuto falso su una persona vera."
+  promiMessage="Non si crea e non si condivide mai un contenuto falso su una persona vera. Nemmeno per ridere."
 />
 </Section>
 
 <Section>
-## Livello completato! 🎉
+## Livello completato
 
 <Panel character="promi" mood="celebrating">
-Bravo! Ora sai che:
+Ricapitolando:
 
-- ✅ Foto, voci e video possono essere creati dall'IA
-- ✅ Prima di credere e condividere, ti fai le 3 domande del Detective
-- ✅ Non si falsificano mai le foto degli altri, e se succede lo si dice a un adulto
+- ✅ Foto, voci e video si possono creare con l'IA, e gli errori visibili sono sempre più rari
+- ✅ Prima di credere e condividere, controlli fonte, data e contesto
+- ✅ Un falso su una persona vera non si crea e non si diffonde: se succede, lo dici a un adulto
 </Panel>
 
 <LevelComplete 
   levelSlug="6-3-real-or-fake" 
   stars={3}
-  message="Niente deepfake ti può ingannare!"
+  message="Ora guardi la fonte prima ancora dell'immagine."
 />
 </Section>

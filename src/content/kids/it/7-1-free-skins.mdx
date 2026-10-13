@@ -1,0 +1,149 @@
+<Section>
+<Panel character="promi" mood="thinking">
+Ultimo mondo: la **Città Digitale**. Qui non si parla di come scrivere prompt, ma di come l'IA cambia i pericoli che incontri online, e di come usarla per difenderti.
+</Panel>
+
+<Panel character="promi" mood="happy">
+Si comincia da un posto che conosci bene: i videogiochi. E da un messaggio che prima o poi arriva a tutti: «Skin gratis, solo per oggi».
+</Panel>
+</Section>
+
+<Section>
+## Perché proprio i videogiochi?
+
+Un account di Fortnite, Roblox o Brawl Stars con tante skin, monete e livelli **vale soldi veri**: si può rivendere, oppure si possono usare i metodi di pagamento collegati.
+
+E i truffatori sanno una cosa: chi gioca di più ha spesso **tra gli 11 e i 14 anni**. Quindi i messaggi sono pensati proprio per te: parlano di drop, stagioni, codici, skin rare.
+
+<Panel character="promi" mood="thinking">
+Non è che ti considerino ingenuo. È che sanno quanto ci tieni a quella skin. È su quello che fanno leva.
+</Panel>
+</Section>
+
+<Section>
+## Cosa cambia con l'IA
+
+Una volta le truffe si riconoscevano facilmente: errori di grammatica, grafica brutta, italiano tradotto male. **Con l'IA non funziona più così.**
+
+- 🎥 **Video di streamer falsi**: con l'IA si può imitare la faccia e la voce di uno streamer famoso (deepfake), oppure tagliare un suo video vero e aggiungerci sopra «link in descrizione per le skin gratis».
+- 🌐 **Siti «generatori di monete»** fatti in pochi minuti con l'IA: grafica perfetta, loghi identici, perfino finte recensioni.
+- 🤖 **Bot** su Discord o nella chat del gioco che si presentano come «Supporto» o «Moderatore» e rispondono in modo naturale, a qualsiasi ora.
+- ✍️ **Messaggi senza errori**: l'IA scrive in italiano perfetto, in qualsiasi lingua.
+
+<Panel character="promi" mood="confused">
+Quindi il vecchio trucco «se ci sono errori è una truffa» lo puoi buttare. Oggi serve guardare **cosa ti chiedono**, non come lo scrivono.
+</Panel>
+</Section>
+
+<Section>
+## Lo schema è sempre quello
+
+Cambiano i giochi, cambiano le skin, ma la ricetta della truffa è quasi sempre fatta con questi ingredienti:
+
+1. 🎁 **Premio**: skin, monete, account raro, «sei stato selezionato».
+2. ⏱️ **Fretta**: «entro 15 minuti», «ultimi 3 posti».
+3. 🤫 **Segreto**: «non dirlo a nessuno, sennò lo vogliono tutti».
+4. 🔗 **Link o login esterno**: «collega l'account qui», «scansiona questo QR».
+5. 🔑 **Richiesta di codice o pagamento**: «mandami il codice che ti arriva», «paga solo 2 € di spedizione».
+
+Il vero supporto di un gioco **non ti chiede mai** la password né il codice di verifica. Mai.
+
+<RedFlagChat
+  contact="Mod_Ufficiale_Team"
+  app="Server Discord del clan"
+  avatar="🛡️"
+  instruction="Un «moderatore» ti scrive in privato. Trova tutti i messaggi che sono segnali d'allarme, poi premi Controlla."
+  messages={[
+    { from: "system", text: "Questo utente non fa parte dello staff verificato del server" },
+    { from: "them", text: "Ciao, sono uno dei moderatori del server. Ti scrivo per l'evento della nuova stagione", why: "Presentarsi come moderatore non è un segnale da solo: il problema è quello che chiede dopo." },
+    { from: "me", text: "Ok, che evento?" },
+    { from: "them", text: "Il tuo account è stato estratto per ricevere 3 skin leggendarie", flag: true, why: "Premio inaspettato che non hai chiesto: è l'esca." },
+    { from: "them", text: "La stagione inizia giovedì, ci sono anche le nuove mappe", why: "Informazione normale e verificabile: da sola non è un segnale." },
+    { from: "them", text: "Per riceverle collega l'account da questo link, vale solo per i prossimi 10 minuti", flag: true, why: "Login da link esterno + fretta: due ingredienti della truffa insieme." },
+    { from: "me", text: "Non posso farlo dall'app del gioco?" },
+    { from: "them", text: "No, è un sistema riservato. Ti arriverà un codice di 6 cifre: mandamelo qui per confermare", flag: true, why: "Chi chiede il codice di verifica vuole entrare nel tuo account. Nessun supporto vero lo fa." },
+    { from: "them", text: "Non parlarne nel canale pubblico, sennò lo chiedono tutti e salta l'evento", flag: true, why: "Il segreto serve a evitare che qualcuno ti avvisi che è una truffa." }
+  ]}
+  successMessage="Premio, fretta, codice, segreto: li hai beccati tutti."
+/>
+</Section>
+
+<Section>
+## Verde, giallo o rosso?
+
+Non tutto quello che parla di skin è una truffa. Alcune cose sono normali, altre vanno controllate, altre sono da evitare e basta.
+
+<SafetySorter
+  title="Ok, controllo o evito?"
+  instruction="Per ogni situazione scegli il colore giusto. Attenzione: alcune sono meno ovvie di quanto sembrano."
+  buckets={[
+    { id: "green", label: "🟢 Ok", color: "green" },
+    { id: "yellow", label: "🟡 Controllo prima", color: "yellow" },
+    { id: "red", label: "🔴 Evito", color: "red" }
+  ]}
+  items={[
+    { text: "Inserisci il codice creatore del tuo streamer preferito nello shop ufficiale del gioco, mentre compri una skin con i tuoi genitori", bucket: "green", why: "È una funzione ufficiale dentro il gioco: non dai dati a nessuno, sostieni solo lo streamer." },
+    { text: "Uno sconosciuto ti propone uno «scambio skin» su un sito esterno al gioco: tu gli dai il login, lui ti trasferisce l'oggetto", bucket: "red", why: "Gli scambi fuori dal gioco non sono protetti, e dare il login significa regalargli l'account." },
+    { text: "Il profilo ufficiale del gioco annuncia un evento con ricompense gratis per chi gioca nel weekend", bucket: "yellow", why: "Probabilmente è vero, ma i profili si possono imitare. Controlla dalla schermata notizie dentro l'app, non dal link nel post." },
+    { text: "Un video di uno streamer famoso dice: «Scansiona il QR sullo schermo per 5.000 monete»", bucket: "red", why: "Il QR porta a un sito esterno e il video potrebbe essere un deepfake o un video rubato. Nessuno regala monete così." },
+    { text: "Un compagno di classe ti dice che nel gioco c'è una ricompensa gratis se completi le sfide della settimana", bucket: "yellow", why: "Il compagno è in buona fede, ma potrebbe aver letto una cosa falsa. Verifica nella sezione sfide del gioco: se c'è, è ok." },
+    { text: "Un sito con grafica perfetta e recensioni a 5 stelle: «Generatore di monete, inserisci username e password»", bucket: "red", why: "I generatori di monete non esistono: le monete le crea solo il gioco. Grafica e recensioni si fanno in pochi minuti con l'IA." },
+    { text: "Ricevi una mail che dice «Accesso da un nuovo dispositivo», ma non sei stato tu", bucket: "yellow", why: "Potrebbe essere un vero avviso o una mail falsa. Non cliccare sulla mail: apri tu l'app ufficiale, controlla e cambia password se serve." }
+  ]}
+  successMessage="Hai capito la differenza tra ufficiale, dubbio e pericoloso."
+/>
+</Section>
+
+<Section>
+## «Funziona davvero, giuro»
+
+<WhatWouldYouDo
+  scenario="Luca, il tuo migliore amico, ti scrive: «Ho trovato un sito che regala V-bucks. Funziona davvero, l'ho provato ieri! Metti il tuo account e vedi.» Non ti dice se le monete gli sono arrivate."
+  question="Cosa fai?"
+  choices={[
+    { text: "Mi fido: Luca è il mio migliore amico, non mi manderebbe mai una truffa.", feedback: "Luca non ti vuole fregare, ma potrebbe essere stato fregato lui. Spesso questi link girano proprio tramite account di amici già rubati." },
+    { text: "Lo provo con un account secondario, così se è una truffa perdo poco.", feedback: "Sembra furbo, ma il sito può comunque installare cose, rubare la mail che usi o chiedere dati di pagamento. E non risolve il problema di Luca." },
+    { text: "Non inserisco niente e dico a Luca di cambiare subito password e avvisare un adulto, perché potrebbe aver già dato l'account.", correct: true, feedback: "Esatto. Un sito che chiede il tuo account per regalarti monete è sempre una truffa. E Luca, se ha messo i suoi dati, deve mettere in sicurezza l'account adesso." },
+    { text: "Chiedo a Luca uno screenshot delle monete arrivate prima di decidere.", feedback: "Uno screenshot si falsifica in un attimo, anche con l'IA. E comunque nessun sito esterno può aggiungere monete al tuo account." }
+  ]}
+  promiMessage="Le monete del gioco si ottengono solo dentro il gioco. Il resto è pesca, e il pesce sei tu."
+/>
+
+<Panel character="promi" mood="thinking">
+E se ci sei cascato? Succede anche agli adulti. Cambia subito la password dall'app ufficiale, avvisa un genitore, segnala l'utente o il sito. **Non vergognarti**: prima lo dici, più cose si salvano.
+</Panel>
+</Section>
+
+<Section>
+## Farsi aiutare dall'IA (nel modo giusto)
+
+L'IA può aiutarti a capire se un messaggio è sospetto. Ma attenzione a **cosa le incolli**: anche lei è un servizio online, e i tuoi dati non devono finire lì.
+
+<PromptVsMistake
+  question="Quale richiesta all'IA ti aiuta senza esporre i tuoi dati?"
+  good="Questo messaggio mi è arrivato nella chat di un gioco, secondo te è una truffa e perché? Testo (ho tolto nomi, link e codici): «Sei stato estratto per 3 skin, collega l'account entro 10 minuti»"
+  bad="Questo messaggio mi è arrivato nella chat di un gioco, secondo te è una truffa e perché? Ti incollo lo screenshot completo, con il mio username, la mia email e il codice che mi è arrivato"
+  explanation="Le due richieste sono uguali, ma la seconda manda all'IA username, email e codice di verifica: proprio i dati che il truffatore voleva. Per capire se è una truffa basta il testo, ripulito."
+  promiMessage="Per giudicare un messaggio mi serve il contenuto, non chi sei tu."
+/>
+</Section>
+
+<Section>
+## Livello completato
+
+<Panel character="promi" mood="celebrating">
+Ecco cosa ti porti via da qui:
+
+- ✅ Con l'IA le truffe sono **scritte bene e sembrano vere**: guarda cosa chiedono, non come sono scritte
+- ✅ Premio + fretta + segreto + link + codice = **truffa**
+- ✅ Login **solo dall'app o dal sito ufficiale**, mai da un link
+- ✅ Nessun supporto vero ti chiede **password o codici**
+- ✅ Se ci caschi: cambi password, avvisi un adulto, segnali
+</Panel>
+
+<LevelComplete
+  levelSlug="7-1-free-skins"
+  stars={3}
+  message="Le skin gratis restano nel negozio ufficiale. E il tuo account resta tuo."
+/>
+</Section>

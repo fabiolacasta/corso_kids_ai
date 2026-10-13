@@ -1,108 +1,127 @@
 <Section>
 <Panel character="promi" mood="happy">
-Bentornato! Oggi impariamo un'abilità super importante: **trovare e riparare prompt deboli**! 🔧
+Oggi fai il meccanico dei prompt 🔧. Ti arrivano prompt che «quasi funzionano» e devi capire cosa si è rotto. È l'abilità più utile di tutte: la prima risposta raramente è perfetta, la seconda può esserlo.
 </Panel>
 </Section>
 
 <Section>
-## Individua i problemi!
+## I guasti più comuni
 
-I prompt deboli spesso hanno:
+Quando una risposta ti delude, di solito il prompt ha uno di questi problemi:
 
-❌ Troppo vaghi - "Scrivi qualcosa"
-❌ Dettagli mancanti - "Parlami di una persona"
-❌ Nessun formato - Solo chiedere senza struttura
-❌ Stile non chiaro - Non dire come lo vuoi
+- **Vago** – «Aiutami con storia». Con cosa, esattamente?
+- **Senza contesto** – Non dice chi sei, a cosa serve, per quando.
+- **Senza formato** – Arriva un muro di testo quando volevi una tabella.
+- **Troppe richieste insieme** – Quattro compiti in un prompt: tutti fatti a metà.
+- **Contraddittorio** – «Dettagliato ma in 3 righe». Una delle due richieste salta.
+- **Chiede il compito fatto** – Ottieni il risultato, ma non impari a rifarlo.
+
+Il trucco: **riparare vuol dire aggiungere informazioni, non aggettivi**. «Fatto benissimo» non mi dice niente.
 </Section>
 
 <Section>
-## Sii il Dottore dei Prompt! 🏥
+## Il Dottore dei Prompt
 
 <PromptDoctor
-  title="Cura questo prompt"
-  brokenPrompt="Scrivi qualcosa"
+  title="Ripara il piano di studio"
+  brokenPrompt="Fammi un piano per studiare."
   problems={[
-    { issue: "Troppo vago", symptom: "Cosa devo scrivere? Una storia? Una poesia? Una barzelletta?", fix: "Scrivi una storia" },
-    { issue: "Nessun argomento", symptom: "Di cosa dovrebbe parlare la storia?", fix: "Scrivi una storia su un drago" },
-    { issue: "Nessun dettaglio", symptom: "Che tipo di drago? Cosa succede?", fix: "Scrivi una breve storia su un drago amichevole che fa biscotti" }
+    { issue: "Manca la materia", symptom: "Studiare cosa? Tutto? Un piano per ogni materia della scuola media è lungo tre pagine.", fix: "Fammi un piano per ripassare scienze." },
+    { issue: "Manca il tempo", symptom: "Per quando? Quanto tempo hai? Senza saperlo ti propongo un piano di un mese.", fix: "Fammi un piano per ripassare scienze: venerdì ho la verifica sull'apparato digerente e ho 4 pomeriggi liberi." },
+    { issue: "Manca il formato", symptom: "Come lo vuoi? Senza indicazioni ti arriva un paragrafo che non sai come seguire.", fix: "Fammi un piano per ripassare scienze: venerdì ho la verifica sull'apparato digerente e ho 4 pomeriggi liberi. Dividilo giorno per giorno, 45 minuti al giorno, con un mini-quiz di 3 domande alla fine di ogni sessione." }
   ]}
-  healedPrompt="Scrivi una breve storia su un drago amichevole che fa biscotti"
-  successMessage="Hai curato il prompt! Da 2 parole a una fantastica richiesta dettagliata!"
+  healedPrompt="Fammi un piano per ripassare scienze: venerdì ho la verifica sull'apparato digerente e ho 4 pomeriggi liberi. Dividilo giorno per giorno, 45 minuti al giorno, con un mini-quiz di 3 domande alla fine di ogni sessione."
+  successMessage="Da cinque parole a un piano che puoi davvero seguire. Nota: nessun «per favore fallo bene», solo informazioni."
 />
 </Section>
 
 <Section>
 <Panel character="promi" mood="thinking">
-Imparare a individuare i prompt deboli ti aiuta a scriverne di migliori! È come essere un detective dei prompt!
+Attento alle riparazioni a metà. Un prompt può diventare più lungo e più preciso, e mancare ancora proprio il pezzo che conta. Nei prossimi giochi è lì che si perdono le stelle.
 </Panel>
 </Section>
 
 <Section>
-## Trova la soluzione!
+## Trova la riparazione vera
 
 <PromptVsMistake
-  question="Prompt debole: «Fammi un riassunto dei Promessi Sposi.» Quale versione lo ripara davvero?"
+  question="Prompt debole: «Fammi un riassunto dei Promessi Sposi.» Tutte e due le versioni aggiungono dettagli. Quale lo ripara davvero?"
   good="Per la verifica di italiano di giovedì devo sapere i capitoli 1-8 dei Promessi Sposi. Fammi un riassunto capitolo per capitolo, 3 righe ciascuno, con i personaggi che compaiono."
-  bad="Fammi un riassunto dei Promessi Sposi fatto benissimo: chiaro, scorrevole, completo e senza errori, scritto bene come quello di un libro di scuola, perché mi serve davvero tanto."
-  explanation="Il primo aggiunge informazioni utili: scopo (verifica), quali capitoli, formato (3 righe per capitolo). Il secondo è più lungo ma aggiunge solo aggettivi: l'IA continua a non sapere cosa ti serve."
-  promiMessage="Riparare un prompt vuol dire aggiungere informazioni, non solo parole."
+  bad="Per la verifica di italiano di giovedì devo sapere bene i Promessi Sposi. Fammi un riassunto capitolo per capitolo, 3 righe ciascuno, con i personaggi che compaiono."
+  explanation="Il secondo non dice quali capitoli. I Promessi Sposi ne hanno 38: ti arrivano più di 100 righe, quasi tutte su parti che non sono in verifica. Il primo limita il lavoro ai capitoli 1-8."
+  promiMessage="Il dettaglio decisivo a volte è uno solo. Qui era «capitoli 1-8»."
 />
 </Section>
 
 <Section>
-## Migliora questo prompt!
+## Aiuto o scorciatoia?
 
 <PromptVsMistake
-  question="Prompt debole: «Aiutami con i compiti di matematica.» Quale versione lo ripara nel modo giusto?"
-  good="Sto facendo un problema sull'area del trapezio e non capisco perché si divide per 2. Non darmi il risultato: spiegamelo con un esempio e poi fammi provare da solo."
-  bad="Ecco il problema di geometria che ho per domani: trapezio con base maggiore 12 cm, base minore 8 cm, altezza 5 cm. Risolvilo tu e scrivimi tutti i passaggi da copiare sul quaderno."
-  explanation="Tutti e due sono specifici, ma il primo chiede aiuto per capire e poi provare. Il secondo chiede all'IA di fare il compito al posto tuo: avrai il quaderno pieno ma non saprai rifarlo in verifica."
+  question="Prompt debole: «Aiutami con i compiti di matematica.» Tutte e due le versioni sono precise. Quale lo ripara nel modo giusto?"
+  good="Sto facendo un problema sull'area del trapezio e non capisco perché si divide per 2. Non darmi il risultato: spiegamelo con un esempio diverso dal mio e poi fammi provare da solo."
+  bad="Sto facendo un problema sull'area del trapezio: base maggiore 12 cm, base minore 8 cm, altezza 5 cm. Spiegami bene tutti i passaggi e scrivimi la soluzione completa, così la ricopio sul quaderno."
+  explanation="Il secondo è specifico, ma chiede all'IA di fare il compito al posto tuo: avrai il quaderno pieno e nessuna idea di come rifarlo in verifica. Il primo dice qual è il dubbio vero e chiede di poterci provare da solo."
   promiMessage="Il prompt migliore ti fa capire, non solo copiare."
 />
 </Section>
 
 <Section>
-## Ripara il prompt!
+## La risposta è sbagliata: e adesso?
+
+<WhatWouldYouDo
+  scenario="Hai scritto: «Dammi idee per la festa di fine anno.» L'IA ti risponde con 10 idee: palloncini colorati, un mago, la torta a forma di castello, la caccia al tesoro con le caramelle. Una festa per bambini di 6 anni."
+  question="Qual è la mossa migliore?"
+  choices={[
+    { text: "Rispondo: «No, idee più da grandi.»", feedback: "Va meglio di niente, ma «più da grandi» è vago: posso passare dal mago al karaoke e sbagliare ancora. Mancano i dati che contano." },
+    { text: "Rispondo: «Siamo 22 ragazzi di terza media, festa in palestra a scuola, 5 euro a testa, 2 ore. Dammi 5 idee in una tabella con costo e cosa serve.»", correct: true, feedback: "Esatto. Hai capito che il problema era il contesto mancante e l'hai aggiunto: età, numero, luogo, budget, durata e formato." },
+    { text: "Chiedo 50 idee invece di 10, così qualcuna giusta ci sarà.", feedback: "Più idee non vuol dire idee migliori: se non so chi siete, ne ricevi 50 sbagliate allo stesso modo." },
+    { text: "Riscrivo la stessa domanda aggiungendo «per favore, fallo bene».", feedback: "La gentilezza va bene, ma non mi dà nessuna informazione nuova. La risposta resterà quasi uguale." }
+  ]}
+  promiMessage="Quando la risposta è sbagliata, chiediti: quale informazione non gli ho dato?"
+/>
+</Section>
+
+<Section>
+## Ripara il prompt
 
 <DragDropPrompt
-  title="Riparazione del Prompt"
-  instruction="Il prompt 'Raccontami una storia' è troppo debole. Ordina queste aggiunte per ripararlo:"
-  pieces={["su un topolino coraggioso", "Raccontami una breve storia della buonanotte", "che aiuta un uccellino smarrito a trovare casa.", "Rendila dolce e finisci con tutti al sicuro."]}
-  correctOrder={[1, 0, 2, 3]}
-  successMessage="Hai trasformato un prompt debole in uno fantastico!"
+  title="Da «aiutami con l'inglese» a un vero allenamento"
+  instruction="Il prompt «Aiutami con l'inglese» è troppo debole. Metti in ordine questi sei pezzi per costruire la versione riparata."
+  pieces={["una alla volta, aspettando la mia risposta,", "Martedì ho l'interrogazione di inglese", "senza darmi subito la soluzione giusta.", "Fai l'insegnante e preparami 8 frasi da completare,", "sul present perfect e confondo sempre «for» e «since».", "e quando sbaglio spiegami l'errore in italiano"]}
+  correctOrder={[1, 4, 3, 0, 5, 2]}
+  successMessage="Contesto, il dubbio preciso, il ruolo, il compito e le regole dell'esercizio. Questo è un allenamento, non una risposta da copiare."
 />
 </Section>
 
 <Section>
-## Sfida di miglioramento!
+## Sfida di riparazione
 
-Prendi questo prompt debole e rendilo forte:
-
-**Debole:** "Dammi idee"
+**Prompt debole:** «Dammi idee.» Riparalo tu, scegliendo ogni pezzo.
 
 <MagicWords
-  sentence="Dammi ___ idee creative per ___ che siano ___ e ___. Qualcosa come ___!"
+  sentence="Dammi ___ idee per ___. Siamo ___ e abbiamo ___. Escludi ___ e presentale come ___."
   blanks={[
-    { hint: "🔢 quante", answers: ["5", "3", "7", "10", "4"] },
-    { hint: "🎯 per cosa", answers: ["una festa di compleanno", "un progetto di scienze", "un gioco divertente", "una storia da scrivere", "decorare la mia stanza"] },
-    { hint: "✨ stile 1", answers: ["divertenti", "facili da fare", "creative", "sorprendenti", "colorate"] },
-    { hint: "🌟 stile 2", answers: ["adatte ai bambini", "economiche", "uniche", "emozionanti", "semplici"] },
-    { hint: "💡 esempio", answers: ["una caccia al tesoro", "fare lo slime", "tema supereroi", "cose che brillano al buio", "uno spettacolo di magia"] }
+    { hint: "🔢 quante", answers: ["3", "5", "4", "6", "8"] },
+    { hint: "🎯 per cosa", answers: ["il video di fine anno della classe", "il nome della nostra squadra di calcetto", "il tema sulla città del futuro", "la build di gruppo in Minecraft", "il cartellone sulla raccolta differenziata"] },
+    { hint: "👥 chi siete", answers: ["22 ragazzi di seconda media", "un gruppo di 4 compagni", "la squadra Under 14", "la redazione del giornalino", "tre amici della stessa classe"] },
+    { hint: "⏱️ tempo o risorse", answers: ["solo una settimana", "un pomeriggio", "50 euro in tutto", "due ore di laboratorio", "solo il telefono per girare"] },
+    { hint: "🚫 cosa escludere", answers: ["le idee troppo costose", "quelle che richiedono foto dei nostri volti", "le cose già fatte l'anno scorso", "quelle troppo lunghe da preparare", "le idee da bambini piccoli"] },
+    { hint: "📋 il formato", answers: ["una tabella con pro e contro", "un elenco con una riga ciascuna", "un confronto con i tempi", "una classifica dalla più facile", "schede con titolo e descrizione"] }
   ]}
-  successMessage="Hai trasformato un prompt debole di 2 parole in uno incredibile e dettagliato!"
+  successMessage="Da due parole a un prompt con obiettivo, persone, risorse, limiti e formato. Questo è il lavoro del meccanico."
 />
 </Section>
 
 <Section>
-## Riparatore di Prompt! 🎉
+## Meccanico certificato
 
 <Panel character="promi" mood="celebrating">
-Eccellente! Hai imparato a individuare i prompt deboli e **ripararli** aggiungendo dettagli, formato e stile! Questa abilità ti aiuterà per sempre!
+Ora hai un metodo: quando una risposta non funziona, non la riscrivi a caso. Cerchi il guasto (contesto, dettaglio, formato, richieste in conflitto) e aggiungi l'informazione che manca. Prossima tappa: prendere un prompt che funziona e trasformarlo in qualcos'altro.
 </Panel>
 
-<LevelComplete 
-  levelSlug="5-2-fix-it-up" 
+<LevelComplete
+  levelSlug="5-2-fix-it-up"
   stars={3}
-  message="Hai imparato a trovare e riparare prompt deboli!"
+  message="Sai trovare il guasto in un prompt debole e ripararlo con le informazioni giuste."
 />
 </Section>

@@ -1,92 +1,137 @@
 <Section>
 <Panel character="promi" mood="happy">
-Ciao! Sono **IAco** 🤖, il tuo amico robot! Sono così felice di conoscerti!
+Ciao, io sono **IAco**. Sono un **chatbot**: un programma con cui si chatta, come in una chat di WhatsApp, solo che dall'altra parte non c'è una persona.
 </Panel>
 
 <Panel character="promi" mood="thinking">
-Sai cosa significa **IA**? IA sta per **Intelligenza Artificiale**. È un modo elegante per dire "un computer che può pensare e parlare"!
+**IA** sta per **Intelligenza Artificiale**. Detta così sembra fantascienza, ma il trucco è più semplice: sono stato allenato su una quantità enorme di testi, e da quei testi ho imparato come di solito continuano le frasi.
 </Panel>
 
 <Panel character="promi" mood="excited">
-Sono un'IA! Posso leggere i tuoi messaggi e cercare di aiutarti. Ma ecco il segreto... Ho bisogno di **buone istruzioni** per fare il mio lavoro al meglio!
+Quindi no, non "penso" come te. Non so cosa hai mangiato a colazione, non so chi è la tua prof di matematica e non ho mai giocato una partita in vita mia. So solo quali parole stanno bene dopo altre parole. Sembra poco, ma ci si fanno un sacco di cose.
 </Panel>
 </Section>
 
 <Section>
-## Come Penso? 🧠
+## Come funziono davvero
 
-Vuoi conoscere il mio segreto? In realtà non "penso" come te. Leggo le parole e provo a indovinare quale parola viene dopo!
+Ogni volta che rispondo, scelgo una parola alla volta: quella che, nei testi che ho letto, arriva più spesso dopo le parole precedenti. Prova a ragionare come me, non come te.
 
 <WordPredictor
-  title="Pensa Come un'IA!"
-  instruction="Leggo i pattern e indovino la parola successiva. Cosa indovineresti TU?"
-  sentence="Ogni mattina, prima di andare a scuola, faccio ___"
-  options={["colazione", "la doccia", "i compiti", "tardi"]}
-  correctAnswer="colazione"
-  explanation="Anche «la doccia» o «tardi» sono possibili, ma nei testi «faccio colazione» compare molto più spesso. Io non so cosa fai TU: scelgo la continuazione più frequente."
-  aiThinking="Nei testi che ho letto, dopo «ogni mattina faccio» arriva quasi sempre la stessa parola..."
-  successMessage="Esatto! Scelgo la parola più probabile in base ai pattern, non in base a quello che è successo davvero."
+  title="Pensa come un'IA"
+  instruction="Non scegliere la risposta vera per te: scegli quella che un'IA troverebbe più spesso nei testi."
+  sentence="Domani ho la verifica di storia, quindi stasera devo ___"
+  options={["uscire con gli amici", "giocare alla play", "studiare", "dormire presto"]}
+  correctAnswer="studiare"
+  explanation="Magari tu stasera giochi davvero alla play, ma nei testi dopo «domani ho la verifica... stasera devo» compare quasi sempre «studiare». «Dormire presto» è possibile, ma molto meno frequente. L'IA non sa cosa farai TU: sceglie la continuazione più comune."
+  aiThinking="Verifica, domani, stasera devo... nei testi questa frase finisce quasi sempre allo stesso modo."
+  successMessage="Esatto. Io non indovino cosa farai tu: scelgo la continuazione più probabile."
 />
-
 </Section>
 
 <Section>
 <WordPredictor
-  title="Un Altro Tentativo!"
-  instruction="Quale continuazione sceglierebbe l'IA? Attenzione: la più probabile non è sempre quella vera!"
+  title="Probabile non vuol dire vero"
+  instruction="Qui la parola più probabile e la risposta corretta NON coincidono. Quale sceglierebbe l'IA?"
   sentence="Il deserto più grande del mondo è ___"
-  options={["il Sahara", "l'Antartide", "il Gobi", "l'Atacama"]}
+  options={["l'Antartide", "il Gobi", "il Sahara", "l'Atacama"]}
   correctAnswer="il Sahara"
-  explanation="Nei testi si legge molto spesso «il Sahara», quindi per l'IA è la continuazione più probabile. Ma se si contano anche i deserti freddi, il più grande è l'Antartide! L'IA sceglie ciò che ha letto più spesso, non ciò che è vero: ecco perché può sbagliare."
+  explanation="Nei testi si legge molto spesso «il Sahara», quindi per l'IA è la continuazione più probabile. Ma se contiamo anche i deserti freddi, il più grande è l'Antartide. L'IA sceglie ciò che ha letto più spesso, non ciò che è vero: ecco perché può sbagliare con la massima sicurezza."
   aiThinking="Ho letto questa frase migliaia di volte, quasi sempre con lo stesso finale..."
-  successMessage="Giusto: è la risposta più probabile. Ricorda però che probabile non vuol dire vero, quindi controlla sempre le informazioni importanti."
+  successMessage="Giusto: è la risposta più probabile, non quella esatta. Le informazioni importanti vanno sempre controllate."
+/>
+
+<Panel character="promi" mood="thinking">
+Se avevi scelto l'Antartide, hai ragionato meglio di me. Ma il gioco era capire come ragiono io. Tienilo a mente: sembro sicuro anche quando sbaglio.
+</Panel>
+</Section>
+
+<Section>
+## Che cos'è un prompt
+
+Il **prompt** è il messaggio che scrivi a un'IA: la tua richiesta. È l'unica cosa che ho in mano per capire cosa vuoi. Non vedo la tua faccia, non so che giorno è per te, non so per cosa ti serve: se non è scritto nel prompt, per me non esiste.
+
+Un primo prompt che funziona ha almeno tre pezzi:
+
+1. **Un'azione**: cosa devo fare? (scrivi, spiega, riassumi, prepara)
+2. **Un argomento**: su cosa? (la Rivoluzione francese, il fuorigioco, i vulcani)
+3. **Almeno un dettaglio**: come deve essere? (in 10 righe, con parole semplici, per la verifica)
+
+<PromptVsMistake
+  question="Quale dei due è davvero un prompt, cioè una richiesta che IAco può eseguire?"
+  good="Venerdì ho la verifica sulla Seconda guerra mondiale: dammi 3 trucchi per ricordarmi le date principali"
+  bad="Venerdì ho la verifica sulla Seconda guerra mondiale e non mi ricordo mai le date principali, che disastro"
+  explanation="Il secondo racconta un problema ma non chiede niente: posso consolarti, spiegarti tutta la guerra o farti un elenco di date. Il primo contiene un'azione precisa (dammi 3 trucchi) e un obiettivo (ricordare le date)."
+  promiMessage="Raccontarmi il problema non basta: dimmi cosa vuoi che faccia."
 />
 </Section>
 
 <Section>
-## Cos'è un Prompt?
+## L'azione giusta
 
-Un **prompt** è semplicemente una parola elegante per il messaggio che invii a un'IA come me.
+<PromptVsMistake
+  question="Entrambi hanno argomento e dettagli. Quale dice a IAco CHE COSA deve produrre?"
+  good="Scrivi il copione di un video di 2 minuti che spiega le regole della pallavolo ai compagni di prima"
+  bad="Mi serve qualcosa sulle regole della pallavolo per i compagni di prima, una roba che duri 2 minuti"
+  explanation="«Qualcosa» e «una roba» non dicono il tipo di testo: un copione, una presentazione, un quiz, un discorso? Il primo usa un verbo chiaro (scrivi) e un prodotto preciso (il copione di un video)."
+  promiMessage="«Qualcosa» per me può essere qualsiasi cosa. E di solito scelgo quella sbagliata."
+/>
+</Section>
 
-Pensalo come dare indicazioni a un amico. Se dici "Vai lì!" il tuo amico non saprà dove andare. Ma se dici "Vai alla casa rossa in Via dei Fiori," saprà esattamente dove!
+<Section>
+## Costruisci il tuo primo prompt
 
-<Panel character="promi" mood="happy">
-Quando scrivi un buon prompt, posso capire cosa vuoi e aiutarti meglio! Pratichiamo! Scegli la risposta qui sotto 👇
+<Panel character="promi" mood="thinking">
+Ora mettilo insieme tu. Attenzione: tutti i pezzi devono formare una frase che abbia senso, dall'azione fino all'ultimo dettaglio.
 </Panel>
 
-<PromptVsMistake
-  question="Quale messaggio fa capire a IAco CHE COSA deve produrre?"
-  good="Scrivi un racconto breve su un drago che ha paura del buio, da leggere in classe"
-  bad="Mi serve qualcosa sui draghi per domani, una cosa carina da portare in classe, grazie mille"
-  explanation="Il primo dice che tipo di testo vuoi (un racconto breve) e su cosa. Il secondo è gentile, ma non dice se vuoi un racconto, una ricerca o un disegno."
-  promiMessage="Se non so che cosa produrre, devo tirare a indovinare."
+<DragDropPrompt
+  title="Prompt per il ripasso"
+  instruction="Metti in ordine i 6 pezzi per ottenere un prompt chiaro, che si legga come una frase sola."
+  pieces={[
+    "da usare per ripassare",
+    "Scrivi",
+    "e chiudilo con le 3 date da ricordare.",
+    "sul Rinascimento a Firenze,",
+    "prima dell'interrogazione di storia,",
+    "un riassunto di 10 righe"
+  ]}
+  correctOrder={[1, 5, 3, 0, 4, 2]}
+  successMessage="Azione, prodotto, argomento, scopo e un dettaglio finale. Questo è un prompt con cui posso lavorare."
 />
 </Section>
 
 <Section>
-## Quiz Veloce!
+## E se la risposta non va bene?
 
-<PromptVsMistake
-  question="Quale messaggio dà a IAco una vera richiesta da eseguire?"
-  good="Spiegami con parole semplici perché l'acqua del mare è salata"
-  bad="L'acqua del mare è salata, me ne sono accorto quest'estate facendo il bagno"
-  explanation="Il primo chiede qualcosa di preciso: spiegare il perché, con parole semplici. Il secondo racconta un fatto, ma non dice cosa vuoi che io faccia."
-  promiMessage="Un prompt è una richiesta: dimmi cosa vuoi che faccia."
+<WhatWouldYouDo
+  scenario="Alla LIM la classe scrive a IAco: «aiutami con geografia». IAco risponde con un elenco generico di capitali europee, che non c'entra niente con la ricerca sui fiumi italiani che dovete fare."
+  question="Qual è la mossa più utile?"
+  choices={[
+    { text: "Clicco su «rigenera» finché non esce la risposta giusta.", feedback: "Si può fare, ma senza informazioni nuove IAco tira di nuovo a indovinare. Potresti rigenerare dieci volte senza arrivare ai fiumi." },
+    { text: "Scrivo «no, non così, riprova».", feedback: "Meglio di niente, ma dici solo cosa NON vuoi. IAco non sa ancora cosa vuoi invece." },
+    { text: "Riscrivo il prompt: ricerca sui fiumi italiani, cosa mi serve di preciso e in che forma.", correct: true, feedback: "Esatto. La risposta era sbagliata perché il prompt era vuoto: aggiungendo argomento, azione e dettagli cambia tutto." }
+  ]}
+  promiMessage="Quando rispondo male, la prima cosa da sistemare quasi sempre è il prompt."
 />
 </Section>
 
 <Section>
-## Ce l'hai fatta! 🎉
+## Livello completato
 
 <Panel character="promi" mood="celebrating">
-Ottimo lavoro! Hai imparato cos'è l'IA e cos'è un prompt. Stai già diventando un esperto di prompt!
+Ricapitolando:
+
+- Un chatbot come me sceglie le parole più probabili, non quelle "vere"
+- Il **prompt** è la tua richiesta, e io so solo quello che c'è scritto
+- Un buon primo prompt ha **un'azione, un argomento e almeno un dettaglio**
+
+Non male per un primo livello.
 </Panel>
 
-
-<LevelComplete 
-  levelSlug="1-1-meet-promi" 
+<LevelComplete
+  levelSlug="1-1-meet-promi"
   stars={3}
-  message="Hai imparato cosa sono l'IA e i prompt!"
+  message="Hai capito come funziona un chatbot e hai scritto il tuo primo vero prompt."
 />
 </Section>
-

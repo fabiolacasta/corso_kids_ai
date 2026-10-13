@@ -1,43 +1,43 @@
 <Section>
 <Panel character="promi" mood="happy">
-Bentornato! La lezione di oggi è super importante: **Mostra, non raccontare**! Usare esempi è uno dei modi migliori per aiutare l'IA a capire!
+Secondo livello delle Caverne. Oggi un trucco che usano anche i professionisti: **mostra, non raccontare**. Invece di descrivermi quello che vuoi, fammi vedere un esempio.
 </Panel>
 </Section>
 
 <Section>
 ## Il potere degli esempi
 
-Invece di descrivere solo cosa vuoi, **mostrami un esempio**!
+Pensa a quando l'allenatore ti spiega uno schema: puoi ascoltare cinque minuti di parole, oppure vederlo fatto una volta sul campo. Di solito capisci di più la seconda volta.
 
-È come quando insegni un gioco a qualcuno - è più facile mostrare come si gioca che solo spiegare le regole!
+Con l'IA funziona allo stesso modo. Un esempio le dice in un colpo solo **lunghezza, tono, stile e struttura** di quello che vuoi. L'IA cerca lo **schema** che si ripete negli esempi e lo applica al caso nuovo.
 </Section>
 
 <Section>
-## Impara il pattern!
+## Trova lo schema
 
 <ExampleMatcher
-  title="Potere dei Pattern"
-  instruction="L'IA impara dagli esempi! Guarda come sono stati trasformati i titoli del giornalino e scegli quello che segue lo stesso schema."
+  title="Trova lo schema"
+  instruction="La redazione del giornalino ha trasformato così i titoli degli articoli. Scegli quello che segue esattamente lo stesso schema."
   examples={[
     { input: "La gita a Firenze", output: "Firenze: 3 cose che non sapevi" },
     { input: "Il laboratorio di scienze", output: "Scienze: 3 cose che non sapevi" },
     { input: "Il nuovo orto della scuola", output: "Orto: 3 cose che non sapevi" }
   ]}
   question="Il torneo di pallavolo"
-  options={["Torneo di pallavolo: tutto quello che c'è da sapere", "Pallavolo: 3 cose che non sapevi", "3 cose che non sapevi sul torneo", "Il grande torneo di pallavolo: 3 cose!"]}
+  options={["Torneo: 3 cose che non sapevi", "Pallavolo: 3 cose che non sapevi", "Pallavolo: 3 cose che non sai", "Torneo di pallavolo: 3 cose che non sapevi"]}
   correctAnswer="Pallavolo: 3 cose che non sapevi"
-  explanation="Lo schema è: una sola parola chiave + «: 3 cose che non sapevi». Le altre opzioni cambiano l'ordine o le parole, quindi non seguono l'esempio. È così che l'IA impara da ciò che le mostri."
+  explanation="Lo schema è: una sola parola, quella che dice l'argomento vero (Scienze, non Laboratorio), più «: 3 cose che non sapevi» identico. «Torneo» è la parola sbagliata, «non sai» cambia la formula, «Torneo di pallavolo» usa più parole. Anche l'IA guarda questi dettagli."
 />
 </Section>
 
 <Section>
 <Panel character="promi" mood="thinking">
-Se dici "rendilo figo", potrei non sapere cosa significa "figo" per te. Ma se mi mostri un esempio, capirò perfettamente!
+Se mi scrivi «fallo figo», io non ho idea di cosa sia figo per te. Davvero. Se mi metti un esempio di qualcosa che ti piace, il problema sparisce.
 </Panel>
 </Section>
 
 <Section>
-## Guarda la differenza
+## L'esempio giusto
 
 <PromptVsMistake
   question="Quale prompt usa un esempio che aiuta davvero l'IA?"
@@ -49,7 +49,7 @@ Se dici "rendilo figo", potrei non sapere cosa significa "figo" per te. Ma se mi
 </Section>
 
 <Section>
-## Mostra il tuo stile
+## Mostra, non descrivere
 
 <PromptVsMistake
   question="Vuoi domande di ripasso fatte come quelle della prof. Quale prompt lo ottiene meglio?"
@@ -61,44 +61,42 @@ Se dici "rendilo figo", potrei non sapere cosa significa "figo" per te. Ma se mi
 </Section>
 
 <Section>
-## Dai esempi!
+## Costruisci un prompt con esempi
 
 <DragDropPrompt
-  title="Costruisci con Esempi"
-  instruction="Ordina i pezzi per creare un prompt con un esempio utile"
-  pieces={["Scrivi un nome da supereroe", "come 'Capitano Coraggio'", "o 'Signora Fulmine'", "- qualcosa di eroico e memorabile"]}
-  correctOrder={[0, 1, 2, 3]}
-  successMessage="Perfetto! I tuoi esempi mostrano esattamente che tipo di nome vuoi!"
+  title="Prompt con esempi"
+  instruction="Metti in ordine: prima la situazione, poi la richiesta, poi gli esempi, infine quante proposte vuoi e come."
+  pieces={["Dammi 8 proposte in elenco,", "Stiamo iscrivendo la classe al torneo di calcetto della scuola.", "o di «Atletico Ma Non Troppo».", "Ci serve un nome per la squadra, corto e ironico,", "ognuna con una riga che spiega la battuta.", "sullo stile di «Real Mediocri»"]}
+  correctOrder={[1, 3, 5, 2, 0, 4]}
+  successMessage="Situazione, richiesta, due esempi chiari e formato: l'IA sa che tipo di nome cerchi."
 />
 </Section>
 
 <Section>
-## Crea il tuo prompt con esempi!
+## Crea il tuo prompt con esempi
 
 <MagicWords
-  sentence="Scrivi un ___ come '___ ___ ___' - qualcosa di ___ e ___"
+  sentence="Inventa un nome per ___, sullo stile di ___. Deve essere ___. Dammene ___."
   blanks={[
-    { hint: "📝 cosa scrivere", answers: ["nome squadra", "nome animale", "nome band", "titolo libro", "nome ristorante"] },
-    { hint: "✨ aggettivo", answers: ["Super", "Felice", "Dorato", "Magico", "Potente"] },
-    { hint: "🌟 nome", answers: ["Stelle", "Draghi", "Sogni", "Tuono", "Fenice"] },
-    { hint: "🎯 parola", answers: ["Club", "Squadra", "Gruppo", "Regno", "Avventura"] },
-    { hint: "😊 stile 1", answers: ["divertente", "emozionante", "figo", "creativo", "accattivante"] },
-    { hint: "🎨 stile 2", answers: ["memorabile", "unico", "potente", "amichevole", "audace"] }
+    { hint: "📝 per cosa", answers: ["il podcast di classe", "la squadra di basket", "il canale video della scuola", "il gruppo di studio"] },
+    { hint: "💡 l'esempio", answers: ["«Storia in Cuffia»", "«Fuori Tempo Massimo»", "«Compiti a Sorpresa»", "«Zona Ricreazione»"] },
+    { hint: "🎨 lo stile", answers: ["corto e ironico", "serio ma non noioso", "facile da ricordare", "con un gioco di parole"] },
+    { hint: "📋 quanti e come", answers: ["5 in elenco", "3 con una spiegazione", "10 divisi per stile"] }
   ]}
-  successMessage="Fantastico! Il tuo esempio mostra esattamente quale stile vuoi!"
+  successMessage="Con un esempio dentro, il prompt dice molto più di quanto sembri."
 />
 </Section>
 
 <Section>
-## Gli esempi sono potenti! 🎉
+## Livello completato
 
 <Panel character="promi" mood="celebrating">
-Lavoro incredibile! Hai imparato che **mostrare esempi** è uno dei modi migliori per aiutare l'IA a capire esattamente cosa vuoi!
+Ricapitolando: un buon esempio mi dice lunghezza, tono e stile meglio di qualunque aggettivo. Un esempio sbagliato, invece, mi porta fuori strada. Sceglilo con cura.
 </Panel>
 
-<LevelComplete 
-  levelSlug="3-2-show-dont-tell" 
+<LevelComplete
+  levelSlug="3-2-show-dont-tell"
   stars={3}
-  message="Hai padroneggiato l'uso degli esempi nei prompt!"
+  message="Hai imparato a usare gli esempi per mostrare all'IA cosa vuoi."
 />
 </Section>

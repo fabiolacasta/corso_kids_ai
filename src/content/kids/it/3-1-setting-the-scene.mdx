@@ -1,21 +1,26 @@
 <Section>
 <Panel character="promi" mood="excited">
-Benvenuto nelle **Grotte del Contesto**! 🕳️ Qui scopriremo la magia delle **informazioni di sfondo**!
+Benvenuto nelle **Caverne del Contesto**. Qui si impara la cosa che fa la differenza tra una risposta qualunque e una risposta che ti serve davvero: le **informazioni di sfondo**.
 </Panel>
 </Section>
 
 <Section>
 <Panel character="promi" mood="thinking">
-Hai mai raccontato una barzelletta a qualcuno, ma non ha riso perché non capiva il contesto? Il contesto è come dare a qualcuno la storia completa!
+Hai presente quando entri nella chat di classe dopo 200 messaggi e leggi solo «ok allora facciamo così»? Non sai cosa hanno deciso, chi lo fa, né quando. Io mi sento così ogni volta che mi scrivi senza contesto.
 </Panel>
 </Section>
 
 <Section>
-## Cos'è il Contesto?
+## Cos'è il contesto?
 
-Il **contesto** è l'informazione extra che aiuta l'IA a capire meglio la tua richiesta.
+Il **contesto** è tutto quello che l'IA non può sapere se non glielo dici tu:
 
-Pensala come raccontare una storia - se dici solo "e poi ha vinto!" nessuno sa chi ha vinto, cosa ha vinto, o perché è importante!
+- **chi sei** (che classe fai, che livello hai);
+- **in che situazione sei** (verifica, partita, compito di gruppo);
+- **a cosa ti serve** la risposta (studiare, esporre, mandare un messaggio);
+- **chi la leggerà** (la prof, i compagni, i genitori).
+
+La stessa domanda, con un contesto diverso, merita una risposta diversa. «Spiegami le frazioni» per un ragazzo di prima media e per uno studente di ingegneria non è la stessa cosa.
 </Section>
 
 <Section>
@@ -31,7 +36,7 @@ Pensala come raccontare una storia - se dici solo "e poi ha vinto!" nessuno sa c
 </Section>
 
 <Section>
-## Preparare la scena
+## Chi leggerà?
 
 <PromptVsMistake
   question="Devi mandare un messaggio sulla partita. Quale prompt spiega meglio la situazione all'IA?"
@@ -43,29 +48,45 @@ Pensala come raccontare una storia - se dici solo "e poi ha vinto!" nessuno sa c
 </Section>
 
 <Section>
-## Pratica a impostare il contesto!
+## Risposta sbagliata: che fai?
 
-<MagicWords
-  sentence="Sono un ___ e ho bisogno di aiuto con ___. Puoi spiegarlo in modo ___?"
-  blanks={[
-    { hint: "👤 chi sei", answers: ["studente", "bambino", "principiante", "giovane artista", "apprendista curioso"] },
-    { hint: "📚 di cosa hai bisogno", answers: ["i compiti di matematica", "un progetto di scienze", "scrivere una storia", "imparare a disegnare", "capire lo spazio"] },
-    { hint: "✨ come spiegare", answers: ["semplice", "divertente", "passo dopo passo", "facile da capire", "creativo"] }
+<WhatWouldYouDo
+  scenario="Giochi a calcio negli Under 14 e domenica hai una partita. Chiedi all'IA «Dammi un piano di allenamento per questa settimana» e ti arriva un programma da palestra per adulti: pesi, panca, 5 giorni su 5."
+  choices={[
+    { text: "Riscrivo: «Fammene uno più leggero e più corto».", feedback: "Più leggero sì, ma resta un programma da palestra. L'IA non sa ancora che giochi a calcio, quanti anni hai e che domenica c'è la partita." },
+    { text: "Riscrivo dicendo che ho 13 anni, gioco a calcio, mi alleno martedì e giovedì con la squadra e domenica ho la partita.", correct: true, feedback: "Esatto. Con età, sport, impegni già fissi e obiettivo l'IA può fare un piano che ha senso per te, invece di indovinare." },
+    { text: "Rigenero la risposta: magari la seconda volta esce un piano più adatto.", feedback: "Puoi provarci, ma la domanda è la stessa e mancano le stesse informazioni. Cambia la forma, non il problema." },
+    { text: "Riscrivo aggiungendo «per un ragazzo».", feedback: "È un passo avanti, ma «un ragazzo» copre dai 10 ai 18 anni e non dice che sport fai né cosa hai già in settimana." }
   ]}
-  successMessage="Ottimo contesto! Ora l'IA sa esattamente come aiutarti!"
+  promiMessage="Se la risposta non c'entra con te, di solito mi manca un pezzo della tua situazione."
 />
 </Section>
 
 <Section>
-## Ottimo inizio! 🎉
+## Costruisci il contesto
+
+<MagicWords
+  sentence="Faccio la ___ e devo prepararmi su ___. Mi serve per ___, quindi spiegamelo ___."
+  blanks={[
+    { hint: "👤 chi sei", answers: ["prima media", "seconda media", "terza media"] },
+    { hint: "📚 l'argomento", answers: ["le equazioni", "il present perfect", "la Rivoluzione francese", "il sistema nervoso"] },
+    { hint: "🎯 a cosa ti serve", answers: ["la verifica di giovedì", "un'interrogazione", "l'esame di terza media", "una presentazione di gruppo"] },
+    { hint: "🧭 come spiegarlo", answers: ["passo dopo passo", "con esempi concreti", "in punti brevi", "senza parole troppo tecniche"] }
+  ]}
+  successMessage="Chi sei, cosa studi, a cosa ti serve, come lo vuoi: ora c'è tutto."
+/>
+</Section>
+
+<Section>
+## Livello completato
 
 <Panel character="promi" mood="celebrating">
-Stai imparando a preparare la scena! Ricorda: darmi contesto mi aiuta a capire la tua situazione e darti risposte migliori!
+Regola da portarti via: prima di chiedere, chiediti cosa non posso sapere io. Di solito è chi sei, a cosa ti serve e chi leggerà. Due righe in più, risposta molto migliore.
 </Panel>
 
-<LevelComplete 
-  levelSlug="3-1-setting-the-scene" 
+<LevelComplete
+  levelSlug="3-1-setting-the-scene"
   stars={3}
-  message="Hai imparato come il contesto aiuta l'IA a capirti!"
+  message="Hai imparato a dare all'IA il contesto: chi sei, la situazione e a cosa ti serve."
 />
 </Section>

@@ -10,11 +10,11 @@ import { evaluate } from "@mdx-js/mdx";
 import remarkGfm from "remark-gfm";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createElement, Fragment, type ReactNode } from "react";
-import { getAllLevels } from "@/lib/kids/levels";
+import { getAllLevels, RETIRED_LEVEL_SLUGS } from "@/lib/kids/levels";
 import * as KidsElements from "@/components/kids/elements";
 
 const CONTENT_DIR = path.join(process.cwd(), "src/content/kids");
-const FULL_LOCALES = ["it", "en"]; // must contain every level (other locales fall back to English)
+const FULL_LOCALES = ["it"]; // must contain every level (other locales fall back to English, then Italian)
 const levels = getAllLevels();
 
 type Call = { name: string; props: Record<string, unknown> };
@@ -43,8 +43,8 @@ for (const locale of fs.readdirSync(CONTENT_DIR)) {
 }
 
 describe("levels", () => {
-  it("has 24 levels with unique slugs", () => {
-    expect(levels.length).toBe(24);
+  it("has 26 levels with unique slugs", () => {
+    expect(levels.length).toBe(26);
     expect(new Set(levels.map((l) => l.slug)).size).toBe(levels.length);
   });
 
@@ -56,7 +56,7 @@ describe("levels", () => {
   }
 
   it("no MDX file belongs to an unknown level", () => {
-    const slugs = new Set(levels.map((l) => l.slug));
+    const slugs = new Set([...levels.map((l) => l.slug), ...RETIRED_LEVEL_SLUGS]);
     expect(files.filter((f) => !slugs.has(f.slug)).map((f) => `${f.locale}/${f.slug}`)).toEqual([]);
   });
 });
@@ -114,6 +114,16 @@ describe.each(files)("$locale/$slug", ({ slug, file }) => {
           const fakes = s.filter((x) => x.fake).length;
           if (fakes !== 1) problems.push(`SpotTheFake must have exactly 1 fake sentence, found ${fakes}`);
           if (s.some((x) => !x.fake && !x.why)) problems.push("SpotTheFake true sentence without why");
+          break;
+        }
+        case "RedFlagChat": {
+          const msgs = p.messages as { from: string; flag?: boolean; why?: string; text: string }[];
+          if (!msgs.some((m) => m.flag)) problems.push("RedFlagChat has no warning sign");
+          for (const m of msgs) {
+            if (m.flag && m.from !== "them") problems.push(`RedFlagChat flag on a "${m.from}" message: ${m.text}`);
+            if (m.flag && !m.why) problems.push(`RedFlagChat flag without why: ${m.text}`);
+          }
+          if (!msgs.some((m) => m.from === "them" && !m.flag)) problems.push("RedFlagChat needs at least one harmless message from them");
           break;
         }
         case "PromptDoctor":

@@ -1,87 +1,107 @@
 <Section>
 <Panel character="promi" mood="excited">
-Oggi impariamo i **formati**! 📝 Sapevi che puoi chiedere all'IA di rispondere in modi diversi?
+Hai dato il contesto, hai messo un esempio. Manca un pezzo: il **formato**. Cioè la forma che deve avere la risposta quando arriva.
 </Panel>
 </Section>
 
 <Section>
 ## Cos'è un formato?
 
-Un **formato** è COME vuoi che la risposta sia presentata:
+Il **formato** è COME vuoi che sia organizzata la risposta. Qualche possibilità:
 
-- 📋 **Lista** - punti numerati o elenco puntato
-- 📖 **Storia** - una narrazione con inizio, mezzo, fine
-- 🎵 **Poesia** - con rime e ritmo
-- ❓ **Domande e Risposte** - stile domanda e risposta
-- 📊 **Tabella** - organizzato in righe e colonne
+- 📋 **Elenco puntato o numerato**: per passaggi, consigli, cose da fare in ordine.
+- 📊 **Tabella**: quando hai più informazioni per ogni voce (anno, evento, protagonista).
+- 🧠 **Schema o mappa concettuale**: per vedere come si collegano i concetti.
+- ❓ **Domande e risposte**: per ripassare o preparare un quiz.
+- 💬 **Messaggio breve**: per la chat, con poche righe.
+- 🎙️ **Copione**: per un video o un podcast, con chi parla e cosa dice.
+
+Puoi anche chiedere **quanto** deve essere lunga: «massimo 5 punti», «3 righe», «una pagina».
 </Section>
 
 <Section>
-<Panel character="promi" mood="happy">
-Dicendomi il formato, mi aiuti a organizzare la mia risposta nel modo più utile per te!
+<Panel character="promi" mood="thinking">
+Se non mi dici il formato, scelgo io. E di solito scelgo un bel blocco di testo, che magari a te non serve proprio. Il formato giusto dipende da cosa ci devi fare dopo.
 </Panel>
 </Section>
 
 <Section>
-## Il formato fa la differenza!
+## Il formato fa la differenza
 
 <PromptVsMistake
   question="Devi ripassare le date del Risorgimento per la verifica. Quale prompt chiede il formato più utile?"
   good="Sto ripassando il Risorgimento per la verifica di storia. Fammi una tabella con tre colonne, anno, evento e protagonista, per gli eventi principali dal 1848 al 1870."
-  bad="Sto ripassando il Risorgimento per la verifica di storia. Scrivimi una poesia in rima con tutti gli eventi importanti dal 1848 al 1870, così è più divertente da imparare."
-  explanation="Per memorizzare date e collegarle agli eventi serve un formato ordinato: la tabella mette tutto in fila. La poesia è divertente, ma le date si perdono tra rime e versi ed è difficile ritrovarle."
+  bad="Sto ripassando il Risorgimento per la verifica di storia. Fammi un riassunto ben organizzato in paragrafi, uno per ogni anno importante, dal 1848 al 1870."
+  explanation="Tutti e due chiedono un formato, ma per memorizzare date e collegarle a eventi e persone la tabella è più adatta: leggi una riga e hai tutto. Nei paragrafi le date ci sono, ma sparse nel testo e più difficili da ripassare a colpo d'occhio."
   promiMessage="Il formato giusto dipende da cosa devi farci con la risposta."
 />
 </Section>
 
 <Section>
-## Scegli il tuo formato!
+## Pronto da usare
 
 <PromptVsMistake
   question="Prepari un quiz a squadre sul sistema solare per la classe. Quale prompt chiede il formato giusto?"
   good="Prepara 8 domande a risposta multipla sul sistema solare per un quiz a squadre in prima media: per ogni domanda 4 opzioni, una sola giusta, e le soluzioni tutte alla fine."
-  bad="Prepara un quiz sul sistema solare per una gara a squadre in prima media. Spiega bene ogni pianeta con tante informazioni interessanti, così i compagni imparano mentre giocano."
-  explanation="Il primo dice esattamente come deve essere fatto il quiz (8 domande, 4 opzioni, soluzioni alla fine). Il secondo chiede spiegazioni sui pianeti: otterresti un testo da leggere, non domande da usare in gara."
-  promiMessage="Dimmi la forma che ti serve e te la preparo già pronta da usare."
+  bad="Prepara 8 domande a risposta multipla sul sistema solare per un quiz a squadre in prima media: per ogni domanda 4 opzioni, con la risposta giusta segnata subito sotto."
+  explanation="Differenza piccola ma decisiva: il quiz verrà proiettato alla LIM. Se la soluzione è subito sotto la domanda, la vedono tutti. Nel primo le soluzioni sono alla fine, quindi puoi mostrarle solo quando vuoi."
+  promiMessage="Pensa a dove userai la risposta: alla LIM, in chat, su un foglio. Il formato cambia di conseguenza."
 />
 </Section>
 
 <Section>
-## Pratica con i formati!
+## Quale formato chiedi?
+
+<WhatWouldYouDo
+  scenario="Siete in 4 per il progetto di scienze. Ci sono 6 compiti da dividere (ricerca, foto, cartellone, slide, esperimento, esposizione), ognuno con una scadenza diversa. Chiedi all'IA di organizzare il lavoro."
+  question="Che formato le chiedi?"
+  choices={[
+    { text: "Un elenco puntato con tutti i compiti.", feedback: "Non è sbagliato, ma con persone e scadenze dentro ogni punto diventa confuso. Ti serve qualcosa che si legga per righe e colonne." },
+    { text: "Una tabella con le colonne compito, chi lo fa e scadenza.", correct: true, feedback: "Giusto. Hai tre informazioni per ogni compito: la tabella le mette in fila e ognuno trova subito la sua riga." },
+    { text: "Una mappa concettuale del progetto.", feedback: "La mappa serve a collegare concetti, per esempio gli argomenti dell'esperimento. Per dire chi fa cosa e entro quando è scomoda." },
+    { text: "Un messaggio da mandare nel gruppo con tutto spiegato.", feedback: "Comodo da inviare, ma un messaggio lungo con 6 compiti e 6 date si perde tra le chat. Prima organizza, poi semmai riassumi." }
+  ]}
+  promiMessage="Più informazioni per ogni voce? Quasi sempre la risposta è una tabella."
+/>
+</Section>
+
+<Section>
+## Aggiungi il formato
 
 <DragDropPrompt
-  title="Aggiungi un Formato"
-  instruction="Ordina per chiedere un formato specifico"
-  pieces={["come una breve poesia", "con versi che rimano", "Scrivi sulla pioggia", "di 4 righe"]}
-  correctOrder={[2, 0, 1, 3]}
-  successMessage="Perfetto! Hai chiesto un formato poesia con dettagli specifici!"
+  title="Chiedi un formato preciso"
+  instruction="Metti in ordine: prima la situazione, poi la richiesta, poi il formato con tutti i dettagli."
+  pieces={["con una riga per ogni settimana", "Fammi un programma di allenamento", "e una nota finale sul riscaldamento.", "Tra 3 settimane c'è la corsa campestre della scuola.", "e le colonne giorno, esercizio e durata,", "sotto forma di tabella,"]}
+  correctOrder={[3, 1, 5, 0, 4, 2]}
+  successMessage="Situazione, richiesta e formato dettagliato: la risposta arriva già pronta da stampare."
 />
 </Section>
 
 <Section>
-## Scegli il tuo formato!
+## Scegli il tuo formato
 
 <MagicWords
-  sentence="Dammi ___ su ___ come ___"
+  sentence="Spiegami ___ sotto forma di ___, con ___, così posso ___."
   blanks={[
-    { hint: "🔢 quanti", answers: ["5 consigli", "3 idee", "10 fatti", "7 passi", "4 esempi"] },
-    { hint: "📚 argomento", answers: ["essere un buon amico", "salvare il pianeta", "stare in salute", "essere creativo", "imparare cose nuove"] },
-    { hint: "📋 formato", answers: ["lista numerata", "punti", "breve poesia", "storia semplice", "passi facili"] }
+    { hint: "📚 argomento", answers: ["la fotosintesi", "la regola del fuorigioco", "il teorema di Pitagora", "le cause della Prima guerra mondiale"] },
+    { hint: "📋 formato", answers: ["mappa concettuale", "tabella", "elenco numerato", "domande e risposte"] },
+    { hint: "📏 quanto", answers: ["massimo 6 punti", "una riga per concetto", "un esempio per ogni passaggio"] },
+    { hint: "🎯 a cosa serve", answers: ["ripassare in 10 minuti", "spiegarlo alla squadra", "prepararmi all'interrogazione"] }
   ]}
-  successMessage="Ottimo lavoro nella scelta del formato! Questo rende le risposte più facili da leggere!"
+  successMessage="Argomento, formato, lunghezza e scopo: la risposta avrà la forma che ti serve."
 />
 </Section>
 
 <Section>
-## Maestro del Formato! 🎉
+## Livello completato
 
 <Panel character="promi" mood="celebrating">
-Meraviglioso! Hai imparato che chiedere un **formato** specifico ti aiuta a ottenere risposte organizzate esattamente come ne hai bisogno!
+Prima di chiedere, immagina la risposta già finita: è una tabella? Un elenco? Un copione? Se lo vedi tu, scrivimelo, e la ricevi già in quella forma.
 </Panel>
 
-<LevelComplete 
-  levelSlug="3-3-format-finder" 
+<LevelComplete
+  levelSlug="3-3-format-finder"
   stars={3}
-  message="Hai imparato a chiedere diversi formati!"
+  message="Hai imparato a scegliere e chiedere il formato giusto per ogni situazione."
 />
 </Section>

@@ -31,24 +31,6 @@ export const TEACHER_CONTENT: Record<string, LevelTeacherContent> = {
     },
     minutes: 45,
   },
-  "1-2-first-words": {
-    goal: "Scrivere il primo prompt e capire che la richiesta determina la risposta.",
-    keywords: ["prompt", "istruzione", "risposta"],
-    questions: [
-      "Che cos'è un prompt, con parole vostre?",
-      "Perché la stessa domanda scritta in due modi può dare risposte diverse?",
-      "Vi è mai capitato di non essere capiti in un messaggio? Cosa avete cambiato?",
-    ],
-    activity: {
-      title: "Il robot che esegue alla lettera",
-      steps: [
-        "Un volontario fa il \"robot\": esegue solo le istruzioni esattamente come vengono dette.",
-        "La classe gli dà istruzioni per disegnare una casa alla lavagna, senza gesti.",
-        "Riflettete: quali istruzioni erano troppo vaghe? Come le avreste scritte meglio?",
-      ],
-    },
-    minutes: 45,
-  },
   "1-3-being-clear": {
     goal: "Riconoscere la differenza tra una richiesta vaga e una chiara.",
     keywords: ["chiarezza", "richiesta vaga", "obiettivo"],
@@ -84,42 +66,6 @@ export const TEACHER_CONTENT: Record<string, LevelTeacherContent> = {
       ],
     },
     minutes: 40,
-  },
-  "2-2-who-and-what": {
-    goal: "Aggiungere al prompt personaggi (chi) e azioni od oggetti (cosa).",
-    keywords: ["chi", "cosa", "personaggi"],
-    questions: [
-      "Perché è utile dire all'IA chi sono i protagonisti?",
-      "Che differenza fa scrivere \"un cane\" o \"un vecchio cane pigro\"?",
-      "Quali \"chi\" e \"cosa\" servirebbero per un problema di matematica?",
-    ],
-    activity: {
-      title: "Carte chi-cosa",
-      steps: [
-        "Preparate due mazzi di bigliettini: personaggi e azioni.",
-        "Ogni gruppo pesca una carta per mazzo e scrive un prompt completo.",
-        "Scambiate i prompt: l'altro gruppo racconta la storia che si immagina.",
-      ],
-    },
-    minutes: 40,
-  },
-  "2-3-when-and-where": {
-    goal: "Aggiungere tempo e luogo per dare contesto alla richiesta.",
-    keywords: ["quando", "dove", "ambientazione"],
-    questions: [
-      "Come cambia una storia se è ambientata nel 1800 o nel 2100?",
-      "In una richiesta di studio, che cosa corrisponde al \"quando\" e al \"dove\"?",
-      "Quale informazione avete dimenticato più spesso?",
-    ],
-    activity: {
-      title: "Stessa storia, altro mondo",
-      steps: [
-        "Scegliete una trama semplice (qualcuno perde una cosa importante).",
-        "Ogni gruppo riceve un tempo e un luogo diversi.",
-        "I gruppi raccontano in 3 frasi come cambia la storia.",
-      ],
-    },
-    minutes: 35,
   },
   "2-4-detail-detective": {
     goal: "Combinare chi, cosa, quando, dove e stile in un unico prompt.",
@@ -445,6 +391,101 @@ export const TEACHER_CONTENT: Record<string, LevelTeacherContent> = {
     },
     minutes: 40,
   },
+  "7-1-free-skins": {
+    goal: "Riconoscere le truffe nei videogiochi costruite con l'IA (video di streamer finti, finto supporto, generatori di monete) e sapere come reagire.",
+    keywords: ["truffa", "phishing", "deepfake", "account di gioco"],
+    questions: [
+      "Perché i truffatori puntano proprio su skin, monete e oggetti dei videogiochi?",
+      "Come può l'IA rendere una truffa più credibile di qualche anno fa?",
+      "Se un amico ci casca e perde l'account, cosa dovrebbe fare per primo?",
+    ],
+    activity: {
+      title: "Il kit del truffatore",
+      steps: [
+        "A gruppi, i ragazzi elencano i \"trucchi\" che rendono credibile una truffa: fretta, premio, autorità, segreto, link.",
+        "Ogni gruppo inventa un messaggio-truffa finto (senza link veri) per un videogioco a scelta.",
+        "I gruppi si scambiano i messaggi e devono trovare tutti i segnali d'allarme nel minor tempo possibile.",
+        "Chiudete scrivendo alla lavagna la regola: nessun regalo vero chiede password, codici o pagamenti.",
+      ],
+    },
+    minutes: 45,
+  },
+  "7-2-cloned-voice": {
+    goal: "Proteggere i propri account con password lunghe e verifica in due passaggi, e sapere che con l'IA una voce o un messaggio possono essere imitati.",
+    keywords: ["password", "verifica in due passaggi", "codice di verifica", "voce clonata"],
+    questions: [
+      "Perché una password lunga fatta di parole è più sicura di una corta piena di simboli?",
+      "Che cosa può fare un truffatore se gli dici il codice di 6 cifre che ti arriva per SMS?",
+      "Come potreste capire se un vocale di un amico o di un genitore è davvero suo?",
+    ],
+    activity: {
+      title: "La parola d'ordine",
+      steps: [
+        "Spiegate che oggi l'IA può imitare una voce partendo da pochi secondi di audio.",
+        "A coppie, i ragazzi inventano una domanda di controllo che solo un amico o un familiare saprebbe (senza scriverla a nessuno).",
+        "Ognuno costruisce una password d'esempio con il metodo delle 4 parole casuali e la confronta con quella del compagno (solo esempi, mai password vere).",
+        "Concludete con le tre regole: password diverse per ogni account, verifica in due passaggi attiva, codici mai a nessuno.",
+      ],
+    },
+    minutes: 40,
+  },
+  "7-3-photo-detective": {
+    goal: "Capire che cosa rivela un contenuto pubblicato (luogo, scuola, abitudini) e che l'IA può ricavare queste informazioni molto in fretta.",
+    keywords: ["impronta digitale", "posizione", "metadati", "screenshot"],
+    questions: [
+      "Quali dettagli di una foto possono far capire dove abiti o dove vai a scuola?",
+      "Perché \"tanto lo cancello dopo\" non funziona su Internet?",
+      "Che cosa controllereste prima di pubblicare una storia o un video?",
+    ],
+    activity: {
+      title: "Detective per 5 minuti",
+      steps: [
+        "Proiettate una foto inventata o presa da una banca immagini (una via, una vetrina, una divisa sportiva).",
+        "In 5 minuti i ragazzi elencano tutto quello che si può dedurre: città, ora del giorno, sport, abitudini.",
+        "Discutete: un'IA farebbe lo stesso in pochi secondi, e su migliaia di foto.",
+        "Ognuno scrive la sua lista \"prima di pubblicare controllo che…\".",
+      ],
+    },
+    minutes: 40,
+  },
+  "7-4-the-feed": {
+    goal: "Capire come un algoritmo di raccomandazione sceglie i contenuti per tenerci collegati e riconoscere le strategie per riprendere il controllo del proprio tempo.",
+    keywords: ["algoritmo", "raccomandazione", "scroll infinito", "notifiche"],
+    questions: [
+      "Come fa un'app a capire che cosa vi piace, anche se non glielo dite mai?",
+      "Perché alcune app non hanno una \"fine\" della pagina?",
+      "Quale trucco usate (o potreste usare) per smettere quando volete voi e non quando vuole l'app?",
+    ],
+    activity: {
+      title: "L'algoritmo umano",
+      steps: [
+        "Un volontario fa l'\"algoritmo\": deve tenere la classe attenta il più a lungo possibile scegliendo argomenti da una lista.",
+        "La classe alza la mano quando un argomento interessa; l'algoritmo prende nota e ripropone argomenti simili.",
+        "Dopo 5 minuti discutete: cosa ha imparato l'algoritmo? Cosa vi ha fatto restare? Cosa vi ha annoiato?",
+        "Ognuno sceglie una impostazione concreta da provare a casa (notifiche spente, timer, telefono fuori dalla camera).",
+      ],
+    },
+    minutes: 45,
+  },
+  "7-5-fake-friends": {
+    goal: "Riconoscere i segnali d'allarme di un profilo finto o di una conversazione online pericolosa e sapere a chi chiedere aiuto.",
+    keywords: ["profilo finto", "segnali d'allarme", "adulto di fiducia", "segnalare e bloccare"],
+    questions: [
+      "Perché con l'IA è più facile creare un profilo che sembra una persona vera?",
+      "Quali richieste in una chat vi farebbero capire che qualcosa non va?",
+      "Se un compagno vi racconta di una chat strana, come potete aiutarlo?",
+    ],
+    activity: {
+      title: "Semaforo delle richieste",
+      steps: [
+        "Preparate 10 frasi tipiche di una chat online (\"che gioco fai?\", \"non dirlo ai tuoi\", \"passiamo su un'altra app\", \"mandami una foto\"…).",
+        "I ragazzi le dividono in verde, giallo e rosso e motivano la scelta.",
+        "Ricordate le tre azioni per il rosso: non rispondere, salvare le prove, parlarne subito con un adulto di fiducia (anche segnalare e bloccare).",
+        "Indicate chi può aiutare a scuola e fuori, per esempio Telefono Azzurro (19696).",
+      ],
+    },
+    minutes: 45,
+  },
 };
 
 export interface GlossaryTerm {
@@ -458,7 +499,7 @@ export interface GlossaryTerm {
 export const GLOSSARY: GlossaryTerm[] = [
   { term: "Intelligenza artificiale (IA)", slug: "intelligenza-artificiale", definition: "Programmi che svolgono compiti che di solito richiedono l'intelligenza umana, come capire una frase, riconoscere un'immagine o scrivere un testo.", example: "Il traduttore del telefono e l'assistente vocale usano l'IA.", level: "1-1-meet-promi" },
   { term: "Chatbot", slug: "chatbot", definition: "Un programma con cui si \"chiacchiera\" scrivendo o parlando. Quelli basati sull'IA generano le risposte parola per parola.", example: "ChatGPT, Gemini e Claude sono chatbot.", level: "1-1-meet-promi" },
-  { term: "Prompt", slug: "prompt", definition: "La richiesta o istruzione che si scrive a un'IA. Più è chiara e completa, più la risposta è utile.", example: "\"Spiegami la fotosintesi in 5 righe per un ragazzo di prima media.\"", level: "1-2-first-words" },
+  { term: "Prompt", slug: "prompt", definition: "La richiesta o istruzione che si scrive a un'IA. Più è chiara e completa, più la risposta è utile.", example: "\"Spiegami la fotosintesi in 5 righe per un ragazzo di prima media.\"", level: "1-1-meet-promi" },
   { term: "Modello linguistico", slug: "modello-linguistico", definition: "Il \"cervello\" di un chatbot: un programma allenato su moltissimi testi che sceglie, una dopo l'altra, le parole più probabili.", level: "6-1-ai-can-be-wrong" },
   { term: "Contesto", slug: "contesto", definition: "Le informazioni che aiutano l'IA a capire la situazione: chi sei, a cosa ti serve la risposta, per chi è.", example: "\"Sono in seconda media e devo preparare un'esposizione di 3 minuti.\"", level: "3-1-setting-the-scene" },
   { term: "Formato", slug: "formato", definition: "La forma della risposta: elenco, tabella, riassunto, poesia, dialogo…", example: "\"Rispondi con una tabella a due colonne.\"", level: "3-3-format-finder" },
@@ -476,4 +517,9 @@ export const GLOSSARY: GlossaryTerm[] = [
   { term: "Plagio", slug: "plagio", definition: "Presentare come proprio un lavoro fatto da altri, anche da un'IA. Usarla per capire va bene; farle fare il compito no.", level: "6-4-fair-and-honest" },
   { term: "Phishing", slug: "phishing", definition: "Una truffa che cerca di farti dare password o dati con messaggi falsi che sembrano arrivare da siti o persone fidate.", example: "\"Hai vinto un premio! Clicca qui e inserisci la password.\"", level: "6-5-ai-guardian" },
   { term: "Adulto di fiducia", slug: "adulto-di-fiducia", definition: "Una persona grande a cui puoi raccontare quello che ti succede online: un genitore, un insegnante, un allenatore.", level: "6-5-ai-guardian" },
+  { term: "Verifica in due passaggi", slug: "verifica-due-passaggi", definition: "Un secondo controllo oltre alla password, di solito un codice che arriva sul telefono. Anche se qualcuno scopre la password, senza il codice non entra.", example: "Il codice di 6 cifre via SMS non si dà a nessuno, nemmeno a chi dice di essere il supporto.", level: "7-2-cloned-voice" },
+  { term: "Voce clonata", slug: "voce-clonata", definition: "Una voce imitata con l'IA partendo da pochi secondi di audio. Viene usata nelle truffe per fingersi un amico o un familiare.", level: "7-2-cloned-voice" },
+  { term: "Impronta digitale", slug: "impronta-digitale", definition: "L'insieme delle tracce che lasciamo online: post, foto, commenti, like, ricerche. Molte restano anche dopo averle cancellate.", level: "7-3-photo-detective" },
+  { term: "Algoritmo di raccomandazione", slug: "algoritmo-raccomandazione", definition: "Il programma (spesso un'IA) che sceglie quali video o post mostrarti, in base a cosa guardi, quanto a lungo e cosa salti.", example: "Il feed \"Per te\" dei social e i video consigliati.", level: "7-4-the-feed" },
+  { term: "Profilo finto", slug: "profilo-finto", definition: "Un account che finge di essere una persona che non esiste o che è diversa da quella reale. Con l'IA si possono creare foto e messaggi molto credibili.", level: "7-5-fake-friends" },
 ];

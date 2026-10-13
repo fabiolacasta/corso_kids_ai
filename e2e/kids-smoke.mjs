@@ -24,7 +24,7 @@ for (const [path, must] of [["/robots.txt", "Sitemap:"], ["/sitemap.xml", "<urls
 const sitemap = (await get("/kids/sitemap.xml")).text;
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(/^https?:\/\/[^/]+/, ""));
 console.log(`\n2) Le ${urls.length} pagine della sitemap (HTML, titolo, canonical, dati strutturati)`);
-if (urls.length !== 54) fail(`la sitemap ha ${urls.length} pagine invece di 54`);
+if (urls.length !== 58) fail(`la sitemap ha ${urls.length} pagine invece di 58`);
 for (const u of urls) {
   const r = await get(u);
   const title = r.text.match(/<title>([^<]*)<\/title>/)?.[1] || "";

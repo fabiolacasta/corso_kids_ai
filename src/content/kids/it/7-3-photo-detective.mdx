@@ -1,0 +1,144 @@
+<Section>
+<Panel character="promi" mood="thinking">
+Una foto vale più di mille parole. Il problema è che alcune di quelle parole sono il nome della tua scuola, la tua via e l'orario in cui esci di casa.
+</Panel>
+</Section>
+
+<Section>
+## La tua impronta digitale
+
+L'**impronta digitale** è tutto quello che lasci online: foto e video che pubblichi, commenti, like, storie, perfino i gruppi in cui sei.
+
+Due cose da sapere:
+
+- **Niente si cancella davvero.** Basta che una persona faccia uno screenshot o una registrazione dello schermo, e quella cosa esiste per sempre, anche se tu la togli.
+- **Anche le storie «che spariscono» in 24 ore** si possono salvare, inoltrare, ripubblicare.
+
+<Panel character="promi" mood="happy">
+Una buona domanda prima di postare: mi andrebbe bene se lo vedessero la prof, i miei genitori e la commissione dell'esame di terza media? Se la risposta è no, forse non è il caso.
+</Panel>
+</Section>
+
+<Section>
+## L'IA guarda le foto meglio di te
+
+Oggi esistono IA che, guardando una sola foto, riescono a capire **dove è stata scattata**: riconoscono la città, la via, i negozi, le montagne sullo sfondo, perfino il tipo di alberi e di asfalto. Sanno **leggere le scritte** anche piccole o sfocate. E alcune app di riconoscimento facciale cercano **altre foto della stessa persona** in giro per internet.
+
+Una persona normale vede un selfie. Un'IA vede una lista di indizi:
+
+- 🏫 l'**insegna della scuola** o il cancello con il nome
+- ⚽ la **divisa sportiva** con il nome della squadra o della società
+- 🏠 il **numero civico**, il citofono, la targa di un'auto
+- 🪟 il **panorama dalla finestra** di camera tua
+- 🕐 la **luce e l'orario**: se posti ogni giorno alla stessa ora dallo stesso posto, si capisce la tua routine
+
+<Panel character="promi" mood="thinking">
+Non serve essere paranoici. Serve guardare la foto come la guarderebbe un'IA, prima di pubblicarla.
+</Panel>
+</Section>
+
+<Section>
+## Il dato che non vedi
+
+Alcune foto contengono anche informazioni **nascoste**: si chiamano **metadati**. Tra queste ci possono essere la data, il modello del telefono e, se la localizzazione della fotocamera è attiva, **il punto esatto dove l'hai scattata**.
+
+Molte app social tolgono questi dati quando pubblichi, ma non tutte, e non quando mandi la foto come file. La soluzione più semplice: **disattivare la posizione per la fotocamera** nelle impostazioni del telefono, con l'aiuto di un adulto se serve.
+
+E poi ci sono le **abitudini**:
+- **Pubblica in ritardo**: le foto della vacanza o della partita si postano dopo, quando sei già tornato.
+- **Account privato non vuol dire al sicuro** se accetti follower che non conosci davvero.
+- **Le foto degli altri** si pubblicano solo con il loro permesso.
+</Section>
+
+<Section>
+## Cosa rivela questa foto?
+
+<SafetySorter
+  title="Indagine fotografica"
+  instruction="Leggi la descrizione di ogni foto. Decidi se si può pubblicare così, se va sistemata prima, o se è meglio non pubblicarla proprio."
+  buckets={[
+    { id: "green", label: "🟢 Ok così", color: "green" },
+    { id: "yellow", label: "🟡 Sistemo prima", color: "yellow" },
+    { id: "red", label: "🔴 Non la pubblico", color: "red" }
+  ]}
+  items={[
+    { text: "Selfie sorridente davanti al cancello della scuola, con il nome dell'istituto ben leggibile", bucket: "yellow", why: "La foto in sé va bene, ma il nome della scuola dice dove sei ogni mattina. Basta ritagliarla o scattarla altrove." },
+    { text: "Foto del tuo disegno o della build in Minecraft, sulla scrivania con niente intorno", bucket: "green", why: "Mostra quello che fai, non dove sei o chi sei." },
+    { text: "Storia dalla finestra di camera tua: si vedono il palazzo di fronte, l'insegna della farmacia e il nome della via", bucket: "red", why: "Insegna + via + panorama: un'IA ricostruisce l'indirizzo in pochi secondi. Non c'è un modo semplice di sistemarla." },
+    { text: "Foto della squadra dopo la partita, con la divisa e il nome della società, pubblicata due giorni dopo", bucket: "yellow", why: "Pubblicarla dopo va bene, ma la divisa dice dove ti alleni ogni settimana. E nella foto ci sono altri ragazzi: serve il loro permesso." },
+    { text: "Foto di un tramonto al mare, pubblicata una settimana dopo essere tornato a casa", bucket: "green", why: "Nessun dato personale e pubblicata in ritardo: nessuno può sapere dove sei adesso." },
+    { text: "Foto di una compagna che dorme sul pullman della gita, «tanto fa ridere»", bucket: "red", why: "È una foto di un'altra persona, in un momento in cui non può dire di no. Senza permesso non si pubblica, mai." },
+    { text: "Selfie in giardino in cui, sullo sfondo sfocato, si vede il citofono con il numero civico", bucket: "yellow", why: "Lo sfocato non basta: l'IA legge anche scritte poco nitide. Ritaglia o copri il citofono prima di pubblicare." }
+  ]}
+  successMessage="Hai guardato le foto come un'IA. Adesso sai cosa togliere."
+/>
+</Section>
+
+<Section>
+## In diretta dalla partita
+
+<WhatWouldYouDo
+  scenario="Sabato pomeriggio, sei sugli spalti per la partita di calcio di tuo fratello. Il campo è quello del vostro quartiere. Vuoi mettere una storia adesso con scritto «Forza ragazzi!» e la posizione attiva, tanto il tuo account è privato."
+  question="Cosa fai?"
+  choices={[
+    { text: "La pubblico così: il profilo è privato, la vedono solo i miei follower.", feedback: "Privato aiuta, ma tra i follower ci sono spesso persone che non conosci davvero. E con la posizione attiva tutti sanno dove sei in questo momento." },
+    { text: "Tolgo la posizione ma la pubblico subito, così è ancora in diretta.", feedback: "Meglio, ma il campo, le divise e i cartelloni sullo sfondo dicono comunque dove sei, e un'IA li riconosce. In diretta è il momento più delicato." },
+    { text: "Faccio le foto adesso e la pubblico stasera a casa, senza posizione e senza le facce degli altri ragazzi.", correct: true, feedback: "Così ti godi la partita, pubblichi lo stesso e nessuno sa dove sei mentre ci sei. Ed eviti di pubblicare altri ragazzi senza permesso." },
+    { text: "Non pubblico niente, mai: è troppo pericoloso.", feedback: "Non serve rinunciare a tutto. Basta qualche accorgimento: pubblicare dopo, senza posizione, senza dati degli altri." }
+  ]}
+  promiMessage="Dove sei adesso è un'informazione che vale molto. Pubblicala quando non è più vera."
+/>
+</Section>
+
+<Section>
+## Una bio senza indizi
+
+Vuoi farti aiutare da un'IA a scrivere la bio del profilo del tuo canale di gaming o di disegno? Ottima idea. Ma la bio è pubblica, e anche quello che scrivi all'IA esce dal tuo telefono.
+
+<PromptVsMistake
+  question="Quale richiesta all'IA ti fa avere una bella bio senza mettere in giro dati personali?"
+  good="Scrivi 3 proposte di bio brevi e ironiche per un canale dove pubblico build di Minecraft e disegni. Non usare nomi, età, città, scuola né contatti, solo le passioni."
+  bad="Scrivi 3 proposte di bio brevi e ironiche per un canale dove pubblico build di Minecraft e disegni. Sono Giulia, 12 anni, seconda media a Brescia, scrivimi in privato."
+  explanation="Il formato e lo stile sono gli stessi. Ma il secondo regala all'IA (e poi alla bio pubblica) nome, età, classe e città, e invita gli sconosciuti a scriverti. Il primo dice esplicitamente cosa NON mettere."
+  promiMessage="Per scrivere una bio interessante mi bastano le tue passioni. Il tuo indirizzo non la rende più simpatica."
+/>
+</Section>
+
+<Section>
+## Il controllo prima di pubblicare
+
+<DragDropPrompt
+  title="Check-list prima di postare"
+  instruction="Hai appena scattato una foto e vuoi pubblicarla. Metti i controlli nell'ordine in cui conviene farli."
+  pieces={[
+    "Disattivo la posizione e controllo che non ci sia un tag del luogo",
+    "Mi chiedo: andrebbe bene se la vedessero la prof e i miei genitori?",
+    "Pubblico, magari più tardi, quando non sono più in quel posto",
+    "Guardo lo sfondo: scritte, insegne, numeri civici, targhe, divise",
+    "Chiedo il permesso a chi compare nella foto",
+    "Ritaglio o copro gli indizi che ho trovato"
+  ]}
+  correctOrder={[1, 4, 3, 5, 0, 2]}
+  successMessage="Prima la domanda generale, poi le persone, poi gli indizi, poi la posizione. Solo alla fine si pubblica."
+/>
+</Section>
+
+<Section>
+## Livello completato
+
+<Panel character="promi" mood="celebrating">
+Cosa ti porti dal laboratorio fotografico:
+
+- ✅ Quello che pubblichi resta: **gli screenshot non si cancellano**
+- ✅ L'IA legge **sfondi, scritte e luoghi** meglio di una persona
+- ✅ **Posizione spenta** e foto pubblicate **dopo**, non in diretta
+- ✅ Account privato sì, ma **solo follower che conosci davvero**
+- ✅ Le foto degli altri **solo con il loro permesso**
+</Panel>
+
+<LevelComplete
+  levelSlug="7-3-photo-detective"
+  stars={3}
+  message="Ora guardi le foto come le guarda un'IA. E decidi tu cosa farle vedere."
+/>
+</Section>

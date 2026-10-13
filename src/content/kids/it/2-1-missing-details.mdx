@@ -1,81 +1,112 @@
 <Section>
 <Panel character="promi" mood="excited">
-Benvenuto al **Castello della Chiarezza**! 🏰 Sono così felice che tu sia qui! In questo mondo impareremo la magia dei **dettagli**!
+Benvenuto al **Castello della Chiarezza** 🏰. Qui si lavora sui **dettagli**: quelli che tu dai per scontati e che io, invece, non ho.
 </Panel>
 </Section>
 
 <Section>
+## Cosa succede quando manca un dettaglio
+
 <Panel character="promi" mood="thinking">
-Hai mai chiesto qualcosa a qualcuno, ma non ha capito cosa intendevi? Succede anche all'IA!
+Ecco una cosa che pochi sanno: quando nel prompt manca un'informazione, io non mi fermo a chiedere. **Riempio il buco** con la scelta più comune, quella più "media". Il risultato sembra sensato, ma è generico. O peggio: inventato.
 </Panel>
-</Section>
 
-<Section>
-## Il problema dei prompt vaghi
-
-Guarda questi due prompt:
-
-❌ **Vago:** "Disegna un'immagine"
-
-✅ **Specifico:** "Disegna un'immagine di un cucciolo felice che gioca in un parco soleggiato"
-
-Quale mi dà più informazioni per lavorare?
-</Section>
-
-<Section>
-<Panel character="promi" mood="happy">
-Il secondo mi dice **cosa** disegnare (cucciolo), **cosa sta facendo** (gioca), e **dove** (parco soleggiato). Questo è il potere dei dettagli!
-</Panel>
-</Section>
-
-<Section>
-## Pratichiamo!
-
-<PromptVsMistake
-  question="Quale prompt lascia a IAco meno dettagli da indovinare?"
-  good="Aiutami a preparare 5 domande a risposta multipla sui vulcani per ripassare prima della verifica di scienze"
-  bad="Aiutami a preparare delle domande sui vulcani per ripassare, così mi preparo bene per la verifica di scienze"
-  explanation="Il primo dice quante domande (5) e di che tipo (a risposta multipla). Il secondo non lo dice: potrei scrivere 2 domande aperte o 30 vero/falso."
-  promiMessage="Quanti? Di che tipo? Sono dettagli piccoli, ma cambiano tutto il risultato."
-/>
-</Section>
-
-<Section>
-## Perché i dettagli contano
-
-<PromptVsMistake
-  question="Quale prompt aiuterebbe IAco a scrivere un biglietto d'auguri davvero personale?"
-  good="Scrivi un messaggio d'auguri per gli 80 anni di mio nonno, che adora la pesca e le barzellette, massimo 4 righe"
-  bad="Scrivi un messaggio d'auguri di compleanno affettuoso e originale, massimo 4 righe, che lo faccia sorridere"
-  explanation="Il primo dice chi festeggia e cosa gli piace, così posso renderlo personale. Il secondo ha tono e lunghezza, ma non dice nulla della persona: verrebbe un biglietto uguale per tutti."
-  promiMessage="Più so della persona, più il messaggio sembrerà scritto proprio per lei."
-/>
-</Section>
-
-<Section>
-## Riempi i dettagli!
-
-<MagicWords
-  sentence="Per favore scrivi una storia su un ___ che vive in un ___ e ama ___"
-  blanks={[
-    { hint: "🐱 un animale", answers: ["gatto", "cane", "coniglio", "drago", "unicorno"] },
-    { hint: "🏠 un posto", answers: ["castello", "foresta", "città", "casa sull'albero", "grotta"] },
-    { hint: "⭐ un'attività", answers: ["cantare", "ballare", "cucinare", "dipingere", "esplorare"] }
+<WhatWouldYouDo
+  scenario="Scrivi a IAco: «Scrivi un messaggio per invitare la classe alla mia festa». Nella risposta c'è scritto: «Ci vediamo sabato alle 21 al parco!». Ma la festa è domenica pomeriggio, in oratorio."
+  question="Perché IAco ha scritto sabato alle 21 al parco?"
+  choices={[
+    { text: "Ha letto la data dal calendario del telefono e l'ha copiata male.", feedback: "No: IAco non vede il tuo calendario né il tuo telefono. Sa solo quello che scrivi nel prompt." },
+    { text: "Ha sbagliato a capire: evidentemente il messaggio era scritto male.", feedback: "Il messaggio era chiaro, ma non conteneva né il giorno né il posto. IAco non ha frainteso: ha riempito un buco." },
+    { text: "Data e luogo mancavano, quindi ha messo quelli più comuni per una festa.", correct: true, feedback: "Esatto. Sabato sera è la scelta «media» per una festa. Se il dettaglio non c'è, lo invento io, e tu rischi di mandarlo a tutta la classe senza accorgertene." }
   ]}
-  successMessage="Ottimo lavoro nell'aggiungere dettagli!"
+  promiMessage="Ogni buco nel prompt lo riempio io. E non sempre come vorresti tu."
 />
 </Section>
 
 <Section>
-## Stai imparando! 🎉
+## Le domande del Castello
+
+Per non lasciare buchi, prima di inviare un prompt controlla queste domande. Non servono tutte ogni volta, ma devi sapere quali mancano:
+
+- **CHI**: chi è coinvolto o chi è il protagonista? (una squadra under 13, Sara, la 2ªB)
+- **COSA**: cosa deve succedere o cosa devo produrre? (un piano, un racconto, un quiz)
+- **QUANDO**: in che momento, entro quando, quanto tempo c'è? (venerdì, 3 pomeriggi, 15 minuti)
+- **DOVE**: in che luogo, con quali limiti? (cortile piccolo, palestra senza porte, gita a Torino)
+- **PERCHÉ / PER CHI**: a cosa serve e chi lo leggerà? (per l'interrogazione, per i genitori)
+- **FORMATO**: in che forma lo vuoi? (tabella, elenco di 5 punti, messaggio di 3 righe)
+
+In questo livello lavoriamo su CHI, COSA, QUANDO e DOVE. Gli altri li mettiamo alla prova nella sfida finale del Castello.
+</Section>
+
+<Section>
+## Guarda la differenza
+
+<PromptLab
+  title="Un dettaglio alla volta"
+  scenario="Sei il capitano della squadra di calcio e chiedi aiuto per l'allenamento. Aggiungi un dettaglio alla volta e guarda come cambia la risposta."
+  basePrompt="Fammi un piano di allenamento"
+  baseResponse="Ecco un piano: corsa di 30 minuti, esercizi di forza in palestra con i pesi, stretching. Ripeti 4 volte a settimana."
+  improvements={[
+    { label: "Aggiungi CHI", prompt: "Fammi un piano di allenamento per una squadra di calcio under 13", response: "Per ragazzi under 13: riscaldamento con la palla, esercizi di passaggio e controllo, partitella finale. Niente pesi: a questa età si lavora su coordinazione e tecnica." },
+    { label: "Aggiungi QUANDO", prompt: "Fammi un piano di allenamento per una squadra di calcio under 13, per un allenamento di 60 minuti il martedì", response: "60 minuti: 10 di riscaldamento con la palla, 20 di passaggi a coppie, 20 di tiri in porta, 10 di partitella." },
+    { label: "Aggiungi DOVE", prompt: "Fammi un piano di allenamento per una squadra di calcio under 13, 60 minuti il martedì, in una palestra piccola senza porte da calcio", response: "60 minuti in palestra piccola: 10 di riscaldamento, 20 di passaggi a coppie contro il muro, 20 di tiri su porte fatte con i coni, 10 di torello a gruppi da 5." }
+  ]}
+  successMessage="La prima risposta era per un adulto in palestra coi pesi. L'ultima si può usare martedì. Hai cambiato solo il prompt."
+/>
+</Section>
+
+<Section>
+## CHI: il protagonista
+
+<PromptVsMistake
+  question="Due prompt per un racconto sportivo. Quale dice a IAco CHI è il protagonista e qual è il suo problema?"
+  good="Scrivi l'inizio di un racconto su Sara, palleggiatrice di 13 anni che in finale deve sostituire la capitana infortunata"
+  bad="Scrivi l'inizio di un racconto su una finale di pallavolo under 14 decisa al tie-break, con tanta tensione in campo"
+  explanation="Il secondo descrive bene la scena (finale, tie-break, tensione) ma non dice di chi è la storia: verrebbe una cronaca della partita. Il primo ha un protagonista preciso con un problema: Sara deve sostituire la capitana. Da lì nasce la storia."
+  promiMessage="Una storia senza un CHI è una telecronaca."
+/>
+</Section>
+
+<Section>
+## QUANDO: il tempo che hai
+
+<PromptVsMistake
+  question="Ti serve un piano di ripasso. Quale prompt permette a IAco di dividere davvero il lavoro?"
+  good="Fammi un piano di ripasso per la verifica sulle equazioni: ho 2 pomeriggi liberi, la verifica è venerdì mattina"
+  bad="Fammi un piano di ripasso per la verifica sulle equazioni che ho a breve, con esercizi dai più facili ai più difficili"
+  explanation="«A breve» sembra un'indicazione di tempo, ma è vaga: domani? Tra due settimane? Il primo dice quanto tempo hai (2 pomeriggi) e la scadenza (venerdì), così il piano si può dividere in due blocchi."
+  promiMessage="«A breve» per me non è una data. «Venerdì, 2 pomeriggi» sì."
+/>
+</Section>
+
+<Section>
+## DOVE: il posto cambia le idee
+
+<PromptVsMistake
+  question="Si organizza la gita di classe. Quale prompt evita proposte impossibili?"
+  good="Proponi 3 attività per la gita di classe a Torino in una giornata di pioggia, a meno di 10 euro a testa"
+  bad="Proponi 3 attività per la gita di classe di un giorno, anche in caso di pioggia, a meno di 10 euro a testa"
+  explanation="Il secondo ha budget, durata e meteo, ma manca il DOVE: potrei proporre un museo a Roma o una grotta in Puglia. Il primo dice la città, quindi le idee saranno realistiche."
+  promiMessage="Senza il DOVE propongo cose bellissime. Dall'altra parte d'Italia."
+/>
+</Section>
+
+<Section>
+## Livello completato
 
 <Panel character="promi" mood="celebrating">
-Ottimo lavoro! Hai scoperto che **i dettagli rendono i prompt migliori**. Prompt vaghi = IA confusa. Prompt dettagliati = risultati incredibili!
+Ora sai che:
+
+- Quando manca un dettaglio, io lo **riempio** con la scelta più comune, o lo invento
+- **CHI**, **COSA**, **QUANDO** e **DOVE** chiudono i buchi più frequenti
+- Parole come «a breve» o «un posto carino» sembrano dettagli, ma non lo sono
+
+Nella sfida finale del Castello aggiungiamo PERCHÉ, PER CHI e FORMATO.
 </Panel>
 
-<LevelComplete 
-  levelSlug="2-1-missing-details" 
+<LevelComplete
+  levelSlug="2-1-missing-details"
   stars={3}
-  message="Hai imparato perché i dettagli sono importanti nei prompt!"
+  message="Hai imparato a trovare i dettagli mancanti: CHI, COSA, QUANDO e DOVE."
 />
 </Section>

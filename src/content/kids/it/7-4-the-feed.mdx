@@ -1,0 +1,135 @@
+<Section>
+<Panel character="promi" mood="thinking">
+Apri l'app «solo per cinque minuti» e ne passano quaranta. Non è un caso, e non è colpa della tua forza di volontà: dall'altra parte c'è un'IA progettata apposta. Oggi vediamo il trucco, così decidi tu.
+</Panel>
+</Section>
+
+<Section>
+## Chi sceglie il tuo feed?
+
+La pagina «Per te» non la sceglie una persona: la sceglie un **algoritmo di raccomandazione**, cioè un'IA che prova a indovinare quale video ti terrà incollato allo schermo.
+
+Per farlo impara da **tutto quello che fai**, anche senza toccare niente:
+
+- ⏱️ **quanti secondi** resti su un video (anche se non metti like)
+- 🔁 cosa **riguardi** e cosa **salti** dopo un secondo
+- ❤️ like, commenti, condivisioni, salvataggi
+- 🕙 **a che ora** apri l'app e per quanto tempo
+
+<WordPredictor
+  title="Pensa come l'algoritmo"
+  instruction="Hai guardato fino alla fine tre video di trick con lo skateboard e uno l'hai rivisto due volte. Niente like, niente commenti."
+  sentence="Il prossimo video che l'app ti propone sarà probabilmente ___"
+  options={["un altro trick di skate, magari ancora più difficile", "il video più visto del giorno in Italia", "un video scelto a caso per farti scoprire cose nuove", "niente di particolare: senza like l'app non sa cosa ti piace"]}
+  correctAnswer="un altro trick di skate, magari ancora più difficile"
+  explanation="Il tempo di visione e i video rivisti contano quanto i like, anzi di più. L'algoritmo ha capito che lo skate ti tiene lì, quindi ti propone altro skate, spesso un po' più spettacolare. Ogni tanto inserisce anche video diversi per testarti, ma non sono scelti davvero a caso."
+  aiThinking="Ha rivisto quel video due volte. Non ha messo like, ma i secondi parlano chiaro..."
+  successMessage="Esatto. Non serve dire cosa ti piace: basta guardare."
+/>
+</Section>
+
+<Section>
+## Cosa vuole l'app da te
+
+Le app gratis guadagnano soprattutto con la **pubblicità**. Più tempo resti dentro, più pubblicità vedi, più l'app guadagna. Per questo è costruita per farti restare:
+
+- **scroll infinito**: il feed non finisce mai, non c'è un punto naturale per fermarsi;
+- **autoplay**: il video dopo parte da solo, prima che tu decida;
+- **notifiche**: ti richiamano dentro proprio quando stavi facendo altro;
+- **serie e streak**: «non perdere la serie di 87 giorni»;
+- l'effetto **«ancora uno»**: ogni video è corto, quindi sembra sempre che costi poco.
+
+<SafetySorter
+  title="Chi decide?"
+  instruction="Per ogni azione: l'hai scelta tu o l'ha scelta l'algoritmo?"
+  buckets={[
+    { id: "me", label: "🙋 Io", color: "blue" },
+    { id: "algo", label: "🤖 L'algoritmo", color: "purple" }
+  ]}
+  items={[
+    { text: "Il video che parte da solo quando finisce quello che stavi guardando", bucket: "algo", why: "Autoplay: il video dopo l'ha scelto l'app, tu non hai fatto niente." },
+    { text: "Cerchi «tutorial equazioni primo grado» prima della verifica di matematica", bucket: "me", why: "Hai deciso tu cosa cercare: è uso attivo." },
+    { text: "La notifica alle 23 «Guarda cosa hanno pubblicato i tuoi amici»", bucket: "algo", why: "L'orario e il testo sono scelti per farti riaprire l'app proprio prima di dormire." },
+    { text: "Il video di un creator che non segui, che compare tra i primi del tuo feed", bucket: "algo", why: "Non l'hai cercato tu: l'algoritmo ha calcolato che probabilmente ti terrà lì." },
+    { text: "Disattivi le notifiche di un'app dalle impostazioni del telefono", bucket: "me", why: "Questo è riprendere il controllo: decidi tu quando entrare." },
+    { text: "Apri il canale di un creator che segui per vedere il suo ultimo video", bucket: "me", why: "Sei andato tu a cercarlo. Attenzione però: appena finisce, il feed riparte a scegliere per te." },
+    { text: "Il messaggio «Hai una serie di 30 giorni, non perderla»", bucket: "algo", why: "Streak e serie servono a farti tornare ogni giorno, anche quando non ne hai voglia." }
+  ]}
+  successMessage="Ora vedi la differenza tra scegliere e farsi scegliere."
+/>
+</Section>
+
+<Section>
+## La bolla, il sonno e lo studio
+
+Se guardi sempre lo stesso tipo di video, l'algoritmo te ne dà sempre di più. Il risultato è una **bolla**: vedi sempre le stesse cose e le stesse opinioni, e a volte contenuti **sempre più estremi**, perché fanno più effetto e tengono di più.
+
+Poi ci sono gli effetti che senti di persona:
+
+- **sonno**: scrollare a letto fa addormentare più tardi, e il giorno dopo si sente;
+- **concentrazione**: se studi con il telefono accanto e le notifiche accese, il cervello continua a interrompersi, anche quando non lo prendi in mano.
+
+<SpotTheFake
+  question="Un chatbot spiega come funziona il feed. Una frase è sbagliata: trovala."
+  sentences={[
+    { text: "Il feed tiene conto di quanti secondi resti su ogni video, non solo dei like.", why: "Vero: il tempo di visione è uno dei segnali più importanti." },
+    { text: "Se guardi tanti video simili, te ne propone sempre di più dello stesso tipo.", why: "Vero: è così che nasce la bolla." },
+    { text: "Più tempo passi nell'app, più pubblicità l'app ti può mostrare.", why: "Vero: è il modo principale in cui le app gratuite guadagnano." },
+    { text: "Per il resto, i video del feed sono scelti a caso, così è uguale per tutti.", fake: true },
+    { text: "Puoi influenzarlo anche tu, per esempio con «Non mi interessa» o cercando argomenti nuovi.", why: "Vero: anche queste azioni sono segnali che l'algoritmo usa." }
+  ]}
+  explanation="Il feed non è né casuale né uguale per tutti: è calcolato su di te, video dopo video. Due compagni di classe con la stessa app vedono feed completamente diversi."
+/>
+</Section>
+
+<Section>
+## Ancora uno?
+
+<WhatWouldYouDo
+  scenario="Sono le 23:30. Domani hai la verifica di storia alla seconda ora. Hai ripassato, sei a letto e stai scrollando. L'ultimo video finisce e ne parte un altro che sembra interessante."
+  question="Qual è la scelta più furba?"
+  choices={[
+    { text: "Guardo solo questo e poi spengo, è corto.", feedback: "È esattamente l'effetto «ancora uno»: ogni video è corto, ma l'autoplay ne fa partire subito un altro. Di solito non finisce dopo uno." },
+    { text: "Abbasso la luminosità dello schermo e continuo ancora un po', così non mi stanco gli occhi.", feedback: "La luminosità non è il punto: il problema è che stai rimandando il sonno, e domani ti serve la testa lucida." },
+    { text: "Metto il telefono in carica fuori dalla camera e domani, dopo la verifica, se mi va lo ritrovo.", correct: true, feedback: "Il video non scappa: con la cronologia o una ricerca lo ritrovi. Il sonno prima di una verifica invece non si recupera." },
+    { text: "Salvo il video e continuo a scrollare per trovarne altri da guardare domani.", feedback: "Sembra organizzato, ma intanto stai ancora scrollando. È proprio il comportamento che l'app vuole." }
+  ]}
+  promiMessage="Il feed non ha un fondo. Il punto in cui fermarti lo devi mettere tu."
+/>
+</Section>
+
+<Section>
+## Riprendere il controllo
+
+Non serve buttare il telefono. Serve conoscere qualche contromossa:
+
+- 🔕 **notifiche spente** per le app che non ti servono davvero;
+- ⏲️ un **timer** o il limite di tempo nelle impostazioni dell'app o del telefono;
+- 🌙 **telefono fuori dalla camera** la notte;
+- 🔍 **cerca tu** quello che vuoi vedere, invece di farti scegliere tutto dal feed;
+- 🙅 usa **«Non mi interessa»** per allenare il feed: anche l'algoritmo si può educare;
+- ⏸️ **pause vere**: due ore senza schermo durante lo studio valgono più di dieci minuti di «riposo» scrollando.
+
+<Panel character="promi" mood="thinking">
+Lo stesso vale per me e per gli altri chatbot. Alcune app di IA sono progettate per farti continuare a chattare: ti fanno sempre un'altra domanda, ti propongono sempre «un'altra idea». Chiedermi un piano di studio per la verifica e poi chiudere è **uso attivo**. Restare lì a chiacchierare per noia è lo stesso scroll, solo con le parole.
+</Panel>
+</Section>
+
+<Section>
+## Livello completato
+
+<Panel character="promi" mood="celebrating">
+Adesso conosci il trucco:
+
+- ✅ Il feed lo sceglie un'IA che impara da quanto guardi, non solo da cosa ti piace
+- ✅ L'obiettivo dell'app è tenerti dentro: scroll infinito, autoplay, notifiche, streak
+- ✅ La bolla, il sonno e la concentrazione sono gli effetti da tenere d'occhio
+- ✅ Notifiche, timer, ricerca attiva e «Non mi interessa» sono le tue contromosse
+</Panel>
+
+<LevelComplete
+  levelSlug="7-4-the-feed"
+  stars={3}
+  message="Ora il feed lo usi tu, non il contrario."
+/>
+</Section>

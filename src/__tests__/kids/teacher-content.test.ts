@@ -9,7 +9,7 @@ import { TEACHER_CONTENT, GLOSSARY } from "@/lib/kids/teacher-content";
 const slugs = getAllLevels().map((l) => l.slug);
 
 describe("teacher content", () => {
-  it("covers exactly the 24 levels", () => {
+  it("covers exactly every level", () => {
     expect(Object.keys(TEACHER_CONTENT).sort()).toEqual([...slugs].sort());
   });
 

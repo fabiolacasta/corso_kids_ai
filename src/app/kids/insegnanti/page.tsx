@@ -29,15 +29,16 @@ export const metadata: Metadata = KIDS_ONLY ? kidsMetadata(TEACHERS_TITLE, TEACH
 
 const WORLD_TOPICS: Record<number, string> = {
   1: "Cos'è l'intelligenza artificiale, cos'è un prompt, perché servono istruzioni chiare.",
-  2: "I dettagli di una richiesta: chi, cosa, quando, dove.",
+  2: "I dettagli di una richiesta: chi, cosa, quando, dove, perché, formato.",
   3: "Contesto, esempi e formato della risposta (liste, storie, tabelle).",
   4: "Usi creativi: gioco di ruolo, storie, personaggi, mondi inventati.",
   5: "Ripasso e sfida finale sulla scrittura di prompt efficaci.",
   6: "Rischi e uso responsabile: allucinazioni, privacy, deepfake e cyberbullismo, stereotipi, compiti onesti, benessere e truffe.",
+  7: "Sicurezza online nell'era dell'IA: truffe nei videogiochi, password e voci clonate, impronta digitale, algoritmi dei social, profili finti.",
 };
 
 const SHARE_TEXT =
-  "Ho trovato un corso gratuito per spiegare l'intelligenza artificiale alle medie: 24 livelli in stile videogioco, si proietta sulla LIM e i ragazzi non devono registrarsi. C'è anche una parte su deepfake, privacy e truffe. " +
+  "Ho trovato un corso gratuito per spiegare l'intelligenza artificiale alle medie: 26 livelli in stile videogioco, si proietta sulla LIM e i ragazzi non devono registrarsi. C'è anche una parte su deepfake, privacy, truffe nei videogiochi e profili finti. " +
   `${SITE_URL}/kids/insegnanti`;
 
 const panel = "bg-white/90 border-4 border-[#8B4513] p-4 md:p-6";
@@ -58,8 +59,8 @@ export default function TeachersPage() {
           </h1>
           <p className={p}>
             Un corso <strong>gratuito</strong> e <strong>open source</strong>, in stile videogioco, per insegnare ai ragazzi di 11-14 anni
-            come usare l&apos;intelligenza artificiale in modo corretto e come riconoscerne i rischi. Ci sono <strong>6 mondi</strong> e{" "}
-            <strong>24 livelli</strong>, con il robot IAco come guida. L&apos;insegnante lo proietta in classe; i ragazzi non devono registrarsi.
+            come usare l&apos;intelligenza artificiale in modo corretto e come riconoscerne i rischi. Ci sono <strong>7 mondi</strong> e{" "}
+            <strong>26 livelli</strong>, con il robot IAco come guida. L&apos;insegnante lo proietta in classe; i ragazzi non devono registrarsi.
           </p>
           <div className="flex flex-wrap gap-3 mt-2 items-center">
             <AccessibilityBadge />
@@ -116,7 +117,7 @@ export default function TeachersPage() {
         </section>
 
         <section className={panel} aria-labelledby="mondi">
-          <h2 id="mondi" className={h2}>I 6 mondi e i 24 livelli</h2>
+          <h2 id="mondi" className={h2}>I 7 mondi e i 26 livelli</h2>
           <div className="flex flex-col gap-4">
             {worlds.map((w) => (
               <div key={w.number} id={`mondo-${w.number}`}>
@@ -142,9 +143,9 @@ export default function TeachersPage() {
         </section>
 
         <section className={panel} aria-labelledby="sicurezza">
-          <h2 id="sicurezza" className={h2}>Il mondo 6: sicurezza, privacy, deepfake, stereotipi e benessere</h2>
+          <h2 id="sicurezza" className={h2}>I mondi 6 e 7: sicurezza, privacy, deepfake, truffe e benessere</h2>
           <p className={p}>
-            La &quot;Spiaggia della Sicurezza&quot; si può fare anche da sola, senza completare i mondi precedenti. Ecco alcune domande per
+            La &quot;Spiaggia della Sicurezza&quot; e la &quot;Città Digitale&quot; si possono fare anche da sole, senza completare i mondi precedenti. Ecco alcune domande per
             continuare la discussione lontano dallo schermo:
           </p>
           <ul className="m-0 pl-5 list-disc text-lg text-[#3E2723]">
@@ -227,7 +228,7 @@ export default function TeachersPage() {
           <p className={p}>
             Il corso è basato sulla sezione per ragazzi di{" "}
             <a href="https://github.com/f/prompts.chat" className="underline text-[#1D4ED8]" rel="noopener">prompts.chat</a>, progetto
-            open source con licenza MIT. Il mondo 6 &quot;Spiaggia della Sicurezza&quot; e l&apos;adattamento per le medie sono stati aggiunti
+            open source con licenza MIT. I mondi 6 &quot;Spiaggia della Sicurezza&quot; e 7 &quot;Città Digitale&quot; e l&apos;adattamento per le medie sono stati aggiunti
             in questa versione.
           </p>
         </footer>

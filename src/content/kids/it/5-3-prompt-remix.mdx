@@ -1,106 +1,125 @@
 <Section>
 <Panel character="promi" mood="excited">
-Oggi impariamo il **Remix dei Prompt**! 🎵 Questo significa cambiare i prompt per ottenere risultati diversi!
+Oggi si fa **remix** 🎧. Come in musica: stessa base, risultato diverso. Prendi un prompt che funziona, cambi una leva e ottieni qualcosa di nuovo, adatto a un altro pubblico o a un altro scopo.
 </Panel>
 </Section>
 
 <Section>
-## Stesso argomento, risultati diversi!
+## Le cinque leve del remix
 
-Puoi chiedere della stessa cosa in modi diversi per ottenere risposte diverse:
+Un argomento, tanti risultati. Prendiamo **il Rinascimento**:
 
-- **Per divertimento**: "Parlami dei delfini in modo sciocco"
-- **Per la scuola**: "Dammi 5 fatti educativi sui delfini"
-- **Per creatività**: "Scrivi una poesia dal punto di vista di un delfino"
+- **Cambi lo scopo** → «Fammi 10 domande flash per ripassare il Rinascimento prima della verifica.»
+- **Cambi il pubblico** → «Spiega il Rinascimento ai bambini di quinta in visita, in 5 frasi.»
+- **Cambi il formato** → «Trasforma i miei appunti sul Rinascimento in una mappa concettuale a 3 livelli.»
+- **Cambi il punto di vista** → «Racconta una giornata nella bottega di Leonardo, vista da un apprendista di 14 anni.»
+- **Cambi il tono** → «Rendi la stessa spiegazione più ironica, per il podcast di classe.»
+
+La regola d'oro: **cambia una leva alla volta**, così capisci che cosa ha fatto la differenza.
 </Section>
 
 <Section>
-## Prova il Laboratorio dei Prompt! 🔬
+## Laboratorio: la scelta delle superiori
 
 <PromptLab
-  title="Migliora il tuo prompt"
-  scenario="Rendiamo un prompt semplice migliore aggiungendo dettagli uno alla volta!"
-  basePrompt="Parlami dei cani"
-  baseResponse="I cani sono animali. Hanno quattro zampe e il pelo."
+  title="Remix passo dopo passo"
+  scenario="Devi scegliere la scuola superiore. Parti da un prompt generico e aggiungi una leva alla volta: guarda come cambia la risposta."
+  basePrompt="Parlami delle scuole superiori."
+  baseResponse="In Italia le scuole superiori si dividono in licei, istituti tecnici e istituti professionali. Durano 5 anni e si concludono con l'esame di maturità."
   improvements={[
-    { label: "Aggiungi una razza specifica", prompt: "Parlami dei cani Golden Retriever", response: "I Golden Retriever sono cani meravigliosi conosciuti per la loro personalità amichevole, il pelo dorato, e l'amore per nuotare!" },
-    { label: "Aggiungi un pubblico", prompt: "Parlami dei cani Golden Retriever per un bambino di 10 anni", response: "I Golden Retriever sono cani super amichevoli che adorano giocare a riporto e nuotare! Hanno un morbido pelo dorato e grandi sorrisi felici!" },
-    { label: "Aggiungi un formato", prompt: "Dammi 3 fatti divertenti sui cani Golden Retriever per un bambino di 10 anni", response: "Ecco 3 fatti divertenti sui Golden Retriever: 1) Erano addestrati per riportare gli uccelli ai cacciatori, 2) Possono imparare oltre 200 parole, 3) Hanno le zampe palmate che li rendono ottimi nuotatori!" }
+    { label: "Aggiungi chi sei e a cosa ti serve", prompt: "Sono in terza media e devo scegliere la scuola superiore. Mi piacciono informatica e matematica. Spiegami le differenze tra liceo scientifico, istituto tecnico informatico e istituto professionale.", response: "Il liceo scientifico punta su matematica, fisica e materie teoriche, e prepara soprattutto all'università. L'istituto tecnico informatico unisce teoria e tante ore di laboratorio su programmazione e reti: dopo puoi lavorare o andare all'università. Il professionale è il più pratico, con laboratori e stage in azienda fin dai primi anni." },
+    { label: "Cambia il formato: tabella", prompt: "Sono in terza media e devo scegliere la scuola superiore. Mi piacciono informatica e matematica. Metti a confronto liceo scientifico, istituto tecnico informatico e istituto professionale in una tabella: materie principali, quanto laboratorio, cosa si può fare dopo.", response: "Tabella a 3 colonne. Materie principali: matematica, fisica, latino / informatica, sistemi e reti, matematica / materie tecniche e pratiche. Laboratorio: poco / tanto / tantissimo. Dopo: soprattutto università / lavoro o università / lavoro, oppure università dopo il diploma." },
+    { label: "Cambia lo scopo: prepararti all'open day", prompt: "Sono in terza media e sto scegliendo tra liceo scientifico e istituto tecnico informatico. Mi piacciono informatica e matematica. Dammi 5 domande da fare agli open day per capire quale scuola fa per me, e spiegami in una riga perché ognuna è utile.", response: "1) Quante ore di laboratorio fate davvero a settimana? Ti dice quanto è pratica la scuola. 2) Cosa fanno i diplomati dopo 2 anni? Ti mostra dove porta. 3) Quanti compiti ci sono in media al pomeriggio? 4) Ci sono progetti o gare di programmazione? 5) Com'è il primo anno per chi arriva dalla media?" }
   ]}
-  successMessage="Ogni dettaglio che hai aggiunto ha reso la risposta migliore e più utile!"
+  successMessage="Stesso argomento, tre risultati diversi: una spiegazione, un confronto, una lista di domande per l'open day. L'ultima è quella che ti serve davvero per decidere."
 />
 </Section>
 
 <Section>
 <Panel character="promi" mood="thinking">
-Remixare i prompt significa che puoi esplorare lo stesso argomento in tanti modi emozionanti!
+Nota l'ultimo remix: non ti ho detto quale scuola scegliere. Ti ho aiutato a fare le domande giuste a chi la scuola la conosce davvero. Le informazioni che ti do possono essere vecchie o generiche: all'open day le verifichi.
 </Panel>
 </Section>
 
 <Section>
-## Guarda il remix!
+## Remix per un nuovo pubblico
 
 <PromptVsMistake
-  question="Hai studiato la fotosintesi e ora devi spiegarla ai ragazzi di quinta elementare in visita. Quale remix va bene?"
-  good="Remixa la mia spiegazione della fotosintesi per i ragazzi di quinta elementare in visita: trasformala in una scenetta di 2 minuti in cui una foglia parla con il Sole, con parole semplici."
-  bad="Remixa la mia spiegazione della fotosintesi per i ragazzi di quinta elementare in visita: rendila più completa e precisa, aggiungendo clorofilla, stomi, glucosio e la formula chimica."
-  explanation="Il primo cambia forma e linguaggio per adattarsi al nuovo pubblico. Il secondo remixa nella direzione sbagliata: più tecnico e difficile proprio quando il pubblico è più piccolo."
-  promiMessage="Un buon remix parte dalla domanda: per chi è, e a cosa serve?"
+  question="Hai studiato la fotosintesi e ora devi spiegarla ai bambini di quinta elementare in visita alla scuola. I due remix sembrano simili: quale funziona?"
+  good="Remixa la mia spiegazione della fotosintesi per i bambini di quinta in visita: una scenetta di 2 minuti in cui una foglia parla con il Sole, con parole semplici e una domanda finale per loro."
+  bad="Remixa la mia spiegazione della fotosintesi in una scenetta di 2 minuti in cui una foglia parla con il Sole, con battute brevi e veloci e una domanda finale per il pubblico."
+  explanation="Il secondo cambia il formato ma si dimentica la leva più importante: il pubblico. Senza sapere che sono bambini di quinta, l'IA può riempire la scenetta di clorofilla, stomi e glucosio. Il primo dice per chi è e chiede parole semplici."
+  promiMessage="Prima domanda di ogni remix: per chi è?"
 />
 </Section>
 
 <Section>
-## Remix per obiettivi diversi!
+## Remix per un nuovo formato
 
 <PromptVsMistake
-  question="Vuoi portare il tuo tema sull'inquinamento della plastica nel podcast di classe. Quale remix funziona?"
-  good="Ho scritto un tema sull'inquinamento della plastica. Remixalo in un copione per il podcast di classe di 3 minuti: due conduttori che dialogano, con una domanda per chi ascolta alla fine."
-  bad="Ho scritto un tema sull'inquinamento della plastica. Remixalo per il podcast di classe: riscrivilo uguale ma con frasi più belle e qualche parola più difficile, così suona più professionale."
-  explanation="Il primo trasforma davvero il tema in qualcosa da ascoltare (copione, dialogo, durata). Il secondo cambia solo le parole: resta un tema scritto, poco adatto a essere ascoltato."
-  promiMessage="Remixare non è abbellire: è cambiare forma per un nuovo scopo."
+  question="Vuoi portare il tuo tema sull'inquinamento da plastica nel podcast di classe. Quale remix funziona meglio da ascoltare?"
+  good="Ho scritto un tema sull'inquinamento da plastica. Remixalo in un copione per il podcast di classe di 3 minuti: due conduttori che dialogano, al massimo 3 dati numerici, e una domanda per chi ascolta alla fine."
+  bad="Ho scritto un tema sull'inquinamento da plastica. Remixalo in un copione per il podcast di classe: due conduttori che dialogano, con tutti i dati e le percentuali del tema, e una domanda per chi ascolta alla fine."
+  explanation="Il secondo non dice quanto deve durare e chiede di tenere tutti i numeri. Un elenco di percentuali letto ad alta voce non si segue: chi ascolta non può tornare indietro come su un foglio. Il primo pensa a chi ascolta: durata fissata e pochi dati scelti."
+  promiMessage="Remixare non è copiare in un altro contenitore: è adattare al nuovo mezzo."
 />
 </Section>
 
 <Section>
-## Prova diversi remix!
+## Remix per un nuovo scopo
+
+<WhatWouldYouDo
+  scenario="Hai scritto una ricerca di 3 pagine su «Social network e adolescenti». Ora la prof la vuole usare per un dibattito in classe la settimana prossima, e tu sarai nel gruppo che deve rispondere alle domande degli altri."
+  question="Che remix chiedi all'IA?"
+  choices={[
+    { text: "«Riassumi la mia ricerca in 10 righe, così la ripasso velocemente.»", feedback: "Un riassunto ti aiuta a ricordare, ma un dibattito chiede altro: argomenti, prove e risposte alle obiezioni. Lo scopo è cambiato, il remix no." },
+    { text: "«Trasforma la mia ricerca in una scaletta per il dibattito: 3 argomenti a favore e 3 contro, ognuno con un dato preso dalla ricerca, più le 3 obiezioni più probabili e come rispondere.»", correct: true, feedback: "Esatto. Hai cambiato formato e scopo insieme: da testo da leggere a strumento per discutere, e ti prepari anche alle domande degli altri." },
+    { text: "«Riscrivi la ricerca in modo più convincente, così vinco il dibattito.»", feedback: "Più convincente non basta: se prepari solo la tua parte, la prima obiezione ti coglie di sorpresa. In un dibattito devi conoscere anche gli argomenti dell'altra parte." },
+    { text: "«Trasforma la ricerca in 10 slide con un titolo e un'immagine ciascuna.»", feedback: "Le slide servono per una presentazione, non per un dibattito. Hai cambiato formato, ma verso lo scopo sbagliato." }
+  ]}
+  promiMessage="Prima di remixare chiediti: che cosa devo fare con questo testo?"
+/>
+</Section>
+
+<Section>
+## Costruisci il remix
 
 <DragDropPrompt
-  title="Remix del Prompt"
-  instruction="Remixa 'Parlami dei gatti' in un prompt creativo:"
-  pieces={["e descrivi il tuo posto preferito per sonnecchiare", "Scrivi dal punto di vista di un gatto pigro", "che vive in una libreria accogliente.", "Rendilo divertente e rilassato!"]}
-  correctOrder={[1, 2, 0, 3]}
-  successMessage="Ottimo remix! Stesso argomento, approccio totalmente diverso e divertente!"
+  title="Dalla guida scritta allo Short"
+  instruction="Hai scritto una guida per costruire un faro in Minecraft. Remixala in un video breve: metti in ordine i sei pezzi."
+  pieces={["dividilo in 6 inquadrature da 10 secondi,", "Prendi la mia guida scritta per costruire un faro in Minecraft", "e chiudi con una domanda da fare nei commenti.", "e trasformala nel copione di un video verticale di 60 secondi", "con un testo a schermo di massimo 8 parole per inquadratura", "per il canale della classe:"]}
+  correctOrder={[1, 3, 5, 0, 4, 2]}
+  successMessage="Stesso contenuto, nuovo formato: durata, ritmo, testo a schermo e un finale che coinvolge chi guarda."
 />
 </Section>
 
 <Section>
-## Crea il tuo remix!
-
-Prendi l'argomento base "robot" e remixalo:
+## Crea il tuo remix
 
 <MagicWords
-  sentence="___ un robot ___ che ___. Descrivi ___. Rendilo ___!"
+  sentence="Prendi ___ e trasformalo in ___ per ___. Cambia ___ ma tieni ___. Lunghezza massima: ___."
   blanks={[
-    { hint: "📝 cosa scrivere", answers: ["Racconta una storia su", "Scrivi un diario di", "Crea una canzone su", "Descrivi una giornata per", "Intervista"] },
-    { hint: "🤖 tipo di robot", answers: ["piccolo aiutante", "ballerino", "cuoco", "esploratore spaziale", "amico di classe simpatico"] },
-    { hint: "⭐ cosa fa", answers: ["ha appena imparato a fare amicizia", "ha scoperto che ama la musica", "ha fatto un errore sciocco", "va alla sua prima avventura", "ha incontrato un umano per la prima volta"] },
-    { hint: "🎯 cosa includere", answers: ["come si sente riguardo alla sua nuova scoperta", "il momento più divertente della sua giornata", "cosa sogna", "il suo ricordo preferito", "cosa ha imparato oggi"] },
-    { hint: "✨ lo stile", answers: ["commovente e dolce", "sciocco e divertente", "emozionante e avventuroso", "pacifico e calmo", "misterioso e curioso"] }
+    { hint: "📄 il materiale di partenza", answers: ["il mio tema sul bullismo", "i miei appunti sulla Prima guerra mondiale", "la recensione del mio videogioco preferito", "la mia ricerca sui vulcani", "il resoconto della gita a Ravenna"] },
+    { hint: "🔄 il nuovo formato", answers: ["un copione per un video", "una mappa concettuale", "10 domande da quiz", "un dialogo a due voci", "un post per il giornalino"] },
+    { hint: "👥 il nuovo pubblico", answers: ["i bambini di quinta", "i genitori all'open day", "i compagni di prima media", "il podcast di classe", "la prof di inglese, in inglese"] },
+    { hint: "🎚️ la leva che cambi", answers: ["il tono, più ironico", "il punto di vista", "il linguaggio, più semplice", "l'ordine, dalla fine all'inizio", "lo stile, più da giornalista"] },
+    { hint: "📌 cosa non deve cambiare", answers: ["i dati principali", "le date corrette", "il messaggio finale", "i 3 concetti chiave", "le citazioni che ho scelto"] },
+    { hint: "📏 il limite", answers: ["2 minuti", "una pagina", "200 parole", "6 battute", "5 punti"] }
   ]}
-  successMessage="Ottimo remix! Hai trasformato 'robot' in qualcosa di totalmente unico!"
+  successMessage="Hai deciso cosa cambiare e cosa tenere fisso. È questo che distingue un remix da un testo rifatto a caso."
 />
 </Section>
 
 <Section>
-## Maestro del Remix! 🎉
+## Remix completato
 
 <Panel character="promi" mood="celebrating">
-Fantastico! Hai imparato a **remixare i prompt** per ottenere risultati diversi dallo stesso argomento! Questo rende la tua creatività infinita!
+Ora sai prendere un lavoro già fatto e farlo funzionare per un altro pubblico, un altro formato o un altro scopo, cambiando una leva alla volta. Nel prossimo livello c'è l'esame finale della parte sui prompt: tutto quello che hai imparato, senza aiuti.
 </Panel>
 
-<LevelComplete 
-  levelSlug="5-3-prompt-remix" 
+<LevelComplete
+  levelSlug="5-3-prompt-remix"
   stars={3}
-  message="Hai imparato a remixare i prompt per risultati diversi!"
+  message="Sai remixare un prompt cambiando pubblico, formato, scopo e punto di vista."
 />
 </Section>

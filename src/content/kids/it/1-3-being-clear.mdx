@@ -1,121 +1,128 @@
 <Section>
 <Panel character="promi" mood="happy">
-Ciao superstar! 🌟 Oggi impareremo l'abilità più importante: essere **CHIARI**!
+Secondo livello del Villaggio Iniziale. Sai già cos'è un prompt; adesso vediamo la differenza tra un prompt **chiaro** e uno che sembra chiaro solo a chi l'ha scritto.
 </Panel>
 </Section>
 
 <Section>
-## Perché Essere Chiari è Importante
+## Il problema delle parole vaghe
 
-Immagina chiedere a tua mamma "cibo" vs chiedere "un panino al burro d'arachidi senza crosta." Quale ti dà esattamente quello che vuoi?
+Se scrivi in chat al tuo compagno di banco «portami quella cosa domani», lui probabilmente capisce: siete in classe insieme, sa di cosa parlavate. Io no. Per me ogni prompt parte da zero.
 
-<Panel character="promi" mood="thinking">
-È lo stesso con me! Quando sei chiaro, so esattamente come aiutare. Quando sei vago, devo indovinare... e potrei sbagliare!
+<Panel character="promi" mood="confused">
+Parole come «breve», «bello», «figo», «non troppo difficile» per te hanno un significato preciso. Per me sono una media di tutto quello che ho letto. Il tuo «breve» può essere 3 righe, il mio una pagina intera.
 </Panel>
-</Section>
 
-<Section>
-## Chiaro vs. Non Chiaro
-
-Pratichiamo a trovare la differenza!
-
+Le parole vaghe si sistemano con **numeri, esempi e paletti concreti**: «in 5 righe» invece di «breve», «senza parolacce» invece di «adatto», «per la seconda media» invece di «non troppo difficile».
 
 <PromptVsMistake
-  question="Quale prompt spiega COME deve essere la poesia in un modo che IAco può davvero seguire?"
-  good="Scrivi una poesia di 8 versi in rima sull'autunno, con parole semplici da capire"
-  bad="Scrivi una poesia brevissima ma molto dettagliata sull'autunno, che spieghi proprio tutto"
-  explanation="Il primo dà indicazioni precise e compatibili: 8 versi, in rima, parole semplici. Il secondo si contraddice: una poesia non può essere brevissima e allo stesso tempo spiegare tutto nei dettagli."
-  promiMessage="Istruzioni che si contraddicono mi mettono in difficoltà: devo scegliere io quale ignorare."
-/>
-
-
-<PromptVsMistake
-  question="Quale prompt dice all'IA anche PER CHI è la risposta?"
-  good="Spiegami la fotosintesi in 5 frasi semplici, per un compagno di prima media che era assente"
-  bad="Spiegami la fotosintesi in 5 frasi, con tutti i termini scientifici giusti e un esempio"
-  explanation="Il primo dice per chi è la spiegazione (un compagno di prima media), così so che livello usare. Il secondo è preciso, ma senza destinatario potrei scrivere qualcosa di troppo difficile o troppo facile."
-  promiMessage="Sapere per chi scrivo mi aiuta a scegliere le parole giuste."
+  question="Due richieste per la playlist della festa di classe. Quale lascia meno spazio all'interpretazione?"
+  good="Suggeriscimi 8 canzoni rap italiane uscite dal 2020 in poi, senza parolacce, per la festa di fine anno"
+  bad="Suggeriscimi 8 canzoni belle e non troppo vecchie, adatte a tutti, per la festa di fine anno della classe"
+  explanation="«Belle», «non troppo vecchie» e «adatte a tutti» sembrano indicazioni, ma non si possono misurare: belle per chi? Vecchie da quando? Il primo usa paletti concreti: genere, anno, niente parolacce."
+  promiMessage="Se un'indicazione non si può controllare, per me non è un'indicazione: è un augurio."
 />
 </Section>
 
 <Section>
-## La Sfida della Chiarezza
+## Quanto è «breve»?
 
-Costruiamo il prompt più chiaro di sempre!
-
-
-<DragDropPrompt
-  title="Rendilo cristallino! 💎"
-  instruction="Sistema questi pezzi per fare un prompt super chiaro"
-  pieces={[
-    "Per favore aiutami a scrivere",
-    "una breve storia della buonanotte",
-    "su un gufo assonnato",
-    "con un lieto fine",
-    "per la mia sorellina"
+<WhatWouldYouDo
+  scenario="Ti serve un riassunto del capitolo sui Comuni medievali da incollare in una scheda, dove c'è spazio per 5 righe. Scrivi «fammi un riassunto breve» e IAco te ne dà uno di 15 righe."
+  question="Come dovevi scrivere il prompt?"
+  choices={[
+    { text: "«Fammi un riassunto brevissimo dei Comuni medievali.»", feedback: "Hai solo spostato il problema: «brevissimo» è vago quanto «breve». Potrebbero uscire 8 righe, ancora troppe per la scheda." },
+    { text: "«Fammi un riassunto breve, ma breve davvero, dei Comuni medievali.»", feedback: "Insistere non aiuta: IAco capisce che lo vuoi più corto, ma non sa di quanto. Serve un numero." },
+    { text: "«Riassumi il capitolo sui Comuni medievali in massimo 5 righe.»", correct: true, feedback: "Esatto. Un numero si può rispettare e controllare. «Breve» no." }
   ]}
-  correctOrder={[0, 1, 2, 3, 4]}
-  successMessage="È il prompt più chiaro di sempre! Fantastico!"
+  promiMessage="Quando conta la lunghezza, dammi un numero: righe, frasi, punti, minuti."
 />
 </Section>
 
 <Section>
-## Aggiungi Dettagli Chiari
+## Istruzioni che litigano tra loro
+
+A volte un prompt è vago in modo più subdolo: ogni pezzo sembra chiaro, ma due pezzi **si contraddicono**. Allora devo scegliere io quale ignorare.
+
+<PromptVsMistake
+  question="Quale messaggio per la squadra può essere scritto senza tradire nessuna delle istruzioni?"
+  good="Scrivi un messaggio di massimo 3 righe per avvisare la squadra che l'allenamento di giovedì è spostato alle 18"
+  bad="Scrivi un messaggio brevissimo per avvisare la squadra dell'allenamento di giovedì, spiegando ogni dettaglio"
+  explanation="Il secondo chiede un messaggio brevissimo che spieghi ogni dettaglio: le due cose fanno a pugni. In più non dice qual è la novità (lo spostamento alle 18). Il primo ha un limite chiaro e l'informazione che conta."
+  promiMessage="Brevissimo e dettagliatissimo insieme non si può. Uno dei due lo ignoro, e magari è quello sbagliato."
+/>
+</Section>
+
+<Section>
+## Le tre domande della chiarezza
+
+Prima di inviare un prompt, controlla che risponda a queste tre domande:
+
+1. **COSA** voglio? Un prodotto preciso: un quiz, una scaletta, un messaggio, una spiegazione.
+2. **COME** deve essere? Lunghezza con un numero, stile, tono, esempi.
+3. **PER CHI** è? Me, la classe, la prof, l'allenatore: cambia il livello e le parole.
 
 <MagicWords
-  title="Aggiungi i dettagli! 🎯"
-  sentence="Scrivi una {{length}} {{type}} su {{topic}} per {{audience}}"
+  title="Ogni pezzo al suo posto"
+  sentence="Scrivi {{cosa}} {{come}}, {{quanto}}, per {{perchi}}."
   blanks={[
-    { id: "length", hint: "Quanto lungo? (breve, lungo)", answers: ["breve", "lunga", "di 5 frasi", "di una pagina", "corta", "veloce"], emoji: "📏" },
-    { id: "type", hint: "Che tipo? (storia, lista, spiegazione)", answers: ["storia", "lista", "spiegazione", "poesia", "canzone", "guida"], emoji: "📝" },
-    { id: "topic", hint: "Su cosa? (spazio, animali, sport)", answers: ["spazio", "animali", "sport", "dinosauri", "robot", "magia", "natura", "scienza"], emoji: "🎯" },
-    { id: "audience", hint: "Per chi? (bambini, principianti)", answers: ["bambini", "principianti", "il mio insegnante", "il mio amico", "la mia famiglia", "studenti"], emoji: "👥" }
+    { id: "cosa", hint: "COSA: il prodotto", answers: ["un quiz di 8 domande", "una scaletta per il tema", "un piano di allenamento"], emoji: "📝" },
+    { id: "come", hint: "COME: stile o tono", answers: ["con parole semplici", "in tono ironico", "con un esempio pratico"] },
+    { id: "quanto", hint: "QUANTO: la lunghezza misurabile", answers: ["in massimo 10 righe", "in 3 punti", "da leggere in 1 minuto"] },
+    { id: "perchi", hint: "PER CHI: il destinatario", answers: ["i compagni di prima", "l'allenatore", "la prof di scienze"] }
   ]}
-  successMessage="Hai aggiunto tutti i dettagli importanti! Ottimo lavoro!"
+  successMessage="Hai separato bene stile e lunghezza: sembrano simili, ma sono due istruzioni diverse."
 />
 </Section>
 
 <Section>
-## Le Regole d'Oro della Chiarezza
+## Il prompt cristallino
 
-<Panel character="promi" mood="excited">
-Ecco i miei migliori consigli per essere chiaro:
-</Panel>
+<DragDropPrompt
+  title="Pitagora per l'interrogazione"
+  instruction="Metti in ordine i 6 pezzi: deve uscire un prompt che dica COSA, COME e PER CHI, scritto in italiano corretto."
+  pieces={[
+    "preso dal campo da calcio",
+    "Spiegami il teorema di Pitagora",
+    "e non superare le 6 frasi.",
+    "che domani ha l'interrogazione.",
+    "Usa un esempio",
+    "come se parlassi a un compagno di seconda media"
+  ]}
+  correctOrder={[1, 5, 3, 4, 0, 2]}
+  successMessage="COSA (spiegare Pitagora), PER CHI (un compagno di seconda), COME (esempio dal calcio, massimo 6 frasi). Niente da indovinare."
+/>
+</Section>
 
-Ricorda queste tre domande quando scrivi un prompt:
-
-1. **COSA** voglio? (storia, aiuto, informazione)
-2. **COME** deve essere? (corto, divertente, semplice)
-3. **PER CHI** è? (me, il mio amico, la mia classe)
-
+<Section>
+## Sfida finale del Villaggio
 
 <PromptVsMistake
-  question="Sfida finale! Quale prompt dice chiaramente COSA, COME e PER CHI?"
-  good="Scrivi tre indovinelli brevi sui pianeti da proporre ai compagni durante la lezione di scienze"
-  bad="Fammi una cosa divertente sui pianeti da proporre ai compagni durante la lezione di scienze"
-  explanation="Il primo dice COSA (tre indovinelli), COME (brevi) e PER CHI (i compagni a lezione). Il secondo ha il destinatario, ma «una cosa divertente» non dice cosa produrre: un quiz, una storia, una canzone?"
-  promiMessage="Ottimo occhio: un verbo vago come «fammi una cosa» lascia tutto a me."
+  question="Ultima prova: quale prompt risponde davvero a COSA, COME e PER CHI?"
+  good="Prepara 6 domande vero/falso sul sistema solare, con una spiegazione di una riga ciascuna, per sfidare i compagni"
+  bad="Prepara un gioco sul sistema solare, con una spiegazione di una riga per ogni risposta, per sfidare i compagni"
+  explanation="Entrambi dicono PER CHI (i compagni) e qualcosa sul COME (una riga di spiegazione). Ma «un gioco» non è un prodotto preciso: un quiz, un cruciverba, un indovinello, una caccia al tesoro? Il primo dice esattamente COSA: 6 domande vero/falso."
+  promiMessage="Il trucco era nel COSA: «un gioco» sembra preciso, ma non lo è."
 />
 </Section>
 
 <Section>
-## Mondo 1 Completato! 🎊
+## Villaggio Iniziale completato
 
 <Panel character="promi" mood="celebrating">
-WOW! Hai finito tutto il Mondo 1! Hai imparato:
+Hai finito il primo mondo. Ora sai che:
 
-- ✅ Cosa sono l'IA e i prompt
-- ✅ Come scrivere i tuoi primi prompt
-- ✅ Perché essere chiaro è super importante
+- Un chatbot sceglie le parole più probabili e sa solo quello che scrivi
+- Un prompt è una richiesta: azione, argomento, dettagli
+- Le parole vaghe si sostituiscono con numeri e paletti concreti
+- Prima di inviare, controlla **COSA**, **COME** e **PER CHI**
 
-Sei pronto per nuove avventure!
+Prossima tappa: il Castello della Chiarezza.
 </Panel>
 
-
-<LevelComplete 
-  levelSlug="1-3-being-clear" 
+<LevelComplete
+  levelSlug="1-3-being-clear"
   stars={3}
-  message="Hai padroneggiato l'arte di essere chiaro! Mondo 1 completato!"
+  message="Hai imparato a scrivere prompt chiari. Villaggio Iniziale completato."
 />
 </Section>
-
